@@ -7,6 +7,7 @@ public class test1 {
 		
 		System.out.println("폴더 너무 길어!!!!");
 		
+		System.out.println("dadada");
 	}
 	
 	
