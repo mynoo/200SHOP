@@ -1,0 +1,65 @@
+1619929998705	Move 8 resources to 'lib'
+1619930035184	Delete element
+1619930630176	Delete element
+1619933065650	Delete element
+1619933081776	Rename resource 'NewFile.jsp'
+1619933204237	Move 'images' to 'WEB-INF'
+1619933266957	Move 'scss' to 'WEB-INF'
+1619933271855	Move 'js' to 'WEB-INF'
+1619933274782	Move 'fonts' to 'WEB-INF'
+1619933282727	Move 'css' to 'WEB-INF'
+1619933824681	Copy file
+1619933864925	Move 'liquorstore-master' to 'WEB-INF'
+1619933914071	Delete element
+1619939439125	Move 'liquorstore-master' to 'webapp'
+1619939447750	Move 7 resources to 'webapp'
+1619939558169	Move 4 resources to 'common'
+1619939564215	Move 'scss' to 'common'
+1619939590099	Rename resource 'NewFile.jsp'
+1619940541404	Move 'css' to 'webapp'
+1619940543286	Move 'fonts' to 'webapp'
+1619940546093	Move 'images' to 'webapp'
+1619940549024	Move 'js' to 'webapp'
+1619940551242	Move 'scss' to 'webapp'
+1619940993778	Move 6 resources to 'common'
+1619941003391	Move 2 resources to 'common'
+1619941017643	Move 'main.html' to 'common'
+1619941023632	Move 'prepros-6.config' to 'common'
+1619941026927	Move 'readme.txt' to 'common'
+1619941033170	Delete element
+1619941088002	Copy file
+1619941487490	Copy file
+1619941585529	Copy file
+1619941656796	Copy file
+1619941710803	Copy file
+1619941820090	Delete element
+1619941821918	Delete element
+1619941828005	Delete element
+1619941844371	Copy file
+1619941875035	Delete elements
+1619941879147	Delete element
+1619941895676	Copy file
+1619941964625	Copy file
+1619941970250	Delete element
+1619941972376	Delete element
+1619942021211	Delete element
+1619942083122	Move 'board_Detail.jsp' to 'board'
+1619942084952	Move 'board.jsp' to 'board'
+1619942090476	Move 2 resources to 'order'
+1619942114491	Move 2 resources to 'product'
+1619945993729	Move 2 resources to 'css'
+1619946008486	Move 2 resources to 'fonts'
+1619946018871	Move 'form-img.jpg' to 'images'
+1619946045556	Move 'signup.js' to 'js'
+1619946058691	Move 2 resources to 'scss'
+1619946140076	Move 'readme.txt' to 'login'
+1619946146748	Move 'signup.jsp' to 'login'
+1619946171835	Move 'vendor' to 'webapp'
+1619947449088	Move 2 resources to 'css'
+1619947487173	Move 2 resources to 'images'
+1619947516185	Move 4 resources to 'fonts'
+1619947549361	Move 'login.js' to 'js'
+1619947570731	Move 6 resources to 'vendor'
+1619947577669	Move 2 resources to 'vendor'
+1619947585855	Move 'jquery-3.2.1.min.js' to 'jquery'
+1619947608390	Move 'login.jsp' to 'login'

@@ -1,0 +1,2 @@
+# Main Section
+main=shopping.common.controller.MainController
