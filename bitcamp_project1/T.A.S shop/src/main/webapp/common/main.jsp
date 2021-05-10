@@ -6,6 +6,7 @@
 </head>
 <body>
 
+
 	<jsp:include page="mainhead.jsp" />
 	
 	<div class="hero-wrap"
