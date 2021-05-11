@@ -11,8 +11,16 @@ public class Member {
 	private String address2;
 	private String birth;
 	private int point;
+	private String phonenumber;
+	
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
 	public String getId() {
-		return id;
+	return id;
 	}
 	public void setId(String id) {
 		this.id = id;
@@ -71,13 +79,15 @@ public class Member {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", Name=" + Name + ", password=" + password + ", email=" + email + ", gender="
 				+ gender + ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + ", birth="
-				+ birth + ", point=" + point + "]";
+				+ birth + ", point=" + point + ", phonenumber=" + phonenumber + "]";
 	}
+	
+
+	
 	
 	
 }

@@ -6,7 +6,6 @@
 </head>
 <body>
 
-
 	<jsp:include page="mainhead.jsp" />
 	
 	<div class="hero-wrap"
@@ -314,9 +313,6 @@
 										<span class="flaticon-shopping-bag"></span>
 									</a> <a href="#"
 										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-heart"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
 										<span class="flaticon-visibility"></span>
 									</a>
 								</p>
@@ -338,9 +334,6 @@
 									<a href="#"
 										class="d-flex align-items-center justify-content-center">
 										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-heart"></span>
 									</a> <a href="#"
 										class="d-flex align-items-center justify-content-center">
 										<span class="flaticon-visibility"></span>
@@ -491,6 +484,6 @@
 		</div>
 	</section>
 	
-	<jsp:include page="footer.jsp" />  
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

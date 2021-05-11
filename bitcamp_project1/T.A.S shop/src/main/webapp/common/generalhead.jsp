@@ -33,8 +33,8 @@
 					</div>
 					<div class="reg">
 						<p class="mb-0">
-							<a href="<%=contextPath%>/login/signup.jsp" class="mr-2">Sign Up</a>
-							<a href="<%=contextPath%>/login/login.jsp">Log In</a>
+							<a href="<%=Noform%>mInsert" class="mr-2">Sign Up</a>
+							<a href="<%=Noform%>mLogin">Log In</a>
 						</p>
 					</div>
 				</div>

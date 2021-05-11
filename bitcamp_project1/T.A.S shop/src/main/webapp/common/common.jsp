@@ -8,6 +8,8 @@
 	String mapping = "/Shopping";
 	
 	String Noform = contextPath + mapping + "?command=";
+	
+	String YesForm = contextPath + mapping;
 %>
 <!DOCTYPE>
 <html>
@@ -47,6 +49,11 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="<%=contextPath%>/js/google-map.js"></script>
 	<script src="<%=contextPath%>/js/main.js"></script>
+	
+	<style type="text/css">
+		/* for form validation check */
+		.err{font-size:10pt;color:red;font-weight:bolder;}
+	</style>
 	
 </head>
 <body>

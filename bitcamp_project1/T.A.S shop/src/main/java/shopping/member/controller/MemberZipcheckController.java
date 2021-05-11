@@ -24,6 +24,7 @@ public class MemberZipcheckController extends SuperClass {
 		CompositeDao dao = new CompositeDao() ;
 		
 		if (dong != null) {
+			System.out.println("dong name : " + dong);
 			lists = dao.SelectDataZipcode(dong) ;
 			System.out.println("dong record size : " + lists.size() ); 
 		}
@@ -31,9 +32,10 @@ public class MemberZipcheckController extends SuperClass {
 		request.setAttribute("lists", lists) ;
 		request.setAttribute("dong", dong) ;
 		
-		String gotopage = "/member/zipCheck.jsp" ;
+		String gotopage = "/member/Zipcheck.jsp" ;
 		super.GotoPage(gotopage);
-	}	
+	}
+	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doGet(request, response);
