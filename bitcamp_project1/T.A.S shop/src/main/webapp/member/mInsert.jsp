@@ -206,13 +206,11 @@
                                     </div>
                                     <span class="err">${errgender}</span>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         <div class="form-submit">
-                            <input type="submit" value="Signup" class="submit" id="submit" name="submit" onclick="return checkForm();"/>
-                            <input type="reset" value="Reset" class="submit" id="reset" name="reset" />
+                            <input type="submit" value="Signup" class="submit" onclick="return checkForm();"/>
+                            <input type="reset" value="Reset" class="submit" name="reset" />
                         </div>
                     </form>
                 </div>

@@ -60,7 +60,7 @@ public class MemberLoginController extends SuperClass {
 				String message = "아이디나 비밀 번호가 잘못되었습니다." ;
 				super.setErrorMessage(message);
 				gotopage = "/member/mLogin.jsp" ;
-				super.GotoPage(gotopage); 				
+				super.GotoPage(gotopage);
 			} else { 
 				System.out.println("로그인 성공");
 				// 로그인 정보를 세션에 바인딩
