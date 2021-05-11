@@ -35,12 +35,12 @@
 				return false;
 			}
 			
-			var url = '<%=Noform%>mIdcheck&id=' + id;
+			var url = '<%=Noform%>meIdcheck&id=' + id;
 			window.open(url, 'mywin', 'height=150, width=300');
 		}
 		
 		function zipfind() {
-			var url = '<%=Noform%>mZipcheck';
+			var url = '<%=Noform%>meZipcheck';
 			
 			window.open(url, 'mywin', 'height=600, width=720 scrollbar=yes')
 		}
@@ -50,7 +50,7 @@
 		}
 		
 		function checkForm(){
-			var isCheck = document.myform.isCheck.value  ;
+			var isCheck = document.minsertform.isCheck.value  ;
 			if(isCheck == 'false'){
 				alert('아이디 중복 체크를 해주세요.') ;
 				return false ; 
@@ -119,7 +119,7 @@
                             <div class="form-group">
                                 <div class="form-input">
                                     <label for="id" class="required">Id</label>
-                                    <input type="text" class="form-control" name="id" id="id" pattern="[A-Za-z]"
+                                    <input type="text" class="form-control" name="id" id="id" pattern="[A-Za-z]+"
                                     	placeholder="input your id" data-toggle="tooltip" 
                                     	onkeyup="isCheckFalse()" value="${bean.id}"/>
 									<input type="button" value="Id Check" class="btn btn-primary" id="button" name="button" 
@@ -151,7 +151,7 @@
                                 
                                 <div class="form-input">
 									<label for="phonenumber" class="required">Phone</label>
-                                    <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]" value="${bean.phonenumber}"/>
+                                    <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]+" value="${bean.phonenumber}"/>
                                     <span class="err">${errphonenumber}</span>
                                 </div>
                                 
