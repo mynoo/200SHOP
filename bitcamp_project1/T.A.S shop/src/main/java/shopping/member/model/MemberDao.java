@@ -67,8 +67,8 @@ public Member SelectData(String id, String password) {
 		
 		int cnt = -99999;
 		
-		String sql = " insert into members(id, name, password, birth, email, zipcode, address1, address2, gender, point)";
-		sql += " values(?, ?, ?, to_date(?, 'yyyy/mm/dd'), ?, ?, ?, ?, ?, default)";
+		String sql = " insert into members(id, name, password, birth, email, zipcode, address1, address2, gender, phonenumber, point)";
+		sql += " values(?, ?, ?, to_date(?, 'yyyy/mm/dd'), ?, ?, ?, ?, ?, ?, default)";
 		
 		try {
 			if(conn == null) {conn = super.getConnection();}
@@ -84,6 +84,7 @@ public Member SelectData(String id, String password) {
 			pst.setString(7, bean.getAddress1());
 			pst.setString(8, bean.getAddress2());
 			pst.setString(9, bean.getGender());
+			pst.setString(10, bean.getPhonenumber());
 			
 			cnt = pst.executeUpdate();
 			conn.commit();

@@ -54,7 +54,7 @@
 							Login
 						</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button class="login100-form-btn" onclick="location.href='signup.jsp' " >
+						<button class="login100-form-btn" onclick="location.href='<%=Noform%>meInsert' " >
 							Sign up
 						</button>
 					</div>

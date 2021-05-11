@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../common/common.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
 			border: 1px solid skyblue;
 		}
 	</style>
-	    
+	
 	<script type="text/javascript">
 		function Idcheck() {
 			var id = document.minsertform.id.value;
@@ -46,6 +47,14 @@
 		
 		function isCheckFalse() {
 			document.minsertform.isCheck.value = false;
+		}
+		
+		function checkForm(){
+			var isCheck = document.myform.isCheck.value  ;
+			if(isCheck == 'false'){
+				alert('아이디 중복 체크를 해주세요.') ;
+				return false ; 
+			}
 		}
 		
 		function Checkpw() {
@@ -103,14 +112,14 @@
                 <div class="signup-form">
                     <form method="POST" class="register-form" name="minsertform">
                     
-                    <input type="hidden" id="command" value="mInsert">
+                    <input type="hidden" id="command" value="meInsert">
                     <input type="hidden" id="isCheck" value="false">
                     
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
                                     <label for="id" class="required">Id</label>
-                                    <input type="text" class="form-control" name="id" id="id" pattern="[A-Z,a-z]"
+                                    <input type="text" class="form-control" name="id" id="id" pattern="[A-Za-z]"
                                     	placeholder="input your id" data-toggle="tooltip" 
                                     	onkeyup="isCheckFalse()" value="${bean.id}"/>
 									<input type="button" value="Id Check" class="btn btn-primary" id="button" name="button" 
@@ -120,7 +129,7 @@
                                 
                                 <div class="form-input">
                                     <label for="name" class="required">Name</label>
-                                    <input type="text" name="name" id="name" />
+                                    <input type="text" name="name" id="name" value="${bean.name}"/>
                                     <span class="err">${errname}</span>
                                 </div>
                                 
@@ -136,12 +145,19 @@
                                 </div>
                                 <div class="form-input">
                                     <label for="birth" class="required">Birth</label>
-                                    <input type="date" name="birth" id="birth" />
+                                    <input type="date" name="birth" id="birth" value="${bean.birth}"/>
                                     <span class="err">${errbirth}</span>
                                 </div>
+                                
+                                <div class="form-input">
+									<label for="phonenumber" class="required">Phone</label>
+                                    <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]" value="${bean.phonenumber}"/>
+                                    <span class="err">${errphonenumber}</span>
+                                </div>
+                                
                                 <div class="form-input">
                                     <label for="email" class="required">Email</label>
-                                    <input type="email" name="email" id="email" placeholder="ex)abc@abc.com"/>
+                                    <input type="email" name="email" id="email" placeholder="ex)abc@abc.com" value="${bean.email}"/>
                                     <span class="err">${erremail}</span>
                                 </div>
                             </div>
@@ -149,7 +165,7 @@
                                 <div class="form-input">
                                     <label class="control-label required" for="zipcode">Zipcode</label>
                                     <div class="col-sm-7">
-	                                    <input type="text" name="fakezipcode" id="fakezipcode" disabled="disabled" />
+	                                    <input type="text" name="fakezipcode" id="fakezipcode" disabled="disabled" value="${bean.zipcode}"/>
 	                                    <input type="text" name="zipcode" id="zipcode" />
                                     </div>
 									<div class="button">
@@ -158,12 +174,12 @@
 				      			</div>
                                 <div class="form-input">
                                     <label class="required" for="address1">Address1</label>
-                                    <input type="text" name="fakeaddress1" id="fakeaddress1" disabled="disabled"/>
+                                    <input type="text" name="fakeaddress1" id="fakeaddress1" disabled="disabled" value="${bean.address1}"/>
                                     <input type="text" name="address1" id="address1" />
                                 </div>
                                 <div class="form-input">
                                     <label class="required" for="address2">Address2</label>
-                                    <input type="text" name="address2" id="address2" />
+                                    <input type="text" name="address2" id="address2" value="${bean.address2}"/>
                                 </div>
                                 
                                  <div class="form-radio">
@@ -172,12 +188,18 @@
                                     </div>
                                     <div class="form-radio-group">
                                         <div class="form-radio-item">
-                                            <input type="radio" name="gender" id="man" value="남자">
+                                            <input type="radio" name="gender" id="man" value="남자" >
+                                            <c:if test="${bean.gender == '남자'}">
+												checked="${bean.gender}"
+											</c:if>
                                             <label for="man">Man</label>
                                             <span class="check"></span>
                                         </div>
                                         <div class="form-radio-item">
-                                            <input type="radio" name="gender" id="female" value="여자">
+                                            <input type="radio" name="gender" id="female" value="여자" >
+                                             <c:if test="${bean.gender == '여자'}">
+												checked="${bean.gender}"
+											</c:if>
                                             <label for="female">Female</label>
                                             <span class="check"></span>
                                         </div>
@@ -189,7 +211,7 @@
                             </div>
                         </div>
                         <div class="form-submit">
-                            <input type="submit" value="Signup" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Signup" class="submit" id="submit" name="submit" onclick="return checkForm();"/>
                             <input type="reset" value="Reset" class="submit" id="reset" name="reset" />
                         </div>
                     </form>
@@ -205,5 +227,6 @@
 	<script src="<%=contextPath%>/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
 	<script src="<%=contextPath%>/vendor/jquery-validation/dist/additional-methods.min.js"></script>
 	<script src="<%=contextPath%>/js/signup.js"></script>
+	
 </body>
 </html>

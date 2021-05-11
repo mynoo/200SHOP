@@ -8,6 +8,8 @@
 	String mapping = "/Shopping";
 	
 	String Noform = contextPath + mapping + "?command=";
+	
+	String YesForm = contextPath + mapping;
 %>
 <!DOCTYPE>
 <html>

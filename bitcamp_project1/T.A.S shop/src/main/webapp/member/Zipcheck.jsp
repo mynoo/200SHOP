@@ -53,7 +53,7 @@
 			</div>
 			<div class="panel-body">
 				<form name="myform" class="form-inline" action="<%=YesForm%>" method="post">
-					<input type="hidden" name="command" value="mZipcheck">
+					<input type="hidden" name="command" value="meZipcheck">
 					<table class="table table-hover">
 						<tr>
 							<td colspan="2" align="center">

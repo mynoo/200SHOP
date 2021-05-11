@@ -1,5 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="common.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+
+
+<c:set var="whologin" value="0" /> 
+<c:if test="${empty sessionScope.loginfo}">
+	<c:set var="whologin" value="0" />
+</c:if>
+<c:if test="${not empty sessionScope.loginfo}">
+	<c:if test="${sessionScope.loginfo.id == 'admin'}">
+		<c:set var="whologin" value="2" />
+	</c:if>
+	<c:if test="${sessionScope.loginfo.id != 'admin'}">
+		<c:set var="whologin" value="1" />
+	</c:if>
+</c:if>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,8 +52,14 @@
 					</div>
 					<div class="reg">
 						<p class="mb-0">
-							<a href="<%=Noform%>mInsert" class="mr-2">Sign Up</a>
-							<a href="<%=Noform%>mLogin">Log In</a>
+							<c:if test="${whologin == 0}">
+							<a href="<%=Noform%>meInsert" class="mr-2">Sign Up</a>
+							<a href="<%=Noform%>meLogin">Log In</a>
+							</c:if>
+							<c:if test="${whologin != 0}">
+							<a href="<%=contextPath%>/member/myprofile.jsp" class="mr-2">My Profile</a>
+							<a href="<%=Noform%>meLogout">Log Out</a>
+							</c:if>
 						</p>
 					</div>
 				</div>

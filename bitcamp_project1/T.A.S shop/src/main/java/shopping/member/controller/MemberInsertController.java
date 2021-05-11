@@ -49,9 +49,14 @@ private Member bean = null ;
 			isCheck = false ;
 		}
 		
+		
 		if (bean.getZipcode() == null || bean.getZipcode() == "" ) {
 			request.setAttribute(super.PREFIX + "zipcode", "우편 번호는 필수 입력 사항입니다.");
 			isCheck = false ;
+		}
+		
+		if (bean.getPhonenumber().length() < 9 ||bean.getPhonenumber().length() < 11 ) {
+			request.setAttribute(super.PREFIX + "phonenumber", "핸드폰 번호는 '-' 포함 9글자 이상 11글자 이하로 입력하세요");
 		}
 		
 		return isCheck ;
@@ -70,6 +75,7 @@ private Member bean = null ;
 		bean.setZipcode(request.getParameter("zipcode"));
 		bean.setName(request.getParameter("name"));
 		bean.setPassword(request.getParameter("password"));
+		bean.setPhonenumber(request.getParameter("phonenumber"));
 		
 		if (request.getParameter("point") == null || request.getParameter("point").equals("")) {
 			bean.setPoint(0);	
@@ -82,18 +88,6 @@ private Member bean = null ;
 		if (this.validate(request) == true) { 
 			System.out.println("member insert validation check success");
 			int cnt = -99999 ; 
-			
-			System.out.println("id :" + bean.getId());
-			System.out.println("name :" + bean.getName());
-			System.out.println("password :" + bean.getPassword());
-			System.out.println("birth :" + bean.getBirth());
-			System.out.println("email :" + bean.getEmail());
-			System.out.println("gender :" + bean.getGender());
-			System.out.println("zipcode :" + bean.getZipcode());
-			System.out.println("addr1 :" + bean.getAddress1());
-			System.out.println("addr2 :" + bean.getAddress2());
-			System.out.println("point :" + bean.getPoint());
-			
 			
 			cnt = dao.InsertData(bean) ;
 			
