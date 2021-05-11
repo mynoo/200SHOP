@@ -9,145 +9,99 @@ import java.util.List;
 import shopping.common.model.SuperDao;
 
 public class MemberDao extends SuperDao {
-
-	public List<Member> GetManagerList() {
-		PreparedStatement pstmt = null ;
-		ResultSet rs = null ;
-
-		String sql = " select * from members  " ; 
-		sql += " where manager is null " ;	
-		sql += " order by name asc " ;
-		
-		List<Member> lists = new ArrayList<Member>();
-		try {
-			if( conn == null ){ super.conn = super.getConnection() ; }
-			pstmt = super.conn.prepareStatement(sql) ;			
 	
-			rs = pstmt.executeQuery() ;		
-			
-			while( rs.next() ){
-				Member bean = new Member();
-				
-				pstmt.setString(1, bean.getId());
-				pstmt.setString(2, bean.getName());
-				pstmt.setString(3, bean.getPassword());
-				pstmt.setString(4, bean.getEmail());
-				pstmt.setString(5, bean.getGender());
-				pstmt.setString(6, bean.getZipcode());
-				pstmt.setString(7, bean.getAddress1());
-				pstmt.setString(8, bean.getAddress2());
-				pstmt.setString(9, bean.getBirth());
-				pstmt.setInt(10, bean.getPoint());					
-							 				 
-				lists.add( bean ) ;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally{
-			try {
-				if( rs != null ){ rs.close(); }
-				if( pstmt != null ){ pstmt.close(); }
-				super.closeConnection(); 
-			} catch (Exception e2) {
-				e2.printStackTrace(); 
-			}
-		}
+public Member SelectData(String id, String password) {
 		
-		return lists ;
-	}		
-	
-	public Member SelectData(String id, String password) {
-		Member bean = null ;
-		PreparedStatement pstmt = null ;
-		ResultSet rs = null ;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
 		
-		String sql = " select * from members where id = ? and password = ? " ;
+		Member bean = null;
+		
+		String sql = " select * from members";
+		sql += " where id = ? and password = ?";
 		
 		try {
-			if(conn == null) {super.conn = super.getConnection() ; }
-			pstmt = conn.prepareStatement(sql) ;
+			if(conn == null) {conn = super.getConnection();}
+			pst = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, id);
-			pstmt.setString(2, password);
+			pst.setString(1, id);
+			pst.setString(2, password);
 			
-			rs = pstmt.executeQuery() ; 
+			rs = pst.executeQuery();
 			
 			if(rs.next()) {
-				bean = new Member() ;
 				
-				pstmt.setString(1, bean.getId());
-				pstmt.setString(2, bean.getName());
-				pstmt.setString(3, bean.getPassword());
-				pstmt.setString(4, bean.getEmail());
-				pstmt.setString(5, bean.getGender());
-				pstmt.setString(6, bean.getZipcode());
-				pstmt.setString(7, bean.getAddress1());
-				pstmt.setString(8, bean.getAddress2());
-				pstmt.setString(9, bean.getBirth());
-				pstmt.setInt(10, bean.getPoint());				
+				bean = new Member();
+				
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPassword(rs.getString("password"));
+				bean.setBirth(rs.getString("birth"));
+				bean.setEmail(rs.getString("email"));
+				bean.setGender(rs.getString("gender"));
+				bean.setZipcode(rs.getString("zipcode"));
+				bean.setAddress1(rs.getString("address1"));
+				bean.setAddress2(rs.getString("address2"));
+				
 			}
-		} catch (Exception e) {			
+			
+		} catch (Exception e) {
 			e.printStackTrace();
-			bean = null ; 
 		}finally {
 			try {
 				if(rs != null) {rs.close();}
-				if(pstmt != null) {pstmt.close();} 
-				
+				if(pst != null) {pst.close();}
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
 		}
-		return bean ;
-	}	
-	
-	
-	public int InsertData( Member bean ){
-		String sql = " insert into members(id, name, password, email, gender, zipcode, address1, address2, birth, point) " ; 
-		sql += "                    values(?,  ?,    ?,        ?,     ?,      ?,       ?,        ?,        ?,     default ) " ;
 		
-		PreparedStatement pstmt = null ;
-		int cnt = -99999 ;
+		return bean;
+		
+	}
+	
+	
+	public int InsertData(Member bean) {
+		
+		PreparedStatement pst = null;
+		
+		int cnt = -99999;
+		
+		String sql = " insert into members(id, name, password, birth, email, zipcode, address1, address2, gender, point)";
+		sql += " values(?, ?, ?, to_date(?, 'yyyy/mm/dd'), ?, ?, ?, ?, ?, default)";
+		
 		try {
-			if( conn == null ){ super.conn = super.getConnection() ; }
-			conn.setAutoCommit( false );
-			pstmt = super.conn.prepareStatement(sql) ;
+			if(conn == null) {conn = super.getConnection();}
+			conn.setAutoCommit(false);
+			pst = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, bean.getId());
-			pstmt.setString(2, bean.getName());
-			pstmt.setString(3, bean.getPassword());
-			pstmt.setString(4, bean.getEmail());
-			pstmt.setString(5, bean.getGender());
-			pstmt.setString(6, bean.getZipcode());
-			pstmt.setString(7, bean.getAddress1());
-			pstmt.setString(8, bean.getAddress2());
-			pstmt.setString(9, bean.getBirth());
-			pstmt.setInt(10, bean.getPoint());			
+			pst.setString(1, bean.getId());
+			pst.setString(2, bean.getName());
+			pst.setString(3, bean.getPassword());
+			pst.setString(4, bean.getBirth());
+			pst.setString(5, bean.getEmail());
+			pst.setString(6, bean.getZipcode());
+			pst.setString(7, bean.getAddress1());
+			pst.setString(8, bean.getAddress2());
+			pst.setString(9, bean.getGender());
 			
+			cnt = pst.executeUpdate();
+			conn.commit();
 			
-			cnt = pstmt.executeUpdate() ; 
-			conn.commit(); 
 		} catch (Exception e) {
-			SQLException err = (SQLException)e ;
-			//getErrorCode() : ����Ŭ ���� ����� ����
-			//�� : not null �̸� 1400 
-			cnt = - err.getErrorCode() ;			
 			e.printStackTrace();
+		}finally {
 			try {
-				conn.rollback(); 
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		} finally{
-			try {
-				if( pstmt != null ){ pstmt.close(); }
-				super.closeConnection(); 
+				if(pst != null) {pst.close();}
+				super.closeConnection();
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
 		}
-		return cnt ;
+		
+		return cnt;
 	}
+
 	public int UpdateData( Member bean ){
 		String sql = " " ; 
 		sql += " " ;
@@ -295,52 +249,54 @@ public class MemberDao extends SuperDao {
 	public MemberDao() {
 		
 	}
-	public Member SelectDataByPk( String id ){
-		PreparedStatement pstmt = null ;
-		ResultSet rs = null ;				
-
-		String sql = " select * from members  " ; 
-		sql += " where id = ? " ; 
-
-		Member bean = null ;
+	
+	public Member SelectDataByPk(String id) {
+		
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		
+		Member bean = null;
+		
+		String sql = " select * from members";
+		sql += " where id = ?";
 		
 		try {
-			if( this.conn == null ){ this.conn = this.getConnection() ; }			
-			pstmt = this.conn.prepareStatement(sql) ;			
+			if(conn == null) {conn = super.getConnection();}
+			pst = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, id);
+			pst.setString(1, id);
 			
-			rs = pstmt.executeQuery() ;
+			rs = pst.executeQuery();
 			
-			if ( rs.next() ) {
-				bean = new Member(); 
-
-				pstmt.setString(1, bean.getId());
-				pstmt.setString(2, bean.getName());
-				pstmt.setString(3, bean.getPassword());
-				pstmt.setString(4, bean.getEmail());
-				pstmt.setString(5, bean.getGender());
-				pstmt.setString(6, bean.getZipcode());
-				pstmt.setString(7, bean.getAddress1());
-				pstmt.setString(8, bean.getAddress2());
-				pstmt.setString(9, bean.getBirth());
-				pstmt.setInt(10, bean.getPoint());			
+			if(rs.next()) {
 				
+				bean = new Member();
+				
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPassword(rs.getString("password"));
+				bean.setBirth(rs.getString("birth"));
+				bean.setEmail(rs.getString("email"));
+				bean.setGender(rs.getString("gender"));
+				bean.setZipcode(rs.getString("zipcode"));
+				bean.setAddress1(rs.getString("address1"));
+				bean.setAddress2(rs.getString("address2"));
 				
 			}
 			
-		} catch (SQLException e) {			
+		} catch (Exception e) {
 			e.printStackTrace();
-		} finally{
+		}finally {
 			try {
-				if( rs != null){ rs.close(); } 
-				if( pstmt != null){ pstmt.close(); } 
-				this.closeConnection() ;
+				if(rs != null) {rs.close();}
+				if(pst != null) {pst.close();}
 			} catch (Exception e2) {
-				e2.printStackTrace(); 
+				e2.printStackTrace();
 			}
-		} 		
-		return bean  ;
+		}
+		
+		
+		return bean;
 	}
 	public int SelectTotalCount() {
 		PreparedStatement pstmt = null ;

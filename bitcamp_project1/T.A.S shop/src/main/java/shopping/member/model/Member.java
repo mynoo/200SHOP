@@ -11,8 +11,9 @@ public class Member {
 	private String address2;
 	private String birth;
 	private int point;
+	
 	public String getId() {
-		return id;
+	return id;
 	}
 	public void setId(String id) {
 		this.id = id;

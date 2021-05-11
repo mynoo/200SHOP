@@ -48,6 +48,11 @@
 	<script src="<%=contextPath%>/js/google-map.js"></script>
 	<script src="<%=contextPath%>/js/main.js"></script>
 	
+	<style type="text/css">
+		/* for form validation check */
+		.err{font-size:10pt;color:red;font-weight:bolder;}
+	</style>
+	
 </head>
 <body>
 

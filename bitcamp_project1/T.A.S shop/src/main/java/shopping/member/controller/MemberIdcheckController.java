@@ -37,18 +37,7 @@ public class MemberIdcheckController extends SuperClass {
 			}
 		}
 	
-		String gotopage = "/member/idCheck.jsp" ;
+		String gotopage = "/member/Idcheck.jsp" ;
 		super.GotoPage(gotopage);
 	}	
-	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		super.doPost(request, response);
-	}
 }
-
-//int no = Integer.parseInt(request.getParameter("no")) ;
-//
-//List<Member> lists = new ArrayList<Member>() ;
-//
-//request.setAttribute("bean", bean);
-//
