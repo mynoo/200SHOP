@@ -8,12 +8,12 @@
 			/* alert('검색');  */	
 			var mode = $('#mode').val() ;
 			var keyword = $('#keyword').val() ;
-			location.href='<%=NoForm%>boList' + '&mode=' + mode + '&keyword=' + keyword ;
+			location.href='<%=Noform%>boList' + '&mode=' + mode + '&keyword=' + keyword ;
 		}
 		
 		function writeForm(){
 			/* alert('글 작성'); */
-			location.href='<%=NoForm%>boInsert';
+			location.href='<%=Noform%>boInsert';
 		}
 		
 		$(document).ready(function(){
@@ -122,7 +122,7 @@
 						<td>23 April 2020</td>
 						<td>
 							<c:if test="${sessionScope.loginfo.id == bean.writer}">
-								<a href="<%=NoForm%>boUpdate&no=${bean.no}&${requestScope.parameters}">
+								<a href="<%=Noform%>boUpdate&no=${bean.no}&${requestScope.parameters}">
 									수정
 								</a>
 							</c:if>
@@ -132,7 +132,7 @@
 						</td>
 						<td>
 							<c:if test="${sessionScope.loginfo.id == bean.writer}">
-								<a href="<%=NoForm%>boDelete&no=${bean.no}&${requestScope.parameters}">
+								<a href="<%=Noform%>boDelete&no=${bean.no}&${requestScope.parameters}">
 									삭제
 								</a>
 							</c:if>
@@ -150,7 +150,7 @@
 								<td>${bean.writedate}</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
-										<a href="<%=NoForm%>boUpdate&no=${bean.no}&${requestScope.parameters}">
+										<a href="<%=Noform%>boUpdate&no=${bean.bno}&${requestScope.parameters}">
 											수정
 										</a>
 									</c:if>
@@ -160,7 +160,7 @@
 								</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
-										<a href="<%=NoForm%>boDelete&no=${bean.no}&${requestScope.parameters}">
+										<a href="<%=Noform%>boDelete&no=${bean.bno}&${requestScope.parameters}">
 											삭제
 										</a>
 									</c:if>

@@ -26,9 +26,6 @@ public class ReplyInsertController extends SuperClass {
 		
 		bean01 = new Reply() ;
 		bean01.setComment(request.getParameter("comment")); 
-		bean01.setDate(request.getParameter("date"));
-		bean01.setGroupno(Integer.parseInt(request.getParameter("groupno")));
-		bean01.setRno(Integer.parseInt(request.getParameter("rno")));
 		bean01.setMid(request.getParameter("mid"));
 		
 		System.out.println("bean01 information");

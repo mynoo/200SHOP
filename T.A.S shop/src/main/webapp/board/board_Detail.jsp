@@ -47,7 +47,7 @@
 					</tr>
 					<tr>
 						<th>writer</th>
-						<td>aaaa</td>
+						<td>admin</td>
 					</tr>
 					<tr>
 						<th>title</th>
@@ -177,7 +177,11 @@
               <h3>Recent Board</h3>
               <div class="block-21 mb-4 d-flex">
                 <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <h3 class="heading">
+                  	<a href="https://brunch.co.kr/@paxcom/268">
+                  	술은 따뜻한 성질로서 양기를 북돋우어 주고 경락과 혈맥을 소통시키며 찬 기운을 물리치는 효능이 매우 강하다. 또한 위와 장을 따뜻하게 하여 소화에 도움을 주고 응어리를 풀어주며 해독 작용이 있다.
+                  	</a>
+                  </h3>
                   <div class="meta">
                     <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
                     <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
