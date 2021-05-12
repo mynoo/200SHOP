@@ -101,6 +101,7 @@ public class MemberInsertController extends SuperClass {
 			
 			request.setAttribute("bean", bean);
 			super.doPost(request, response);
+			
 			String gotopage = "/member/mInsert.jsp" ;
 			super.GotoPage(gotopage);
 		}		
