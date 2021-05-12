@@ -20,8 +20,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>T.A.S Shop Main</title>
+	<meta charset="UTF-8">
+	<title>T.A.S Shop Main</title>
+	<style type="text/css">
+		.reg{
+			color: white;
+		}
+	</style>
 </head>
 <body>
 	<div class="wrap">
@@ -59,20 +64,16 @@
 							</a>
 						</p>
 					</div>
+					
 					<div class="reg">
 						<p class="mb-0">
 							<c:if test="${whologin == 0}">
 								<a href="<%=Noform%>meInsert" class="mr-2">Sign Up</a>
-								<a href="<%=Noform%>meLogin">Log In</a>
-							</c:if>
-							<c:if test="${whologin == 2}">
-								<a href="<%=Noform%>meList" class="mr-2">Member List</a>
+								<a href="<%=Noform%>meLogin" class="mr-2">Log In</a>
 							</c:if>
 							<c:if test="${whologin != 0}">
-								<a href="<%=Noform%>meDetailView" class="mr-2">My Profile</a>
-								<a href="<%=Noform%>meLogout">Log Out</a>
+								<a href="<%=Noform%>meLogout" class="mr-2">Log Out</a>
 							</c:if>
-							
 						</p>
 					</div>
 				</div>
@@ -98,36 +99,34 @@
 						<div class="text pl-3">
 							<h4>Bacardi 151</h4>
 							<p class="mb-0">
-								<a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity:
-									01</span>
+								<a href="#" class="price">$25.99</a>
+								<span class="quantity ml-3">Quantity: 01</span>
 							</p>
 						</div>
 					</div>
 					<div class="dropdown-item d-flex align-items-start" href="#">
-						<div class="img"
-							style="background-image: url(<%=contextPath%>/images/prod-2.jpg);"></div>
+						<div class="img" style="background-image: url(<%=contextPath%>/images/prod-2.jpg);"></div>
 						<div class="text pl-3">
 							<h4>Jim Beam Kentucky Straight</h4>
 							<p class="mb-0">
-								<a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity:
-									02</span>
+								<a href="#" class="price">$30.89</a>
+								<span class="quantity ml-3">Quantity: 02</span>
 							</p>
 						</div>
 					</div>
 					<div class="dropdown-item d-flex align-items-start" href="#">
-						<div class="img"
-							style="background-image: url(<%=contextPath%>/images/prod-3.jpg);"></div>
+						<div class="img" style="background-image: url(<%=contextPath%>/images/prod-3.jpg);"></div>
 						<div class="text pl-3">
 							<h4>Citadelle</h4>
 							<p class="mb-0">
-								<a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity:
-									01</span>
+								<a href="#" class="price">$22.50</a>
+								<span class="quantity ml-3">Quantity: 01</span>
 							</p>
 						</div>
 					</div>
 					<a class="dropdown-item text-center btn-link d-block w-100"
-						href="<%=contextPath%>/order/order.jsp"> View All <span
-						class="ion-ios-arrow-round-forward"></span>
+						href="<%=contextPath%>/order/order.jsp"> View All 
+						<span class="ion-ios-arrow-round-forward"></span>
 					</a>
 				</div>
 			</div>
@@ -144,9 +143,6 @@
 						<a href="<%=Noform%>main" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=contextPath%>/common/about.jsp" class="nav-link">About</a>
-					</li>
-					<li class="nav-item">
 						<a href="<%=contextPath%>/product/product.jsp" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
@@ -155,6 +151,20 @@
 					<li class="nav-item">
 						<a href="contact.jsp" class="nav-link">Contact</a>
 					</li>
+					<c:if test="${whologin != 0}">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown04" 
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Info</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown04">
+								<a class="dropdown-item" href="<%=Noform%>meDetailView">My Profile</a>
+								<a class="dropdown-item" href="<%=Noform%>meUpdate">Profile Modify</a>
+								<c:if test="${whologin == 2}">
+									<a class="dropdown-item" href="<%=Noform%>meList">Member List</a>
+								</c:if>
+								<a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> Secession</a>
+							</div>
+						</li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

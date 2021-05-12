@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import shopping.common.controller.MainController;
 import shopping.common.controller.SuperClass;
 import shopping.member.model.Member;
 import shopping.member.model.MemberDao;
@@ -93,13 +94,14 @@ public class MemberInsertController extends SuperClass {
 			
 			cnt = dao.InsertData(bean) ;
 			
-			new MemberLoginController().doGet(request, response);
+			new MainController().doGet(request, response);
 			
 		} else {
 			System.out.println("member insert validation check failure");
 			
 			request.setAttribute("bean", bean);
 			super.doPost(request, response);
+			
 			String gotopage = "/member/mInsert.jsp" ;
 			super.GotoPage(gotopage);
 		}		
