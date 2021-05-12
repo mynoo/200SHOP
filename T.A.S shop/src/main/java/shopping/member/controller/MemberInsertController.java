@@ -94,7 +94,6 @@ public class MemberInsertController extends SuperClass {
 			
 			cnt = dao.InsertData(bean) ;
 			
-//			new MemberLoginController().doGet(request, response);
 			new MainController().doGet(request, response);
 			
 		} else {
