@@ -39,7 +39,7 @@
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5" method="post">
 
-					<input type="text" id="command" value="meLogin">
+					<input type="hidden" id="command" value="meLogin">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter userid">
 						<input class="input100" type="text" name="id" placeholder="User id"">
