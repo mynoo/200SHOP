@@ -144,10 +144,12 @@ public Member SelectData(String id, String password) {
 		return cnt ;
 	}
 	public int DeleteData( String id ){
-		String sql ;		
+		String sql;
+		
 		PreparedStatement pstmt = null;
 		Member bean = null;
 		int cnt = -99999;
+		
 		try {
 			bean = this.SelectDataByPk(id);
 			

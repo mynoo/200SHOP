@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import shopping.common.controller.MainController;
 import shopping.common.controller.SuperClass;
 import shopping.member.model.Member;
 import shopping.member.model.MemberDao;
@@ -25,7 +26,7 @@ public class MemberDeleteController extends SuperClass {
 		
 		super.session.invalidate(); 
 		
-		new MemberLoginController().doGet(request, response);
+		new MainController().doGet(request, response);
 	}	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
