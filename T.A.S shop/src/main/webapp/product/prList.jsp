@@ -147,7 +147,7 @@ h4 {
 			<div align="center">
 				<footer>${pageInfo.pagingHtml}</footer>
 			</div>
-			<a href="board_Insert.jsp"><button class="btn btn-primary"
+			<a href="<%=Noform%>prInsert"><button class="btn btn-primary"
 					id="pr-btn">상품 등록</button></a>
 		</div>
 	</section>
