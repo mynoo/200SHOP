@@ -18,9 +18,9 @@ meDelete=shopping.member.controller.MemberDeleteController
 #boUpdate=shopping.board.controller.BoardUpdateController
 #boReply=shopping.board.controller.BoardReplyController
 ### Product Section ######################################################
-#prList=shopping.product.controller.ProductListController
+prList=shopping.product.controller.ProductListController
 #prDetailView=shopping.product.controller.ProductDetailViewController
-#prInsert=shopping.product.controller.ProductInsertController
+prInsert=shopping.product.controller.ProductInsertController
 #prDelete=shopping.product.controller.ProductDeleteController
 #prUpdate=shopping.product.controller.ProductUpdateController
 ### Mall Section ######################################################
