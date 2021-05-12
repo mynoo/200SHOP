@@ -2,7 +2,6 @@
 <%
 	int twelve = 12 ;
 %>
-<!--테스트  -->
 <%
 	String contextPath = request.getContextPath();
 	
