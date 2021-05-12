@@ -36,12 +36,13 @@ public Member SelectData(String id, String password) {
 				bean.setId(rs.getString("id"));
 				bean.setName(rs.getString("name"));
 				bean.setPassword(rs.getString("password"));
-				bean.setBirth(rs.getString("birth"));
+				bean.setBirth(String.valueOf(rs.getDate("birth")));
 				bean.setEmail(rs.getString("email"));
 				bean.setGender(rs.getString("gender"));
 				bean.setZipcode(rs.getString("zipcode"));
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
+				bean.setPhonenumber(rs.getString("phonenumber"));
 				
 			}
 			
@@ -59,7 +60,6 @@ public Member SelectData(String id, String password) {
 		return bean;
 		
 	}
-	
 	
 	public int InsertData(Member bean) {
 		
@@ -104,22 +104,29 @@ public Member SelectData(String id, String password) {
 	}
 
 	public int UpdateData( Member bean ){
-		String sql = " " ; 
-		sql += " " ;
-		sql += " " ;		
+		String sql = " update members set password = ?, phonenumber = ?, email = ?, zipcode = ?, address1 = ?, address2 = ?" ; 
+		sql += " where id = ?" ;
 
 		PreparedStatement pstmt = null ;
 		int cnt = -99999 ;
 		try {
 			if( conn == null ){ super.conn = super.getConnection() ; }
 			conn.setAutoCommit( false );
-			pstmt = super.conn.prepareStatement(sql) ;			
+			pstmt = super.conn.prepareStatement(sql);
 			
-			cnt = pstmt.executeUpdate() ; 
+			pstmt.setString(1, bean.getPassword());
+			pstmt.setString(2, bean.getPhonenumber());
+			pstmt.setString(3, bean.getEmail());
+			pstmt.setString(4, bean.getZipcode());
+			pstmt.setString(5, bean.getAddress1());
+			pstmt.setString(6, bean.getAddress2());
+			pstmt.setString(7, bean.getId());
+			
+			cnt = pstmt.executeUpdate();
 			conn.commit(); 
 		} catch (Exception e) {
-			SQLException err = (SQLException)e ;			
-			cnt = - err.getErrorCode() ;			
+			SQLException err = (SQLException)e;
+			cnt = - err.getErrorCode();
 			e.printStackTrace();
 			try {
 				conn.rollback(); 
@@ -128,7 +135,7 @@ public Member SelectData(String id, String password) {
 			}
 		} finally{
 			try {
-				if( pstmt != null ){ pstmt.close(); }
+				if( pstmt != null ){pstmt.close();}
 				super.closeConnection(); 
 			} catch (Exception e2) {
 				e2.printStackTrace();
@@ -136,13 +143,13 @@ public Member SelectData(String id, String password) {
 		}
 		return cnt ;
 	}
-	public int DeleteData( String id ){		
+	public int DeleteData( String id ){
 		String sql ;		
-		PreparedStatement pstmt = null ;		
-		Member bean = null ;
-		int cnt = -99999 ;
+		PreparedStatement pstmt = null;
+		Member bean = null;
+		int cnt = -99999;
 		try {
-			bean = this.SelectDataByPk(id) ;
+			bean = this.SelectDataByPk(id);
 			
 			if( conn == null ){ super.conn = super.getConnection() ; }
 			conn.setAutoCommit( false );
@@ -153,7 +160,7 @@ public Member SelectData(String id, String password) {
 			pstmt = super.conn.prepareStatement(sql) ;
 			
 			String imsi = bean.getName() +  "(" + id + ")가 회원 탈퇴를 하였습니다." ;
-			pstmt.setString(1, imsi);			
+			pstmt.setString(1, imsi);
 			pstmt.setString(2, id);
 			
 			cnt = pstmt.executeUpdate() ;
@@ -171,17 +178,19 @@ public Member SelectData(String id, String password) {
 			if(pstmt != null) {pstmt.close();}
 			
 			// step03 : 회원 테이블 행 삭제하기
-			sql = " delete from members " ;
+			sql = " delete from members" ;
 			sql += " where id = ? " ;
 			pstmt = super.conn.prepareStatement(sql) ;
-			pstmt.setString(1, id);			
+			
+			pstmt.setString(1, id);
+			
 			cnt = pstmt.executeUpdate() ;
 			if(pstmt != null) {pstmt.close();}
 			
 			conn.commit(); 
 		} catch (Exception e) {
-			SQLException err = (SQLException)e ;			
-			cnt = - err.getErrorCode() ;			
+			SQLException err = (SQLException)e ;
+			cnt = - err.getErrorCode() ;
 			e.printStackTrace();
 			try {
 				conn.rollback(); 
@@ -214,7 +223,7 @@ public Member SelectData(String id, String password) {
 //			pstmt.setInt(1, beginRow);
 //			pstmt.setInt(2, endRow);
 			
-			rs = pstmt.executeQuery() ;		
+			rs = pstmt.executeQuery() ;
 			
 			while( rs.next() ){
 				Member bean = new Member();
@@ -228,7 +237,7 @@ public Member SelectData(String id, String password) {
 				pstmt.setString(7, bean.getAddress1());
 				pstmt.setString(8, bean.getAddress2());
 				pstmt.setString(9, bean.getBirth());
-				pstmt.setInt(10, bean.getPoint());							
+				pstmt.setInt(10, bean.getPoint());
 							 				 
 				lists.add( bean ) ;
 			}
@@ -252,7 +261,6 @@ public Member SelectData(String id, String password) {
 	}
 	
 	public Member SelectDataByPk(String id) {
-		
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		
@@ -282,6 +290,7 @@ public Member SelectData(String id, String password) {
 				bean.setZipcode(rs.getString("zipcode"));
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
+				bean.setPhonenumber(rs.getString("phonenumber"));
 				
 			}
 			
@@ -301,32 +310,32 @@ public Member SelectData(String id, String password) {
 	}
 	public int SelectTotalCount() {
 		PreparedStatement pstmt = null ;
-		ResultSet rs = null ;				
+		ResultSet rs = null ;
 		
-		String sql = " " ; 
+		String sql = " ";
 		sql += " " ;
-		sql += " " ;		
+		sql += " " ;
 
 		
 		int cnt = -99999 ;
 		try {
-			if( this.conn == null ){ this.conn = this.getConnection() ; }			
-			pstmt = this.conn.prepareStatement(sql) ;			 
-			rs = pstmt.executeQuery() ; 			
+			if( this.conn == null ){ this.conn = this.getConnection() ; }
+			pstmt = this.conn.prepareStatement(sql) ; 
+			rs = pstmt.executeQuery() ; 
 			
 			
-		} catch (SQLException e) {			
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally{
 			try {
-				if( rs != null){ rs.close(); } 
-				if( pstmt != null){ pstmt.close(); } 
-				this.closeConnection() ;
+				if( rs != null){ rs.close();}
+				if( pstmt != null){ pstmt.close();}
+				this.closeConnection();
 			} catch (Exception e2) {
-				e2.printStackTrace(); 
+				e2.printStackTrace();
 			}
-		} 		
-		return cnt  ; 
+		}
+		return cnt;
 	}
 	
 	public int UpdateMpoint(String id, int mpoint ) {
@@ -340,13 +349,12 @@ public Member SelectData(String id, String password) {
 			if( conn == null ){ super.conn = super.getConnection() ; }
 			conn.setAutoCommit( false );
 			pstmt = super.conn.prepareStatement(sql) ;
-		
 			
 			cnt = pstmt.executeUpdate() ; 
 			conn.commit(); 
 		} catch (Exception e) {
-			SQLException err = (SQLException)e ;			
-			cnt = - err.getErrorCode() ;			
+			SQLException err = (SQLException)e;
+			cnt = - err.getErrorCode();
 			e.printStackTrace();
 			try {
 				conn.rollback(); 

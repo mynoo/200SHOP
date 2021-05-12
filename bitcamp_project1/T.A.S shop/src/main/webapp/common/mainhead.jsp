@@ -4,8 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-
-
 <c:set var="whologin" value="0" /> 
 <c:if test="${empty sessionScope.loginfo}">
 	<c:set var="whologin" value="0" />
@@ -18,6 +16,7 @@
 		<c:set var="whologin" value="1" />
 	</c:if>
 </c:if>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +56,7 @@
 							<a href="<%=Noform%>meLogin">Log In</a>
 							</c:if>
 							<c:if test="${whologin != 0}">
-							<a href="<%=contextPath%>/member/myprofile.jsp" class="mr-2">My Profile</a>
+							<a href="<%=Noform%>meDetailView" class="mr-2">My Profile</a>
 							<a href="<%=Noform%>meLogout">Log Out</a>
 							</c:if>
 						</p>

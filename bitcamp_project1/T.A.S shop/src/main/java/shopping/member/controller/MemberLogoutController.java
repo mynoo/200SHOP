@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import shopping.common.controller.MainController;
 import shopping.common.controller.SuperClass;
 
 public class MemberLogoutController extends SuperClass {
@@ -29,8 +30,7 @@ public class MemberLogoutController extends SuperClass {
 		// 나의 로그인 정보 및 관련 모든 것들을 비웁니다.
 		super.session.invalidate(); 
 		
-		String gotopage = "/member/meLoginForm.jsp" ;
-		super.GotoPage(gotopage);
+		new MainController().doGet(request, response);
 	}
 }
 

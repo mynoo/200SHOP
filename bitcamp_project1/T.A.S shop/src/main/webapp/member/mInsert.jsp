@@ -138,11 +138,13 @@
                                     <input type="password" name="password" id="password" onchange="Checkpw()"/>
                                     <span class="err">${errpassword}</span>
                                 </div>
+                                
                                 <div class="form-input">
                                     <label for="confpassword" class="required">Confirm Password</label>
                                     <input type="password" name="confpassword" id="confpassword" onchange="Checkpw()"/>
                                     <span id="same"></span>
                                 </div>
+                                
                                 <div class="form-input">
                                     <label for="birth" class="required">Birth</label>
                                     <input type="date" name="birth" id="birth" value="${bean.birth}"/>
@@ -155,18 +157,20 @@
                                     <span class="err">${errphonenumber}</span>
                                 </div>
                                 
-                                <div class="form-input">
+                            </div>
+                            <div class="form-group">
+                            	
+                            	<div class="form-input">
                                     <label for="email" class="required">Email</label>
                                     <input type="email" name="email" id="email" placeholder="ex)abc@abc.com" value="${bean.email}"/>
                                     <span class="err">${erremail}</span>
                                 </div>
-                            </div>
-                            <div class="form-group">
+                            
                                 <div class="form-input">
                                     <label class="control-label required" for="zipcode">Zipcode</label>
                                     <div class="col-sm-7">
 	                                    <input type="text" name="fakezipcode" id="fakezipcode" disabled="disabled" value="${bean.zipcode}"/>
-	                                    <input type="text" name="zipcode" id="zipcode" />
+	                                    <input type="hidden" name="zipcode" id="zipcode" />
                                     </div>
 									<div class="button">
 										<input type="button" value="우편 번호 찾기" class="btn btn-info" onclick="zipfind();">
@@ -175,7 +179,7 @@
                                 <div class="form-input">
                                     <label class="required" for="address1">Address1</label>
                                     <input type="text" name="fakeaddress1" id="fakeaddress1" disabled="disabled" value="${bean.address1}"/>
-                                    <input type="text" name="address1" id="address1" />
+                                    <input type="hidden" name="address1" id="address1" />
                                 </div>
                                 <div class="form-input">
                                     <label class="required" for="address2">Address2</label>

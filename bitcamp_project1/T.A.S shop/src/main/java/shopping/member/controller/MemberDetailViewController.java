@@ -17,18 +17,16 @@ public class MemberDetailViewController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
+		String id = request.getParameter("id");
+		
 		Member bean = null ;
 		MemberDao dao = new MemberDao();
-		String data = dao.toString() ;
 		
-		String id = request.getParameter("id") ;
-		int no = Integer.parseInt(request.getParameter("no")) ;
-		
-		List<Member> lists = new ArrayList<Member>() ;
+		bean = dao.SelectDataByPk(id);
 		
 		request.setAttribute("bean", bean);
 		
-		String gotopage = "/member/main.jsp" ;
+		String gotopage = "/member/myprofile.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override

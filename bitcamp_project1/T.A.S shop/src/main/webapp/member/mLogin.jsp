@@ -58,7 +58,7 @@
 							Login
 						</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button class="login100-form-btn" onclick="location.href='<%=Noform%>meInsert' " >
+						<button class="login100-form-btn" onclick="location.href='<%=Noform%>meInsert'" >
 							Sign up
 						</button>
 					</div>

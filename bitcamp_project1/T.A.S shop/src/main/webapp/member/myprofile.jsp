@@ -26,8 +26,28 @@
 		margin-right: -4px;
 		border: 1px solid skyblue;
 	}
+	
+	div.left {
+		width: 50%;
+		float: left;
+	}
+	div.button {
+		width: 50%;
+		right: auto;
+	}
 	</style>
-
+	
+	<script type="text/javascript">
+		function zipfind() {
+			var url = '<%=Noform%>meZipcheck';
+			
+			window.open(url, 'mywin', 'height=600, width=720 scrollbar=yes')
+		}
+	
+		function onlyChecked(gender){
+			gender.checked = true;
+		}
+	</script>
 </head>
 
 <body>
@@ -35,98 +55,86 @@
 		<div class="container">
 			<div class="signup-content">
 				<div class="signup-img">
-					<img src="../images/solid.png" alt="">
+					<img src="<%=contextPath%>/images/solid.png" alt="">
 					
 					<div class="signup-img-content">
-					 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail rounded-circle" alt="avatar"><br><br>
-						<h2>My profile</h2>
-						<p>while seats are available !</p>
+					 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" 
+					 	class="avatar img-circle img-thumbnail rounded-circle" alt="avatar"><br><br>
+						<h2 style="color: black;">My profile</h2>
+						<p style="color: black;">while seats are available!</p>
 					</div>
 				</div>
 				<div class="signup-form">
-					<form method="post" class="register-form" id="register-form" name="myform" action="<%=YesForm%>">
-					<input type="hidden" name="command" value="meInsert" >
+					<form method="post" class="register-form" name="minsertform" action="<%=YesForm%>">
+					<input type="hidden" name="command" value="meUpdate" >
 						<div class="form-row">
 							<div class="form-group">
 								<div class="form-input">
-									<label for="name" class="required">Id</label>
-									<input type="text" name="id" id="id" value="${loginfo.id}" disabled="disabled" />
+									<label for="name">Id</label>
+									<input type="text" name="id" id="id" 
+										value="${loginfo.id}" readonly="readonly" />
+								</div>
+								
+								<div class="form-input">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" 
+										value="${loginfo.name}" readonly="readonly"/>
+								</div>
+								
+								<div class="form-input">
+									<label for="password">Password</label>
+									<input type="password" name="password" id="password" 
+										value="${loginfo.password}"/>
 								</div>
 								<div class="form-input">
-									<label for="password" class="required">Password</label>
-									<input type="text" name="password" id="password" value="${loginfo.password}"/>
+									<label for="birth">Birth</label>
+									<input type="date" name="birth" id="birth" 
+										value="${loginfo.birth}" readonly="readonly"/>
 								</div>
 								<div class="form-input">
-									<label for="birth" class="required">Birth</label>
-									<input type="date" name="birth" id="birth" value="${loginfo.birth}" disabled="disabled"/>
-								</div>
-								<div class="form-input">
-									<label for="email" class="required">Email</label>
-									<input type="text" name="email" id="email"  value="${loginfo.email}" />
-								</div>
-								<div class="form-input">
-									<label for="phone_number" class="required">Phone number</label>
-									<input type="text" name="phone_number" id="phone_number"  value="${loginfo.phonenumber}" />
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" 
+										value="${loginfo.email}" />
 								</div>
 							</div>
+							
 							<div class="form-group">
-
 								<div class="form-input">
-									<label for="name" class="required">Name</label>
-									<input type="text" name="name" id="name" value="${loginfo.name}" disabled="disabled"/>
+									<label for="phonenumber">Phone number</label>
+									<input type="text" name="phonenumber" id="phonenumber"
+										value="${loginfo.phonenumber}" />
 								</div>
-
+								
 								<div class="form-input">
-									<label class="control-label col-sm-3" for="zipcode">Zipcode</label>
-									<div class="col-sm-7">
-										<input type="text" name="fakezipcode" id="fakezipcode" disabled="disabled" />
-										<input type="text" name="zipcode" id="zipcode" value="${loginfo.zipcode}" />
+									<label for="zipcode">Zipcode</label>
+									<div class="left">
+										<input type="text" name="fakezipcode" id="fakezipcode" disabled="disabled" value="${loginfo.zipcode}"/>
+										<input type="hidden" name="zipcode" id="zipcode" value="${loginfo.zipcode}"/>
 									</div>
-									<div class="col-sm-2">
-										<input type="button" value="우편 번호 찾기" class="btn btn-info"
+									<div class="button">
+										<input type="button" value="주소 찾기" class="btn btn-info"
 											onclick="zipfind();" >
 									</div>
 								</div>
+								
 								<div class="form-input">
 									<label for="address1">Address1</label> 
-									<input type="text" name="fakeaddress1" id="fakeaddress1" disabled="disabled" />
-										<input type="text" name="address1" id="address1" value="${loginfo.address1}" />
+									<input type="text" name="fakeaddress1" id="fakeaddress1" disabled="disabled" value="${loginfo.address1}"/>
+									<input type="hidden" name="address1" id="address1" value="${loginfo.address1}"/>
 								</div>
 								<div class="form-input">
 									<label for="address2">Address2</label> 
 									<input type="text" name="address2" id="address2" value="${loginfo.address2}" />
 								</div>
 
-								<div class="form-radio">
-									<div class="label-flex">
-										<label for="gender">Gender</label>
-									</div>
-									<div class="form-radio-group">
-										<div class="form-radio-item">
-											<input type="radio" name="gender" id="man" value="남자" 
-											<c:if test="${loginfo.gender == '남자'}">
-												checked="${loginfo.gender}"
-											</c:if>
-											>
-											<label for="man">Man</label>
-											<span class="check"></span>
-										</div>
-										<div class="form-radio-item">
-											<input type="radio" name="gender" id="female" value="여자" 
-											<c:if test="${loginfo.gender == '여자'}">
-												checked="${loginfo.gender}"
-											</c:if>
-											>
-											<label for="female">Female</label>
-											<span class="check"></span>
-										</div>
-									</div>
+								<div class="form-input">
+									<label for="gender">Gender</label>
+									<input type="text" name="gender" value="${loginfo.gender}" readonly="readonly">
 								</div>
-
 							</div>
 						</div>
 						<div class="form-submit">
-							<input type="button" value="Modify" class="submit" id="submit" name="submit" />
+							<input type="submit" value="Modify" class="submit" id="submit" name="submit" />
 							<input type="button" value="Home" class="submit" name="home" onclick="location='<%=Noform%>main'" />
 						</div>
 					</form>

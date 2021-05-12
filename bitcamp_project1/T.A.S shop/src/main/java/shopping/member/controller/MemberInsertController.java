@@ -13,7 +13,7 @@ import shopping.member.model.Member;
 import shopping.member.model.MemberDao;
 
 public class MemberInsertController extends SuperClass {
-private Member bean = null ;
+	private Member bean = null ;
 	
 	@Override
 	public boolean validate(HttpServletRequest request) {
@@ -64,6 +64,9 @@ private Member bean = null ;
 	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("추가 페이지");
+		
 		bean = new Member(); 
 		
 		bean.setAddress1(request.getParameter("address1"));

@@ -21,7 +21,7 @@ public class MemberLoginController extends SuperClass {
 	
 		String gotopage = "/member/mLogin.jsp" ;
 		super.GotoPage(gotopage);
-	}	
+	}
 	@Override
 	public boolean validate(HttpServletRequest request) {
 		boolean isCheck = true ; // true이면 유효성 검사에 문제가 없습니다.
@@ -41,6 +41,8 @@ public class MemberLoginController extends SuperClass {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
+		
+		System.out.println("로그인 페이지");
 		
 		this.id = request.getParameter("id") ;
 		this.password = request.getParameter("password") ;

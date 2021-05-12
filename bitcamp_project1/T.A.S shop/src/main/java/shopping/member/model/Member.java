@@ -2,7 +2,7 @@ package shopping.member.model;
 
 public class Member {
 	private String id;
-	private String Name;
+	private String name;
 	private String password;
 	private String email;
 	private String gender;
@@ -26,10 +26,10 @@ public class Member {
 		this.id = id;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public String getPassword() {
 		return password;
@@ -81,7 +81,7 @@ public class Member {
 	}
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", Name=" + Name + ", password=" + password + ", email=" + email + ", gender="
+		return "Member [id=" + id + ", Name=" + name + ", password=" + password + ", email=" + email + ", gender="
 				+ gender + ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + ", birth="
 				+ birth + ", point=" + point + ", phonenumber=" + phonenumber + "]";
 	}
