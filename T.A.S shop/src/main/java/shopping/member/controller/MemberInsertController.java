@@ -18,7 +18,7 @@ public class MemberInsertController extends SuperClass {
 	@Override
 	public boolean validate(HttpServletRequest request) {
 		boolean isCheck = true ;
-		// 유효성 검사 수행 예정
+		// 유효성 검사 수행
 		if (bean.getId().length() < 4 || bean.getId().length() > 10) {
 			request.setAttribute(super.PREFIX + "id", "아이디는 4자리 이상 10자리 이하이어야 합니다.");
 			isCheck = false ;
@@ -48,7 +48,6 @@ public class MemberInsertController extends SuperClass {
 			request.setAttribute(super.PREFIX + "birth", "생일은 yyyy/mm/dd 또는 yyyy-mm-dd으로 입력해 주셔야 합니다.");
 			isCheck = false ;
 		}
-		
 		
 		if (bean.getZipcode() == null || bean.getZipcode() == "" ) {
 			request.setAttribute(super.PREFIX + "zipcode", "우편 번호는 필수 입력 사항입니다.");
