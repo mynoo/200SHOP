@@ -29,8 +29,12 @@
 			<div class="row">
 				<div class="col-md-6 d-flex align-items-center">
 					<p class="mb-0 phone pl-md-2">
-						<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span>
-							+82 1234 567</a> <a href="#"><span class="fa fa-paper-plane mr-1"></span>
+						<a href="#" class="mr-2">
+							<span class="fa fa-phone mr-1"></span>
+							+82 02-3486-9600
+						</a>
+						<a href="#">
+							<span class="fa fa-paper-plane mr-1"></span>
 							youremail@tasshop.com
 						</a>
 					</p>
@@ -39,26 +43,36 @@
 					<div class="social-media mr-4">
 						<p class="mb-0 d-flex">
 							<a href="#" class="d-flex align-items-center justify-content-center">
-								<span class="fa fa-facebook"><i class="sr-only">Facebook</i></span>
+								<span class="fa fa-facebook">
+									<i class="sr-only">Facebook</i>
+								</span>
 							</a> 
 							<a href="#" class="d-flex align-items-center justify-content-center">
-								<span class="fa fa-twitter"><i class="sr-only">Twitter</i></span>
+								<span class="fa fa-twitter">
+									<i class="sr-only">Twitter</i>
+								</span>
 							</a>
 							<a href="#" class="d-flex align-items-center justify-content-center"> 
-								<span class="fa fa-instagram"><i class="sr-only">Instagram</i></span>
+								<span class="fa fa-instagram">
+									<i class="sr-only">Instagram</i>
+								</span>
 							</a>
 						</p>
 					</div>
 					<div class="reg">
 						<p class="mb-0">
 							<c:if test="${whologin == 0}">
-							<a href="<%=Noform%>meInsert" class="mr-2">Sign Up</a>
-							<a href="<%=Noform%>meLogin">Log In</a>
+								<a href="<%=Noform%>meInsert" class="mr-2">Sign Up</a>
+								<a href="<%=Noform%>meLogin">Log In</a>
+							</c:if>
+							<c:if test="${whologin == 2}">
+								<a href="<%=Noform%>meList" class="mr-2">Member List</a>
 							</c:if>
 							<c:if test="${whologin != 0}">
-							<a href="<%=Noform%>meDetailView" class="mr-2">My Profile</a>
-							<a href="<%=Noform%>meLogout">Log Out</a>
+								<a href="<%=Noform%>meDetailView" class="mr-2">My Profile</a>
+								<a href="<%=Noform%>meLogout">Log Out</a>
 							</c:if>
+							
 						</p>
 					</div>
 				</div>
@@ -68,7 +82,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="#">T.A.S <span>store</span></a>
+			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
 				<a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -127,7 +141,7 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a href="#" class="nav-link">Home</a>
+						<a href="<%=Noform%>main" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=contextPath%>/common/about.jsp" class="nav-link">About</a>

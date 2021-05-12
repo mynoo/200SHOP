@@ -22,7 +22,7 @@ public class MemberListController extends SuperClass {
 		
 		request.setAttribute("lists", lists);
 		
-		String gotopage = "/member/meList.jsp" ;
+		String gotopage = "/member/mList.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override

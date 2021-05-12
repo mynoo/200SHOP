@@ -1,8 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../common/common.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		th {
+			padding: 3px;
+			text-align: center;
+			background-color: #A23F25;
+			color: white;
+			border-bottom: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+		}
+		td {
+			padding: 3px;
+			border-bottom: 1px solid #ddd;
+		}
+	</style>
 </head>
 <body>
 
@@ -34,55 +49,61 @@
 	 <section class="ftco-section ftco-degree-bg">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 ftco-animate">
+				<div class="ftco-animate">
+					<c:set var="cnt" value="0"/>
 					<table>
-						<thead>
-						
+						<thead align="center">
+							<tr>
+								<th> No </th>
+								<th> Id </th>
+								<th> Name </th>
+								<th> Birth </th>
+								<th> Gender </th>
+								<th> Email </th>
+								<th> Phone </th>
+								<th> Address </th>
+								<th> Point </th>
+								<th> Update/Del </th>
+							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th>no</th>
-								<td>1</td>
-							</tr>
-							<tr>
-								<th>writer</th>
-								<td>aaaa</td>
-							</tr>
-							<tr>
-								<th>title</th>
-								<td>
-									<h3 class="mb-3">It is a long established fact a reader be distracted</h3>
-								</td>
-							</tr>
-							<tr>
-								<th>
-									regdate
-								</th>
-								<td>
-									<input type="date" id="regdate" name="regdate" value="23 April 2020">
-								</td>
-							</tr>
-							<tr>
-								<th>contant</th>
-								<td>
-									
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.
-									Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!
-								</td>
-							</tr>
-							<tr>
-								<th>Attachments</th>
-								<td>
-									<input type="file" name="image" id="image">
-								</td>
-							</tr>
+							<c:forEach var="bean" items="${requestScope.lists }">
+								<tr>
+									<td>
+										<c:set var="cnt" value="${cnt +1}"/>
+										${cnt}
+									</td>
+									<td>${bean.id}</td>
+									<td>${bean.name}</td>
+									<td>${bean.birth}</td>
+									<td>${bean.gender}</td>
+									<td>${bean.email}</td>
+									<td>${bean.phonenumber}</td>
+									<td>
+										${bean.address1}
+										${bean.address2}
+									</td>
+									<td>${bean.point}</td>
+									<td>
+										<c:if test="${bean.id == 'admin'}">
+											<a href="<%=Noform%>meUpdate&id=${bean.id}">
+												Update
+											</a>
+										</c:if>
+										<c:if test="${bean.id != 'admin'}">
+											<a href="<%=Noform%>meDelete&id=${bean.id}">
+												Delete
+											</a>
+										</c:if>
+									</td>
+								</tr>
+							</c:forEach>
+							
 						</tbody>
 					</table>
-			
 					<div class="button">
-						<button type="button" class="btn btn-danger" style="float: right;"> 
-							Back
-						</button>
+						<input type="button" value="Home" class="btn btn-default"
+							style="float: right; background-color: #A23F25; color: white;" onclick="location='<%=Noform%>main'" />
 					</div>
 				</div>
 			</div>

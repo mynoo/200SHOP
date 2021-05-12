@@ -4,18 +4,18 @@
 <html>
 <head>
 	<style type="text/css">
-	th {
-		padding: 3px;
-		text-align: center;
-		background-color: #A23F25;
-		color: white;
-		border-bottom: 1px solid #ddd;
-		border-right: 1px solid #ddd;
-	}
-	td {
-		padding: 3px;
-		border-bottom: 1px solid #ddd;
-	}
+		th {
+			padding: 3px;
+			text-align: center;
+			background-color: #A23F25;
+			color: white;
+			border-bottom: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+		}
+		td {
+			padding: 3px;
+			border-bottom: 1px solid #ddd;
+		}
 	</style>
 	
 </head>
