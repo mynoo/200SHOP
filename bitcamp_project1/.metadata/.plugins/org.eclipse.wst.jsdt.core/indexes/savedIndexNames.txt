@@ -1,4 +1,0 @@
-INDEX VERSION 1.4+/home/junhwan/bitcamp_project1/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-1224972598.index
-946860975.index
-4171347779.index
