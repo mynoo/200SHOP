@@ -31,19 +31,19 @@ public class ProductInsertController extends SuperClass {
 		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
 		bean = new Product() ;
 		
+		bean.setBrand(multi.getParameter("brand"));
 		bean.setCategory(multi.getParameter("category"));
 		bean.setCompany(multi.getParameter("company"));
-		bean.setContents(multi.getParameter("contents"));		
-		bean.setInputdate(multi.getParameter("inputdate"));
-		bean.setName(multi.getParameter("name"));
-		bean.setRemark(multi.getParameter("remark"));
+		bean.setContent(multi.getParameter("content"));		
+		bean.setDate(multi.getParameter("date"));
+		bean.setPname(multi.getParameter("pname"));
 		
 		bean.setImage(multi.getFilesystemName("image"));
 		
 		// bean.setNum(0); 시퀀스가 알아서 하므로 ....
 		
-		if (multi.getParameter("point") != null && multi.getParameter("point").equals("") == false) {
-			bean.setPoint(Integer.parseInt(multi.getParameter("point")));	
+		if (multi.getParameter("volume") != null && multi.getParameter("volume").equals("") == false) {
+			bean.setVolume(Integer.parseInt(multi.getParameter("volume")));	
 		}
 		
 		if (multi.getParameter("price") != null && multi.getParameter("price").equals("") == false) {
@@ -52,6 +52,9 @@ public class ProductInsertController extends SuperClass {
 		
 		if (multi.getParameter("stock") != null && multi.getParameter("stock").equals("") == false) {
 			bean.setStock(Integer.parseInt(multi.getParameter("stock")));	
+		}		 
+		if (multi.getParameter("alcohol") != null && multi.getParameter("alcohol").equals("") == false) {
+			bean.setAlcohol(Integer.parseInt(multi.getParameter("alcohol")));	
 		}		 
 		
 		if (this.validate(request) == true) {
@@ -75,7 +78,7 @@ public class ProductInsertController extends SuperClass {
 	public boolean validate(HttpServletRequest request) {
 		boolean isCheck = true ;
 
-		if (bean.getName().length() < 3 || bean.getName().length() > 15) {
+		if (bean.getPname().length() < 3 || bean.getPname().length() > 15) {
 			request.setAttribute(super.PREFIX + "name", "상품 이름은(는) 3자리 이상 15자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
@@ -83,7 +86,7 @@ public class ProductInsertController extends SuperClass {
 			request.setAttribute(super.PREFIX + "company", "제조 회사 이름은(는) 3자리 이상 30자리 이하이어야 합니다.");
 			isCheck = false ;
 		}		
-		if (bean.getContents().length() < 5 || bean.getContents().length() > 255) {
+		if (bean.getContent().length() < 5 || bean.getContent().length() > 255) {
 			request.setAttribute(super.PREFIX + "contents", "상품에 대한 설명은 5자리 이상 255자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
@@ -96,11 +99,11 @@ public class ProductInsertController extends SuperClass {
 		// 날짜 형식은 yyyy/mm/dd 또는 yyyy-mm-dd 
 		String regex = "\\d{4}[-/]\\d{2}[-/]\\d{2}" ;
 		
-		if (bean.getInputdate() == null) {
-			bean.setInputdate("");
+		if (bean.getDate() == null) {
+			bean.setDate("");
 		}
 		
-		boolean result = Pattern.matches(regex, bean.getInputdate()) ;
+		boolean result = Pattern.matches(regex, bean.getDate()) ;
 		if (result == false) {
 			request.setAttribute(super.PREFIX + "inputdate", "입고 일자는 yyyy/mm/dd 또는 yyyy-mm-dd으로 입력해 주셔야 합니다.");
 			isCheck = false ;
@@ -113,25 +116,11 @@ public class ProductInsertController extends SuperClass {
 		
 		int stock = 10 ;
 		if (bean.getStock() < stock) {
-			request.setAttribute(super.PREFIX + "stock", "재고 수량은 " + stock + "개이상이어야 합니다.");
+			request.setAttribute(super.PREFIX + "stock", "재고 수량은 " + stock + "개 이상이어야 합니다.");
 			isCheck = false ;
 		}
-		
-		if (bean.getPoint() < 5 || bean.getPoint() > 10) {
-			request.setAttribute(super.PREFIX + "point", "포인트는 최소 5이상 10이하로 입력하셔야 합니다.");
-			isCheck = false ;
-		}		
 		
 		return isCheck ;
 	}
 }
 
-//request.setAttribute("bean", bean);
-//Product bean = null ;
-//ProductDao dao = new ProductDao();
-//String data = dao.toString() ;
-//
-//String id = request.getParameter("id") ;
-//int no = Integer.parseInt(request.getParameter("no")) ;
-//
-//List<Product> lists = new ArrayList<Product>() ;
