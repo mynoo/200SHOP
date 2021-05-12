@@ -37,7 +37,7 @@
 				<span class="login100-form-title p-b-41">
 					Account Login
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5" method="post">
+				<form class="login100-form validate-form p-b-33 p-t-5" method="post" >
 
 					<input type="hidden" id="command" value="meLogin">
 
