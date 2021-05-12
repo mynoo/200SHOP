@@ -43,10 +43,6 @@
 			
 			window.open(url, 'mywin', 'height=600, width=720 scrollbar=yes')
 		}
-	
-		function onlyChecked(gender){
-			gender.checked = true;
-		}
 	</script>
 </head>
 
