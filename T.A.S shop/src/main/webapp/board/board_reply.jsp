@@ -32,7 +32,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate mb-5 text-center">
           	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="../common/common.jsp">Home <i class="fa fa-chevron-right"></i></a></span> <span>Board<i class="fa fa-chevron-right"></i></span></p>
-            <h2 class="mb-0 bread">Board</h2>
+            <h2 class="mb-0 bread">Reply</h2>
           </div>
         </div>
       </div>
@@ -42,42 +42,22 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 ftco-animate">
-					<form action="<%=YesForm%>" method="post">
-						<h3>Write Board</h3>
+					<form class="#" action="" method="post">
+						<h3>Write Reply</h3>
 						<table style="width: 100%">
 							<tbody>
 								<tr>
-									<th>Title</th>
-									<td>
-										<input name="title" id="title" placeholder="input title">
-									</td>
-								</tr>
-								<tr>
 									<th>Writer</th>
 									<td>
-										<input type="hidden" name="writer" id="writer" width="100%" value="${sessionScope.loginfo.id }">
-									</td>
-								</tr>
-								<tr>
-									<th>
-										Regdate
-									</th>
-									<td>
-										<input type="date" id="regdate" name="regdate" width="100%" value="23 April 2020">
+										<input type="hidden" name="writer" id="writer" width="100%" value="${sessionScope.loginfo.id}">
 									</td>
 								</tr>
 								<tr>
 									<th>Contant</th>
 									<td>
 										<textarea rows="10" cols="80">
-										
+											
 										</textarea>
-									</td>
-								</tr>
-								<tr>
-									<th>Attachments</th>
-									<td>
-										<input type="file" name="image" id="image">
 									</td>
 								</tr>
 							</tbody>

@@ -1,17 +1,19 @@
 package shopping.board.controller;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.board.model.Board;
 import shopping.board.model.BoardDao;
 import shopping.common.controller.SuperClass;
-
+@WebServlet(value = "/board/reply")
 public class BoardReplyController extends SuperClass {
 	private Board bean = null ;
 	private BoardDao dao = null ; 
@@ -21,10 +23,7 @@ public class BoardReplyController extends SuperClass {
 		
 		dao = new BoardDao() ;
 		
-		int groupno = Integer.parseInt(request.getParameter("groupno")) ;
-		
 		int cnt = -99999 ;
-		cnt = dao.GetGroupnoCount(groupno) ;
 		
 		int replysu = 5 ;
 		
@@ -44,17 +43,12 @@ public class BoardReplyController extends SuperClass {
 		super.doPost(request, response);
 		
 		bean = new Board() ;
-		bean.setContent(request.getParameter("content")); 
-		bean.setPassword(request.getParameter("password"));
-		bean.setSubject(request.getParameter("subject"));
+		bean.setBcontents(request.getParameter("bcontents")); 
+		bean.setTitle(request.getParameter("title"));
 		bean.setWriter(request.getParameter("writer"));
 		
-		int groupno = Integer.parseInt(request.getParameter("groupno")) ;
-		int orderno = Integer.parseInt(request.getParameter("orderno")) ;
 		int depth = Integer.parseInt(request.getParameter("depth")) ;
-		
-		bean.setGroupno(groupno);		
-		bean.setOrderno(orderno);		
+			
 		bean.setDepth(depth);
 		
 		System.out.println("bean information");
@@ -64,8 +58,6 @@ public class BoardReplyController extends SuperClass {
 			System.out.println("board reply validation check success");
 			dao = new BoardDao();
 			int cnt = - 999999 ;
-			cnt = dao.ReplyData(bean) ;
-			
 			new BoardListController().doGet(request, response); 
 			
 		} else {
@@ -80,16 +72,13 @@ public class BoardReplyController extends SuperClass {
 	@Override
 	public boolean validate(HttpServletRequest request) {
 		boolean isCheck = true ;		
-		if (bean.getSubject().length() < 3 || bean.getSubject().length() > 10) {
-			request.setAttribute(super.PREFIX + "subject", "제목은 3자리 이상 10자리 이하이어야 합니다.");
+		if (bean.getTitle().length() < 3 || bean.getTitle().length() > 10) {
+			request.setAttribute(super.PREFIX + "Title", "제목은 3자리 이상 10자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
-		if (bean.getPassword().length() < 4 || bean.getPassword().length() > 10) {
-			request.setAttribute(super.PREFIX + "password", "비밀 번호는 4자리 이상 10자리 이하이어야 합니다.");
-			isCheck = false ;
-		}
-		if (bean.getContent().length() < 5 || bean.getContent().length() > 30) {
-			request.setAttribute(super.PREFIX + "content", "글 내용은 5자리 이상 30자리 이하이어야 합니다.");
+	
+		if (bean.getBcontents().length() < 5 || bean.getBcontents().length() > 30) {
+			request.setAttribute(super.PREFIX + "Bcontents", "글 내용은 5자리 이상 30자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
 		return isCheck ;
