@@ -7,9 +7,5 @@
 	response.sendRedirect( imsi ) ;
 %>
 
-
-
-
-
 </body>
 </html>	
