@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" name="minsertform">
+                    <form method="POST" class="register-form" name="minsertform" >
                     
                     <input type="hidden" id="command" value="meInsert">
                     <input type="hidden" id="isCheck" value="false">
