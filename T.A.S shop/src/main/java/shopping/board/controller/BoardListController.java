@@ -1,18 +1,20 @@
 package shopping.board.controller;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.board.model.Board;
 import shopping.board.model.BoardDao;
 import shopping.common.controller.SuperClass;
-import shopping.utility.FlowParameters;
-import shopping.utility.Paging;
-
+import shopping.common.utility.FlowParameters;
+import shopping.common.utility.Paging;
+@WebServlet(value = "/board/list") 
 public class BoardListController extends SuperClass {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,7 +59,7 @@ public class BoardListController extends SuperClass {
 		// 자주 사용되는 파라미터를 속성으로 정의합니다. 
 		request.setAttribute("parameters", parameters.toString());
 		
-		String gotopage = "/board/boList.jsp" ;
+		String gotopage = "/board/board.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override

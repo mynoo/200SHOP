@@ -46,7 +46,7 @@ public class ReplyDao extends SuperDao {
 
 	public int InsertData(Reply bean01) {
 		String sql = " insert into reply(rno, groupno, mid, comment,date ) " ;
-		sql += " values(myreply.nextval, myreply.nextval, ?, ?,sysdate ) " ;
+		sql += " values(myboard.nextval, ?, ?, ?,? ) " ;
 		
 		PreparedStatement pstmt = null ;
 		int cnt = -99999 ;
@@ -55,8 +55,10 @@ public class ReplyDao extends SuperDao {
 			conn.setAutoCommit( false );
 			pstmt = super.conn.prepareStatement(sql) ;
 			
-			pstmt.setString(1, bean01.getMid());
-			pstmt.setString(2, bean01.getComment());
+			pstmt.setInt(1, bean01.getGroupno());
+			pstmt.setString(2, bean01.getMid());
+			pstmt.setString(3, bean01.getComment());
+			pstmt.setString(4, bean01.getDate());
 			
 			cnt = pstmt.executeUpdate() ; 
 			conn.commit(); 
