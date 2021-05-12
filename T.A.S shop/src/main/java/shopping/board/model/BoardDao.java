@@ -13,8 +13,8 @@ public class BoardDao extends SuperDao {
 	
 	
 	public int InsertData( Board bean ){
-		String sql = " insert into boards(no, title, writer, bcontents ) " ;
-		sql += " values(myboard.nextval, ?, ?, ? ) " ;
+		String sql = " insert into boards(bno, title, writer, bcontents,writedate,depth ) " ;
+		sql += " values(myboard.nextval, ?, ?, ?, ?, 0 ) " ;
 		
 		PreparedStatement pstmt = null ;
 		int cnt = -99999 ;

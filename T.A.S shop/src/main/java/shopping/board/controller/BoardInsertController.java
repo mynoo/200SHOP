@@ -18,7 +18,7 @@ public class BoardInsertController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		String gotopage = "/board/board_Insert.jsp" ;
+		String gotopage = "/board/board.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override
@@ -46,7 +46,7 @@ public class BoardInsertController extends SuperClass {
 			System.out.println("board insert validation check failure");
 			
 			request.setAttribute("bean", bean);
-			String gotopage = "/board/board_Insert.jsp" ;
+			String gotopage = "/board/board.jsp" ;
 			super.GotoPage(gotopage);
 		}
 		

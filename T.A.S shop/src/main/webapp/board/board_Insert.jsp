@@ -42,7 +42,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 ftco-animate">
-					<form action="<%=YesForm%>" method="post">
+					<form action="/board/insert">
 						<h3>Write Board</h3>
 						<table style="width: 100%">
 							<tbody>
@@ -63,15 +63,13 @@
 										Regdate
 									</th>
 									<td>
-										<input type="date" id="regdate" name="regdate" width="100%" value="23 April 2020">
+										<input type="date" id="writedate" name="writedate" width="100%" value="23 April 2020">
 									</td>
 								</tr>
 								<tr>
 									<th>Contant</th>
 									<td>
-										<textarea rows="10" cols="80">
-										
-										</textarea>
+										<input type="text" name="bscontents" id="bscontents">
 									</td>
 								</tr>
 								<tr>

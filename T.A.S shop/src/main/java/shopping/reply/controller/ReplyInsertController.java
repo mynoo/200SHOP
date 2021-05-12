@@ -11,13 +11,13 @@ import shopping.common.controller.SuperClass;
 import shopping.reply.model.Reply;
 import shopping.reply.model.ReplyDao;
 @WebServlet(value = "/reply/insert")
-public class ReplyIesertController extends SuperClass {
+public class ReplyInsertController extends SuperClass {
 	private Reply bean01 = null ;
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		String gotopage = "/reply/reply_Insert.jsp" ;
+		String gotopage = "/reply/board_Detail.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override
@@ -45,7 +45,7 @@ public class ReplyIesertController extends SuperClass {
 			System.out.println("reply insert validation check failure");
 			
 			request.setAttribute("bean01", bean01);
-			String gotopage = "/reply/reply_Insert.jsp" ;
+			String gotopage = "/reply/board_Detail.jsp" ;
 			super.GotoPage(gotopage);
 		}
 		

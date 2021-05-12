@@ -42,22 +42,20 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 ftco-animate">
-					<form class="#" action="" method="post">
+					<form class="#" action="/reply/insert">
 						<h3>Write Reply</h3>
 						<table style="width: 100%">
 							<tbody>
 								<tr>
 									<th>Writer</th>
 									<td>
-										<input type="hidden" name="writer" id="writer" width="100%" value="${sessionScope.loginfo.id}">
+										<input type="hidden" name="mid" id="mid" width="100%" value="${sessionScope.loginfo.id}">
 									</td>
 								</tr>
 								<tr>
 									<th>Contant</th>
 									<td>
-										<textarea rows="10" cols="80">
-											
-										</textarea>
+										<input type="text" name="comment" id="comment">
 									</td>
 								</tr>
 							</tbody>
