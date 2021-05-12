@@ -9,6 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Sign Up</title>
 
+
 	<!-- Font Icon -->
 	<link rel="stylesheet" href="<%=contextPath%>/fonts/material-icon/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="<%=contextPath%>/vendor/nouislider/nouislider.min.css">
