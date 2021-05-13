@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Sign Up</title>
-
 	<!-- Font Icon -->
 	<link rel="stylesheet" href="<%=contextPath%>/fonts/material-icon/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="<%=contextPath%>/vendor/nouislider/nouislider.min.css">
@@ -110,7 +109,7 @@
                     </div>
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" name="minsertform">
+                    <form method="POST" class="register-form" name="minsertform" >
                     
                     <input type="hidden" id="command" value="meInsert">
                     <input type="hidden" id="isCheck" value="false">

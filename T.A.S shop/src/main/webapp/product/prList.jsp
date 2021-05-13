@@ -9,19 +9,16 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 }
-
 th {
 	padding: 8px;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
-
 td {
 	padding: 8px;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
-
 h4 {
 	text-align: center;
 }
