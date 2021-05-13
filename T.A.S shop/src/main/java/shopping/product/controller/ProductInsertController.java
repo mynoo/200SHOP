@@ -33,7 +33,6 @@ public class ProductInsertController extends SuperClass {
 		
 		bean.setBrand(multi.getParameter("brand"));
 		bean.setCategory(multi.getParameter("category"));
-		bean.setCompany(multi.getParameter("company"));
 		bean.setContent(multi.getParameter("content"));		
 		bean.setDate(multi.getParameter("date"));
 		bean.setPname(multi.getParameter("pname"));
@@ -82,10 +81,6 @@ public class ProductInsertController extends SuperClass {
 			request.setAttribute(super.PREFIX + "name", "상품 이름은(는) 3자리 이상 15자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
-		if (bean.getCompany().length() < 3 || bean.getCompany().length() > 30) {
-			request.setAttribute(super.PREFIX + "company", "제조 회사 이름은(는) 3자리 이상 30자리 이하이어야 합니다.");
-			isCheck = false ;
-		}		
 		if (bean.getContent().length() < 5 || bean.getContent().length() > 255) {
 			request.setAttribute(super.PREFIX + "contents", "상품에 대한 설명은 5자리 이상 255자리 이하이어야 합니다.");
 			isCheck = false ;
