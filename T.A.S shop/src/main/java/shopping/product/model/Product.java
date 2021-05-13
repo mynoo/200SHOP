@@ -7,7 +7,6 @@ public class Product {
 	private String image;
 	private int stock;
 	private int price;
-	private String company;
 	private String category;
 	private String date;
 	private int alcohol;
@@ -62,13 +61,6 @@ public class Product {
 		this.price = price;
 	}
 
-	public String getCompany() {
-		return company;
-	}
-
-	public void setCompany(String company) {
-		this.company = company;
-	}
 
 	public String getCategory() {
 		return category;

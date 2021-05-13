@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>ProductInsertForm</title>
+	<title>ProductUpdateForm</title>
 	
 	<!-- Font Icon -->
 	<link rel="stylesheet"
@@ -39,9 +39,9 @@
 					</div>
 				</div>
 				<div class="signup-form">
-					<form method="POST" class="register-form" id="register-form" 
+					<form method="post" class="register-form" id="register-form" 
 					action="<%=YesForm%>" enctype="multipart/form-data">
-					<input type="hidden" id="command" name="command" value="prInsert">
+					<input type="hidden" id="command" name="command" value="prUpdate">
 						<div class="form-row">
 							<div class="form-group">
 								<div class="form-input">
@@ -59,7 +59,7 @@
 								</div>
 								<div class="form-input">
 									<label for="stock" class="required">Stock</label> <input
-										type="text" name="stock" id="stock" value="${bean.stock}"/>
+										type="number" name="stock" id="stock" value="${bean.stock}"/>
 								</div>
 								<div class="form-input">
 									<label for="name" class="required">Price</label> <input
@@ -103,7 +103,7 @@
 							</div>
 						</div>
 						<div class="form-submit">
-							<input type="submit" value="Register" class="submit" id="submit"
+							<input type="submit" value="Update" class="submit" id="submit"
 								name="submit" /> <input type="reset" value="Reset"
 								class="submit" id="reset" name="reset" />
 						</div>
