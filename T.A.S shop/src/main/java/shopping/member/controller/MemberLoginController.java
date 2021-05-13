@@ -59,8 +59,10 @@ public class MemberLoginController extends SuperClass {
 			
 			if (bean == null) { 
 				System.out.println("로그인 실패");
-				String message = "아이디나 비밀 번호가 잘못되었습니다." ;
+				String message = "등록되지 않는 아이디이거나 아이디 또는 비밀번호를 잘못 입력했습니다." ;
+				
 				super.setErrorMessage(message);
+				
 				gotopage = "/member/mLogin.jsp" ;
 				super.GotoPage(gotopage);
 			} else { 
