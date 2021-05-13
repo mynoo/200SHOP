@@ -3,13 +3,14 @@ package shopping.board.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.board.model.Board;
 import shopping.board.model.BoardDao;
 import shopping.common.controller.SuperClass;
-
+@WebServlet(value = "/board/insert")
 public class BoardInsertController extends SuperClass {
 	private Board bean = null ;
 	
@@ -17,7 +18,7 @@ public class BoardInsertController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		String gotopage = "/board/boInsertForm.jsp" ;
+		String gotopage = "/board/board.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override
@@ -25,10 +26,10 @@ public class BoardInsertController extends SuperClass {
 		super.doPost(request, response);
 		
 		bean = new Board() ;
-		bean.setContent(request.getParameter("content")); 
-		bean.setPassword(request.getParameter("password"));
-		bean.setSubject(request.getParameter("subject"));
+		bean.setBcontents(request.getParameter("bcontents")); 
+		bean.setTitle(request.getParameter("title"));
 		bean.setWriter(request.getParameter("writer"));
+		bean.setWritedate(request.getParameter("writedate"));
 		
 		System.out.println("bean information");
 		System.out.println(bean.toString()); 
@@ -45,7 +46,7 @@ public class BoardInsertController extends SuperClass {
 			System.out.println("board insert validation check failure");
 			
 			request.setAttribute("bean", bean);
-			String gotopage = "/board/boInsertForm.jsp" ;
+			String gotopage = "/board/board.jsp" ;
 			super.GotoPage(gotopage);
 		}
 		
@@ -53,15 +54,12 @@ public class BoardInsertController extends SuperClass {
 	@Override
 	public boolean validate(HttpServletRequest request) {
 		boolean isCheck = true ;		
-		if (bean.getSubject().length() < 3 || bean.getSubject().length() > 10) {
+		if (bean.getTitle().length() < 3 || bean.getTitle().length() > 10) {
 			request.setAttribute(super.PREFIX + "subject", "제목은 3자리 이상 10자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
-		if (bean.getPassword().length() < 4 || bean.getPassword().length() > 10) {
-			request.setAttribute(super.PREFIX + "password", "비밀 번호는 4자리 이상 10자리 이하이어야 합니다.");
-			isCheck = false ;
-		}
-		if (bean.getContent().length() < 5 || bean.getContent().length() > 30) {
+		
+		if (bean.getBcontents().length() < 5 || bean.getBcontents().length() > 30) {
 			request.setAttribute(super.PREFIX + "content", "글 내용은 5자리 이상 30자리 이하이어야 합니다.");
 			isCheck = false ;
 		}

@@ -26,7 +26,7 @@ public class MemberDetailViewController extends SuperClass {
 		
 		request.setAttribute("bean", bean);
 		
-		String gotopage = "/member/myprofile.jsp" ;
+		String gotopage = "/member/mDetailview.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override

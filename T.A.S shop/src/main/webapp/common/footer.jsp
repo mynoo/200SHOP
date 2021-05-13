@@ -91,14 +91,24 @@
 					<div class="ftco-footer-widget mb-4 ml-md-4">
 						<h2 class="ftco-heading-2">Information</h2>
 						<ul class="list-unstyled">
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
-									About us </a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
-									Catalog </a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
-									Contact us </a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
-									Term &amp; Conditions </a></li>
+							<li>
+								<a href="#">
+									<span class="fa fa-chevron-right mr-2"></span>
+									Catalog 
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="fa fa-chevron-right mr-2"></span>
+									Contact us 
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="fa fa-chevron-right mr-2"></span>
+									Term &amp; Conditions 
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>

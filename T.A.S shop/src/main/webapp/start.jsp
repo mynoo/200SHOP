@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/common/common.jsp" %>
+<%@ include file="/common/common.jsp"%>
 <!DOCTYPE><html><head></head>
-<body> 	
+<body>
 <%
 	String imsi = Noform + "main";
-	response.sendRedirect( imsi ) ;
+	response.sendRedirect( imsi );
 %>
 
-
-
-
 </body>
-</html>	
+</html>

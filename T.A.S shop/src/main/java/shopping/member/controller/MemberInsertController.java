@@ -94,7 +94,6 @@ public class MemberInsertController extends SuperClass {
 			
 			cnt = dao.InsertData(bean) ;
 			
-//			new MemberLoginController().doGet(request, response);
 			new MainController().doGet(request, response);
 			
 		} else {
@@ -102,6 +101,7 @@ public class MemberInsertController extends SuperClass {
 			
 			request.setAttribute("bean", bean);
 			super.doPost(request, response);
+			
 			String gotopage = "/member/mInsert.jsp" ;
 			super.GotoPage(gotopage);
 		}		

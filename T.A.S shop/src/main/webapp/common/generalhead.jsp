@@ -145,7 +145,7 @@
 						<a href="<%=contextPath%>/product/product.jsp" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=contextPath%>/board/board.jsp" class="nav-link">Boards</a>
+						<a href="<%=contextPath%>/board/list" class="nav-link">Boards</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=contextPath%>/common/contact.jsp" class="nav-link">Contact</a>

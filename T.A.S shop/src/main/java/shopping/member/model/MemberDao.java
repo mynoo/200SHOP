@@ -182,6 +182,7 @@ public Member SelectData(String id, String password) {
 			// step03 : 회원 테이블 행 삭제하기
 			sql = " delete from members" ;
 			sql += " where id = ? " ;
+			
 			pstmt = super.conn.prepareStatement(sql) ;
 			
 			pstmt.setString(1, id);
@@ -251,7 +252,7 @@ public Member SelectData(String id, String password) {
 				if( pstmt != null ){ pstmt.close(); }
 				super.closeConnection(); 
 			} catch (Exception e2) {
-				e2.printStackTrace(); 
+				e2.printStackTrace();
 			}
 		}
 		return lists ;
@@ -340,7 +341,7 @@ public Member SelectData(String id, String password) {
 	public int UpdateMpoint(String id, int mpoint ) {
 		String sql = " " ; 
 		sql += " " ;
-		sql += " " ;		
+		sql += " " ;
 
 		PreparedStatement pstmt = null ;
 		int cnt = -99999 ;
@@ -369,9 +370,6 @@ public Member SelectData(String id, String password) {
 			}
 		}
 		return cnt ;
-		
 	}
 
-
-	
 }
