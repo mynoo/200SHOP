@@ -37,8 +37,12 @@
 						<div
 							class="col-md-12 d-flex justify-content-between align-items-center">
 							<h4 class="product-select">Select Types of Products</h4>
-					<a href="<%=Noform%>prList"><button class="btn btn-primary">상품 목록</button></a>
-					<a href="<%=Noform%>prInsert"><button class="btn btn-primary">상품 등록</button></a>
+					<c:if test="${whologin == 2}">
+						<a href="<%=Noform%>prList"><button class="btn btn-primary">상품 목록</button></a>
+					</c:if>
+					<c:if test="${whologin == 2}">
+						<a href="<%=Noform%>prInsert"><button class="btn btn-primary">상품 등록</button></a>
+					</c:if>
 							<select class="selectpicker">
 								<option>--selecte type --</option>
 								<option>Brandy</option>
