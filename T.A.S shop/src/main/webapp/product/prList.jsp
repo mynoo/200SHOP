@@ -9,21 +9,21 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 }
-
 th {
 	padding: 8px;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
-
 td {
 	padding: 8px;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
-
 h4 {
 	text-align: center;
+}
+ul.pagination{
+	justify-content: center;
 }
 </style>
 <script>	
@@ -46,10 +46,29 @@ h4 {
 </head>
 
 <body>
-
+<jsp:include page="../common/generalhead.jsp" />
+    
+	<section class="hero-wrap hero-wrap-2"
+		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate mb-5 text-center">
+					<p class="breadcrumbs mb-0">
+						<span class="mr-2"><a
+							href="<%=contextPath%>/common/main.jsp">Home <i
+								class="fa fa-chevron-right"></i></a></span> <span>Products <i
+							class="fa fa-chevron-right"></i></span>
+					</p>
+					<h2 class="mb-0 bread">Products List</h2>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section class="ftco-section">
 		<div class="container">
-			<h4>Product List</h4>
 			<table>
 				<thead>
 					<tr>
@@ -60,8 +79,8 @@ h4 {
 									<select id="mode" name="mode" class="form-control">
 										<option value="all" selected="selected">-- 선택하세요.
 										<option value="pname">이름
-										<option value="company">제조회사
-										<option value="category">카테코리
+										<option value="brand">제조회사
+										<option value="category">카테고리
 									</select>
 								</div>
 								<div class="form-group">
@@ -74,10 +93,8 @@ h4 {
 								&nbsp;&nbsp;
 								<button class="btn btn-default" type="button"
 									onclick="searchAll();">전체 검색</button>
-								<c:if test="${whologin == 2}">
-									<button class="btn btn-default btn-info" type="button"
+									<button class="btn btn-primary btn-info" type="button"
 										onclick="writeForm();">상품 등록</button>
-								</c:if>
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
 						</td>
@@ -89,7 +106,6 @@ h4 {
 						<th>PNAME</th>
 						<th>CONTENT</th>
 						<th>BRAND</th>
-						<th>COMPANY</th>
 						<th>CATEGORY</th>
 						<th>STOCK</th>
 						<th>PRICE</th>
@@ -106,13 +122,12 @@ h4 {
 				<tr>
 					<td>${bean.pno}</td>
 					<td>
-						<a href="<%=Noform%>prDetailView&num=${bean.pname}&${requestScope.parameters}">
+						<a href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}">
 							${bean.pname}
 						</a>
 					</td>
 							<td>${bean.content}</td>
 							<td>${bean.brand}</td>
-							<td>${bean.company}</td>
 							<td>${bean.category}</td>
 							<td>${bean.stock}</td>
 							<td>${bean.price}</td>
@@ -120,35 +135,23 @@ h4 {
 							<td>${bean.volume}</td>
 							<td>${bean.date}</td>
 					<td>
-						<c:if test="${whologin == 2}">
-							<a href="<%=Noform%>prDelete&num=${bean.pno}&${requestScope.parameters}">
-								삭제
+							<a href="<%=Noform%>prDelete&pno=${bean.pno}" onclick="return confirm('삭제하시겠습니까?');">
+								Delete
 							</a>
-						</c:if>
-						<c:if test="${whologin != 2}">
-							삭제
-						</c:if>				
 					</td>
 					<td>
-						<c:if test="${whologin == 2}">
-							<a href="<%=Noform%>prUpdate&num=${bean.pno}&${requestScope.parameters}">
-								수정
+							<a href="<%=Noform%>prUpdate&pno=${bean.pno}">
+								Update
 							</a>
-						</c:if>
-						<c:if test="${whologin != 2}">
-							수정
-						</c:if>					
 						
 					</td>
 				</tr>
 				</c:forEach>		
 				</tbody>
 			</table>
-			<div align="center">
+			<div>
 				<footer>${pageInfo.pagingHtml}</footer>
 			</div>
-			<a href="<%=Noform%>prInsert"><button class="btn btn-primary"
-					id="pr-btn">상품 등록</button></a>
 		</div>
 	</section>
 	<br><br><br><br>
@@ -162,6 +165,6 @@ h4 {
 			/* 이전에 넣었던 값 그대로 보존 */
 			$('#keyword').val( '${pageInfo.keyword}' ) ;		
 		</script>	
-
+<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

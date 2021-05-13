@@ -110,7 +110,7 @@
 					<tr>
 						<td>1</td>
 						<td>
-							<a href="board_Detail.jsp"> The Recipe from a <br>
+							<a href="<%=Noform%>boDetailView"> The Recipe from a <br>
 								Winemakerâs Restaurent
 							</a>
 						</td>

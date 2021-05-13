@@ -8,7 +8,7 @@
 
 <body>
 	<jsp:include page="../common/generalhead.jsp" />
-
+    
 	<section class="hero-wrap hero-wrap-2"
 		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
 		data-stellar-background-ratio="0.5">
