@@ -25,6 +25,12 @@ h4 {
 ul.pagination{
 	justify-content: center;
 }
+ul.pagination li {
+    padding: 3;
+}
+form.form-inline {
+    justify-content: center;
+}
 </style>
 <script>	
 		function search(){
@@ -149,8 +155,12 @@ ul.pagination{
 				</c:forEach>		
 				</tbody>
 			</table>
-			<div>
-				<footer>${pageInfo.pagingHtml}</footer>
+			<div class="row mt-5">
+				<div class="col text-center">
+					<div class="block-27">
+						<footer>${pageInfo.pagingHtml}</footer>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
