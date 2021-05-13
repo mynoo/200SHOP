@@ -6,10 +6,5 @@
 	String imsi = Noform + "main";
 	response.sendRedirect( imsi ) ;
 %>
-
-
-
-
-
 </body>
 </html>	
