@@ -17,19 +17,25 @@ public class ProductDeleteController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		Product bean = null ;
+		int pno = Integer.parseInt(request.getParameter("pno")) ;
+		
+		int cnt = -99999 ;
+		
 		ProductDao dao = new ProductDao();
-		String data = dao.toString() ;
+		cnt = dao.DeleteData(pno) ;
 		
-		String id = request.getParameter("id") ;
-		int no = Integer.parseInt(request.getParameter("no")) ;
+		if(cnt != 0) {
+			System.out.println("상품 삭제 성공");
+			
+			new ProductListController().doGet(request, response);
+			
+		}else {
+			System.out.println("상품 삭제 실패");
+			
+			String gotopage = "/product/prList.jsp" ;
+			super.GotoPage(gotopage);
+		}
 		
-		List<Product> lists = new ArrayList<Product>() ;
-		
-		request.setAttribute("bean", bean);
-		
-		String gotopage = "/product/main.jsp" ;
-		super.GotoPage(gotopage);
 	}	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,10 +12,10 @@ public class ProductDao extends SuperDao {
 	public int InsertData( Product bean ){
 		String sql = " insert into products" ;
 		sql += " ( " ;
-		sql += " num, name, company, image, stock, price, category, contents, point, inputdate " ;
+		sql += " pno, pname, brand, image, stock, price, category, alcohol, volume, content, inputdate " ;
 		sql += " ) " ;
 		sql += " values( " ;
-		sql += " seqprod.nextval, ?, ?, ?, ?, ?, ?, ?, ?, sysdate " ;
+		sql += " seqprod.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, default" ;
 		sql += " ) " ;		
 		
 		PreparedStatement pstmt = null ;
@@ -25,15 +25,15 @@ public class ProductDao extends SuperDao {
 			conn.setAutoCommit( false );
 			pstmt = super.conn.prepareStatement(sql) ;
 			
-			pstmt.setString(1, bean.getName());
-			pstmt.setString(2, bean.getCompany());
+			pstmt.setString(1, bean.getPname());
+			pstmt.setString(2, bean.getBrand());
 			pstmt.setString(3, bean.getImage());
 			pstmt.setInt(4, bean.getStock());
 			pstmt.setInt(5, bean.getPrice());
 			pstmt.setString(6, bean.getCategory());
-			pstmt.setString(7, bean.getContents());
-			pstmt.setInt(8, bean.getPoint());
-			
+			pstmt.setInt(7, bean.getAlcohol());
+			pstmt.setInt(8, bean.getVolume());
+			pstmt.setString(9, bean.getContent());
 			
 			cnt = pstmt.executeUpdate() ; 
 			conn.commit(); 
@@ -57,9 +57,9 @@ public class ProductDao extends SuperDao {
 		return cnt ;
 	}
 	public int UpdateData( Product bean ){
-		String sql = " " ;
-		sql += "  " ;
-		sql += "  " ;
+		String sql = " update products set pname = ?, content = ?, brand = ?, inputdate = ?, " ;
+		sql += " image = ?, category = ?, stock = ?, price = ?, alcohol = ?, volume = ?";
+		sql += " where pno = ? " ;
 
 
 		PreparedStatement pstmt = null ;
@@ -69,6 +69,18 @@ public class ProductDao extends SuperDao {
 			conn.setAutoCommit( false );
 			pstmt = super.conn.prepareStatement(sql) ;
 				
+			pstmt.setString(1, bean.getPname());
+			pstmt.setString(2, bean.getContent());
+			pstmt.setString(3, bean.getBrand());
+			pstmt.setString(4, String.valueOf(bean.getDate()));
+			pstmt.setString(5, bean.getImage());
+			pstmt.setString(6, bean.getCategory());
+			pstmt.setInt(7, bean.getStock());
+			pstmt.setInt(8, bean.getPrice());
+			pstmt.setInt(9, bean.getAlcohol());
+			pstmt.setInt(10, bean.getVolume());
+			pstmt.setInt(11, bean.getPno());
+			
 			cnt = pstmt.executeUpdate() ; 
 			conn.commit(); 
 		} catch (Exception e) {
@@ -90,10 +102,9 @@ public class ProductDao extends SuperDao {
 		}
 		return cnt ;
 	}
-	public int DeleteData( int pmkey ){
-		String sql = " " ;
-		sql += "  " ;
-		sql += "  " ;
+	public int DeleteData( int pno ){
+		String sql = " delete from products " ;
+		sql += " where pno = ? " ;
 
 		
 		PreparedStatement pstmt = null ;
@@ -103,6 +114,7 @@ public class ProductDao extends SuperDao {
 			conn.setAutoCommit( false );
 			pstmt = super.conn.prepareStatement(sql) ;
 			
+			pstmt.setInt(1, pno);
 			
 			cnt = pstmt.executeUpdate() ; 
 			conn.commit(); 
@@ -125,17 +137,14 @@ public class ProductDao extends SuperDao {
 		}
 		return cnt ;
 	}
-	public ProductDao() {
-	
-	}
 	public List<Product> SelectDataList( int beginRow, int endRow, String mode, String keyword ) {
 		// 해당 검색 조건에 맞는 모든 데이터를 조회합니다.
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;
 		
-		String sql = " select ranking, num, name, company, image, stock, price, category, contents, point, inputdate, remark " ;
-		sql += " from ( select num, name, company, image, stock, price, category, contents, point, inputdate, remark, rank() over(order by num desc) as ranking " ;
-		sql += " from products  " ;
+		String sql = " select ranking, pno, pname, brand, image, stock, price, category, alcohol, volume, content, inputdate " ;
+		sql += " from ( select pno, pname, brand, image, stock, price, category, alcohol, volume, content,  inputdate, rank() over(order by pno desc) as ranking " ;
+		sql += " from products " ;
 		
 		if(mode.equalsIgnoreCase("all") ==false) { 
 			System.out.println("not all search mode");
@@ -159,17 +168,17 @@ public class ProductDao extends SuperDao {
 			while( rs.next() ){
 				Product bean = new Product();
 				
-				bean.setNum(rs.getInt("num"));
-				bean.setName(rs.getString("name"));				
-				bean.setCompany(rs.getString("company"));
+				bean.setPno(rs.getInt("pno"));
+				bean.setPname(rs.getString("pname"));				
+				bean.setBrand(rs.getString("brand"));				
 				bean.setImage(rs.getString("image"));
 				bean.setStock(rs.getInt("stock"));
 				bean.setPrice(rs.getInt("price"));
 				bean.setCategory(rs.getString("category"));
-				bean.setInputdate(String.valueOf(rs.getDate("inputdate")));
-				bean.setContents(rs.getString("contents"));				
-				bean.setPoint(rs.getInt("point"));
-				bean.setRemark(rs.getString("remark"));
+				bean.setDate(String.valueOf(rs.getDate("inputdate")));
+				bean.setContent(rs.getString("content"));
+				bean.setAlcohol(rs.getInt("alcohol"));
+				bean.setVolume(rs.getInt("volume"));
 				
 				lists.add(bean);
 			}
@@ -188,36 +197,36 @@ public class ProductDao extends SuperDao {
 		return lists ;
 	}
 
-	public Product SelectDataByPk( int num  ){
+	public Product SelectDataByPk( int pno ){
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;				
 
 		String sql = " select * from products " ;
-		sql += " where num = ?  " ;
+		sql += " where pno = ?  " ;
 
 		Product bean = null ;
 		try {
 			if( this.conn == null ){ this.conn = this.getConnection() ; }			
 			pstmt = this.conn.prepareStatement(sql) ;
 			
-			pstmt.setInt(1, num);
+			pstmt.setInt(1, pno);
 			
 			rs = pstmt.executeQuery() ; 
 			
 			if ( rs.next() ) {
 				bean = new Product() ;
 				
-				bean.setNum(rs.getInt("num"));
-				bean.setName(rs.getString("name"));				
-				bean.setCompany(rs.getString("company"));
+				bean.setPno(rs.getInt("pno"));
+				bean.setPname(rs.getString("pname"));
+				bean.setBrand(rs.getString("brand"));
 				bean.setImage(rs.getString("image"));
 				bean.setStock(rs.getInt("stock"));
 				bean.setPrice(rs.getInt("price"));
 				bean.setCategory(rs.getString("category"));
-				bean.setInputdate(String.valueOf(rs.getDate("inputdate")));
-				bean.setContents(rs.getString("contents"));				
-				bean.setPoint(rs.getInt("point"));
-				bean.setRemark(rs.getString("remark"));
+				bean.setAlcohol(rs.getInt("alcohol"));
+				bean.setVolume(rs.getInt("volume"));
+				bean.setDate(String.valueOf(rs.getDate("inputdate")));
+				bean.setContent(rs.getString("content"));				
 
 			}
 			
@@ -246,7 +255,7 @@ public class ProductDao extends SuperDao {
 		int cnt = 0 ; //없는 경우의 기본 값
 		try {
 			if( this.conn == null ){ this.conn = this.getConnection() ; }			
-			pstmt = this.conn.prepareStatement(sql) ;			 
+			pstmt = this.conn.prepareStatement(sql) ;
 			rs = pstmt.executeQuery() ; 
 			
 			if ( rs.next() ) { 

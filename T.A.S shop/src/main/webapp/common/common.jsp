@@ -1,7 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
 	int twelve = 12 ;
 %>
+<%-- 로그인 상태 정보 --%>
+<c:set var="whologin" value="0" /> 
+<c:if test="${empty sessionScope.loginfo}">
+	<c:set var="whologin" value="0" />
+</c:if>
+<c:if test="${not empty sessionScope.loginfo}">
+	<c:if test="${sessionScope.loginfo.id == 'admin'}">
+		<c:set var="whologin" value="2" />
+	</c:if>
+	<c:if test="${sessionScope.loginfo.id != 'admin'}">
+		<c:set var="whologin" value="1" />
+	</c:if>
+</c:if>
 <%
 	String contextPath = request.getContextPath();
 	

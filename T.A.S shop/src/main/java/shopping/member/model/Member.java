@@ -16,6 +16,10 @@ public class Member {
 	private String phonenumber;
 	
 	public String getPhonenumber() {
+		if(phonenumber == null)
+		{
+			this.phonenumber = "";
+		}
 		return phonenumber;
 	}
 	public void setPhonenumber(String phonenumber) {
@@ -28,6 +32,10 @@ public class Member {
 		this.id = id;
 	}
 	public String getName() {
+		if(name == null)
+		{
+			this.name = "";
+		}
 		return name;
 	}
 	public void setName(String name) {

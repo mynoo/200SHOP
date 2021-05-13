@@ -11,18 +11,18 @@ meUpdate=shopping.member.controller.MemberUpdateController
 meDelete=shopping.member.controller.MemberDeleteController
 meLogincheck=shopping.member.controller.MemberLogincheckController
 ### Board Section ######################################################
-#boList=shopping.board.controller.BoardListController
-#boInsert=shopping.board.controller.BoardInsertController
-#boDetailView=shopping.board.controller.BoardDetailViewController
-#boDelete=shopping.board.controller.BoardDeleteController
-#boUpdate=shopping.board.controller.BoardUpdateController
-#boReply=shopping.board.controller.BoardReplyController
+boList=shopping.board.controller.BoardListController
+boInsert=shopping.board.controller.BoardInsertController
+boDetailView=shopping.board.controller.BoardDetailViewController
+boDelete=shopping.board.controller.BoardDeleteController
+boUpdate=shopping.board.controller.BoardUpdateController
+boReply=shopping.board.controller.BoardReplyController
 ### Product Section ######################################################
-#prList=shopping.product.controller.ProductListController
-#prDetailView=shopping.product.controller.ProductDetailViewController
-#prInsert=shopping.product.controller.ProductInsertController
-#prDelete=shopping.product.controller.ProductDeleteController
-#prUpdate=shopping.product.controller.ProductUpdateController
+prList=shopping.product.controller.ProductListController
+prDetailView=shopping.product.controller.ProductDetailViewController
+prInsert=shopping.product.controller.ProductInsertController
+prDelete=shopping.product.controller.ProductDeleteController
+prUpdate=shopping.product.controller.ProductUpdateController
 ### Mall Section ######################################################
 #mallInsert=shopping.mall.controller.MallInsertController
 #mallList=shopping.mall.controller.MallListController

@@ -3,22 +3,24 @@ package shopping.board.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.board.model.BoardDao;
 import shopping.common.controller.SuperClass;
 
+@WebServlet(value = "/board/delete")
 public class BoardDeleteController extends SuperClass {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		int no = Integer.parseInt(request.getParameter("no")) ;
+		int bno = Integer.parseInt(request.getParameter("bno")) ;
 		
 		BoardDao dao = new BoardDao();
 		int cnt = -99999 ;
-		cnt = dao.DeleteData(no) ;
+		cnt = dao.DeleteData(bno) ;
 		
 		new BoardListController().doGet(request, response);
 		
