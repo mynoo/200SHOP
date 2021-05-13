@@ -7,8 +7,10 @@ public class Member {
 	private String email;
 	private String gender;
 	private String zipcode;
+	private String roadaddress;
 	private String address1;
 	private String address2;
+	private String extraaddress;
 	private String birth;
 	private int point;
 	private String phonenumber;
@@ -87,15 +89,26 @@ public class Member {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	@Override
-	public String toString() {
-		return "Member [id=" + id + ", Name=" + name + ", password=" + password + ", email=" + email + ", gender="
-				+ gender + ", zipcode=" + zipcode + ", address1=" + address1 + ", address2=" + address2 + ", birth="
-				+ birth + ", point=" + point + ", phonenumber=" + phonenumber + "]";
+	
+	public String getRoadaddress() {
+		return roadaddress;
+	}
+	public void setRoadaddress(String roadaddress) {
+		this.roadaddress = roadaddress;
+	}
+	public String getExtraaddress() {
+		return extraaddress;
+	}
+	public void setExtraaddress(String extraaddress) {
+		this.extraaddress = extraaddress;
 	}
 	
-
-	
-	
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
+				+ gender + ", zipcode=" + zipcode + ", roadaddress=" + roadaddress + ", address1=" + address1
+				+ ", address2=" + address2 + ", extraaddress=" + extraaddress + ", birth=" + birth + ", point=" + point
+				+ ", phonenumber=" + phonenumber + "]";
+	}
 	
 }

@@ -43,6 +43,8 @@ public Member SelectData(String id, String password) {
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
 				bean.setPhonenumber(rs.getString("phonenumber"));
+				bean.setRoadaddress(rs.getString("roadaddress"));
+				bean.setExtraaddress(rs.getString("extraaddress"));
 				
 			}
 			
@@ -67,8 +69,8 @@ public Member SelectData(String id, String password) {
 		
 		int cnt = -99999;
 		
-		String sql = " insert into members(id, name, password, birth, email, zipcode, address1, address2, gender, phonenumber, point)";
-		sql += " values(?, ?, ?, to_date(?, 'yyyy/mm/dd'), ?, ?, ?, ?, ?, ?, default)";
+		String sql = " insert into members(id, name, password, birth, email, zipcode, address1, address2, gender, phonenumber, roadaddress, extraaddress, point)";
+		sql += " values(?, ?, ?, to_date(?, 'yyyy/mm/dd'), ?, ?, ?, ?, ?, ?, ?, ?, default)";
 		
 		try {
 			if(conn == null) {conn = super.getConnection();}
@@ -85,6 +87,8 @@ public Member SelectData(String id, String password) {
 			pst.setString(8, bean.getAddress2());
 			pst.setString(9, bean.getGender());
 			pst.setString(10, bean.getPhonenumber());
+			pst.setString(11, bean.getRoadaddress());
+			pst.setString(12, bean.getExtraaddress());
 			
 			cnt = pst.executeUpdate();
 			conn.commit();
@@ -104,7 +108,7 @@ public Member SelectData(String id, String password) {
 	}
 
 	public int UpdateData( Member bean ){
-		String sql = " update members set password = ?, phonenumber = ?, email = ?, zipcode = ?, address1 = ?, address2 = ?" ; 
+		String sql = " update members set password = ?, phonenumber = ?, email = ?, zipcode = ?, address1 = ?, address2 = ? roadaddress = ?, extraaddress = ?" ; 
 		sql += " where id = ?" ;
 
 		PreparedStatement pstmt = null ;
@@ -121,6 +125,8 @@ public Member SelectData(String id, String password) {
 			pstmt.setString(5, bean.getAddress1());
 			pstmt.setString(6, bean.getAddress2());
 			pstmt.setString(7, bean.getId());
+			pstmt.setString(8, bean.getRoadaddress());
+			pstmt.setString(9, bean.getExtraaddress());
 			
 			cnt = pstmt.executeUpdate();
 			conn.commit(); 
@@ -241,6 +247,8 @@ public Member SelectData(String id, String password) {
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
 				bean.setPoint(rs.getInt("point"));
+				bean.setRoadaddress(rs.getString("roadaddress"));
+				bean.setExtraaddress(rs.getString("extraaddress"));
 				
 				lists.add( bean ) ;
 			}
@@ -291,7 +299,8 @@ public Member SelectData(String id, String password) {
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
 				bean.setPhonenumber(rs.getString("phonenumber"));
-				
+				bean.setRoadaddress(rs.getString("roadaddress"));
+				bean.setExtraaddress(rs.getString("extraaddress"));
 			}
 			
 		} catch (Exception e) {

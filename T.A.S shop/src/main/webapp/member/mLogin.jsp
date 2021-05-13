@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../common/common.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,20 @@
 	<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/main.css">
 
+	<script type="text/javascript">
+		function Logincheck() {
+			var id = document.login.id.value;
+			var pw = document.login.password.value;
+			
+			var url = '<%=Noform%>meLogincheck&id=' + id +'&password=' + pw;
+			window.open(url, 'mywin', 'left=800, top=400, menubar=no, height=150, width=300');
+			
+		}
+	
+		function isCheckFalse() {
+			document.login.isCheck.value = false;
+		}
+	</script>
 </head>
 <body>
 	
@@ -37,12 +52,13 @@
 				<span class="login100-form-title p-b-41">
 					Account Login
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5" method="post" >
+				<form class="login100-form validate-form p-b-33 p-t-5" method="post" name="login">
 
 					<input type="hidden" id="command" value="meLogin">
+					<input type="hidden" id="isCheck" value="false">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter userid">
-						<input class="input100" type="text" name="id" placeholder="User id"">
+						<input class="input100" type="text" name="id" placeholder="User id" value="${requestScope.id}">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 						<span class="err">${errid}</span>
 					</div>
@@ -54,7 +70,7 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn" >
+						<button class="login100-form-btn" onclick="Logincheck();">
 							Login
 						</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -62,7 +78,6 @@
 							Sign up
 						</button>
 					</div>
-
 				</form>
 			</div>
 		</div>
