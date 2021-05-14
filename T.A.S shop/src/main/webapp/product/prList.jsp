@@ -82,7 +82,7 @@ form.form-inline {
 							<form action="" class="form-inline" role="form" name="myform"
 								method="get">
 								<div class="form-group">
-									<select id="mode" name="mode" class="form-control">
+									<select id="mode" name="mode" class="form-control-sm">
 										<option value="all" selected="selected">-- 선택하세요.
 										<option value="pname">이름
 										<option value="brand">제조회사
@@ -90,7 +90,7 @@ form.form-inline {
 									</select>
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control" name="keyword"
+									<input type="text" class="form-control-sm" name="keyword"
 										id="keyword">
 								</div>
 								&nbsp;&nbsp;

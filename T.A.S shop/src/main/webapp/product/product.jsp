@@ -5,7 +5,11 @@
 <html lang="en">
 <head>
 </head>
-
+<style>
+#prList{
+	float: right;
+}
+</style>
 <body>
 	<jsp:include page="../common/generalhead.jsp" />
     
@@ -34,16 +38,9 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="row mb-4">
-						<div
-							class="col-md-12 d-flex justify-content-between align-items-center">
+						<div class="col-md-12" id="prList">
 							<h4 class="product-select">Select Types of Products</h4>
-					<c:if test="${whologin == 2}">
-						<a href="<%=Noform%>prList"><button class="btn btn-primary">상품 목록</button></a>
-					</c:if>
-					<c:if test="${whologin == 2}">
-						<a href="<%=Noform%>prInsert"><button class="btn btn-primary">상품 등록</button></a>
-					</c:if>
-							<select class="selectpicker">
+							<select class="form-control-sm">
 								<option>--selecte type --</option>
 								<option>Brandy</option>
 								<option>Gin</option>
@@ -52,6 +49,9 @@
 								<option>Vodka</option>
 								<option>Whiskey</option>
 							</select>
+							<c:if test="${whologin == 2}">
+								<a href="<%=Noform%>prList"><button class="btn btn-primary">상품 목록</button></a>
+							</c:if>
 						</div>
 					</div>
 					<div class="row">
