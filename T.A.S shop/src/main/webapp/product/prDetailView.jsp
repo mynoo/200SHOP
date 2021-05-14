@@ -121,7 +121,7 @@ h4{
 											data-placement="auto top"
 											data-content="구매하시고자 하는 수량을 정수로 입력하세요.">
 									</div>
-									<button type="submit" class="btn btn-primary">주문</button>
+									<a href="${Noform}MallMyCart"><button type="submit" class="btn btn-primary">주문</button></a>
 								</form>
 							</td>
 						</tr>

@@ -1,6 +1,7 @@
 package shopping.mall.controller;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
 import shopping.common.model.CompositeDao;
-import shopping.common.model.MyCartList;
 import shopping.common.model.ShoppingInfo;
 import shopping.mall.model.MallDao;
 import shopping.mall.model.Order;
+import shopping.mall.model.OrderDao;
 import shopping.member.controller.MemberLoginController;
 import shopping.member.model.Member;
 
@@ -32,8 +33,8 @@ public class MallDetailController extends SuperClass {
 			MallDao mdao = new MallDao();			
 			Order order = mdao.SelectDataByPk(oid) ;
 			
-			CompositeDao cdao = new CompositeDao();
-			List<ShoppingInfo> lists = cdao.ShowDetail(oid) ;
+			OrderDao odao = new OrderDao();
+			List<Order> lists = odao.SelectDataList(oid) ;
 			
 			request.setAttribute("order", order); // order information
 			request.setAttribute("lists", lists); // shopping information

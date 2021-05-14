@@ -21,7 +21,7 @@
 							Good <span>Drink</span> for Good <span>Moments</span>.
 						</h1>
 						<p>
-							<a href="<%=contextPath%>/product/product.jsp" class="btn btn-primary py-2 px-4">Shop Now</a>
+							<a href="<%=Noform%>prprList" class="btn btn-primary py-2 px-4">Shop Now</a>
 						</p>
 					</div>
 				</div>
