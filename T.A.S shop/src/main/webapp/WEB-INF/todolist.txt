@@ -6,10 +6,10 @@ meList=shopping.member.controller.MemberListController
 meInsert=shopping.member.controller.MemberInsertController
 meLogout=shopping.member.controller.MemberLogoutController
 meIdcheck=shopping.member.controller.MemberIdcheckController
-meZipcheck=shopping.member.controller.MemberZipcheckController
 meDetailView=shopping.member.controller.MemberDetailViewController
 meUpdate=shopping.member.controller.MemberUpdateController
 meDelete=shopping.member.controller.MemberDeleteController
+meLogincheck=shopping.member.controller.MemberLogincheckController
 ### Board Section ######################################################
 boList=shopping.board.controller.BoardListController
 boInsert=shopping.board.controller.BoardInsertController
@@ -36,3 +36,7 @@ mallMyCart=shopping.mall.controller.MallMyCartController
 #list.com=shopping.comment.controller.CommentListController
 #insert.com=shopping.comment.controller.CommentInsertController
 #delete.com=shopping.comment.controller.CommentDeleteController
+### Review Section ######################################################
+reviewInsert=shopping.review.controller.ReviewInsertController
+#reviewDelete=shopping.review.controller.ReviewDeleteController
+#reviewUpdate=shopping.review.controller.ProductListController

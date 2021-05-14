@@ -80,21 +80,25 @@
 								</div>
 								
 								<div class="form-input">
-									<label for="zipcode">Zipcode</label>
-									<div class="left">
-										<input type="text" name="fakezipcode" id="fakezipcode" readonly="readonly"" value="${loginfo.zipcode}"/>
-										<input type="hidden" name="zipcode" id="zipcode" value="${loginfo.zipcode}"/>
+									<label class="control-label required" for="zipcode">Zipcode</label>
+									<div class="form-inline">
+										<input type="text" id="zipcode" name="zipcode" placeholder="우편번호" readonly="readonly">
+									</div>
+									<div class="button">
+										<input type="button" onclick="zipfind();" value="우편번호 찾기">
 									</div>
 								</div>
 								
 								<div class="form-input">
-									<label for="address1">Address1</label> 
-									<input type="text" name="fakeaddress1" id="fakeaddress1" readonly="readonly" value="${loginfo.address1}"/>
-									<input type="hidden" name="address1" id="address1" value="${loginfo.address1}"/>
+									<label class="required" for="address1">Address1</label>
+										<input type="text" id="roadaddress" name="roadaddress" placeholder="도로명주소" readonly="readonly">	
+										<input type="text" id="address1" name="address1" placeholder="지번주소" readonly="readonly">
+										<span id="guide" style="color:#999;display:none"></span>
 								</div>
 								<div class="form-input">
-									<label for="address2">Address2</label> 
-									<input type="text" name="address2" id="address2" value="${loginfo.address2}" readonly="readonly" />
+									<label class="required" for="address2">Address2</label>
+										<input type="text" id="address2" name="address2" placeholder="상세주소" readonly="readonly">
+										<input type="text" id="extraaddress" name="extraaddress" placeholder="참고항목" readonly="readonly">
 								</div>
 
 								<div class="form-input">

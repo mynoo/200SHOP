@@ -129,7 +129,15 @@ h4{
 							<td width="25%" align="center">입고 일자</td>
 							<td width="75%" align="left">${bean.date}</td>
 						</tr>
+						<a href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}"">리뷰 등록하기</a>
 					</table>
+					
+						
+					
+					
+					
+					
+					
 				</div>
 			</div>
 		</div>

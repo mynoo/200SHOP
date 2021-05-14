@@ -15,7 +15,7 @@ public class ProductDetailViewController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-//		String pname = request.getParameter("pname");
+		String pname = request.getParameter("pname");
 		
 		int pno = Integer.parseInt(request.getParameter("pno"));
 		ProductDao dao = new ProductDao();
@@ -36,7 +36,6 @@ public class ProductDetailViewController extends SuperClass {
 		
 		if (bean == null) {
 			new ProductListController().doGet(request, response);
-			System.out.println("널값들어옴");
 			
 		} else {
 			request.setAttribute("bean", bean);

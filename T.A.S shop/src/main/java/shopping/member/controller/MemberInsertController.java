@@ -1,7 +1,6 @@
 package shopping.member.controller;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
@@ -17,55 +16,7 @@ public class MemberInsertController extends SuperClass {
 	private Member bean = null ;
 	
 	@Override
-	public boolean validate(HttpServletRequest request) {
-		boolean isCheck = true ;
-		// 유효성 검사 수행
-		if (bean.getId().length() < 4 || bean.getId().length() > 10) {
-			request.setAttribute(super.PREFIX + "id", "아이디는 4자리 이상 10자리 이하이어야 합니다.");
-			isCheck = false ;
-		}
-		if (bean.getName().length() < 2 || bean.getName().length() > 10) {
-			request.setAttribute(super.PREFIX + "name", "이름은(는) 2자리 이상 10자리 이하이어야 합니다.");
-			isCheck = false ;
-		}
-		if (bean.getPassword().length() < 4 || bean.getPassword().length() > 10) {
-			request.setAttribute(super.PREFIX + "password", "비밀 번호는 4자리 이상 10자리 이하이어야 합니다.");
-			isCheck = false ;
-		}
-		if (bean.getGender() == null ) {
-			request.setAttribute(super.PREFIX + "gender", "성별은 반드시 체크가 되어야 합니다.");
-			isCheck = false ;
-		}
-		
-		// 날짜 형식은 yyyy/mm/dd 또는 yyyy-mm-dd 
-		String regex = "\\d{4}[-/]\\d{2}[-/]\\d{2}" ;
-		
-		if (bean.getBirth() == null) {
-			bean.setBirth("");
-		}
-		
-		boolean result = Pattern.matches(regex, bean.getBirth()) ;
-		if (result == false) {
-			request.setAttribute(super.PREFIX + "birth", "생일은 yyyy/mm/dd 또는 yyyy-mm-dd으로 입력해 주셔야 합니다.");
-			isCheck = false ;
-		}
-		
-		if (bean.getZipcode() == null || bean.getZipcode() == "" ) {
-			request.setAttribute(super.PREFIX + "zipcode", "우편 번호는 필수 입력 사항입니다.");
-			isCheck = false ;
-		}
-		
-		if (bean.getPhonenumber().length() < 9 ||bean.getPhonenumber().length() < 11 ) {
-			request.setAttribute(super.PREFIX + "phonenumber", "핸드폰 번호는 '-' 포함 9글자 이상 11글자 이하로 입력하세요");
-		}
-		
-		return isCheck ;
-	}
-	
-	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("추가 페이지");
 		
 		bean = new Member(); 
 		
@@ -79,6 +30,8 @@ public class MemberInsertController extends SuperClass {
 		bean.setName(request.getParameter("name"));
 		bean.setPassword(request.getParameter("password"));
 		bean.setPhonenumber(request.getParameter("phonenumber"));
+		bean.setExtraaddress(request.getParameter("extraaddress"));
+		bean.setRoadaddress(request.getParameter("roadaddress"));
 		
 		if (request.getParameter("point") == null || request.getParameter("point").equals("")) {
 			bean.setPoint(0);	
@@ -105,6 +58,75 @@ public class MemberInsertController extends SuperClass {
 			String gotopage = "/member/mInsert.jsp" ;
 			super.GotoPage(gotopage);
 		}		
+	}
+	
+	@Override
+	public boolean validate(HttpServletRequest request) {
+		boolean isCheck = true ;
+		// 유효성 검사 수행
+		if (bean.getId().length() < 4 || bean.getId().length() > 10) {
+			request.setAttribute(super.PREFIX + "id", "아이디는 4자리 이상 10자리 이하이어야 합니다.");
+			isCheck = false ;
+		}
+		
+//		System.out.println("id : " + isCheck);
+		
+		if (bean.getName().length() < 2 || bean.getName().length() > 10) {
+			request.setAttribute(super.PREFIX + "name", "이름은(는) 2자리 이상 10자리 이하이어야 합니다.");
+			isCheck = false ;
+		}
+		
+//		System.out.println("name : " + isCheck);
+		
+		if (bean.getPassword().length() < 4 || bean.getPassword().length() > 10) {
+			request.setAttribute(super.PREFIX + "password", "비밀 번호는 4자리 이상 10자리 이하이어야 합니다.");
+			isCheck = false ;
+		}
+		
+//		System.out.println("password : " + isCheck);
+		
+		if (bean.getGender() == null ) {
+			request.setAttribute(super.PREFIX + "gender", "성별은 반드시 체크가 되어야 합니다.");
+			isCheck = false ;
+		}
+		
+//		System.out.println("gender : " + isCheck);
+		
+		// 날짜 형식은 yyyy/mm/dd 또는 yyyy-mm-dd 
+		String regex = "\\d{4}[-/]\\d{2}[-/]\\d{2}" ;
+		
+		if (bean.getBirth() == null) {
+			bean.setBirth("");
+		}
+		
+		boolean result = Pattern.matches(regex, bean.getBirth()) ;
+		if (result == false) {
+			request.setAttribute(super.PREFIX + "birth", "생일은 yyyy/mm/dd 또는 yyyy-mm-dd으로 입력해 주셔야 합니다.");
+			isCheck = false ;
+		}
+		
+//		System.out.println("birth : " + isCheck);
+		
+		if (bean.getZipcode() == null || bean.getZipcode() == "" ) {
+			request.setAttribute(super.PREFIX + "zipcode", "우편 번호는 필수 입력 사항입니다.");
+			isCheck = false ;
+		}
+		
+//		System.out.println("zipcode : " + isCheck);
+		
+		if (bean.getPhonenumber().length() < 9 ||bean.getPhonenumber().length() < 11 ) {
+			request.setAttribute(super.PREFIX + "phonenumber", "핸드폰 번호는 9글자 이상 11글자 이하로 입력하세요");
+		}
+		
+//		System.out.println("phonenumber : " + isCheck);
+		
+		if (bean.getEmail() == null || bean.getZipcode() == "") {
+			request.setAttribute(super.PREFIX + "email", "이메일은 필수 입력 사항입니다.");
+		}
+		
+//		System.out.println("email : " + isCheck);
+		
+		return isCheck ;
 	}
 	
 	@Override
