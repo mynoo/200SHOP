@@ -34,3 +34,7 @@ prUpdate=shopping.product.controller.ProductUpdateController
 #list.com=shopping.comment.controller.CommentListController
 #insert.com=shopping.comment.controller.CommentInsertController
 #delete.com=shopping.comment.controller.CommentDeleteController
+### Review Section ######################################################
+reviewInsert=shopping.review.controller.ReviewInsertController
+#reviewDelete=shopping.review.controller.ReviewDeleteController
+#reviewUpdate=shopping.review.controller.ProductListController
