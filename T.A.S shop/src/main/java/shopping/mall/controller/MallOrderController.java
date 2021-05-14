@@ -1,7 +1,7 @@
 package shopping.mall.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,12 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
-import shopping.common.model.MyCartList;
 import shopping.mall.model.MallDao;
 import shopping.mall.model.Order;
 import shopping.member.controller.MemberLoginController;
 import shopping.member.model.Member;
-import shopping.product.controller.ProductListController;
+import shopping.product.controller.ProductPrListController;
 
 public class MallOrderController extends SuperClass {
 	@Override
@@ -33,10 +32,10 @@ public class MallOrderController extends SuperClass {
 			if (lists.size() == 0) {
 				String message = "이전 쇼핑 내역이 존재하지 않습니다." ;
 				super.setErrorMessage(message); 
-				new ProductListController().doGet(request, response);
+				new ProductPrListController().doGet(request, response);
 			}else {
 				request.setAttribute("lists", lists);
-				String gotopage = "/mall/shopList.jsp" ;
+				String gotopage = "/order/order.jsp" ;
 				super.GotoPage(gotopage);	
 			}
 		}

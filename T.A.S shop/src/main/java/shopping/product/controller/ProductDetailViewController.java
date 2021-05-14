@@ -17,10 +17,10 @@ public class ProductDetailViewController extends SuperClass {
 		
 		String pname = request.getParameter("pname");
 		
-		int pno = Integer.parseInt(request.getParameter("pno")) ;
+		int pno = Integer.parseInt(request.getParameter("pno"));
 		ProductDao dao = new ProductDao();
 		
-		Product bean = dao.SelectDataByPk(pno) ; 
+		Product bean = dao.SelectDataByPk(pno);
 		
 		System.out.println("pno : " + bean.getPno());
 		System.out.println("alcohol : " + bean.getAlcohol());
