@@ -85,14 +85,13 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
-				<a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a href="<%=Noform%>mallOrder" class="btn-cart dropdown-toggle dropdown-toggle-split">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
-						<small></small>
+						<small>10</small>
 					</div>
 				</a>
-				<div class="dropdown-menu dropdown-menu-right">
+				<%-- <div class="dropdown-menu dropdown-menu-right">
 					<div class="dropdown-item d-flex align-items-start" href="#">
 						<div class="img"
 							style="background-image: url(<%=contextPath%>/images/prod-1.jpg);"></div>
@@ -128,7 +127,7 @@
 						href="<%=contextPath%>/order/order.jsp"> View All 
 						<span class="ion-ios-arrow-round-forward"></span>
 					</a>
-				</div>
+				</div> --%>
 			</div>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -143,7 +142,7 @@
 						<a href="<%=Noform%>main" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=contextPath%>/product/product.jsp" class="nav-link">Products</a>
+						<a href="<%=Noform%>prprList" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=contextPath%>/board/board.jsp" class="nav-link">Boards</a>

@@ -1,6 +1,7 @@
 package shopping.mall.controller;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
-import shopping.common.model.MyCartList;
 import shopping.common.model.ShoppingInfo;
 import shopping.member.controller.MemberLoginController;
 import shopping.product.controller.ProductListController;
@@ -55,16 +55,13 @@ public class MallListController extends SuperClass {
 					// shopInfo : 상품 1개에 대한 정보를 저장하기 위한 클래스
 					ShoppingInfo shopInfo = new ShoppingInfo() ;
 					
-					int point = bean.getPoint() ;
 					int price = bean.getPrice() ;
 					
 					totalAmount += qty * price ;
-					totalPoint += qty * point ; 
 					
 					shopInfo.setImage(bean.getImage());
-					shopInfo.setPname(bean.getName());
+					shopInfo.setPname(bean.getPname());
 					shopInfo.setPnum(pnum);
-					shopInfo.setPoint(point);
 					shopInfo.setPrice(price);
 					shopInfo.setQty(qty);
 					
