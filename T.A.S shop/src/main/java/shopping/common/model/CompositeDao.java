@@ -71,10 +71,6 @@ public class CompositeDao extends SuperDao {
             e2.printStackTrace();
          }
       }
-
       return lists;
-
    }
-
-
 }
