@@ -1,7 +1,6 @@
 package shopping.mall.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
-import shopping.common.model.MyCartList;
 import shopping.mall.model.MallDao;
 import shopping.mall.model.Order;
 import shopping.member.controller.MemberLoginController;
@@ -26,7 +24,7 @@ public class MallOrderController extends SuperClass {
 		if (loginfo == null) {
 			new MemberLoginController().doGet(request, response);
 			
-		} else {			
+		} else {
 			MallDao dao = new MallDao();			
 			List<Order> lists = dao.OrderMall(loginfo.getId()) ;
 			
@@ -42,10 +40,3 @@ public class MallOrderController extends SuperClass {
 		}
 	}	
 }
-
-//String id = request.getParameter("id") ;
-//int no = Integer.parseInt(request.getParameter("no")) ;
-//
-//MyCartList mycart = new MyCartList(); 
-//
-//

@@ -42,7 +42,7 @@ public class ProductListController extends SuperClass {
 								url, 
 								parameters.getMode(), 
 								parameters.getKeyword()) ;	 	
-		    
+		
 		List<Product> lists = dao.SelectDataList(
 					pageInfo.getBeginRow(), 
 					pageInfo.getEndRow(), 

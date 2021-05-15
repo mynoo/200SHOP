@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.print.attribute.standard.MediaSize.Other;
+
 import shopping.common.model.SuperDao;
 
 public class MemberDao extends SuperDao {
@@ -381,4 +383,5 @@ public Member SelectData(String id, String password) {
 		return cnt ;
 	}
 
+	
 }

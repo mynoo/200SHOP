@@ -173,7 +173,7 @@ form.form-inline {
 				}
 			});	
 			/* 이전에 넣었던 값 그대로 보존 */
-			$('#keyword').val( '${pageInfo.keyword}' ) ;		
+			$('#keyword').val( '${pageInfo.keyword}');
 		</script>	
 <jsp:include page="../common/footer.jsp" />
 </body>

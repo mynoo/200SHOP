@@ -29,7 +29,10 @@ prUpdate=shopping.product.controller.ProductUpdateController
 #mallCalculate=shopping.mall.controller.MallCalculateController
 #mallDelete=shopping.mall.controller.MallDeleteController
 #mallOrder=shopping.mall.controller.MallOrderController
-#mallDetail=shopping.mall.controller.MallDetailController
+mallDetail=shopping.mall.controller.MallDetailController
+### OtherAddress Section #################################################
+otheraddrList=shopping.otheraddress.controller.OtheraddressListController
+otheraddrInsert=shopping.otheraddress.controller.OtheraddressInsertController
 ### Comment Section ######################################################
 #list.com=shopping.comment.controller.CommentListController
 #insert.com=shopping.comment.controller.CommentInsertController
