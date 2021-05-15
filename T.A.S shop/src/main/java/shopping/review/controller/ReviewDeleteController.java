@@ -17,7 +17,7 @@ public class ReviewDeleteController extends SuperClass{
 		super.doGet(request, response);
 		
 		int vnum = Integer.parseInt(request.getParameter("vnum")) ;
-		
+		int pno = Integer.parseInt(request.getParameter("pno")) ;
 		int cnt = -99999 ;
 		
 		ReviewDao dao = new ReviewDao();

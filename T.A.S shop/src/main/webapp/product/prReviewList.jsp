@@ -59,9 +59,15 @@ form.form-inline {
 							<td>${bean.vcomment}</td>
 							<td>${bean.inputdate}</td>
 					<td>
-							<a href="<%=Noform%>reviewDelete&vnum=${bean.vnum}" onclick="return confirm('삭제하시겠습니까?');">
+					<form action="<%=YesForm%>" class="form-inline" role="form"	method="get">
+							<input type="hidden" name="command" value="reviewDelete">
+							<input type="hidden" name="vnum" value="${bean.vnum}">
+							<input type="hidden" name="pno" value="${bean.pno}">
+							<button type="submit" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?');">삭제</button>		
+					</form>
+							<%-- <a href="<%=Noform%>reviewDelete&vnum=${bean.vnum}" onclick="return confirm('삭제하시겠습니까?');">
 								Delete
-							</a>
+							</a> --%>
 					</td>
 					<td>
 							<a href="<%=Noform%>prUpdate&pno=${bean.pno}">
