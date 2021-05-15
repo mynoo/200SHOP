@@ -18,14 +18,15 @@
                 <form method="POST" class="p-5 bg-light" action="<%=YesForm%>" enctype="multipart/form-data" >
                 
                  <input type="hidden" id="command" name="command" value="reviewInsert">
+                  <input type="hidden" name="pno" value="${bean.pno}">
                   
                    <div class="form-group">
                     <label for="name">Pno</label>
-                    <input type="text" class="form-control" name="pno" id="pno" />
+                    <input type="text" class="form-control" name="pno" id="pno" value="${bean.pno}" readonly/>
                   </div>
                   <div class="form-group">
                     <label for="name">ID</label>
-                    <input type="text" class="form-control" name="mid" id="mid"  />
+                    <input type="text" class="form-control" name="mid" id="mid" value="${loginfo.id}" readonly />
                   </div>
                    <div class="form-group">
                     <label for="message">Message</label>

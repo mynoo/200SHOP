@@ -26,17 +26,19 @@ prDelete=shopping.product.controller.ProductDeleteController
 prUpdate=shopping.product.controller.ProductUpdateController
 ### Mall Section ######################################################
 #mallInsert=shopping.mall.controller.MallInsertController
-mallList=shopping.mall.controller.MallListController
+#mallList=shopping.mall.controller.MallListController
 #mallCalculate=shopping.mall.controller.MallCalculateController
 #mallDelete=shopping.mall.controller.MallDeleteController
-mallOrder=shopping.mall.controller.MallOrderController
-mallDetail=shopping.mall.controller.MallDetailController
-mallMyCart=shopping.mall.controller.MallMyCartController
+#mallOrder=shopping.mall.controller.MallOrderController
+#mallDetail=shopping.mall.controller.MallDetailController
+#mallMyCart=shopping.mall.controller.MallMyCartController
 ### Comment Section ######################################################
 #list.com=shopping.comment.controller.CommentListController
 #insert.com=shopping.comment.controller.CommentInsertController
 #delete.com=shopping.comment.controller.CommentDeleteController
 ### Review Section ######################################################
 reviewInsert=shopping.review.controller.ReviewInsertController
-#reviewDelete=shopping.review.controller.ReviewDeleteController
+reviewMain=shopping.review.controller.ReviewMainController
+reviewList=shopping.review.controller.ReviewListController
+reviewDelete=shopping.review.controller.ReviewDeleteController
 #reviewUpdate=shopping.review.controller.ProductListController

@@ -129,8 +129,18 @@ h4{
 							<td width="25%" align="center">입고 일자</td>
 							<td width="75%" align="left">${bean.date}</td>
 						</tr>
-						<a href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}"">리뷰 등록하기</a>
+						
 					</table>
+					<form action="<%=YesForm%>" class="form-inline" role="form"	method="post">
+							<input type="hidden" name="command" value="reviewMain">
+							<input type="hidden" name="pno" value="${bean.pno}">
+							<button type="submit" class="btn btn-danger">리뷰 등록</button>		
+					</form>
+					<form action="<%=YesForm%>" class="form-inline" role="form"	method="get">
+							<input type="hidden" name="command" value="reviewList">
+							<input type="hidden" name="pno" value="${bean.pno}">
+							<button type="submit" class="btn btn-danger">리뷰 보기</button>		
+					</form>
 					
 						
 					
