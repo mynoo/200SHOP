@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="./../common/common.jsp"%>
-<%
 /* position for grid system */
 /* int offset = 2 ;
 int mywidth = twelve - 2 * offset ;
@@ -33,9 +32,6 @@ int rightside = twelve - leftside ; */
 	width: 1400px;
 	margin: 0 auto;
 }
-.btn{
-	justify-content: flex-end;
-}
 .btnbox2{
 	text-align: right;
 	margin: 0 auto 20px;
@@ -48,6 +44,41 @@ h4{
 }
 .form-control-sm{
 	margin: 0 10px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+td {
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+h4 {
+	text-align: center;
+}
+ul.pagination{
+	justify-content: center;
+}
+ul.pagination li {
+    padding: 3;
+}
+form.form-inline {
+    justify-content: center;
+}
+
+.hidden-col{display: none;}
+#btn3 {
+    margin: 20px auto 0;
+}
+form.form-inline {
+    margin: auto;
 }
 </style>
 </head>
@@ -121,29 +152,13 @@ h4{
 											data-placement="auto top"
 											data-content="구매하시고자 하는 수량을 정수로 입력하세요.">
 									</div>
-									<a href="${Noform}MallMyCart"><button type="submit" class="btn btn-primary">주문</button></a>
+									<a href="${Noform}MallMyCart"><button type="submit" class="btn btn-primary btn2">주문</button></a>
 								</form>
 							</td>
 						</tr>
 						<tr>
 							<td width="25%" align="center">입고 일자</td>
 							<td width="75%" align="left">${bean.date}</td>
-						</tr>
-						<tr>
-						<td>
-						<form action="<%=YesForm%>" class="form-inline" role="form"	method="post">
-							<input type="hidden" name="command" value="reviewMain">
-							<input type="hidden" name="pno" value="${bean.pno}">
-							<button type="submit" class="btn btn-danger">리뷰 등록</button>		
-					</form>
-					</td>
-					<td>
-					<form action="<%=YesForm%>" class="form-inline" role="form"	method="get">
-							<input type="hidden" name="command" value="reviewList">
-							<input type="hidden" name="pno" value="${bean.pno}">
-							<button type="submit" class="btn btn-success">리뷰 보기</button>		
-					</form>
-					</td>
 						</tr>
 					</table>
 				</div>
@@ -156,6 +171,63 @@ h4{
 			</button>
 		</div>
 	</div>
+	
+	
+	
+	<section class="ftco-section">
+		<div class="container">
+			<table>
+				<thead align="center">
+					<tr>
+						<th>회원 아이디</th>
+						<th>코멘트</th>
+						<th>작성 날짜</th>
+					</tr>
+				</thead>
+				<tbody>
+				<c:forEach var="bean" items="${requestScope.lists}">
+				<tr>
+							<%-- <td class="hidden-col">${bean.vnum}</td> --%>
+							<td>${bean.mid}</td>
+							<td>${bean.vcomment}</td>
+							<td>${bean.inputdate}</td>
+					<td>
+					<form action="<%=YesForm%>" class="form-inline" role="form"	method="get">
+							<input type="hidden" name="command" value="reviewDelete">
+							<input type="hidden" name="vnum" value="${bean.vnum}">
+							<input type="hidden" name="pno" value="${bean.pno}">
+							<button type="submit" class="btn btn-danger" id="btn2" onclick="return confirm('삭제하시겠습니까?');">삭제</button>		
+					</form>
+					</td>
+					<td>
+							<form action="<%=YesForm%>" class="form-inline" role="form"	method="get">
+							<input type="hidden" name="command" value="reviewUpdate">
+							<input type="hidden" name="vnum" value="${bean.vnum}">
+							<button type="submit" class="btn btn-danger" id="btn2" onclick="return confirm('수정하시겠습니까?');">수정</button>		
+							</form>
+					</td>
+				</tr>
+				</c:forEach>		
+				</tbody>
+			</table>
+			<form action="<%=YesForm%>" role="form"	method="post">
+				<input type="hidden" name="command" value="reviewMain">
+				<input type="hidden" name="pno" value="${bean.pno}">
+				<input type="submit" class="btn btn-danger" id="btn3" style="float: right;" value="리뷰 등록">		
+			</form>
+			<%-- <div class="row mt-5">
+				<div class="col text-center">
+					<div class="block-27">
+						<footer>${pageInfo.pagingHtml}</footer>
+					</div>
+				</div>
+			</div> --%>
+		</div>
+	</section>
+	
+	
+	
+	
 	<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

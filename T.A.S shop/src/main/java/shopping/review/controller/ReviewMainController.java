@@ -54,7 +54,7 @@ public class ReviewMainController extends SuperClass{
 //		
 //		new ProductDetailViewController().doGet(request, response);
 		
-		String gotopage = "/product/prReview.jsp" ;
+		String gotopage = "/review/prReview.jsp" ;
 		super.GotoPage(gotopage);
 		
 	}

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import shopping.board.model.Board;
 import shopping.common.model.SuperDao;
 import shopping.product.model.Product;
 
@@ -162,6 +163,103 @@ public class ReviewDao extends SuperDao {
 				}
 			}
 			return cnt ;
+	}
+
+
+
+
+
+
+
+
+
+
+
+	public Review SelectDataByPk(int vnum) {
+		PreparedStatement pstmt = null ;
+		ResultSet rs = null ;	
+		
+		String sql = " select * from review " ;
+		sql += " where vnum = ? " ;
+		
+		Review bean = null ;
+		try {
+			if( this.conn == null ){ this.conn = this.getConnection() ; }			
+			pstmt = this.conn.prepareStatement(sql) ;			
+			
+			pstmt.setInt(1, vnum);
+			
+			rs = pstmt.executeQuery() ; 
+			
+			if ( rs.next() ) { 
+				bean = new Review(); 
+				
+				bean.setPno(rs.getInt("pno"));
+				bean.setMid(rs.getString("mid"));
+				bean.setVcomment(rs.getString("vcomment"));
+				bean.setVnum(vnum);
+				bean.setInputdate(rs.getString("inputdate"));
+				
+			}
+			
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		} finally{
+			try {
+				if( rs != null){ rs.close(); } 
+				if( pstmt != null){ pstmt.close(); } 
+				this.closeConnection() ;
+			} catch (Exception e2) {
+				e2.printStackTrace(); 
+			}
+		} 		
+		return bean  ;
+	}
+
+
+
+
+
+
+
+
+
+
+
+	public int UpdateData(Review bean) {
+		String sql = " update review set vcomment=? " ;
+		sql += " where vnum = ? " ;
+		
+		PreparedStatement pstmt = null ;
+		int cnt = -99999 ;
+		try {
+			if( conn == null ){ super.conn = super.getConnection() ; }
+			conn.setAutoCommit( false );
+			pstmt = super.conn.prepareStatement(sql) ;
+
+			pstmt.setString(1, bean.getVcomment());
+			pstmt.setInt(2, bean.getVnum());
+						
+			cnt = pstmt.executeUpdate() ; 
+			conn.commit(); 
+		} catch (Exception e) {
+			SQLException err = (SQLException)e ;			
+			cnt = - err.getErrorCode() ;			
+			e.printStackTrace();
+			try {
+				conn.rollback(); 
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		} finally{
+			try {
+				if( pstmt != null ){ pstmt.close(); }
+				super.closeConnection(); 
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return cnt ;
 	}
 
 	

@@ -60,7 +60,7 @@ public class ReviewListController extends SuperClass {
 //		request.setAttribute("parameters", parameters.toString());
 		
 		
-		String gotopage = "/product/prReviewList.jsp" ;
+		String gotopage = "/product/prDetailView.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override

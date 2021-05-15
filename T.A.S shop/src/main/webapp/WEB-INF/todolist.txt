@@ -41,4 +41,4 @@ reviewInsert=shopping.review.controller.ReviewInsertController
 reviewMain=shopping.review.controller.ReviewMainController
 reviewList=shopping.review.controller.ReviewListController
 reviewDelete=shopping.review.controller.ReviewDeleteController
-#reviewUpdate=shopping.review.controller.ProductListController
+reviewUpdate=shopping.review.controller.ReviewUpdateController
