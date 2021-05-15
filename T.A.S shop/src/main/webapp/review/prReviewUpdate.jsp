@@ -15,16 +15,17 @@
 	<jsp:include page="../common/generalhead.jsp" />
  			  <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">리뷰 수정</h3>
-                <form method="post" class="p-5 bg-light" action="<%=YesForm%>" enctype="multipart/form-data" >
+                <form method="post" class="p-5 bg-light" action="<%=YesForm%>" >
                 
                  <input type="hidden" name="command" value="reviewUpdate">
-                  <input type="hidden" name="mid" value="${loginfo.id}">
-                  <input type="hidden" name="vnum" value="${bean.vnum}">
-                  <input type="hidden" name="pno" value="${bean.pno}">
                   
                    <div class="form-group">
                     <label for="name">Pno</label>
                     <input type="text" class="form-control" name="pno" id="pno" value="${bean.pno}" readonly/>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">vnum</label>
+                    <input type="text" class="form-control" name="vnum" id="vnum" value="${bean.vnum}" readonly />
                   </div>
                   <div class="form-group">
                     <label for="name">ID</label>

@@ -19,8 +19,8 @@ public class ProductDetailViewController extends SuperClass {
 		super.doGet(request, response);
 		
 		String pname = request.getParameter("pname");
-		
-		int pno = Integer.parseInt(request.getParameter("pno"));
+		System.out.println("pno = " + request.getParameter("pno"));
+		int pno = Integer.parseInt(request.getParameter("pno"));  
 		ProductDao dao = new ProductDao();
 		
 		Product bean = dao.SelectDataByPk(pno);

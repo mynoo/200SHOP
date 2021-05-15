@@ -11,6 +11,7 @@ import com.oreilly.servlet.MultipartRequest;
 import shopping.board.controller.BoardDetailViewController;
 import shopping.common.controller.SuperClass;
 import shopping.product.controller.ProductDetailViewController;
+import shopping.product.controller.ProductListController;
 import shopping.review.model.Review;
 import shopping.review.model.ReviewDao;
 
@@ -35,14 +36,19 @@ public class ReviewUpdateController extends SuperClass {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
-		int vnum = Integer.parseInt(request.getParameter("vnum")) ;
-		System.out.println("vnum : " +  vnum);
+		
+		
 		Review bean = new Review() ;
 		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
-		bean.setVcomment(multi.getParameter("vcomment"));
-//		bean.setVnum( Integer.parseInt(request.getParameter("vnum")) );
+
+		bean.setVnum(Integer.parseInt(request.getParameter("vnum")));
 		bean.setPno(Integer.parseInt(request.getParameter("pno")));
-		bean.setMid(request.getParameter("mid"));
+		bean.setMid(request.getParameter("mid"));		
+		bean.setVcomment(request.getParameter("vcomment"));
+		bean.setInputdate(request.getParameter("inputdate"));
+		
+		String pno = request.getParameter("pno");
+		
 		
 		System.out.println("bean information");
 		System.out.println(bean.toString()); 
@@ -50,12 +56,11 @@ public class ReviewUpdateController extends SuperClass {
 			ReviewDao dao = new ReviewDao();
 			int cnt = - 999999 ;
 			cnt = dao.UpdateData(bean) ;
-			
-			if(cnt >= 0 )
+			if(cnt >= 1 )
 			{
 				System.out.println("board update validation check success");
-				String gotopage = "/product/prDetailView.jsp" ;
-				super.GotoPage(gotopage);
+				request.setAttribute("pno", pno);
+				new ProductDetailViewController().doGet(request, response);
 			}
 			else
 			{
