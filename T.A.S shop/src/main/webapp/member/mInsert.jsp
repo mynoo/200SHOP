@@ -176,10 +176,8 @@
 			
 								<div class="form-input">
 									<label class="control-label required" for="zipcode">Zipcode</label>
-									<span class="err">${errzipcode}</span>
-									<div class="form-control">
 										<input type="text" id="zipcode" name="zipcode" placeholder="우편번호" readonly="readonly">
-									</div>
+									<span class="err">${errzipcode}</span>
 									<div class="button">
 										<input type="button" onclick="zipfind();" value="우편번호 찾기">
 									</div>

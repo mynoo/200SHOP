@@ -52,7 +52,7 @@
 					<div class="reg">
 						<p class="mb-0">
 							<c:if test="${whologin == 0}">
-								<a href="<%=Noform%>meInsert" class="mr-2">Sign Up</a>
+								<a href="<%=Noform%>regForm" class="mr-2">Sign Up</a>
 								<a href="<%=Noform%>meLogin">Log In</a>
 							</c:if>
 							<c:if test="${whologin == 2}">

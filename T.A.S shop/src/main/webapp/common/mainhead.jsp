@@ -33,7 +33,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 d-flex align-items-center">
-					<p class="mb-0 phone pl-md-2">
+					<p class="mb-0 phone pl-md-2" style="color: white;">
 						<span class="fa fa-phone mr-1"></span>
 						+82 02-3486-9600
 						<span class="fa fa-paper-plane mr-1"></span>
@@ -64,7 +64,7 @@
 					<div class="reg">
 						<p class="mb-0">
 							<c:if test="${whologin == 0}">
-								<a href="<%=Noform%>meInsert" class="mr-2">Sign Up</a>
+								<a href="<%=Noform%>regForm" class="mr-2">Sign Up</a>
 								<a href="<%=Noform%>meLogin" class="mr-2">Log In</a>
 							</c:if>
 							<c:if test="${whologin != 0}">
