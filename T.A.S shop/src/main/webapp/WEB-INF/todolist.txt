@@ -20,7 +20,6 @@ boUpdate=shopping.board.controller.BoardUpdateController
 boReply=shopping.board.controller.BoardReplyController
 ### Product Section ######################################################
 prList=shopping.product.controller.ProductListController
-prprList=shopping.product.controller.ProductPrListController
 prDetailView=shopping.product.controller.ProductDetailViewController
 prInsert=shopping.product.controller.ProductInsertController
 prDelete=shopping.product.controller.ProductDeleteController
@@ -31,8 +30,10 @@ prUpdate=shopping.product.controller.ProductUpdateController
 #mallCalculate=shopping.mall.controller.MallCalculateController
 #mallDelete=shopping.mall.controller.MallDeleteController
 #mallOrder=shopping.mall.controller.MallOrderController
-#mallDetail=shopping.mall.controller.MallDetailController
-#mallMyCart=shopping.mall.controller.MallMyCartController
+mallDetail=shopping.mall.controller.MallDetailController
+### OtherAddress Section #################################################
+otheraddrList=shopping.otheraddress.controller.OtheraddressListController
+otheraddrInsert=shopping.otheraddress.controller.OtheraddressInsertController
 ### Comment Section ######################################################
 #list.com=shopping.comment.controller.CommentListController
 #insert.com=shopping.comment.controller.CommentInsertController
