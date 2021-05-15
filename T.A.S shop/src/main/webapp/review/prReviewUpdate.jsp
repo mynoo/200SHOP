@@ -18,9 +18,9 @@
                 <form method="post" class="p-5 bg-light" action="<%=YesForm%>" enctype="multipart/form-data" >
                 
                  <input type="hidden" name="command" value="reviewUpdate">
-                  <input type="hidden" name="vnum" value="${bean.vnum}">
                   <input type="hidden" name="mid" value="${loginfo.id}">
-                  
+                  <input type="hidden" name="vnum" value="${bean.vnum}">
+                  <input type="hidden" name="pno" value="${bean.pno}">
                   
                    <div class="form-group">
                     <label for="name">Pno</label>

@@ -35,11 +35,13 @@ public class ReviewUpdateController extends SuperClass {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
+		int vnum = Integer.parseInt(request.getParameter("vnum")) ;
+		System.out.println("vnum : " +  vnum);
 		Review bean = new Review() ;
 		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
 		bean.setVcomment(multi.getParameter("vcomment"));
-		bean.setVnum(Integer.parseInt(request.getParameter("vnum")));
-		bean.setPno(Integer.parseInt(request.getParameter("vnum")));
+//		bean.setVnum( Integer.parseInt(request.getParameter("vnum")) );
+		bean.setPno(Integer.parseInt(request.getParameter("pno")));
 		bean.setMid(request.getParameter("mid"));
 		
 		System.out.println("bean information");
