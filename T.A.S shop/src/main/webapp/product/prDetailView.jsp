@@ -35,6 +35,7 @@ h4{
 .form-control-sm{
    margin: 0 10px;
 }
+
 table {
    border-collapse: collapse;
    width: 100%;
@@ -61,6 +62,7 @@ ul.pagination li {
 form.form-inline {
     justify-content: center;
 }
+
 .hidden-col{display: none;}
 #btn3 {
     margin: 20px auto 0;
