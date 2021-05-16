@@ -25,13 +25,12 @@ prInsert=shopping.product.controller.ProductInsertController
 prDelete=shopping.product.controller.ProductDeleteController
 prUpdate=shopping.product.controller.ProductUpdateController
 ### Mall Section ######################################################
-#mallInsert=shopping.mall.controller.MallInsertController
+mallInsert=shopping.mall.controller.MallInsertController
 mallList=shopping.mall.controller.MallListController
 #mallCalculate=shopping.mall.controller.MallCalculateController
-#mallDelete=shopping.mall.controller.MallDeleteController
+mallDelete=shopping.mall.controller.MallDeleteController
 mallOrder=shopping.mall.controller.MallOrderController
 mallDetail=shopping.mall.controller.MallDetailController
-mallMyCart=shopping.mall.controller.MallMyCartController
 ### Comment Section ######################################################
 #list.com=shopping.comment.controller.CommentListController
 #insert.com=shopping.comment.controller.CommentInsertController

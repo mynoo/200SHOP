@@ -6,12 +6,12 @@
 [ FONT ]*/
 
 @font-face {
-  font-family: Ubuntu-Regular;
+  font-family: 'Song Myung', serif;
   src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
 }
 
 @font-face {
-  font-family: Ubuntu-Bold;
+  font-family: 'Song Myung', serif;
   src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
 }
 

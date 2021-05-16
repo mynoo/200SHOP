@@ -2,6 +2,7 @@ package shopping.mall.controller;
 
 import java.io.IOException;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
 import shopping.common.model.ShoppingInfo;
+import shopping.mall.model.MyCart;
 import shopping.member.controller.MemberLoginController;
 import shopping.product.controller.ProductListController;
 import shopping.product.model.Product;
@@ -27,13 +29,13 @@ public class MallListController extends SuperClass {
 			new MemberLoginController().doGet(request, response);
 			
 		} else {
-			MyCartList mycart = (MyCartList)super.session.getAttribute("mycart") ;
+			MyCart mycart = (MyCart)super.session.getAttribute("mycart") ;
 			if (mycart == null) {
 				String message = "쇼핑 목록이 없어서 상품 목록 페이지로 이동합니다." ;
 				super.setErrorMessage(message);
 				
 				new ProductListController().doGet(request, response);
-			} else {
+			} else if(mycart != null){
 				Map<Integer, Integer> maplists = mycart.GetAllOrderList() ;
 				System.out.println("cart item size : " + maplists.size());
 				

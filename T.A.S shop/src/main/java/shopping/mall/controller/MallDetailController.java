@@ -2,6 +2,7 @@ package shopping.mall.controller;
 
 import java.io.IOException;
 
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
-import shopping.common.model.CompositeDao;
 import shopping.common.model.ShoppingInfo;
 import shopping.mall.model.MallDao;
 import shopping.mall.model.Order;

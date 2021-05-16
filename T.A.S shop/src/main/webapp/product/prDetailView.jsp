@@ -30,8 +30,8 @@ int rightside = twelve - leftside ; */
 	display: inline-block;
 }
 .container-wrap{
-	width: 1400px;
-	margin: 0 auto;
+	width: 1200px;
+	margin: 40 auto;
 }
 .btn{
 	justify-content: flex-end;
@@ -39,7 +39,7 @@ int rightside = twelve - leftside ; */
 .btnbox2{
 	text-align: right;
 	margin: 0 auto 20px;
-	width: 1130px;
+	width: 986px;
 }
 h4{
 	margin: 0px auto;
@@ -49,11 +49,19 @@ h4{
 .form-control-sm{
 	margin: 0 10px;
 }
+.col-lg-10 {
+    margin: auto;
+}
+th{
+	text-align: center !important;
+}
+button.btn.btn-primary {
+    margin: 0 10 0 0;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="../common/generalhead.jsp" />
-
 	<section class="hero-wrap hero-wrap-2"
 		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
 		data-stellar-background-ratio="0.5">
@@ -68,19 +76,19 @@ h4{
 								class="fa fa-chevron-right"></i></a></span> <span>Products <i
 							class="fa fa-chevron-right"></i></span>
 					</p>
-					<h2 class="mb-0 bread">Products</h2>
+					<h2 class="mb-0 bread">Product Detail View</h2>
 				</div>
 			</div>
 		</div>
 	</section>
-	<h4>Product Detail View</h4>
 	<div class="container-wrap">
 	
-		<div class="imgbox col-sm-2" >
+		<div class="imgbox col-sm-3" >
 			<table>
 				<tr>
-					<td><img src="${applicationScope.uploadedPath}/${bean.image}"
-						class="img-rounded" alt="${bean.pname}" width="200" height="200">
+					<%-- <td><img src="${applicationScope.uploadedPath}/${bean.image}" --%>
+					<td><img src="<%=contextPath%>/images/${bean.image}"
+						class="img-rounded" alt="${bean.pname}" width="350" height="400">
 					</td>
 				</tr>
 			</table>
@@ -89,48 +97,49 @@ h4{
 		<div class="panel panel-primary">
 			<div class="panel-heading"></div>
 			<div class="panel-body">
-				<div class="col-sm-2">
+				<div class="col-lg-10">
 					<table class="table table-bordered">
 						<tr>
-							<td width="25%" align="center">상품명(번호)</td>
-							<td width="75%" align="left">${bean.pname}(${bean.pno})</td>
+							<th width="40%">상품명(번호)</th>
+							<td width="60%" align="left">${bean.pname}(${bean.pno})</td>
 						</tr>
 						<tr>
-							<td width="25%" align="center">재고 수량</td>
-							<td width="75%" align="left">${bean.stock}</td>
+							<th width="40%">재고 수량</th>
+							<td width="60%" align="left">${bean.stock}</td>
 						</tr>
 						<tr>
-							<td width="25%" align="center">가격</td>
-							<td width="75%" align="left">${bean.price}</td>
+							<th width="40%">가격</th>
+							<td width="60%" align="left">${bean.price}</td>
 						</tr>
 						<tr>
-							<td width="25%" align="center">설명</td>
-							<td width="75%" align="left">${bean.content}</td>
+							<th width="40%">설명</th>
+							<td width="60%" align="left">${bean.content}</td>
 						</tr>
 						<tr>
-							<td width="25%" align="center">주문 수량</td>
-							<td width="75%" align="left">
+							<th width="40%">주문 수량</th>
+							<td width="60%" align="left">
 								<form action="<%=YesForm%>" class="form-inline" role="form"
 									method="post">
 									<input type="hidden" name="command" value="mallInsert">
-									<input type="hidden" name="pno" value="${bean.pno}"> <input
-										type="hidden" name="stock" value="${bean.stock}">
+									<input type="hidden" name="pno" value="${bean.pno}"> 
+									<input type="hidden" name="stock" value="${bean.stock}">
 									<div class="form-group">
-										<input type="number" name="qty" id="qty" class="form-control-sm"
+										<input type="number" name="qty" id="qty" class="form-control-sm" 
 											data-toggle="popover" title="수량 입력란" data-trigger="hover"
 											data-placement="auto top"
 											data-content="구매하시고자 하는 수량을 정수로 입력하세요.">
 									</div>
 									<a href="${Noform}MallMyCart"><button type="submit" class="btn btn-primary">주문</button></a>
+									<a href="${Noform}mallOrder&id=${loginfo.id}"><button type="submit" class="btn btn-primary">장바구니</button></a>
 								</form>
 							</td>
 						</tr>
 						<tr>
-							<td width="25%" align="center">입고 일자</td>
+							<th width="25%" >입고 일자</th>
 							<td width="75%" align="left">${bean.date}</td>
 						</tr>
-						<a href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}"">리뷰 등록하기</a>
 					</table>
+						<a href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}">리뷰 등록하기</a>
 					
 						
 					

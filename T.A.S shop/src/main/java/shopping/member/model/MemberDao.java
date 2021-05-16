@@ -43,8 +43,8 @@ public Member SelectData(String id, String password) {
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
 				bean.setPhonenumber(rs.getString("phonenumber"));
-				bean.setRoadaddress(rs.getString("roadaddress"));
-				bean.setExtraaddress(rs.getString("extraaddress"));
+//				bean.setRoadaddress(rs.getString("roadaddress"));
+//				bean.setExtraaddress(rs.getString("extraaddress"));
 				
 			}
 			

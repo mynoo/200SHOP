@@ -155,14 +155,14 @@ public class MallDao extends SuperDao {
 		return bean ;
 	}
 	
-	public List<Order> OrderMall(String id) {
+	public List<MyCart> OrderMall(String id) {
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;
-		String sql = " select * from orders " ;
-		sql += " where mid = ? "  ;
-		sql += " order by orderdate desc "  ; 
+		String sql = " select c.mid, c.pnum, c.pname, c.price, c.qty, c.image, p.price * c.qty as amount " ;
+		sql += " from products p inner join orders o on p.pno = o.oid inner join cart c on o.mid = c.mid " ;
+		sql += " where c.mid = ? " ;
 		
-		List<Order> lists = new ArrayList<Order>() ;
+		List<MyCart> lists = new ArrayList<MyCart>() ;
 		try {
 			if( this.conn == null ){ this.conn = this.getConnection() ; }
 			pstmt = conn.prepareStatement(sql) ;
@@ -172,14 +172,17 @@ public class MallDao extends SuperDao {
 			rs = pstmt.executeQuery() ;
 			
 			while (rs.next()) {
-				Order bean = new Order();
-				bean.setMid(rs.getString("mid"));
-				bean.setOid(rs.getInt("oid"));				
-				bean.setOrderdate(String.valueOf(rs.getDate("orderdate")));				
-				bean.setRemark(rs.getString("remark")); 
+				MyCart bean = new MyCart();
+				bean.setMid(id);
+				bean.setPnum(rs.getInt("pnum"));
+				bean.setPname(rs.getString("pname"));
+				bean.setQty(rs.getInt("qty"));
+				bean.setImage(rs.getString("image"));
+				bean.setPrice(rs.getInt("price"));
 				
-				lists.add(bean) ;				
+				lists.add(bean);				
 			}			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

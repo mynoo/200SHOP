@@ -9,7 +9,6 @@ import shopping.product.model.Product;
 public class OrderDetailDao  extends SuperDao{
 
 	public int UpdateRemark( Product bean ) {
-		// ��ǰ ��ȣ pnum�� �ش��ϴ� ��� ���� �÷� remark�� ��ǰ �̸����� �����մϴ�.
 		String sql = " update orderdetails set ";
 		sql += " remark = ? " ;
 		sql += " where pnum = ? " ; 
@@ -19,8 +18,8 @@ public class OrderDetailDao  extends SuperDao{
 			if( conn == null ){ super.conn = super.getConnection() ; }
 			conn.setAutoCommit( false );
 			pstmt = super.conn.prepareStatement(sql) ;
-			pstmt.setString(1, bean.getName());
-			pstmt.setInt(2, bean.getNum());			
+			pstmt.setString(1, bean.getPname());
+			pstmt.setInt(2, bean.getPno());			
 			cnt = pstmt.executeUpdate() ; 
 			conn.commit(); 
 		} catch (Exception e) {
@@ -53,7 +52,6 @@ public class OrderDetailDao  extends SuperDao{
 			if( conn == null ){ super.conn = super.getConnection() ; }
 			conn.setAutoCommit( false );
 			pstmt = super.conn.prepareStatement(sql) ;
-			//�����ڰ� ������ �� 2 : ? ������ ��
 			pstmt.setInt(1, bean.getOid() );
 			pstmt.setInt(2, bean.getPnum() );			
 			pstmt.setInt(3, bean.getQty() ); 
@@ -62,8 +60,6 @@ public class OrderDetailDao  extends SuperDao{
 			conn.commit(); 
 		} catch (Exception e) {
 			SQLException err = (SQLException)e ;
-			//getErrorCode() : ����Ŭ ���� ����� ����
-			//�� : not null �̸� 1400 
 			cnt = - err.getErrorCode() ;			
 			e.printStackTrace();
 			try {

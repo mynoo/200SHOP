@@ -2,12 +2,14 @@ package shopping.mall.controller;
 
 import java.io.IOException;
 
+
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
-import shopping.common.model.MyCartList;
+import shopping.mall.model.MyCart;
 import shopping.product.controller.ProductDetailViewController;
 
 public class MallInsertController extends SuperClass {
@@ -22,22 +24,22 @@ public class MallInsertController extends SuperClass {
 			String gotopage = "/member/meLoginForm.jsp" ;
 			super.GotoPage(gotopage);
 		} else {
-			int num = Integer.parseInt(request.getParameter("num")) ;
+			int pnum = Integer.parseInt(request.getParameter("pnum")) ;
 			int stock = Integer.parseInt(request.getParameter("stock")) ;
 			int qty = Integer.parseInt(request.getParameter("qty")) ;
-			
+			System.out.println("stock 주문 수량: "+  stock);
 			if (stock < qty) {
 				String message = "재고 수량이 부족합니다." ;
 				super.setErrorMessage(message);
 				new ProductDetailViewController().doGet(request, response);
 			} else {
-				MyCartList mycart = (MyCartList)super.session.getAttribute("mycart") ;
+				MyCart mycart = (MyCart)super.session.getAttribute("mycart") ;
 				if (mycart == null) {
-					mycart = new MyCartList() ;
+					mycart = new MyCart() ;
 				}
-				mycart.AddOrder(num, qty); // put into mycart
+				mycart.AddOrder(pnum, qty); // put into mycart
 				super.session.setAttribute("mycart", mycart);
-				new MallListController().doGet(request, response);
+				new MallOrderController().doGet(request, response);
 			}
 		}
 	}
