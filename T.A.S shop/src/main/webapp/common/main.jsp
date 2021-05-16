@@ -1,13 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="common.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="common.jsp"%>
 <!DOCTYPE>
 <html>
 <head>
+<style>
+.mb-4 {
+	font-family: inherit;
+}
+
+* {
+	font-family: 'Song Myung', serif;
+}
+.row.justify-content-center.pb-5 {
+    margin: 200px 0 30px 0;
+}
+#viewAll {
+    margin: 50px auto 100;
+}
+</style>
 </head>
 <body>
 
 	<jsp:include page="mainhead.jsp" />
-	
+
 	<div class="hero-wrap"
 		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
 		data-stellar-background-ratio="0.5">
@@ -21,7 +37,8 @@
 							Good <span>Drink</span> for Good <span>Moments</span>.
 						</h1>
 						<p>
-							<a href="<%=Noform%>prprList" class="btn btn-primary py-2 px-4">Shop Now</a>
+							<a href="<%=Noform%>prprList" class="btn btn-primary py-2 px-4">Shop
+								Now</a>
 						</p>
 					</div>
 				</div>
@@ -38,9 +55,8 @@
 							<span class="flaticon-support"></span>
 						</div>
 						<div class="text">
-							<h2>Online Support 24/7</h2>
-							<p>A small river named Duden flows by their place and
-								supplies it with the necessary regelialia.</p>
+							<h2>연중무휴 온라인 지원</h2>
+							<p>고객들의 편의를 위해 24시간 연중무휴 온라인 고객센터를 운영합니다.</p>
 						</div>
 					</div>
 				</div>
@@ -50,9 +66,8 @@
 							<span class="flaticon-cashback"></span>
 						</div>
 						<div class="text">
-							<h2>Money Back Guarantee</h2>
-							<p>A small river named Duden flows by their place and
-								supplies it with the necessary regelialia.</p>
+							<h2>환불 보증</h2>
+							<p>보다 확실한 품질을 보증하기 위해 조금이라도 품질에 문제가 있을 경우 환불을 보장합니다.</p>
 						</div>
 					</div>
 				</div>
@@ -62,9 +77,8 @@
 							<span class="flaticon-free-delivery"></span>
 						</div>
 						<div class="text">
-							<h2>Free Shipping &amp; Return</h2>
-							<p>A small river named Duden flows by their place and
-								supplies it with the necessary regelialia.</p>
+							<h2>무료 배송 &amp; 반품</h2>
+							<p>보다 어쩌구저쩌구 해서 고객들의 신뢰도를 높이기 위해 이렇게 했슴다.</p>
 						</div>
 					</div>
 				</div>
@@ -81,28 +95,31 @@
 				<div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
 					<div class="heading-section">
 						<span class="subheading">Since 1905</span>
-						<h2 class="mb-4">Desire Meets A New Taste</h2>
+						<h2 class="mb-4">욕망이 새로운 맛을 만나다.</h2>
 
-						<p>A small river named Duden flows by their place and supplies
-							it with the necessary regelialia. It is a paradisematic country,
-							in which roasted parts of sentences fly into your mouth.</p>
+						<p>뭐라고 써야할지 모르겠다... 아무튼 술은 맛있다 특히나 저는 잭콕을 즐겨 마십니다. 잭콕은 은은하게
+							취하게 만들기 때문이다. 님들도 즐겨보십시오. 매우 만족스러운 결과를 낳을 것이다. 번역체로 쓰기 재미있다. 안녕</p>
 						<p>On her way she met a copy. The copy warned the Little Blind
 							Text, that where it came from it would have been rewritten a
 							thousand times and everything that was left from its origin would
 							be the word "and" and the Little Blind Text should turn around
 							and return to its own, safe country.</p>
 						<p class="year">
-							<strong class="number" data-number="115">0</strong> <span>Years
-								of Experience In Business</span>
+							<strong class="number" data-number="200">0</strong> <span>연혁
 						</p>
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<section class="ftco-section ftco-no-pb">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<span class="subheading">Our Delightful offerings</span>
+					<h2>Tastefully Yours</h2>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-2 col-md-4 ">
@@ -147,217 +164,16 @@
 						<h3>Whiskey</h3>
 					</div>
 				</div>
-
 			</div>
 		</div>
-	</section>
-
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<span class="subheading">Our Delightful offerings</span>
-					<h2>Tastefully Yours</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-1.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="<%=contextPath%>/product/bacardi_151_detail.jsp"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="sale">Sale</span> <span class="category">Brandy</span>
-							<h2>Bacardi 151</h2>
-							<p class="mb-0">
-								<span class="price price-sale">$69.00</span> <span class="price">$49.00</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-2.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="seller">Best Seller</span> <span class="category">Gin</span>
-							<h2>Jim Beam Kentucky Straight</h2>
-							<span class="price">$69.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-3.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="new">New Arrival</span> <span class="category">Rum</span>
-							<h2>Citadelle</h2>
-							<span class="price">$69.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-4.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="category">Rum</span>
-							<h2>The Glenlivet</h2>
-							<span class="price">$69.00</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-5.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="category">Whiskey</span>
-							<h2>Black Label</h2>
-							<span class="price">$69.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-6.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="category">Tequila</span>
-							<h2>Macallan</h2>
-							<span class="price">$69.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-7.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="category">Vodka</span>
-							<h2>Old Monk</h2>
-							<span class="price">$69.00</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex">
-					<div class="product ftco-animate">
-						<div class="img d-flex align-items-center justify-content-center"
-							style="background-image: url(<%=contextPath%>/images/prod-8.jpg);">
-							<div class="desc">
-								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-shopping-bag"></span>
-									</a> <a href="#"
-										class="d-flex align-items-center justify-content-center">
-										<span class="flaticon-visibility"></span>
-									</a>
-								</p>
-							</div>
-						</div>
-						<div class="text text-center">
-							<span class="category">Whiskey</span>
-							<h2>Jameson Irish Whiskey</h2>
-							<span class="price">$69.00</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<a href="<%=contextPath%>/product/product.jsp" class="btn btn-primary d-block">View
-						All Products <span class="fa fa-long-arrow-right"></span>
-					</a>
-				</div>
+		<div class="row justify-content-center" id="viewAll">
+			<div class="col-md-4">
+				<a href="<%=contextPath%>/product/product.jsp"
+					class="btn btn-primary d-block">View All Products <span
+					class="fa fa-long-arrow-right"></span>
+				</a>
 			</div>
 		</div>
-	</section>
 
 	<section class="ftco-section testimony-section img"
 		style="background-image: url(<%=contextPath%>/images/bg_4.jpg);">
@@ -480,10 +296,10 @@
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
 	</section>
-	
+
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

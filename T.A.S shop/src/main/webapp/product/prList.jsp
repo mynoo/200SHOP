@@ -31,6 +31,9 @@ ul.pagination li {
 form.form-inline {
     justify-content: center;
 }
+.form-group {
+    margin: 0 5;
+}
 </style>
 <script>	
 		function search(){
@@ -55,7 +58,7 @@ form.form-inline {
 <jsp:include page="../common/generalhead.jsp" />
     
 	<section class="hero-wrap hero-wrap-2"
-		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+		style="background-image: url('<%=contextPath%>/images/bg_4.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
