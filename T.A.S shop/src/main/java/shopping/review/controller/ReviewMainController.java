@@ -12,11 +12,10 @@ import shopping.common.controller.SuperClass;
 import shopping.member.model.Member;
 import shopping.product.controller.ProductDetailViewController;
 import shopping.product.controller.ProductListController;
-import shopping.product.controller.ProductPrListController;
 import shopping.review.model.Review;
 import shopping.review.model.ReviewDao;
 
-public class ReviewInsertController extends SuperClass{
+public class ReviewMainController extends SuperClass{
 	private Review bean = null ;
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,31 +27,35 @@ public class ReviewInsertController extends SuperClass{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
+		
+		System.out.println("여기는 리뷰 메인컨트롤러!");
 //		String id = request.getParameter("id") ;
 //		int no = Integer.parseInt(request.getParameter("no")) ;
 		
+		int pno = Integer.parseInt(request.getParameter("pno")) ;
+		
+		
 		bean = new Review();
-		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
-		bean.setPno(Integer.parseInt(multi.getParameter("pno")));
-		bean.setMid(multi.getParameter("mid"));
-		bean.setVcomment(multi.getParameter("vcomment")); 
+		Member mem = new Member();
+//		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
+		bean.setPno(pno);
 		
-		System.out.println("mid : " + multi.getParameter("mid"));
-		System.out.println("vcomment : " + multi.getParameter("vcomment"));
-		System.out.println("pno : " + Integer.parseInt(multi.getParameter("pno")));
-		
-		
-		ReviewDao dao = new ReviewDao();
-		int cnt = -999999 ;
-		cnt = dao.InsertData(bean) ;
+		System.out.println("pno : " + bean.getPno());
+//		System.out.println("mid : " + );
+//		System.out.println("pno : " + Integer.parseInt(multi.getParameter("pno")));
 		
 		
+//		ReviewDao dao = new ReviewDao();
+//		int cnt = -999999 ;
+//		cnt = dao.InsertData(bean) ;
+//		
+//		
 		request.setAttribute("bean", bean);
+//		
+//		new ProductDetailViewController().doGet(request, response);
 		
-		new ProductPrListController().doGet(request, response);
-//		String gotopage = "/product/product.jsp" ;
-//		super.GotoPage(gotopage);
-		
+		String gotopage = "/review/prReview.jsp" ;
+		super.GotoPage(gotopage);
 		
 	}
 	
