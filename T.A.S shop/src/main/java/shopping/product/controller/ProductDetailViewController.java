@@ -61,7 +61,7 @@ public class ProductDetailViewController extends SuperClass {
 		
 		if (bean == null) {
 			new ProductListController().doGet(request, response);
-			
+			System.out.println("null 값 들어옴");
 		} else {
 			request.setAttribute("bean", bean);
 			String gotopage = "/product/prDetailView.jsp" ;

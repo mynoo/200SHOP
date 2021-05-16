@@ -1,6 +1,8 @@
 package shopping.mall.controller;
 
 import java.io.IOException;
+
+
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -8,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
-import shopping.common.model.MyCartList;
 import shopping.mall.model.MallDao;
+import shopping.mall.model.MyCart;
 import shopping.member.model.Member;
 
 public class MallCalculateController extends SuperClass {
@@ -18,7 +20,7 @@ public class MallCalculateController extends SuperClass {
 		super.doGet(request, response);
 		System.out.println("장바구내 내역을 이용하여 계산을 합니다.");
 		
-		MyCartList mycart = (MyCartList)super.session.getAttribute("mycart") ;
+		MyCart mycart = (MyCart)super.session.getAttribute("mycart") ;
 		MallDao dao = new MallDao() ;
 		
 		if (mycart != null) {

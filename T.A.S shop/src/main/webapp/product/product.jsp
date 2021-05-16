@@ -42,7 +42,7 @@ ul.pagination li {
 	<jsp:include page="../common/generalhead.jsp" />
 
 	<section class="hero-wrap hero-wrap-2"
-		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+		style="background-image: url(<%=contextPath%>/images/bg_4.jpg);"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -102,10 +102,10 @@ ul.pagination li {
 
 									<div
 										class="img d-flex align-items-center justify-content-center"
-										style="background-image: url(${applicationScope.uploadedPath}/${bean.image});">
+										style="background-image: url(<%=contextPath%>/images/${bean.image});">
 										<div class="desc">
 											<p class="meta-prod d-flex">
-												<a href="<%=Noform%>mallOrder"
+												<a href="<%=Noform%>mallOrder&id=${loginfo.id}"
 													class="d-flex align-items-center justify-content-center"><span
 													class="flaticon-shopping-bag"></span></a> <a
 													href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}"
