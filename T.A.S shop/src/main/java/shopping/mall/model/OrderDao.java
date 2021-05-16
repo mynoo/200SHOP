@@ -11,23 +11,23 @@ import shopping.common.model.SuperDao;
 public class OrderDao extends SuperDao{
 
 	public List<Order> SelectDataList() {
-		PreparedStatement pstmt = null ;
-		ResultSet rs = null ;				
-		String sql = "select * from orders " ;
-		List<Order> lists = new ArrayList<Order>() ;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from orders ";
+		List<Order> lists = new ArrayList<Order>();
 		try {
-			if( this.conn == null ){ this.conn = this.getConnection() ; }			
-			pstmt = this.conn.prepareStatement(sql) ;			
+			if( this.conn == null ){ this.conn = this.getConnection() ; }
+			pstmt = this.conn.prepareStatement(sql) ;
 			rs = pstmt.executeQuery() ; 
 			while ( rs.next() ) {
 				Order bean = new Order() ; 
-				bean.setMid( rs.getString("mid") );				
-				bean.setOid( rs.getInt("oid") );				
-				bean.setOrderdate( String.valueOf( rs.getDate("orderdate") ));			
+				bean.setMid( rs.getString("mid") );
+				bean.setOid( rs.getInt("oid") );
+				bean.setOrderdate( String.valueOf( rs.getDate("orderdate") ));
 				lists.add( bean ) ; 
 			}
 			
-		} catch (SQLException e) {			
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally{
 			try {
@@ -37,7 +37,7 @@ public class OrderDao extends SuperDao{
 			} catch (Exception e2) {
 				e2.printStackTrace(); 
 			}
-		} 		
+		} 
 		return lists  ;
 	}
 

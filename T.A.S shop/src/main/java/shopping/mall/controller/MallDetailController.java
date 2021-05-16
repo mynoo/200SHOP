@@ -1,12 +1,18 @@
 package shopping.mall.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
+import shopping.common.model.ShoppingInfo;
+import shopping.mall.model.Order;
+import shopping.mall.model.OrderDao;
+import shopping.mall.model.OrderDetail;
+import shopping.mall.model.OrderDetailDao;
 import shopping.member.model.Member;
 import shopping.member.model.MemberDao;
 
@@ -26,13 +32,20 @@ public class MallDetailController extends SuperClass {
 		super.doPost(request, response);
 		
 		String id = (String)super.session.getAttribute("id");
+		int oid = (Integer)request.getAttribute("oid");
 		
 		Member bean = null;
-		MemberDao dao = new MemberDao();
+		MemberDao mdao = new MemberDao();
 		
-		bean = dao.SelectDataByPk(id);
+		bean = mdao.SelectDataByPk(id);
+		
+		OrderDetailDao odao = new OrderDetailDao();
+		
+		List<ShoppingInfo> lists = odao.showDetail(oid);
 
 		request.setAttribute("bean", bean);
+		request.setAttribute("lists", lists);
+		
 		super.doPost(request, response);
 	
 		String gotopage = "/orderdetail/orderdetail.jsp" ;

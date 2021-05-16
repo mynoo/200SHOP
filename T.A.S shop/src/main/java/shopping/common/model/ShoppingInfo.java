@@ -7,9 +7,7 @@ public class ShoppingInfo {
 	private int price ;
 	private String image;
 	private int point ;
-	//private int amount ;
 	
-	//getter, setter, toString �޼ҵ� ����
 		
 	public int getPnum() {
 		return pnum;

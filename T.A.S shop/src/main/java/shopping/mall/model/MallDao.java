@@ -39,7 +39,7 @@ public class MallDao extends SuperDao {
 				bean.setPrice(rs.getInt("price"));
 				bean.setQty(rs.getInt("qty"));
 				
-				lists.add(bean) ;				
+				lists.add(bean);
 			}			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -93,11 +93,11 @@ public class MallDao extends SuperDao {
 						
 				pstmt.setString(1, mem.getId());
 				pstmt.setInt(2, pnum);
-				pstmt.setString(3, bean.getName());
+				pstmt.setString(3, bean.getPname());
 				pstmt.setInt(4, qty);
 				pstmt.setInt(5, bean.getPrice());
 				pstmt.setString(6, bean.getImage());
-				pstmt.setInt(7, bean.getPoint());
+				pstmt.setInt(7, bean.getStock());
 				
 				cnt = pstmt.executeUpdate() ;
 				if(pstmt != null) {pstmt.close();}
