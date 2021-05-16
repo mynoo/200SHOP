@@ -88,7 +88,7 @@
                   <small></small>
                </div>
             </a>
-            <div class="dropdown-menu dropdown-menu-right">
+            <%-- <div class="dropdown-menu dropdown-menu-right">
                <div class="dropdown-item d-flex align-items-start" href="#">
                   <div class="img"
                      style="background-image: url(<%=contextPath%>/images/prod-1.jpg);"></div>
@@ -125,7 +125,7 @@
                   <span class="ion-ios-arrow-round-forward"></span>
                </a>
             </div>
-         </div>
+ --%>         </div>
 
          <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#ftco-nav" aria-controls="ftco-nav"
