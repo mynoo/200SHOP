@@ -34,14 +34,10 @@
 			<div class="row">
 				<div class="col-md-6 d-flex align-items-center">
 					<p class="mb-0 phone pl-md-2">
-						<a href="#" class="mr-2">
 							<span class="fa fa-phone mr-1"></span>
 							+82 02-3486-9600
-						</a>
-						<a href="#">
 							<span class="fa fa-paper-plane mr-1"></span>
 							youremail@tasshop.com
-						</a>
 					</p>
 				</div>
 				<div class="col-md-6 d-flex justify-content-md-end">
@@ -68,7 +64,7 @@
 					<div class="reg">
 						<p class="mb-0">
 							<c:if test="${whologin == 0}">
-								<a href="<%=Noform%>meInsert" class="mr-2">Sign Up</a>
+								<a href="<%=Noform%>regForm" class="mr-2">Sign Up</a>
 								<a href="<%=Noform%>meLogin" class="mr-2">Log In</a>
 							</c:if>
 							<c:if test="${whologin != 0}">
@@ -145,10 +141,10 @@
 						<a href="<%=Noform%>prprList" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=contextPath%>/board/board.jsp" class="nav-link">Boards</a>
+						<a href="<%=Noform%>boList" class="nav-link">Boards</a>
 					</li>
 					<li class="nav-item">
-						<a href="contact.jsp" class="nav-link">Contact</a>
+						<a href="<%=contextPath%>/common/contact.jsp" class="nav-link">Contact</a>
 					</li>
 					<c:if test="${whologin != 0}">
 						<li class="nav-item dropdown">
