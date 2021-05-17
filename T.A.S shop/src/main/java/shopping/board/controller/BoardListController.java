@@ -56,7 +56,6 @@ public class BoardListController extends SuperClass {
       request.setAttribute("lists", lists);
       request.setAttribute("pageInfo", pageInfo);
       
-      request.setAttribute("lists", lists);
       
       //자주 사용되는 파라미터를 속성으로 정의합니다. 
       request.setAttribute("parameters", parameters.toString());

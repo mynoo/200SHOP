@@ -105,7 +105,7 @@ button.btn.btn-primary {
 
 									<div
 										class="img d-flex align-items-center justify-content-center"
-										style="background-image: url(<%=contextPath%>/images/${bean.image});">
+										style="background-image: url('upload/${bean.image}');">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="<%=Noform%>mallOrder&id=${loginfo.id}"

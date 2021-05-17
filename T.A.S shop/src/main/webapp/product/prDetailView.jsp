@@ -96,7 +96,7 @@ form.form-inline {
       <div class="imgbox col-sm-4" >
          <table>
             <tr>
-               <td><img src="<%=contextPath%>/images/${bean.image}"
+               <td><img src="'upload/${bean.image}'"
                   class="img-rounded" alt="${bean.pname}" width="270" height="350">
                </td>
             </tr>
@@ -156,16 +156,13 @@ form.form-inline {
          <button class="btn btn-primary" onclick="history.back();">
             돌아가기
          </button>
+         <form action="<%=YesForm%>" class="form-inline" role="form" method="get">
+			<input type="hidden" name="command" value="reviewList">
+			<input type="hidden" name="pno" value="${bean.pno}"> 
+			<button type="submit" class="btn btn-danger" id="btn2">리뷰보기(${requestScope.totalcount})</button>  
+         </form>
       </div>
    </div>
-   
-   
-     <form action="<%=YesForm%>" class="form-inline" role="form"
-                           method="get">
-                           <input type="hidden" name="command" value="reviewList">
-                           <input type="hidden" name="pno" value="${bean.pno}"> 
-                            <button type="submit" class="btn btn-danger" id="btn2">리뷰보기(${requestScope.totalcount})</button>  
-                        </form>
    
    <jsp:include page="../common/footer.jsp" />
 </body>

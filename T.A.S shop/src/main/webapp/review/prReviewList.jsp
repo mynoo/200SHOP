@@ -33,12 +33,29 @@
 </head>
 
 <body>
-	<jsp:include page="../common/generalhead.jsp" />
+	   <jsp:include page="../common/generalhead.jsp" />
+
+   <section class="hero-wrap hero-wrap-2"
+      style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+      data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+         <div
+            class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate mb-5 text-center">
+               <p class="breadcrumbs mb-0">
+                  <span class="mr-2"><a
+                     href="<%=contextPath%>/common/main.jsp">Home <i
+                        class="fa fa-chevron-right"></i></a></span> <span>Products <i
+                     class="fa fa-chevron-right"></i></span>
+               </p>
+               <h2 class="mb-0 bread">Product Review</h2>
+            </div>
+         </div>
+      </div>
+   </section>
     
  <section class="ftco-section">
-   <div>
-      <h4><상품 리뷰></h4>
-   </div>
       <div class="container">
          <table>
             <thead align="center">
@@ -84,7 +101,7 @@
          <form action="<%=YesForm%>" role="form"   method="post">
             <input type="hidden" name="command" value="reviewMain">
             <input type="hidden" name="pno" value="${requestScope.pno}">
-            <input type="submit" class="btn btn-danger" id="btn3" style="float: right;" value="리뷰 등록">      
+            <input type="submit" class="btn btn-danger" id="btn3" style="float: right; margin-top: 10;" value="리뷰 등록">      
          </form>
          
 	
