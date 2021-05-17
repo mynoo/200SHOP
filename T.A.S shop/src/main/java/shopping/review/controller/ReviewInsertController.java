@@ -46,10 +46,11 @@ public class ReviewInsertController extends SuperClass{
 		int cnt = -999999 ;
 		cnt = dao.InsertData(bean) ;
 		
-		
+		int pno = Integer.parseInt(multi.getParameter("pno"));
+		request.setAttribute("pno", pno);
 		request.setAttribute("bean", bean);
 		
-		new ProductPrListController().doGet(request, response);
+		new ProductDetailViewController().doGet(request, response);
 //		String gotopage = "/product/product.jsp" ;
 //		super.GotoPage(gotopage);
 		

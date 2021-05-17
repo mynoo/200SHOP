@@ -3,7 +3,7 @@ package shopping.utility;
 public class FlowParameters {
 	private String pageNumber ;
 	private String mode ;
-	private String keyword ;	
+	private String keyword;
 	
 	@Override
 	public String toString() {		

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import shopping.board.model.Board;
 import shopping.board.model.BoardDao;
 import shopping.common.controller.SuperClass;
-@WebServlet(value = "/board/insert")
+
 public class BoardInsertController extends SuperClass {
 	private Board bean = null ;
 	
@@ -18,7 +18,7 @@ public class BoardInsertController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		String gotopage = "/board/board.jsp" ;
+		String gotopage = "/board/boList.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override
@@ -46,7 +46,7 @@ public class BoardInsertController extends SuperClass {
 			System.out.println("board insert validation check failure");
 			
 			request.setAttribute("bean", bean);
-			String gotopage = "/board/board.jsp" ;
+			String gotopage = "/board/boInsert.jsp" ;
 			super.GotoPage(gotopage);
 		}
 		

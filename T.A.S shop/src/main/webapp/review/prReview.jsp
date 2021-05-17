@@ -36,7 +36,7 @@
 	
 	
  			  <div class="comment-form-wrap pt-5">
-                <h3 class="mb-5">Leave a review</h3>
+                <h3 align="center">리뷰 작성</h3>
                 <form method="POST" class="p-5 bg-light" action="<%=YesForm%>" enctype="multipart/form-data" >
                 
                  <input type="hidden" id="command" name="command" value="reviewInsert">

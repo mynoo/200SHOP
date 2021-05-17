@@ -88,16 +88,12 @@
                 <a href="#" class="tag-cloud-link">Travel</a>
               </div>
             </div>
-            
             <div class="button" align="right">
-				<a href="board.jsp" class="btn btn-primary py-2 px-4" >Go Back</a>
+				<a href="boList.jsp" class="btn btn-primary py-2 px-4" >Go Back</a>
 			</div>
-            
             <div class="pt-5 mt-5">
               <h3 class="mb-5">6 Comments</h3>
               <ul class="comment-list">
-              
-              
                 <li class="comment">
                   <div class="vcard bio">
                     <img src="../images/person_1.jpg" alt="Image placeholder">
@@ -106,49 +102,138 @@
                     <h3>John Doe</h3>
                     <div class="meta">April 12, 2020 at 1:21am</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="board_reply.jsp" class="reply">Reply</a></p>
+                    <c:forEach var="cnt" begin="1" end="${bean.depth}">
+                    	
+                    </c:forEach>
+                    <p><a href="<%=contextPath%>/board/boReply.jsp" class="reply">Reply</a></p>
                   </div>
                 </li>
+
                 <li class="comment">
                   <div class="vcard bio">
                     <img src="../images/person_1.jpg" alt="Image placeholder">
                   </div>
                   <div class="comment-body">
-                    <h3>
-                    	<input type="text" value="comment_name">
-                    </h3>
-                    <div class="meta">
-                    	<input type="date">
-                    </div>
+                    <h3>John Doe</h3>
+                    <div class="meta">April 12, 2020 at 1:21am</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
                     <p>
-                    	<input type="text" value="comment_message">
+          <div class="col-sm-12">					
+				<ul id="comment_list">
+					<!-- 여기에 동적 생성 요소가 들어가게 됩니다. -->
+				</ul>
+				<div id="comment_mid">
+					<form id="comment_form" action="<%=YesForm %>" method="get" role="form" >
+					<input type="hidden" name="command" value="reInsert">
+						<div class="form-group">
+							<label for="writer" class="col-xs-3 col-lg-3 control-label">작성자</label>
+							<div class="col-xs-4 col-lg-4">
+								<input type="text" name="fakewriter" id="fakemid" class="form-control" disabled="disabled" value="${sessionScope.loginfo.id}">								
+							</div><input type="hidden" name="mid" id="mid" value="${sessionScope.loginfo.id}">
+						</div>
+						<div class="form-group">
+							<label for="content" class="col-xs-3 col-lg-3 control-label">덧글 내용</label>
+							<div class="col-xs-9 col-lg-9">
+								<textarea name="comment" class="form-control" rows="3" cols="50" id="comment" ></textarea> 
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="#" align="right">
+								<button type="submit" class="reply">
+									Reply
+								</button> 
+							</div>
+						</div>	        		
+					</form>
+				</div>
+			</div>
                     </p>
-                    <p><a href="board_reply.jsp" class="reply">Reply</a></p>
+                  </div>
+
+                  <ul class="children">
+                    <li class="comment">
+                      <div class="vcard bio">
+                        <img src="../images/person_1.jpg" alt="Image placeholder">
+                      </div>
+                      <div class="comment-body">
+                        <h3>John Doe</h3>
+                        <div class="meta">April 12, 2020 at 1:21am</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p><a href="#" class="reply">Reply</a></p>
+                      </div>
+
+
+                      <ul class="children">
+                        <li class="comment">
+                          <div class="vcard bio">
+                            <img src="../images/person_1.jpg" alt="Image placeholder">
+                          </div>
+                          <div class="comment-body">
+                            <h3>John Doe</h3>
+                            <div class="meta">April 12, 2020 at 1:21am</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                            <p><a href="#" class="reply">Reply</a></p>
+                          </div>
+
+                            <ul class="children">
+                              <li class="comment">
+                                <div class="vcard bio">
+                                  <img src="../images/person_1.jpg" alt="Image placeholder">
+                                </div>
+                                <div class="comment-body">
+                                  <h3>John Doe</h3>
+                                  <div class="meta">April 12, 2020 at 1:21am</div>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                                  <p><a href="#" class="reply">Reply</a></p>
+                                </div>
+                              </li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="comment">
+                  <div class="vcard bio">
+                    <img src="../images/person_1.jpg" alt="Image placeholder">
+                  </div>
+                  <div class="comment-body">
+                    <h3>John Doe</h3>
+                    <div class="meta">April 12, 2020 at 1:21am</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                    <p><a href="#" class="reply">Reply</a></p>
                   </div>
                 </li>
-                
-                
               </ul>
-              
               <!-- END comment-list -->
+              
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
-                <form action="comment" class="p-5 bg-light">
+                <form action="#" class="p-5 bg-light">
                   <div class="form-group">
                     <label for="name">Name *</label>
-                    <input type="hidden" class="form-control" name="comment_name"  id="name" value="${sessionScope.loginfo.id }">
+                    <input type="text" class="form-control" id="name">
                   </div>
-                   <div class="form-group">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="url" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="comment_message" id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
                   </div>
-                  <div class="form-group" align="right">
+                  <div class="form-group">
                     <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
                   </div>
 
                 </form>
               </div>
-              
             </div>
 
           </div> <!-- .col-md-8 -->
@@ -177,7 +262,11 @@
               <h3>Recent Board</h3>
               <div class="block-21 mb-4 d-flex">
                 <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <h3 class="heading">
+                  	<a href="https://brunch.co.kr/@paxcom/268">
+                  		술은 성질이 따뜻해서 몸의 체온을 올리고 혈액순환을 왕성하게 하며 통증을 줄여준다.
+                  	</a>
+                  </h3>
                   <div class="meta">
                     <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
                     <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
@@ -187,7 +276,11 @@
               </div>
               <div class="block-21 mb-4 d-flex">
                 <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <h3 class="heading">
+                  	<a href="http://blog.yes24.com/blog/blogMain.aspx?blogid=silvianim&artSeqNo=423273">
+                  		청주는 일반적으로 15~20도가 적당하고, 데워서 마실 때는 40~45도 정도가 좋다.
+                  	</a>
+                  </h3>
                   <div class="meta">
                     <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2020</a></div>
                     <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
@@ -206,6 +299,11 @@
                 </div>
               </div>
             </div>
+			<c:if test="${whologin == 2}">
+			<div class="button" align="right">
+				<a href="board_Detail" class="btn btn-primary py-1 px-2" >write</a>
+			</div>
+			</c:if>
 
             <div class="sidebar-box ftco-animate">
               <h3>Tag Cloud</h3>

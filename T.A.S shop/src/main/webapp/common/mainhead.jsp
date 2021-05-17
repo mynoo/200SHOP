@@ -138,7 +138,7 @@
 						<a href="<%=Noform%>main" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=Noform%>prList" class="nav-link">Products</a>
+						<a href="<%=Noform%>prprList" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=Noform%>boList" class="nav-link">Boards</a>

@@ -9,6 +9,17 @@ public class Board {
 	private int depth;
 	
 	
+	
+	public Board(int bno, String writer, String title, String bcontents, String writedate, int depth) {
+		super();
+		this.bno = bno;
+		this.writer = writer;
+		this.title = title;
+		this.bcontents = bcontents;
+		this.writedate = writedate;
+		this.depth = depth;
+	}
+
 	public int getBno() {
 		return bno;
 	}
@@ -63,16 +74,6 @@ public class Board {
 	public String toString() {
 		return "Board [bno=" + bno + ", writer=" + writer + ", title=" + title + ", bcontents=" + bcontents
 				+ ", writedate=" + writedate + ", depth=" + depth + "]";
-	}
-
-	public Board(int bno, String writer, String title, String bcontents, String writedate, int depth) {
-		super();
-		this.bno = bno;
-		this.writer = writer;
-		this.title = title;
-		this.bcontents = bcontents;
-		this.writedate = writedate;
-		this.depth = depth;
 	}
 	
 	
