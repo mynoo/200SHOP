@@ -23,6 +23,7 @@
 		margin-right: -4px;
 		border: 1px solid skyblue;
 	}
+}
 	</style>
 
 </head>
@@ -32,7 +33,7 @@
 		<div class="container">
 			<div class="signup-content">
 				<div class="signup-img">
-					<img src="../images/solid.png" alt="">
+					<img src="<%=contextPath%>/images/solid.png" alt="">
 					<div class="signup-img-content">
 						<h2>Product Registration</h2>
 						<p>Please enter the product to add !</p>
@@ -72,7 +73,6 @@
 								</div>
 							</div>
 							<div class="form-group">
-
 								<div class="form-input">
 									<label for="name" class="required">Date</label> <input
 										type="date" name="date" id="date" value="${bean.date}"/>
@@ -93,7 +93,6 @@
 										type="text" name="content" id="content" value="${bean.content}"/>
 										<span class="err form-control-static">${errcontent}</span>
 								</div>
-
 								<div class="form-input">
 									<div class="label-flex">
 										<label for="Category">Category</label>
@@ -109,7 +108,6 @@
 									</select>
 									<span class="err form-control-static">${errcategory}</span>
 								</div>
-
 							</div>
 						</div>
 						<div class="form-submit">

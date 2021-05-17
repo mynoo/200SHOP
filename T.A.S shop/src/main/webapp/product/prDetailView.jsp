@@ -31,6 +31,7 @@ h4{
    margin: 0px auto;
    padding: 20px 0;
    width: 1400px;
+   text-align: center;
 }
 .form-control-sm{
    margin: 0 10px;
@@ -49,9 +50,6 @@ td {
    padding: 8px;
    text-align: center;
    border-bottom: 1px solid #ddd;
-}
-h4 {
-   text-align: center;
 }
 ul.pagination{
    justify-content: center;
@@ -89,19 +87,17 @@ form.form-inline {
                         class="fa fa-chevron-right"></i></a></span> <span>Products <i
                      class="fa fa-chevron-right"></i></span>
                </p>
-               <h2 class="mb-0 bread">Products</h2>
+               <h2 class="mb-0 bread">Product Detail View</h2>
             </div>
          </div>
       </div>
    </section>
-   <h4>Product Detail View</h4>
    <div class="container-wrap">
-   
-      <div class="imgbox col-sm-2" >
+      <div class="imgbox col-sm-4" >
          <table>
             <tr>
                <td><img src="<%=contextPath%>/images/${bean.image}"
-                  class="img-rounded" alt="${bean.pname}" width="200" height="200">
+                  class="img-rounded" alt="${bean.pname}" width="270" height="350">
                </td>
             </tr>
          </table>

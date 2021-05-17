@@ -36,9 +36,14 @@ a.btn.btn-primary.d-block {
 	font-family: 'Slabo 27px', serif;
 }
 /********************************main css end***********************************/
-
-.form-group {
-    margin-right: 10px;
+.mb-0{
+	font-family: 'Song Myung', serif;
+}
+a{
+	font-family: 'Slabo 27px', serif;
+}
+td{
+	color: #808080;	
 }
 :root {
   --blue: #007bff;
@@ -8640,7 +8645,7 @@ h1, h2, h3, h4, h5,
   .product .img {
     display: block;
     border-radius: 4px;
-    height: 350px;
+    height: 500px;
     position: relative;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
