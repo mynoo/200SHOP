@@ -87,19 +87,17 @@ form.form-inline {
                         class="fa fa-chevron-right"></i></a></span> <span>Products <i
                      class="fa fa-chevron-right"></i></span>
                </p>
-               <h2 class="mb-0 bread">Products</h2>
+               <h2 class="mb-0 bread">Product Detail View</h2>
             </div>
          </div>
       </div>
    </section>
-   <h4>Product Detail View</h4>
    <div class="container-wrap">
-   
-      <div class="imgbox col-sm-2" >
+      <div class="imgbox col-sm-4" >
          <table>
             <tr>
-               <td><img src="${applicationScope.uploadedPath}/${bean.image}"
-                  class="img-rounded" alt="${bean.pname}" width="200" height="200">
+               <td><img src="<%=contextPath%>/images/${bean.image}"
+                  class="img-rounded" alt="${bean.pname}" width="270" height="350">
                </td>
             </tr>
          </table>
@@ -108,7 +106,7 @@ form.form-inline {
       <div class="panel panel-primary">
          <div class="panel-heading"></div>
          <div class="panel-body">
-            <div class="col-sm-2">
+            <div class="col-sm-4">
                <table class="table table-bordered">
                   <tr>
                      <td width="25%" align="center">상품명(번호)</td>
@@ -141,6 +139,7 @@ form.form-inline {
                                  data-content="구매하시고자 하는 수량을 정수로 입력하세요.">
                            </div>
                            <a href="${Noform}MallMyCart"><button type="submit" class="btn btn-primary btn2">주문</button></a>
+                           <a href="${Noform}MallMyCart"><button type="submit" class="btn btn-primary btn2">장바구니</button></a>
                         </form>
                      </td>
                   </tr>
