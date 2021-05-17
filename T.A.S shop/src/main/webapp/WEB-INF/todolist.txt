@@ -27,7 +27,7 @@ prUpdate=shopping.product.controller.ProductUpdateController
 ### Mall Section ######################################################
 mallInsert=shopping.mall.controller.MallInsertController
 mallList=shopping.mall.controller.MallListController
-#mallCalculate=shopping.mall.controller.MallCalculateController
+mallCalculate=shopping.mall.controller.MallCalculateController
 mallDelete=shopping.mall.controller.MallDeleteController
 mallOrder=shopping.mall.controller.MallOrderController
 mallDetail=shopping.mall.controller.MallDetailController

@@ -61,7 +61,7 @@
 										</div>
 									</td>
 									<td>${bean.price * bean.qty}</td>
-									<td><a href="<%=Noform%>mallDelete&pnum=${bean.pnum}&id=${loginfo.id}">삭제</a>
+									<td><a href="<%=Noform%>mallDelete&pnum=${bean.pnum}&id=${loginfo.id}" onclick="return confirm('삭제하시겠습니까?');">삭제</a>
 									</td>
 								</tr>
 							</c:forEach>
@@ -72,7 +72,7 @@
 								<div class="cart-total mb-3">
 									<h3>Cart Totals</h3>
 									<p class="d-flex">
-										<span>Subtotal</span> <span>${bean.price * bean.qty}</span>
+										<span>Subtotal</span> <span><fmt:formatNumber value="${sessionScope.totalAmount}" pattern="###,###"/></span>
 									</p>
 									<p class="d-flex">
 										<span>Delivery</span> <span>0</span>
@@ -83,7 +83,7 @@
 
 									<hr>
 									<p class="d-flex total-price">
-										<span>Total</span> <span>${bean.price * bean.qty-bean.price/10}</span>
+										<span>Total</span> <span><fmt:formatNumber value="${sessionScope.totalAmount/10}"/></span>
 									</p>
 								</div>
 								<p class="text-center">

@@ -5,13 +5,6 @@
 <html>
 <head>
 <style>
-.mb-4 {
-	font-family: inherit;
-}
-
-* {
-	font-family: 'Song Myung', serif;
-}
 .row.justify-content-center.pb-5 {
     margin: 200px 0 30px 0;
 }
@@ -97,15 +90,9 @@
 						<span class="subheading">Since 1905</span>
 						<h2 class="mb-4">욕망이 새로운 맛을 만나다.</h2>
 
-						<p>뭐라고 써야할지 모르겠다... 아무튼 술은 맛있다 특히나 저는 잭콕을 즐겨 마십니다. 잭콕은 은은하게
-							취하게 만들기 때문이다. 님들도 즐겨보십시오. 매우 만족스러운 결과를 낳을 것이다. 번역체로 쓰기 재미있다. 안녕</p>
-						<p>On her way she met a copy. The copy warned the Little Blind
-							Text, that where it came from it would have been rewritten a
-							thousand times and everything that was left from its origin would
-							be the word "and" and the Little Blind Text should turn around
-							and return to its own, safe country.</p>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 						<p class="year">
-							<strong class="number" data-number="200">0</strong> <span>연혁
+							<strong class="number" data-number="116">0</strong> <span>연혁
 						</p>
 					</div>
 				</div>
@@ -169,7 +156,7 @@
 		<div class="row justify-content-center" id="viewAll">
 			<div class="col-md-4">
 				<a href="<%=contextPath%>/product/product.jsp"
-					class="btn btn-primary d-block">View All Products <span
+					class="btn btn-primary d-block">View All Products&nbsp&nbsp<span
 					class="fa fa-long-arrow-right"></span>
 				</a>
 			</div>
@@ -201,7 +188,7 @@
 										blind texts.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
-											style="background-image: url(<%=contextPath%>/images/person_1.jpg)"></div>
+											style="background-image: url(<%=contextPath%>/images/prod-1.jpg)"></div>
 										<div class="pl-3">
 											<p class="name">Roger Scott</p>
 											<span class="position">Marketing Manager</span>
@@ -222,7 +209,7 @@
 										blind texts.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
-											style="background-image: url(<%=contextPath%>/images/person_2.jpg)"></div>
+											style="background-image: url(<%=contextPath%>/images/prod-2.jpg)"></div>
 										<div class="pl-3">
 											<p class="name">Roger Scott</p>
 											<span class="position">Marketing Manager</span>
@@ -243,7 +230,7 @@
 										blind texts.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
-											style="background-image: url(<%=contextPath%>/images/person_3.jpg)"></div>
+											style="background-image: url(<%=contextPath%>/images/prod-3.jpg)"></div>
 										<div class="pl-3">
 											<p class="name">Roger Scott</p>
 											<span class="position">Marketing Manager</span>
@@ -264,7 +251,7 @@
 										blind texts.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
-											style="background-image: url(<%=contextPath%>/images/person_1.jpg)"></div>
+											style="background-image: url(<%=contextPath%>/images/prod-4.jpg)"></div>
 										<div class="pl-3">
 											<p class="name">Roger Scott</p>
 											<span class="position">Marketing Manager</span>
@@ -285,7 +272,7 @@
 										blind texts.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
-											style="background-image: url(<%=contextPath%>/images/person_2.jpg)"></div>
+											style="background-image: url(<%=contextPath%>/images/prod-5.jpg)"></div>
 										<div class="pl-3">
 											<p class="name">Roger Scott</p>
 											<span class="position">Marketing Manager</span>

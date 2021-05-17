@@ -159,7 +159,7 @@ public class MallDao extends SuperDao {
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;
 		String sql = " select c.mid, c.pnum, c.pname, c.price, c.qty, c.image, p.price * c.qty as amount " ;
-		sql += " from products p inner join orders o on p.pno = o.oid inner join cart c on o.mid = c.mid " ;
+		sql += " from products p inner join cart c on p.pno = c.pnum inner join orders o on o.mid = c.mid " ;
 		sql += " where c.mid = ? " ;
 		
 		List<MyCart> lists = new ArrayList<MyCart>() ;
@@ -173,7 +173,7 @@ public class MallDao extends SuperDao {
 			
 			while (rs.next()) {
 				MyCart bean = new MyCart();
-				bean.setMid(id);
+				bean.setMid(rs.getString("mid"));
 				bean.setPnum(rs.getInt("pnum"));
 				bean.setPname(rs.getString("pname"));
 				bean.setQty(rs.getInt("qty"));
