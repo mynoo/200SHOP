@@ -24,6 +24,9 @@ ul.pagination li {
 .block-27 {
 	margin-bottom: 20px;
 }
+button.btn.btn-primary {
+    margin-right: 15px;
+}
 </style>
 <script>	
 		function search(){
@@ -64,13 +67,9 @@ ul.pagination li {
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9">
-					<div class="row mb-4">
-						<div class="col-md-12" id="prList">
-				<c:if test="${whologin == 2}">
-					<a href="<%=Noform%>prList"><button class="btn btn-primary">상품
-							목록</button></a>
-				</c:if>
+				<div class="col-md">
+					<div class="row mb">
+						<div class="col-md" id="prList">
 							<form action="" class="form-inline" role="form" name="myform"
 								method="get">
 								<div class="form-group">
@@ -94,6 +93,10 @@ ul.pagination li {
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
 						</div>
+						<c:if test="${whologin == 2}">
+							<a href="<%=Noform%>prList"><button class="btn btn-primary" id="btn">상품
+									목록</button></a>
+						</c:if>
 					</div>
 					<div class="row">
 						<c:forEach var="bean" items="${requestScope.lists}">
@@ -128,7 +131,7 @@ ul.pagination li {
 					</div>
 				</div>
 
-				<div class="col-md-3">
+				<%-- <div class="col-md-3">
 					<div class="sidebar-box ftco-animate">
 						<div class="categories" id="mode" name="mode">
 							<h3>Product Types</h3>
@@ -147,7 +150,7 @@ ul.pagination li {
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> --%>
 			</div>
 		</div>
 	</section>

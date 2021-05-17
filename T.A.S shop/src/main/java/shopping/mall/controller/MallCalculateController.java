@@ -18,7 +18,7 @@ public class MallCalculateController extends SuperClass {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
-		System.out.println("장바구내 내역을 이용하여 계산을 합니다.");
+		System.out.println("장바구니 내역을 이용하여 계산을 합니다.");
 		
 		MyCart mycart = (MyCart)super.session.getAttribute("mycart") ;
 		MallDao dao = new MallDao() ;
