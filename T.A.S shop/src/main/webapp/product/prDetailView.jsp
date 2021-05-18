@@ -21,48 +21,48 @@ function goinsert() {
 }
 
 .containerbox {
-display: inline-block;
+	display: inline-block;
 }
 
 .container-wrap {
-width: 1200px;
-margin: 100 auto;
-margin-left: 200;
+	width: 1200px;
+	margin: 100 auto;
+	margin-left: 200;
 }
 
 .btn {
-justify-content: flex-end;
+	justify-content: flex-end;
 }
 
 .btnbox2 {
-text-align: right;
-margin: 0 auto 20px;
-width: 986px;
+	text-align: right;
+	margin: 0 auto 20px;
+	width: 986px;
 }
 
 h4 {
-margin: 0px auto;
-padding: 20px 0;
-width: 1400px;
+	margin: 0px auto;
+	padding: 20px 0;
+	width: 1400px;
 }
 
 .form-control-sm {
-margin: 0 10px;
+	margin: 0 10px;
 }
 
 .col-lg-10 {
-margin: auto;
+	margin: auto;
 }
 
 th {
-text-align: center !important;
+	text-align: center !important;
 }
 
 button.btn.btn-primary {
-margin: 0 10 0 0;
+	margin: 0 10 0 0;
 }
 .containerbox.container.col-sm-offset.col-sm-6 {
-margin: 0;
+	margin: 0;
 }
 </style>
 </head>
