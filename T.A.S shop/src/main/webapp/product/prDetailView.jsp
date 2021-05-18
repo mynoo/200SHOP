@@ -10,8 +10,8 @@ $(document).ready(function() {
 });
 function goinsert() {
     location.href = '<%=Noform%>
-    	mallInsert';
-}
+	mallInsert';
+	}
 </script>
 <style>
 .imgbox {
