@@ -12,20 +12,14 @@ int pageSize = 9;
 #prList {
 	float: right;
 }
-
 ul.pagination {
 	justify-content: center;
 }
-
 ul.pagination li {
 	padding: 3;
 }
-
 .block-27 {
 	margin-bottom: 20px;
-}
-button.btn.btn-primary {
-    margin-right: 15px;
 }
 </style>
 <script>	
@@ -38,14 +32,13 @@ button.btn.btn-primary {
 			location.href='<%=Noform%>prprList';
 	}
 	$(document).ready(function() {
-
 	});
 </script>
 <body>
 	<jsp:include page="../common/generalhead.jsp" />
 
 	<section class="hero-wrap hero-wrap-2"
-		style="background-image: url(<%=contextPath%>/images/bg_4.jpg);"
+		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -67,9 +60,13 @@ button.btn.btn-primary {
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md">
-					<div class="row mb">
-						<div class="col-md" id="prList">
+				<div class="col-md-9">
+					<div class="row mb-4">
+						<div class="col-md-12" id="prList">
+				<c:if test="${whologin == 2}">
+					<a href="<%=Noform%>prList"><button class="btn btn-primary">상품
+							목록</button></a>
+				</c:if>
 							<form action="" class="form-inline" role="form" name="myform"
 								method="get">
 								<div class="form-group">
@@ -93,10 +90,6 @@ button.btn.btn-primary {
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
 						</div>
-						<c:if test="${whologin == 2}">
-							<a href="<%=Noform%>prList"><button class="btn btn-primary" id="btn">상품
-									목록</button></a>
-						</c:if>
 					</div>
 					<div class="row">
 						<c:forEach var="bean" items="${requestScope.lists}">
@@ -105,10 +98,10 @@ button.btn.btn-primary {
 
 									<div
 										class="img d-flex align-items-center justify-content-center"
-										style="background-image: url('upload/${bean.image}');">
+										style="background-image: url(${applicationScope.uploadedPath}/${bean.image});">
 										<div class="desc">
 											<p class="meta-prod d-flex">
-												<a href="<%=Noform%>mallOrder&id=${loginfo.id}"
+												<a href="<%=Noform%>mallOrder"
 													class="d-flex align-items-center justify-content-center"><span
 													class="flaticon-shopping-bag"></span></a> <a
 													href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}"
@@ -128,6 +121,27 @@ button.btn.btn-primary {
 								</div>
 							</div>
 						</c:forEach>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="sidebar-box ftco-animate">
+						<div class="categories" id="mode" name="mode">
+							<h3>Product Types</h3>
+							<ul class="p-0">
+								<li><a href="<%=Noform%>prprList&category=brandy">Brandy <span
+										class="fa fa-chevron-right" name="keyword"
+										id="keyword"></span></a></li>
+								<li><a href="<%=Noform%>prprList&category=gin">Gin <span class="fa fa-chevron-right"></span></a></li>
+								<li><a href="<%=Noform%>prprList&category=rum">Rum <span class="fa fa-chevron-right"></span></a></li>
+								<li><a href="<%=Noform%>prprList&category=tequila">Tequila <span
+										class="fa fa-chevron-right"></span></a></li>
+								<li><a href="<%=Noform%>prprList&category=vodka">Vodka <span class="fa fa-chevron-right"></span></a></li>
+								<li><a href="<%=Noform%>prprList&category=whiskey" name="keyword"
+										id="keyword">Whiskey <span
+										class="fa fa-chevron-right" ></span></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
