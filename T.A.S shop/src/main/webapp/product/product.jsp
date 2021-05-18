@@ -27,18 +27,22 @@ int pageSize = 9;
 	button.btn.btn-primary {
 		margin-right: 15px;
 	}
+.form-group {
+    margin-left: 20;
+}
 </style>
-<script>
-function search(){
-	var mode = $('#mode').val() ;
-	var keyword = $('#keyword').val() ;
-	location.href='<%=Noform%>prprList' + '&mode=' + mode + '&keyword=' + keyword ;
-}
-function searchAll(){
-	location.href='<%=Noform%>prprList';
-}
-$(document).ready(function() {
-});
+<script>	
+		function search(){
+			var mode = $('#mode').val() ;
+			var keyword = $('#keyword').val() ;
+			location.href='<%=Noform%>prprList' + '&mode=' + mode + '&keyword=' + keyword ;
+		}
+		function searchAll(){
+			location.href='<%=Noform%>prprList';
+	}
+	$(document).ready(function() {
+
+	});
 </script>
 </head>
 
