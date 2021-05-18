@@ -27,6 +27,9 @@ ul.pagination li {
 button.btn.btn-primary {
     margin-right: 15px;
 }
+.form-group {
+    margin-left: 20;
+}
 </style>
 <script>	
 		function search(){
@@ -85,10 +88,10 @@ button.btn.btn-primary {
 										id="keyword">
 								</div>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="search();">검색</button>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="searchAll();">전체 검색</button>
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
@@ -105,7 +108,7 @@ button.btn.btn-primary {
 
 									<div
 										class="img d-flex align-items-center justify-content-center"
-										style="background-image: url(<%=contextPath%>/images/${bean.image});">
+										style="background-image: url('upload/${bean.image}');">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="<%=Noform%>mallOrder&id=${loginfo.id}"
