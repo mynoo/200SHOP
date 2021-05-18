@@ -62,19 +62,19 @@ button.btn.btn-primary {
 	margin: 0 10 0 0;
 }
 .containerbox.container.col-sm-offset.col-sm-6 {
-	margin: 0;
+    margin: 0;
 }
 </style>
 </head>
 <body>
-<jsp:include page="../common/generalhead.jsp" />
+	<jsp:include page="../common/generalhead.jsp" />
 
-<section class="hero-wrap hero-wrap-2"
-	style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
-	data-stellar-background-ratio="0.5">
-	<div class="overlay"></div>
-	<div class="container">
-		<div
+	<section class="hero-wrap hero-wrap-2"
+		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
 			class="row no-gutters slider-text align-items-end justify-content-center">
 			<div class="col-md-9 ftco-animate mb-5 text-center">
 				<p class="breadcrumbs mb-0">
