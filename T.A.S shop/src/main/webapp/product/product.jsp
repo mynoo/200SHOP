@@ -37,6 +37,7 @@
 		location.href='<%=Noform%>prprList';
 	}
 	$(document).ready(function() {
+
 	});
 </script>
 </head>
