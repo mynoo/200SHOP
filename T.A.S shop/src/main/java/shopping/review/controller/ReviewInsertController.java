@@ -28,8 +28,6 @@ public class ReviewInsertController extends SuperClass{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
-//		String id = request.getParameter("id") ;
-//		int no = Integer.parseInt(request.getParameter("no")) ;
 		
 		bean = new Review();
 		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
@@ -50,9 +48,7 @@ public class ReviewInsertController extends SuperClass{
 		request.setAttribute("pno", pno);
 		request.setAttribute("bean", bean);
 		
-		new ProductDetailViewController().doGet(request, response);
-//		String gotopage = "/product/product.jsp" ;
-//		super.GotoPage(gotopage);
+		new ReviewListController().doGet(request, response);
 		
 		
 	}

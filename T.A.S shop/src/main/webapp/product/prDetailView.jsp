@@ -153,14 +153,19 @@ form.form-inline {
       </div>
    </div>
       <div class="btnbox2">
-         <button class="btn btn-primary" onclick="history.back();">
-            돌아가기
-         </button>
-         <form action="<%=YesForm%>" class="form-inline" role="form" method="get">
-			<input type="hidden" name="command" value="reviewList">
-			<input type="hidden" name="pno" value="${bean.pno}"> 
-			<button type="submit" class="btn btn-danger" id="btn2">리뷰보기(${requestScope.totalcount})</button>  
-         </form>
+     	 <c:set var="totalcount" value="${requestScope.totalcount}" />
+	        	<form action="<%=YesForm%>" class="form-inline" role="form" method="get">
+					<input type="hidden" name="command" value="reviewList">
+					<input type="hidden" name="pno" value="${bean.pno}"> 
+					<input type="hidden" name="totalcount" value="${requestScope.totalcount}">
+					<button type="submit" class="btn btn-danger" id="btn1">리뷰보기(${requestScope.totalcount})</button>  
+					<button class="btn btn-primary" onclick="history.back();">
+           				돌아가기
+     	   			 </button>
+         		</form>
+           <%--  <c:if test="${totalcount == 0}">
+            	<a  class="btn btn-danger" id="btn2"  href="void(0);" onclick="alert('등록된 리뷰가 없습니다.');return false;">리뷰보기(0)</a>
+            </c:if> --%>
       </div>
    </div>
    

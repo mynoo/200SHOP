@@ -34,7 +34,14 @@
 
 <body>
 	   <jsp:include page="../common/generalhead.jsp" />
-
+	   
+			 <c:set var="totalcount" value="${requestScope.totalcount}"/>
+			<c:if test="${totalcount < 1 }">
+				 <script>
+		 		 	alert('등록된 리뷰가 없습니다.');
+   				 </script>
+			</c:if>  
+			
    <section class="hero-wrap hero-wrap-2"
       style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
       data-stellar-background-ratio="0.5">

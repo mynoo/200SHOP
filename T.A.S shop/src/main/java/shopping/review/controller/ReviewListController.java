@@ -23,7 +23,17 @@ public class ReviewListController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		int pno = Integer.parseInt(request.getParameter("pno")) ;
+		int pno=0;
+		if(request.getParameter("pno") != null)
+		{
+			pno = Integer.parseInt(request.getParameter("pno")) ;
+		}
+		if(request.getAttribute("pno") != null)
+		{
+			pno = (int) request.getAttribute("pno");
+		}
+		
+		
 		String mid = request.getParameter("mid");
 
 		FlowParameters parameters 
@@ -62,6 +72,7 @@ public class ReviewListController extends SuperClass {
 		
 		System.out.println("product list count : " + list.size()); 
 		
+		request.setAttribute("totalcount", totalCount);
 		request.setAttribute("lists", list);
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("pno", pno);

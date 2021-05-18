@@ -53,31 +53,33 @@
                     <label for="message">Message</label>
                     <textarea name="vcomment" id="vcomment" cols="30" rows="10" class="form-control"></textarea>
                   </div>
-<div class="star-box">
-  <span class="star star_left" ></span>
-  <span class="star star_right"></span>
-
-  <span class="star star_left"></span>
-  <span class="star star_right"></span>
-
-  <span class="star star_left"></span>
-  <span class="star star_right"></span>
-
- <span class="star star_left"></span>
- <span class="star star_right"></span>
-
- <span class="star star_left"></span>
- <span class="star star_right"></span>
-</div>
-<script type="text/javascript">
-$(".star").on('click',function(){
-	   var idx = $(this).index();
-	   $(".star").removeClass("on");
-	     for(var i=0; i<=idx; i++){
-	        $(".star").eq(i).addClass("on");
-	   }
-	 });
-</script>
+					<div class="star-box">
+					  <span class="star star_left" ></span>
+					  <span class="star star_right"></span>
+					
+					  <span class="star star_left"></span>
+					  <span class="star star_right"></span>
+					
+					  <span class="star star_left"></span>
+					  <span class="star star_right"></span>
+					
+					 <span class="star star_left"></span>
+					 <span class="star star_right"></span>
+					
+					 <span class="star star_left"></span>
+					 <span class="star star_right"></span>
+					</div>
+					
+					<script type="text/javascript">
+					$(".star").on('click',function(){
+						   var idx = $(this).index();
+						   $(".star").removeClass("on");
+						     for(var i=0; i<=idx; i++){
+						        $(".star").eq(i).addClass("on");
+						   }
+						 });
+					</script>
+					
                   <div class="form-group" align="right">
                     <input type="submit" value="Post Review" class="btn py-3 px-4 btn-primary">
 					<input type="reset" value="Reset" class="btn py-3 px-4 btn-primary" name="reset" />
