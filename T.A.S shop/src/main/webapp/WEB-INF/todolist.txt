@@ -42,6 +42,11 @@ other=shopping.otheraddress.controller.OtherOrderController
 #insert.com=shopping.comment.controller.CommentInsertController
 #delete.com=shopping.comment.controller.CommentDeleteController
 ### Review Section ######################################################
-#reviewInsert=shopping.review.controller.ReviewInsertController
-#reviewDelete=shopping.review.controller.ReviewDeleteController
-#reviewUpdate=shopping.review.controller.ProductListController
+reviewInsert=shopping.review.controller.ReviewInsertController
+reviewMain=shopping.review.controller.ReviewMainController
+reviewList=shopping.review.controller.ReviewListController
+reviewDelete=shopping.review.controller.ReviewDeleteController
+reviewUpdate=shopping.review.controller.ReviewUpdateController
+### Reply Section #####################################################
+reInsert=shopping.reply.controller.ReplyInsertController
+reDelete=shopping.reply.controller.ReplyDeleteController
