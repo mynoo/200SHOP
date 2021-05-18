@@ -4,6 +4,47 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ /**********************main start***************************/
+ p.mb-0.phone.pl-md-2{
+ font-family: 'Slabo 27px', serif;
+ }
+ .mr-2{
+ font-family: 'Slabo 27px', serif;
+ padding-top: 3px;
+ display: inline-block;
+ }
+ a.nav-link {
+    font-family: 'Slabo 27px', serif;
+}
+.navbar-brand {
+	font-family: 'Cinzel', serif;
+}
+.heading-section {
+    font-family: 'Song Myung', serif;
+    color: #808080;
+}
+section.ftco-intro {
+	font-family: 'Song Myung', serif;
+}
+.col-lg-2.col-md-4 {
+	font-family: 'Slabo 27px', serif;
+}
+a.btn.btn-primary.d-block {
+	font-family: 'Slabo 27px', serif;
+}
+.dropdown-menu {
+	font-family: 'Slabo 27px', serif;
+}
+/********************************main css end***********************************/
+.mb-0{
+	font-family: 'Song Myung', serif;
+}
+a{
+	font-family: 'Slabo 27px', serif;
+}
+td{
+	color: #808080;	
+}
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -41,7 +82,6 @@
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -8000,7 +8040,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   font-weight: 300;
-  color: gray; }
+  color: #fff; }
   body.menu-show {
     overflow: hidden;
     position: fixed;
@@ -8171,7 +8211,7 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light .navbar-nav {
       padding-bottom: 10px; } }
   .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
-    font-size: 14px;
+    font-size: 20px;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     padding-left: 20px;
@@ -8337,7 +8377,7 @@ h1, h2, h3, h4, h5,
 
 .navbar-brand {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 35px;
   position: relative;
   text-transform: uppercase; }
 
@@ -8605,7 +8645,7 @@ h1, h2, h3, h4, h5,
   .product .img {
     display: block;
     border-radius: 4px;
-    height: 350px;
+    height: 500px;
     position: relative;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -8910,7 +8950,7 @@ h1, h2, h3, h4, h5,
   overflow-x: scroll; }
 
 .table {
-  min-width: 1000px !important;
+  min-width: 700px !important;
   width: 100%;
   background: #fff;
   -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
@@ -8928,8 +8968,9 @@ h1, h2, h3, h4, h5,
   .table tbody tr {
     margin-bottom: 10px; }
   .table tbody th, .table tbody td {
+    color: black;
     border: none;
-    padding: 30px;
+    padding: 20px;
     background: #fff;
     border-bottom: 4px solid #f8f9fd;
     vertical-align: middle; }

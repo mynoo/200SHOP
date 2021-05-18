@@ -13,8 +13,8 @@ public class BoardDao extends SuperDao {
 	
 	
 	public int InsertData( Board bean ){
-		String sql = " insert into boards(bno, title, writer, bcontents,writedate,depth ) " ;
-		sql += " values(myboard.nextval, ?, ?, ?, ?, 0 ) " ;
+		String sql = " insert into boards(bno, title, writer, bcontents, writedate, depth ) " ;
+		sql += " values(myboard.nextval, ?, ?, ?, sysdate, 0 ) " ;
 		
 		PreparedStatement pstmt = null ;
 		int cnt = -99999 ;
@@ -49,7 +49,7 @@ public class BoardDao extends SuperDao {
 		return cnt ;
 	}
 	public int UpdateData( Board bean ){
-		String sql = " update boards set bscontent=?, title=?, writer=?, depth=? " ;
+		String sql = " update boards set bcontents=?, title=?, writer=?, depth=? " ;
 		sql += " where bno = ? " ;
 		
 		PreparedStatement pstmt = null ;
@@ -159,7 +159,7 @@ public class BoardDao extends SuperDao {
 		return lists ;
 	}
 
-	public Board SelectDataByPk( int no ){
+	public Board SelectDataByPk( int bno ){
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;	
 		
@@ -171,7 +171,7 @@ public class BoardDao extends SuperDao {
 			if( this.conn == null ){ this.conn = this.getConnection() ; }			
 			pstmt = this.conn.prepareStatement(sql) ;			
 			
-			pstmt.setInt(1, no);
+			pstmt.setInt(1, bno);
 			
 			rs = pstmt.executeQuery() ; 
 			
@@ -207,7 +207,7 @@ public class BoardDao extends SuperDao {
 		ResultSet rs = null ;
 		
 		String sql = " select ranking, bno, writer,title, bcontents,writedate,depth " ;
-		sql += " from ( select bno, writer,title, bcontents,writedate,depth rank() over(order by groupno desc, orderno asc, depth asc) as ranking " ;
+		sql += " from ( select bno, writer,title, bcontents,writedate,depth, rank() over(order by bno asc) as ranking " ;
 		sql += " from boards  " ;
 		
 		if(mode.equalsIgnoreCase("all") ==false) { 

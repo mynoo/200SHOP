@@ -31,6 +31,12 @@ ul.pagination li {
 form.form-inline {
     justify-content: center;
 }
+.form-group {
+    margin: 0 5;
+}
+.btn{
+	margin: 10px;
+}
 </style>
 <script>	
 		function search(){
@@ -55,7 +61,7 @@ form.form-inline {
 <jsp:include page="../common/generalhead.jsp" />
     
 	<section class="hero-wrap hero-wrap-2"
-		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+		style="background-image: url('<%=contextPath%>/images/bg_4.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -84,7 +90,7 @@ form.form-inline {
 							<form action="" class="form-inline" role="form" name="myform"
 								method="get">
 								<div class="form-group">
-									<select id="mode" name="mode" class="form-control">
+									<select id="mode" name="mode" class="form-control-sm">
 										<option value="all" selected="selected">-- 선택하세요.
 										<option value="pname">이름
 										<option value="brand">제조회사
@@ -92,14 +98,14 @@ form.form-inline {
 									</select>
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control" name="keyword"
+									<input type="text" class="form-control-sm" name="keyword"
 										id="keyword">
 								</div>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="search();">검색</button>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="searchAll();">전체 검색</button>
 									<button class="btn btn-primary btn-info" type="button"
 										onclick="writeForm();">상품 등록</button>
@@ -108,7 +114,7 @@ form.form-inline {
 						</td>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody style="color:#808080" align="center">
 					<tr>
 						<th>PNO</th>
 						<th>PNAME</th>

@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	int pageSize = 9;
-%>
 <%@ include file="/common/common.jsp"%>
+<%
+int pageSize = 9;
+%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+</head>
 <style>
 	#prList {
 		float: right;
@@ -26,15 +27,21 @@
 	button.btn.btn-primary {
 		margin-right: 15px;
 	}
+.form-group {
+    margin-left: 20;
+}
+.form-group {
+    margin-left: 20;
+}
 </style>
-<script>
-	function search(){
-		var mode = $('#mode').val() ;
-		var keyword = $('#keyword').val() ;
-		location.href='<%=Noform%>prprList' + '&mode=' + mode + '&keyword=' + keyword ;
-	}
-	function searchAll(){
-		location.href='<%=Noform%>prprList';
+<script>	
+		function search(){
+			var mode = $('#mode').val() ;
+			var keyword = $('#keyword').val() ;
+			location.href='<%=Noform%>prprList' + '&mode=' + mode + '&keyword=' + keyword ;
+		}
+		function searchAll(){
+			location.href='<%=Noform%>prprList';
 	}
 	$(document).ready(function() {
 
@@ -86,9 +93,11 @@
 									<input type="text" class="form-control-sm" name="keyword" id="keyword">
 								</div>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button" onclick="search();">검색</button>
+								<button class="btn btn-primary" type="button"
+									onclick="search();">검색</button>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button" onclick="searchAll();">전체 검색</button>
+								<button class="btn btn-primary" type="button"
+									onclick="searchAll();">전체 검색</button>
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
 						</div>

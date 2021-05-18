@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import shopping.board.model.BoardDao;
 import shopping.common.controller.SuperClass;
 
-@WebServlet(value = "/board/delete")
+
 public class BoardDeleteController extends SuperClass {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,11 +12,10 @@ import shopping.common.controller.SuperClass;
 import shopping.member.model.Member;
 import shopping.product.controller.ProductDetailViewController;
 import shopping.product.controller.ProductListController;
-import shopping.product.controller.ProductPrListController;
 import shopping.review.model.Review;
 import shopping.review.model.ReviewDao;
 
-public class ReviewInsertController extends SuperClass{
+public class ReviewMainController extends SuperClass{
 	private Review bean = null ;
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,27 +28,22 @@ public class ReviewInsertController extends SuperClass{
 		super.doPost(request, response);
 		
 		
+		System.out.println("여기는 리뷰 메인컨트롤러!");
+		System.out.println("pno는 : " + request.getParameter("pno"));
+		int pno = Integer.parseInt(request.getParameter("pno")) ;
+		
+		
 		bean = new Review();
-		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
-		bean.setPno(Integer.parseInt(multi.getParameter("pno")));
-		bean.setMid(multi.getParameter("mid"));
-		bean.setVcomment(multi.getParameter("vcomment")); 
+		Member mem = new Member();
+		bean.setPno(pno);
 		
-		System.out.println("mid : " + multi.getParameter("mid"));
-		System.out.println("vcomment : " + multi.getParameter("vcomment"));
-		System.out.println("pno : " + Integer.parseInt(multi.getParameter("pno")));
+		System.out.println("pno : " + bean.getPno());
 		
 		
-		ReviewDao dao = new ReviewDao();
-		int cnt = -999999 ;
-		cnt = dao.InsertData(bean) ;
-		
-		int pno = Integer.parseInt(multi.getParameter("pno"));
-		request.setAttribute("pno", pno);
 		request.setAttribute("bean", bean);
 		
-		new ReviewListController().doGet(request, response);
-		
+		String gotopage = "/review/prReviewInsert.jsp" ;
+		super.GotoPage(gotopage);
 		
 	}
 	
