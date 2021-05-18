@@ -5,90 +5,52 @@
 <html>
 <head>
 <script>
-	function goinsert() {
-		location.href = '<%=Noform%>mallInsert';
-	}
+$(document).ready(function() {
+	$('[data-toggle="popover"]').popover();
+});
+function goinsert() {
+    location.href = '<%=Noform%>mallInsert';
+ }
 
-
-   $(document).ready(function() {
-      $('[data-toggle="popover"]').popover();
-   });
 </script>
 <style>
-.imgbox {
-	display: inline-block;
-	vertical-align: top;
-	text-align: right;
+.imgbox{
+display: inline-block;
+vertical-align: top;
+text-align: right;
 }
-
-.containerbox {
-	display: inline-block;
+.containerbox{
+display: inline-block;
 }
-
-.container-wrap {
-	width: 1400px;
-	margin: 0 auto;
+.container-wrap{
+width: 1200px;
+margin: 100 auto;
+margin-left: 200;
 }
-
-.btnbox2 {
-	text-align: right;
-	margin: 0 auto 20px;
-	width: 1130px;
+.btn{
+justify-content: flex-end;
 }
-
-h4 {
-	margin: 0px auto;
-	padding: 20px 0;
-	width: 1400px;
+.btnbox2{
+text-align: right;
+margin: 0 auto 20px;
+width: 986px;
 }
-
-.form-control-sm {
-	margin: 0 10px;
+h4{
+margin: 0px auto;
+padding: 20px 0;
+width: 1400px;
 }
-
-table {
-	border-collapse: collapse;
-	width: 100%;
+.form-control-sm{
+margin: 0 10px;
 }
-
-th {
-	padding: 8px;
-	text-align: center;
-	border-bottom: 1px solid #ddd;
+.col-lg-10 {
+margin: auto;
 }
-
-td {
-	padding: 8px;
-	text-align: center;
-	border-bottom: 1px solid #ddd;
+th{
+text-align: center !important;
 }
-
-h4 {
-	text-align: center;
-}
-
-ul.pagination {
-	justify-content: center;
-}
-
-ul.pagination li {
-	padding: 3;
-}
-
-form.form-inline {
-	justify-content: center;
-}
-
-.hidden-col {
-	display: none;
-}
-
-#btn3 {
-	margin: 20px auto 0;
-}
-
-form.form-inline {
-	margin: auto;
+button.btn.btn-primary {
+margin: 0 10 0 0;
 }
 </style>
 </head>
