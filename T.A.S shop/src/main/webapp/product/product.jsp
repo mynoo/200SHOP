@@ -90,9 +90,11 @@ int pageSize = 9;
 									<input type="text" class="form-control-sm" name="keyword" id="keyword">
 								</div>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button" onclick="search();">검색</button>
+																<button class="btn btn-primary" type="button"
+									onclick="search();">검색</button>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button" onclick="searchAll();">전체 검색</button>
+								<button class="btn btn-primary" type="button"
+									onclick="searchAll();">전체 검색</button>
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
 						</div>
