@@ -49,7 +49,8 @@ public class Paging2 {
 		
 		 this.Display();
 	}
-		private String getPagingHtml(String url) {
+	
+	private String getPagingHtml(String url) {
 		String result = "" ;
 		
 		// 필드 검색을 위한 변수
@@ -110,33 +111,4 @@ public class Paging2 {
 	public int getPageNumber() {return pageNumber;}
 	public int getBeginRow() {return beginRow;}
 	public int getEndRow() {return endRow;}
-	
-//	
-//	public int getTotalCount() {
-//		return totalCount;
-//	}
-//
-//	public int getTotalPage() {
-//		return totalPage;
-//	}
-//
-//	public int getPageSize() {
-//		return pageSize;
-//	}
-//
-//	public int getPageCount() {
-//		return pageCount;
-//	}
-//
-//	public int getBeginPage() {
-//		return beginPage;
-//	}
-//
-//	public int getEndPage() {
-//		return endPage;
-//	}
-//
-//	public String getUrl() {
-//		return url;
-//	}	
 }

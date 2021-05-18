@@ -32,17 +32,17 @@
 				<div class="col-md-6 d-flex justify-content-md-end">
 					<div class="social-media mr-4">
 						<p class="mb-0 d-flex">
-							<a href="#" class="d-flex align-items-center justify-content-center">
+							<a href="#" target=”_blank” onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' +encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Facebook" class="d-flex align-items-center justify-content-center" >
 								<span class="fa fa-facebook">
 									<i class="sr-only">Facebook</i>
 								</span>
 							</a>
-							<a href="#" class="d-flex align-items-center justify-content-center">
+							<a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20' +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Twitter" class="d-flex align-items-center justify-content-center">
 								<span class="fa fa-twitter">
 									<i class="sr-only">Twitter</i>
 								</span>
 							</a>
-							<a href="#" class="d-flex align-items-center justify-content-center">
+							<a href="#" onclick="javascript:window.open('https://instagram.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20' +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Instagram" class="d-flex align-items-center justify-content-center">
 								<span class="fa fa-instagram">
 									<i class="sr-only">Instagram</i>
 								</span>
@@ -75,11 +75,12 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
-				<a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split"
+				<a href="<%=Noform%>mallOrder&id=${loginfo.id}" class="btn-cart dropdown-toggle dropdown-toggle-split"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
-						<small> </small>
+						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
+						<small style="color: white;">${shopcount}</small>
 					</div>
 				</a>
 				<div class="dropdown-menu dropdown-menu-right">
@@ -135,7 +136,7 @@
 						<a href="<%=Noform%>main" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=Noform%>prList" class="nav-link">Products</a>
+						<a href="<%=Noform%>prprList" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=Noform%>boList" class="nav-link">Boards</a>

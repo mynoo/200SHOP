@@ -31,6 +31,12 @@ ul.pagination li {
 form.form-inline {
     justify-content: center;
 }
+.form-group {
+    margin: 0 5;
+}
+.btn{
+	margin: 10px;
+}
 </style>
 <script>	
 		function search(){
@@ -55,7 +61,7 @@ form.form-inline {
 <jsp:include page="../common/generalhead.jsp" />
     
 	<section class="hero-wrap hero-wrap-2"
-		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+		style="background-image: url('<%=contextPath%>/images/bg_4.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -63,10 +69,12 @@ form.form-inline {
 				class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate mb-5 text-center">
 					<p class="breadcrumbs mb-0">
-						<span class="mr-2"><a
-							href="<%=contextPath%>/common/main.jsp">Home <i
-								class="fa fa-chevron-right"></i></a></span> <span>Products <i
-							class="fa fa-chevron-right"></i></span>
+						<span class="mr-2">
+							<a href="<%=contextPath%>/common/main.jsp">Home 
+								<i class="fa fa-chevron-right"></i>
+							</a>
+						</span>
+						<span>Products <i class="fa fa-chevron-right"></i></span>
 					</p>
 					<h2 class="mb-0 bread">Products List</h2>
 				</div>
@@ -94,10 +102,10 @@ form.form-inline {
 										id="keyword">
 								</div>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="search();">검색</button>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="searchAll();">전체 검색</button>
 									<button class="btn btn-primary btn-info" type="button"
 										onclick="writeForm();">상품 등록</button>
@@ -106,7 +114,7 @@ form.form-inline {
 						</td>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody style="color:#808080" align="center">
 					<tr>
 						<th>PNO</th>
 						<th>PNAME</th>
@@ -132,27 +140,26 @@ form.form-inline {
 							${bean.pname}
 						</a>
 					</td>
-							<td>${bean.content}</td>
-							<td>${bean.brand}</td>
-							<td>${bean.category}</td>
-							<td>${bean.stock}</td>
-							<td>${bean.price}</td>
-							<td>${bean.alcohol}</td>
-							<td>${bean.volume}</td>
-							<td>${bean.date}</td>
+						<td>${bean.content}</td>
+						<td>${bean.brand}</td>
+						<td>${bean.category}</td>
+						<td>${bean.stock}</td>
+						<td>${bean.price}</td>
+						<td>${bean.alcohol}</td>
+						<td>${bean.volume}</td>
+						<td>${bean.date}</td>
 					<td>
-							<a href="<%=Noform%>prDelete&pno=${bean.pno}" onclick="return confirm('삭제하시겠습니까?');">
-								Delete
-							</a>
+						<a href="<%=Noform%>prDelete&pno=${bean.pno}" onclick="return confirm('삭제하시겠습니까?');">
+							Delete
+						</a>
 					</td>
 					<td>
-							<a href="<%=Noform%>prUpdate&pno=${bean.pno}">
-								Update
-							</a>
-						
+						<a href="<%=Noform%>prUpdate&pno=${bean.pno}">
+							Update
+						</a>
 					</td>
 				</tr>
-				</c:forEach>		
+				</c:forEach>
 				</tbody>
 			</table>
 			<div class="row mt-5">

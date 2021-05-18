@@ -206,7 +206,7 @@ public class ProductDao extends SuperDao {
 
 		Product bean = null ;
 		try {
-			if( this.conn == null ){ this.conn = this.getConnection() ; }			
+			if( this.conn == null ){ this.conn = this.getConnection() ; }
 			pstmt = this.conn.prepareStatement(sql) ;
 			
 			pstmt.setInt(1, pno);
@@ -345,8 +345,8 @@ public class ProductDao extends SuperDao {
 				Product bean = new Product();
 				
 				bean.setPno(rs.getInt("pno"));
-				bean.setPname(rs.getString("pname"));				
-				bean.setBrand(rs.getString("brand"));				
+				bean.setPname(rs.getString("pname"));
+				bean.setBrand(rs.getString("brand"));
 				bean.setImage(rs.getString("image"));
 				bean.setStock(rs.getInt("stock"));
 				bean.setPrice(rs.getInt("price"));

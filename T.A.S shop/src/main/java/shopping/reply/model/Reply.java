@@ -7,17 +7,6 @@ public class Reply {
 	private String comment;
 	private String date;
 	
-	
-	
-	public Reply(int rno, int groupno, String mid, String comment, String date) {
-		super();
-		this.rno = rno;
-		this.groupno = groupno;
-		this.mid = mid;
-		this.comment = comment;
-		this.date = date;
-	}
-
 	public Reply() {}
 
 	public int getRno() {

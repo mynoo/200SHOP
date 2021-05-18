@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shopping.common.controller.SuperClass;
+import shopping.mall.controller.MallCalculateController;
 import shopping.otheraddress.model.Otheraddress;
 import shopping.otheraddress.model.OtheraddressDao;
 
@@ -42,13 +43,11 @@ public class OtheraddressInsertController extends SuperClass {
 		if (this.validate(request) == true) { 
 			System.out.println("otheraddress insert validation check success");
 			
-			
 			cnt = dao.InsertData(bean) ;
 			
-			request.setAttribute("bean", bean);
+			session.setAttribute("otherinfo", bean);
 			
-			String gotopage = "/orderdetail/orderdetail.jsp" ;
-			super.GotoPage(gotopage);
+			new MallCalculateController().doGet(request, response);
 			
 		} else {
 			System.out.println("otheraddress insert validation check failure");
@@ -56,7 +55,7 @@ public class OtheraddressInsertController extends SuperClass {
 			request.setAttribute("bean", bean);
 			super.doPost(request, response);
 			
-			String gotopage = "/orderdetail/orderinformation.jsp" ;
+			String gotopage = "/orderdetail/userInformation.jsp" ;
 			super.GotoPage(gotopage);
 		}		
 		

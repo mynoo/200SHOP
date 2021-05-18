@@ -269,4 +269,103 @@ public class ReviewDao extends SuperDao {
 	
 	
 	
+	
+	public List<Review> SelectDataList( int beginRow, int endRow, String mode, String keyword, int pno ) {
+		// 해당 검색 조건에 맞는 모든 데이터를 조회합니다.
+		PreparedStatement pstmt = null ;
+		ResultSet rs = null ;
+		
+		String sql = " select ranking, vnum, pno, mid, vcomment, inputdate " ;
+		sql += " from ( select vnum, pno, mid, vcomment, inputdate, rank() over(order by vnum desc) as ranking " ;
+		sql += " from review " ;
+		
+		if(mode.equalsIgnoreCase("all") ==false) { 
+			System.out.println("not all search mode");
+			sql += " where " + mode + " like '%" + keyword + "%' " ;	
+		}
+		
+		sql += " where pno=? ) " ;
+		sql += " where ranking between ? and ? and pno=? " ;	
+
+		List<Review> lists = new ArrayList<Review>();
+		
+		try {
+			if( conn == null ){ super.conn = super.getConnection() ; }
+			pstmt = super.conn.prepareStatement(sql) ;
+			
+			pstmt.setInt(1, pno);
+			pstmt.setInt(2, beginRow);
+			pstmt.setInt(3, endRow);
+			pstmt.setInt(4, pno);
+			
+			rs = pstmt.executeQuery() ;	
+			
+			while( rs.next() ){
+				Review bean = new Review();
+				
+				bean.setVnum(rs.getInt("vnum"));
+				bean.setPno(rs.getInt("pno"));
+				bean.setMid(rs.getString("mid"));				
+				bean.setVcomment(rs.getString("vcomment"));
+				bean.setInputdate(String.valueOf(rs.getDate("inputdate")));
+				
+				lists.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				if( rs != null ){ rs.close(); }
+				if( pstmt != null ){ pstmt.close(); }
+				super.closeConnection(); 
+			} catch (Exception e2) {
+				e2.printStackTrace(); 
+			}
+		}
+		
+		return lists ;
+	}
+	
+	
+	public int SelectTotalCount( String mode, String keyword, int pno ) {
+		PreparedStatement pstmt = null ;
+		ResultSet rs = null ;
+		
+		String sql = " select count(*) as cnt from review " ;
+		sql += " where pno = ? " ;
+		if(mode.equalsIgnoreCase("all") ==false) { 
+			System.out.println("not all search mode");
+			sql += " where " + mode + " like '%" + keyword + "%' " ;	
+		}
+		int cnt = 0 ; //없는 경우의 기본 값
+		try {
+			if( this.conn == null ){ this.conn = this.getConnection() ; }			
+			pstmt = this.conn.prepareStatement(sql) ;
+			pstmt.setInt(1, pno);
+			
+			rs = pstmt.executeQuery() ; 
+			
+			if ( rs.next() ) { 
+				cnt = rs.getInt("cnt");
+			}
+			
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		} finally{
+			try {
+				if( rs != null){ rs.close(); } 
+				if( pstmt != null){ pstmt.close(); } 
+				this.closeConnection() ;
+			} catch (Exception e2) {
+				e2.printStackTrace(); 
+			}
+		} 		
+		System.out.println("여긴 페이질 토탈 카운트");
+		return cnt  ; 
+	}
+	
+	
+	
+	
+	
 }

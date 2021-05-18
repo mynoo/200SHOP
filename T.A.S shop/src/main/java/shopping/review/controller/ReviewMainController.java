@@ -29,32 +29,20 @@ public class ReviewMainController extends SuperClass{
 		
 		
 		System.out.println("여기는 리뷰 메인컨트롤러!");
-//		String id = request.getParameter("id") ;
-//		int no = Integer.parseInt(request.getParameter("no")) ;
-		
+		System.out.println("pno는 : " + request.getParameter("pno"));
 		int pno = Integer.parseInt(request.getParameter("pno")) ;
 		
 		
 		bean = new Review();
 		Member mem = new Member();
-//		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
 		bean.setPno(pno);
 		
 		System.out.println("pno : " + bean.getPno());
-//		System.out.println("mid : " + );
-//		System.out.println("pno : " + Integer.parseInt(multi.getParameter("pno")));
 		
 		
-//		ReviewDao dao = new ReviewDao();
-//		int cnt = -999999 ;
-//		cnt = dao.InsertData(bean) ;
-//		
-//		
 		request.setAttribute("bean", bean);
-//		
-//		new ProductDetailViewController().doGet(request, response);
 		
-		String gotopage = "/review/prReview.jsp" ;
+		String gotopage = "/review/prReviewInsert.jsp" ;
 		super.GotoPage(gotopage);
 		
 	}

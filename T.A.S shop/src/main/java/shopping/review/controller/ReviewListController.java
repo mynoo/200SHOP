@@ -2,6 +2,7 @@ package shopping.review.controller;
 
 import java.io.IOException;
 
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -15,52 +16,68 @@ import shopping.review.model.Review;
 import shopping.review.model.ReviewDao;
 import shopping.utility.FlowParameters;
 import shopping.utility.Paging;
+import shopping.utility.PagingR;
 
 public class ReviewListController extends SuperClass {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		int pno = Integer.parseInt(request.getParameter("pno")) ;
+		int pno=0;
+		if(request.getParameter("pno") != null)
+		{
+			pno = Integer.parseInt(request.getParameter("pno")) ;
+		}
+		if(request.getAttribute("pno") != null)
+		{
+			pno = (int) request.getAttribute("pno");
+		}
 		
 		
-//		FlowParameters parameters 
-//			= new FlowParameters(
-//					request.getParameter("pageNumber"), 
-//					request.getParameter("mode"), 
-//					request.getParameter("keyword")); 
-//		
-//		System.out.println("parameter list ");
-//		System.out.println(parameters.toString());
-			
-//		String contextPath = request.getContextPath() ;
-//		String url = contextPath + "/Shopping?command=prList" ;
-		
-		ReviewDao dao = new ReviewDao();
-		
-		// 행(row) 총 개수
-//		int totalCount = dao.SelectTotalCount(parameters.getMode(), parameters.getKeyword()) ; 
-//		System.out.println("total data size : " + totalCount); 
-//		
-//		Paging pageInfo = new Paging(
-//								parameters.getPageNumber(), 
-//								totalCount, 
-//								url, 
-//								parameters.getMode(), 
-//								parameters.getKeyword()) ;	 	
+		String mid = request.getParameter("mid");
 
-		List<Review> lists = dao.SelectDataList(pno) ;
+		FlowParameters parameters 
+			= new FlowParameters(
+				request.getParameter("pageNumber"), 
+				request.getParameter("mode"), 
+				request.getParameter("keyword")); 
+	
+		System.out.println("parameter list ");
+		System.out.println(parameters.toString());
+		String contextPath = request.getContextPath() ;
+		String url = contextPath + "/Shopping?command=reviewList" ;
+		ReviewDao Rdao = new ReviewDao();
 		
-//		System.out.println("product list count : " + lists.size()); 
 		
-		request.setAttribute("lists", lists);
-//		request.setAttribute("pageInfo", pageInfo);
+		int totalCount = Rdao.SelectTotalCount(parameters.getMode(), parameters.getKeyword(), pno) ; 
+		System.out.println("total data size : " + totalCount); 
 		
-		// 자주 사용되는 파라미터를 속성으로 정의합니다. 
-//		request.setAttribute("parameters", parameters.toString());
+		PagingR pageInfo = new PagingR(
+								parameters.getPageNumber(), 
+								totalCount, 
+								url, 
+								parameters.getMode(), 
+								parameters.getKeyword(),
+								pno);	 	
+
+		List<Review> list = Rdao.SelectDataList(
+				pageInfo.getBeginRow(), 
+				pageInfo.getEndRow(), 
+				parameters.getMode(), 
+				parameters.getKeyword(),
+				pno) ;
 		
+
+//		List<Review> lists = Rdao.SelectDataList(pno) ;
 		
-		String gotopage = "/product/prDetailView.jsp" ;
+		System.out.println("product list count : " + list.size()); 
+		
+		request.setAttribute("totalcount", totalCount);
+		request.setAttribute("lists", list);
+		request.setAttribute("pageInfo", pageInfo);
+		request.setAttribute("pno", pno);
+		
+		String gotopage = "/review/prReviewList.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override

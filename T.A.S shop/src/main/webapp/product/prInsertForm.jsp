@@ -23,6 +23,7 @@
 		margin-right: -4px;
 		border: 1px solid skyblue;
 	}
+}
 	</style>
 
 </head>
@@ -32,7 +33,7 @@
 		<div class="container">
 			<div class="signup-content">
 				<div class="signup-img">
-					<img src="../images/solid.png" alt="">
+					<img src="<%=contextPath%>/images/solid.png" alt="">
 					<div class="signup-img-content">
 						<h2>Product Registration</h2>
 						<p>Please enter the product to add !</p>
@@ -48,43 +49,50 @@
 									<label for="pname" class="required">Pname</label> 
 									<input
 										type="text" name="pname" id="pname" value="${bean.pname}" />
+										<span class="err form-control-static">${errpname}</span>
 								</div>
 								<div class="form-input">
 									<label for="brand" class="required">Brand</label> <input
 										type="text" name="brand" id="brand" value="${bean.brand}" />
+										<span class="err form-control-static">${errbrand}</span>
 								</div>
 								<div class="form-input">
 									<label for="image" class="required">Image</label> <input
 										type="file" name="image" id="image" value="${bean.image}"/>
+										<span class="err form-control-static">${errimage}</span>
 								</div>
 								<div class="form-input">
 									<label for="stock" class="required">Stock</label> <input
 										type="text" name="stock" id="stock" value="${bean.stock}"/>
+										<span class="err form-control-static">${errstock}</span>
 								</div>
 								<div class="form-input">
 									<label for="name" class="required">Price</label> <input
 										type="number" name="price" id="price" value="${bean.price}"/>
+										<span class="err form-control-static">${errprice}</span>
 								</div>
 							</div>
 							<div class="form-group">
-
 								<div class="form-input">
 									<label for="name" class="required">Date</label> <input
 										type="date" name="date" id="date" value="${bean.date}"/>
+										<span class="err form-control-static">${errdate}</span>
 								</div>
 								<div class="form-input">
 									<label for="alcohol" class="required">Alcohol</label> <input
 										type="number" name="alcohol" id="alcohol" value="${bean.alcohol}"/>
+										<span class="err form-control-static">${erralcohol}</span>
 								</div>
 								<div class="form-input">
 									<label for="volume" class="required">Volume</label> <input
 										type="number" name="volume" id="volume" value="${bean.volume}"/>
+										<span class="err form-control-static">${errvolume}</span>
 								</div>
 								<div class="form-input">
 									<label for="content" class="required">Content</label> <input
 										type="text" name="content" id="content" value="${bean.content}"/>
+										<span class="err form-control-static">${errcontent}</span>
 								</div>
-
 								<div class="form-input">
 									<div class="label-flex">
 										<label for="Category">Category</label>
@@ -98,8 +106,8 @@
 										<option value="vodka">Vodka</option>
 										<option value="whiskey">Whiskey</option>
 									</select>
+									<span class="err form-control-static">${errcategory}</span>
 								</div>
-
 							</div>
 						</div>
 						<div class="form-submit">
