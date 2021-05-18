@@ -26,7 +26,6 @@ public class ProductListController extends SuperClass {
 		
 		System.out.println("parameter list ");
 		System.out.println(parameters.toString());
-			
 		String contextPath = request.getContextPath() ;
 		String url = contextPath + "/Shopping?command=prList" ;
 		
@@ -42,7 +41,7 @@ public class ProductListController extends SuperClass {
 								url, 
 								parameters.getMode(), 
 								parameters.getKeyword()) ;	 	
-		    
+		
 		List<Product> lists = dao.SelectDataList(
 					pageInfo.getBeginRow(), 
 					pageInfo.getEndRow(), 

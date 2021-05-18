@@ -10,6 +10,7 @@ meDetailView=shopping.member.controller.MemberDetailViewController
 meUpdate=shopping.member.controller.MemberUpdateController
 meDelete=shopping.member.controller.MemberDeleteController
 meLogincheck=shopping.member.controller.MemberLogincheckController
+regForm=shopping.member.controller.MemberRegFormController
 ### Board Section ######################################################
 boList=shopping.board.controller.BoardListController
 boInsert=shopping.board.controller.BoardInsertController
@@ -31,11 +32,21 @@ mallCalculate=shopping.mall.controller.MallCalculateController
 mallDelete=shopping.mall.controller.MallDeleteController
 mallOrder=shopping.mall.controller.MallOrderController
 mallDetail=shopping.mall.controller.MallDetailController
+mallAddr=shopping.mall.controller.MallInsertAddrContorller
+### OtherAddress Section #################################################
+otheraddrList=shopping.otheraddress.controller.OtheraddressListController
+otheraddrInsert=shopping.otheraddress.controller.OtheraddressInsertController
+other=shopping.otheraddress.controller.OtherOrderController
 ### Comment Section ######################################################
 #list.com=shopping.comment.controller.CommentListController
 #insert.com=shopping.comment.controller.CommentInsertController
 #delete.com=shopping.comment.controller.CommentDeleteController
 ### Review Section ######################################################
 reviewInsert=shopping.review.controller.ReviewInsertController
-#reviewDelete=shopping.review.controller.ReviewDeleteController
-#reviewUpdate=shopping.review.controller.ProductListController
+reviewMain=shopping.review.controller.ReviewMainController
+reviewList=shopping.review.controller.ReviewListController
+reviewDelete=shopping.review.controller.ReviewDeleteController
+reviewUpdate=shopping.review.controller.ReviewUpdateController
+### Reply Section #####################################################
+reInsert=shopping.reply.controller.ReplyInsertController
+reDelete=shopping.reply.controller.ReplyDeleteController

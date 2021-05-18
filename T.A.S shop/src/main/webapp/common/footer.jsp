@@ -62,7 +62,7 @@
 							</li>
 							<li>
 								<c:if test="${whologin == 0}">
-									<a href="<%=Noform%>meInsert"><span class="fa fa-chevron-right mr-2" ></span>
+									<a href="<%=Noform%>regForm"><span class="fa fa-chevron-right mr-2" ></span>
 										Register 
 									</a>
 								</c:if>
@@ -117,7 +117,7 @@
 						<h2 class="ftco-heading-2">Quick Link</h2>
 						<ul class="list-unstyled">
 							<li>
-								<a href="<%=Noform%>meInsert">
+								<a href="<%=Noform%>regForm">
 									<c:if test="${whologin == 0}">
 										<span class="fa fa-chevron-right mr-2"></span>
 										New User 

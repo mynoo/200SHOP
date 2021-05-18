@@ -45,6 +45,9 @@
 				</div>
 				
 				<div class="signup-form">
+					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="history.go(-2);">
+						<b>X</b>
+					</button>
 					<form method="post" class="register-form">
 						<div class="form-row">
 							<div class="form-group">
@@ -82,23 +85,20 @@
 								<div class="form-input">
 									<label class="control-label required" for="zipcode">Zipcode</label>
 									<div class="form-inline">
-										<input type="text" id="zipcode" name="zipcode" placeholder="우편번호" readonly="readonly">
-									</div>
-									<div class="button">
-										<input type="button" onclick="zipfind();" value="우편번호 찾기">
+										<input type="text" id="zipcode" name="zipcode" value="${loginfo.zipcode}" readonly="readonly">
 									</div>
 								</div>
 								
 								<div class="form-input">
 									<label class="required" for="address1">Address1</label>
-										<input type="text" id="roadaddress" name="roadaddress" placeholder="도로명주소" readonly="readonly">	
-										<input type="text" id="address1" name="address1" placeholder="지번주소" readonly="readonly">
+										<input type="text" id="roadaddress" name="roadaddress" value="${loginfo.roadaddress}" readonly="readonly">	
+										<input type="text" id="address1" name="address1" value="${loginfo.address1}" readonly="readonly">
 										<span id="guide" style="color:#999;display:none"></span>
 								</div>
 								<div class="form-input">
 									<label class="required" for="address2">Address2</label>
-										<input type="text" id="address2" name="address2" placeholder="상세주소" readonly="readonly">
-										<input type="text" id="extraaddress" name="extraaddress" placeholder="참고항목" readonly="readonly">
+										<input type="text" id="address2" name="address2" value="${loginfo.address2}" readonly="readonly">
+										<input type="text" id="extraaddress" name="extraaddress" value="${loginfo.extraaddress}" readonly="readonly">
 								</div>
 
 								<div class="form-input">

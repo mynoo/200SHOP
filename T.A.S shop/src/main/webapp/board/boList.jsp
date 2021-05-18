@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/common/common.jsp" %>
+<%@ include file="./../common/common.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,7 +84,7 @@
 									&nbsp;&nbsp;
 									<button class="btn btn-default" type="button" onclick="search();">search</button>
 									<div class="button" align="right">
-										<a href="board_Insert.jsp" class="btn btn-primary py-2 px-4" >Write</a>
+										<a href="<%=contextPath%>/board/boInsert.jsp" class="btn btn-primary py-2 px-4" >Write</a>
 									</div>
 									&nbsp;&nbsp;
 									${pageInfo.pagingStatus}								
@@ -105,52 +106,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					
-				
-					<tr>
-						<td>1</td>
-						<td>
-							<a href="<%=Noform%>boDetailView"> The Recipe from a <br>
-								Winemakerâs Restaurent
-							</a>
-						</td>
-						<td>
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</td>
-						<td>aaaa</td>
-						<td>23 April 2020</td>
-						<td>
-							<c:if test="${sessionScope.loginfo.id == bean.writer}">
-								<a href="<%=Noform%>boUpdate&no=${bean.no}&${requestScope.parameters}">
-									수정
-								</a>
-							</c:if>
-							<c:if test="${sessionScope.loginfo.id != bean.writer}">
-								수정
-							</c:if>
-						</td>
-						<td>
-							<c:if test="${sessionScope.loginfo.id == bean.writer}">
-								<a href="<%=Noform%>boDelete&no=${bean.no}&${requestScope.parameters}">
-									삭제
-								</a>
-							</c:if>
-							<c:if test="${sessionScope.loginfo.id != bean.writer}">
-								삭제
-							</c:if>	
-						</td>
-					</tr>
 						<c:forEach var="bean" items="${requestScope.lists}">		
 							<tr>
 								<td>${bean.bno}</td>
-								<td>${bean.title}</td>
+								<td>
+								<a href="<%=contextPath%>/board/board_Detail.jsp">
+								${bean.title}
+								</a>
+								</td>
 								<td>${bean.bcontents}</td>
-								<td>${bean.writer}</td>	
+								<td>${sessionScope.loginfo.id}</td>	
 								<td>${bean.writedate}</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
-										<a href="<%=Noform%>boUpdate&no=${bean.no}&${requestScope.parameters}">
+										<a href="<%=Noform%>boUpdate&bno=${bean.bno}&${requestScope.parameters}">
 											수정
 										</a>
 									</c:if>
@@ -160,7 +129,7 @@
 								</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
-										<a href="<%=Noform%>boDelete&no=${bean.no}&${requestScope.parameters}">
+										<a href="<%=Noform%>boDelete&no=${bean.bno}&${requestScope.parameters}">
 											삭제
 										</a>
 									</c:if>

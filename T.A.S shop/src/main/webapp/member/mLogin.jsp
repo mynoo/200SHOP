@@ -47,16 +47,19 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('../images/login_bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('<%=contextPath%>/images/login_bg-01.jpg');">
 			<div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
 					Account Login
+					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="history.go(-1);">
+						<b>X</b>
+					</button>
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5" method="post" name="login">
 
 					<input type="hidden" id="command" value="meLogin">
 					<input type="hidden" id="isCheck" value="false">
-
+					
 					<div class="wrap-input100 validate-input" data-validate = "Enter userid">
 						<input class="input100" type="text" name="id" placeholder="User id" value="${requestScope.id}">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
@@ -74,7 +77,7 @@
 							Login
 						</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button class="login100-form-btn" onclick="location.href='<%=Noform%>meInsert'" >
+						<button class="login100-form-btn" onclick="location.href='<%=Noform%>regForm'" >
 							Sign up
 						</button>
 					</div>

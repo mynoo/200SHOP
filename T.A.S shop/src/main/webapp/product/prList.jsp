@@ -69,10 +69,12 @@ form.form-inline {
 				class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate mb-5 text-center">
 					<p class="breadcrumbs mb-0">
-						<span class="mr-2"><a
-							href="<%=contextPath%>/common/main.jsp">Home <i
-								class="fa fa-chevron-right"></i></a></span> <span>Products <i
-							class="fa fa-chevron-right"></i></span>
+						<span class="mr-2">
+							<a href="<%=contextPath%>/common/main.jsp">Home 
+								<i class="fa fa-chevron-right"></i>
+							</a>
+						</span>
+						<span>Products <i class="fa fa-chevron-right"></i></span>
 					</p>
 					<h2 class="mb-0 bread">Products List</h2>
 				</div>
@@ -138,27 +140,26 @@ form.form-inline {
 							${bean.pname}
 						</a>
 					</td>
-							<td>${bean.content}</td>
-							<td>${bean.brand}</td>
-							<td>${bean.category}</td>
-							<td>${bean.stock}</td>
-							<td>${bean.price}</td>
-							<td>${bean.alcohol}</td>
-							<td>${bean.volume}</td>
-							<td>${bean.date}</td>
+						<td>${bean.content}</td>
+						<td>${bean.brand}</td>
+						<td>${bean.category}</td>
+						<td>${bean.stock}</td>
+						<td>${bean.price}</td>
+						<td>${bean.alcohol}</td>
+						<td>${bean.volume}</td>
+						<td>${bean.date}</td>
 					<td>
-							<a href="<%=Noform%>prDelete&pno=${bean.pno}" onclick="return confirm('삭제하시겠습니까?');">
-								Delete
-							</a>
+						<a href="<%=Noform%>prDelete&pno=${bean.pno}" onclick="return confirm('삭제하시겠습니까?');">
+							Delete
+						</a>
 					</td>
 					<td>
-							<a href="<%=Noform%>prUpdate&pno=${bean.pno}">
-								Update
-							</a>
-						
+						<a href="<%=Noform%>prUpdate&pno=${bean.pno}">
+							Update
+						</a>
 					</td>
 				</tr>
-				</c:forEach>		
+				</c:forEach>
 				</tbody>
 			</table>
 			<div class="row mt-5">
@@ -179,7 +180,7 @@ form.form-inline {
 				}
 			});	
 			/* 이전에 넣었던 값 그대로 보존 */
-			$('#keyword').val( '${pageInfo.keyword}' ) ;		
+			$('#keyword').val( '${pageInfo.keyword}');
 		</script>	
 <jsp:include page="../common/footer.jsp" />
 </body>

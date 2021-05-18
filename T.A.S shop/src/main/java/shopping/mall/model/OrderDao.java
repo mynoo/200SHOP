@@ -13,7 +13,8 @@ public class OrderDao extends SuperDao {
 	public List<Order> SelectDataList(int oid) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from orders ";
+		String sql = "select * from orders";
+		
 		List<Order> lists = new ArrayList<Order>();
 		try {
 			if (this.conn == null) {

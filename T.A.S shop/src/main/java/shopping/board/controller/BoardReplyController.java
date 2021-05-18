@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import shopping.board.model.Board;
 import shopping.board.model.BoardDao;
 import shopping.common.controller.SuperClass;
-@WebServlet(value = "/board/reply")
+
 public class BoardReplyController extends SuperClass {
 	private Board bean = null ;
 	private BoardDao dao = null ; 
@@ -21,51 +21,58 @@ public class BoardReplyController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
+
+		bean = new Board() ;
+		bean.setBcontents(request.getParameter("bcontents")); 
+		bean.setTitle(request.getParameter("title"));
+		bean.setWriter(request.getParameter("writer"));
+		
+//		int depth = Integer.parseInt(request.getParameter("depth")) ;
+//			
+//		bean.setDepth(depth);
+		
+		System.out.println("bean information");
+		System.out.println(bean.toString()); 
+		
+		new BoardReplyController().doPost(request, response); 
+		
+		
+		if (this.validate(request) == true) {
+			System.out.println("board reply validation check success");
+			dao = new BoardDao();
+			int cnt = - 999999 ;
+			new BoardReplyController().doGet(request, response); 
+			
+		} else {
+			System.out.println("board reply validation check failure");
+			
+			request.setAttribute("bean", bean);
+			String gotopage = "/board/boReply.jsp" ;
+			super.GotoPage(gotopage);
+		}
+		
+		
+	}	
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		super.doPost(request, response);
+		
+
 		dao = new BoardDao() ;
 		
 		int cnt = -99999 ;
 		
 		int replysu = 5 ;
 		
-		if (cnt == replysu) { // 답글 작성 갯수 초과
+		String gotopage = "/board/board_detailexam.jsp" ;
+		super.GotoPage(gotopage);
+		
+		if (cnt == replysu) { // �떟湲� �옉�꽦 媛��닔 珥덇낵
 			String message = "답글 작성 갯수 " + replysu + "개를 초과하였습니다." ;
 			super.setErrorMessage(message);
 			
-			new BoardListController().doGet(request, response);
-			
 		} else {
-			String gotopage = "/board/boReplyForm.jsp" ;
-			super.GotoPage(gotopage);
-		}
-	}	
-	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		super.doPost(request, response);
-		
-		bean = new Board() ;
-		bean.setBcontents(request.getParameter("bcontents")); 
-		bean.setTitle(request.getParameter("title"));
-		bean.setWriter(request.getParameter("writer"));
-		
-		int depth = Integer.parseInt(request.getParameter("depth")) ;
 			
-		bean.setDepth(depth);
-		
-		System.out.println("bean information");
-		System.out.println(bean.toString()); 
-		
-		if (this.validate(request) == true) {
-			System.out.println("board reply validation check success");
-			dao = new BoardDao();
-			int cnt = - 999999 ;
-			new BoardListController().doGet(request, response); 
-			
-		} else {
-			System.out.println("board reply validation check failure");
-			
-			request.setAttribute("bean", bean);
-			String gotopage = "/board/boReplyForm.jsp" ;
-			super.GotoPage(gotopage);
 		}
 		
 	}
