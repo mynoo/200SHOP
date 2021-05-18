@@ -21,13 +21,13 @@ public class MallDeleteController extends SuperClass {
 		} else {
 			MyCartList mycart = (MyCartList)super.session.getAttribute("mycart") ;
 			if (mycart == null) {
-				mycart = new MyCartList();				
+				mycart = new MyCartList();
 			}
 			
 			int pnum = Integer.parseInt(request.getParameter("pnum")) ;
 			mycart.DeleteOrder(pnum);
 			super.session.setAttribute("mycart", mycart);
 			new MallListController().doGet(request, response);
-		}		
+		}
 	}
 }

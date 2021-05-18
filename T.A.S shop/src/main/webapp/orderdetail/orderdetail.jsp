@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-	String payment = (String)request.getAttribute("optradio");
+	String payment = request.getParameter("optradio");
 %>
 <!DOCTYPE html>
 <html>
@@ -190,10 +190,10 @@
 											<strong> 받으시는 분 </strong>
 										</td>
 										<td>
-											<c:if test="${bean.fname == null}">
+											<c:if test="${sessionScope.otherinfo.fname == null}">
 												${sessionScope.loginfo.name}
 											</c:if>
-											${bean.fname}님
+											${sessionScope.otherinfo.fname}님
 										</td>
 									</tr>
 									<tr>
@@ -201,10 +201,10 @@
 											<strong> 우편 번호 </strong>
 										</td>
 										<td>
-											<c:if test="${bean.zipcode == null}">
+											<c:if test="${sessionScope.otherinfo.zipcode == null}">
 												${sessionScope.loginfo.zipcode}
 											</c:if>
-											${bean.zipcode}
+											${sessionScope.otherinfo.zipcode}
 										</td>
 									</tr>
 									<tr>
@@ -212,15 +212,15 @@
 											<strong> 주소 </strong>
 										</td>
 										<td>
-											<c:if test="${bean.roadaddress == null}">
+											<c:if test="${sessionScope.otherinfo.roadaddress == null}">
 												${sessionScope.loginfo.roadaddress}
 											</c:if>
-											${bean.roadaddress}
+											${sessionScope.otherinfo.roadaddress}
 											&nbsp;
-											<c:if test="${bean.address2 == null}">
+											<c:if test="${sessionScope.otherinfo.address2 == null}">
 												${sessionScope.loginfo.address2}
 											</c:if>
-											${bean.address2}
+											${sessionScope.otherinfo.address2}
 										</td>
 									</tr>
 									<tr>

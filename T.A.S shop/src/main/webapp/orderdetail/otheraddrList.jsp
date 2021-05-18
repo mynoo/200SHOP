@@ -17,14 +17,14 @@
 			
 			opener.neworderinfo.name.value = fname;
 			
-			opener.neworderinfo.zipcode.value = zipcode ;
+			opener.neworderinfo.zipcode.value = zipcode;
 			
-			opener.neworderinfo.roadaddress.value = roadaddress ;
-			opener.neworderinfo.address1.value = address1 ;
-			opener.neworderinfo.extraaddress.value = extraaddress ;
+			opener.neworderinfo.roadaddress.value = roadaddress;
+			opener.neworderinfo.address1.value = address1;
+			opener.neworderinfo.address2.value = address2;
+			opener.neworderinfo.extraaddress.value = extraaddress;
 			
-			opener.neworderinfo.address2.focus() ;
-			self.close() ;
+			self.close();
 		}
 		
 		</script>

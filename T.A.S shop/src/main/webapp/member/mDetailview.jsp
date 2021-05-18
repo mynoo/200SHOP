@@ -45,6 +45,9 @@
 				</div>
 				
 				<div class="signup-form">
+					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="history.go(-2);">
+						<b>X</b>
+					</button>
 					<form method="post" class="register-form">
 						<div class="form-row">
 							<div class="form-group">

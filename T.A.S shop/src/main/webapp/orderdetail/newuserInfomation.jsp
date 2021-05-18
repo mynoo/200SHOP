@@ -9,11 +9,23 @@
 	
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	
-	<script type="text/javascript">
-		function neworder() {
-			location.href = "orderdetail/neworderinformation.jsp"
-		}
+	<script src="<%=contextPath%>/common/common.jsp"></script>
 	
+	<script type="text/javascript">
+		
+		function addrfind() {
+			var id = document.neworderinfo.id.value;
+			
+			var url = '<%=Noform%>otheraddrList&id=' + id;
+			
+			window.open(url , 'mywin', 'left=800, top=400, menubar=no, height=500, width=700, scrollbar=yes')
+			
+		}
+		
+		function isCheckForm() {
+			document.neworderinfo.isCheck.value = false;
+		}
+		
 		$(document).ready(function name() {
 			
 		});
@@ -44,97 +56,141 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 ftco-animate">
-					<form action="<%=YesForm%>" class="billing-form" method="post">
+					<form action="<%=YesForm%>" class="billing-form" name="neworderinfo" method="post">
 					
-						<input type="hidden" name="command" value="mallDetail">
+						<input type="hidden" name="command" value="otheraddrInsert">
+						<input type="hidden" name="isCheck()" value="false">
 						
 						<h3 class="mb-4 billing-heading">Billing Details</h3>
 						<div class="row align-items-end">
-							<div class="col-md-12">
-								<div class="form-group mt-4">
+							<div class="form-group">
+								<div class="col-md-12">
 									<div class="radio">
 										<label>
-											<input type="radio" onclick="neworder();"> Ship to different address
+											<input type="radio" onclick="addrfind()" class="mr-2"> 전에 사용한 주소 보기
 										</label>
+										<table class="table">
+											<thead class="thead-primary" align="center">
+												<tr>
+													<th>Pnum</th>
+													<th>Image</th>
+													<th>Product</th>
+													<th>Price</th>
+													<th>Quantity</th>
+													<th>total</th>
+												</tr>
+											</thead>
+											<tbody>
+												<c:forEach var="bean" items="${sessionScope.shoplists}">
+													<tr class="alert" role="alert">
+														<td>${bean.pnum}</td>
+														<td>
+															<img src="<%=contextPath%>/images/${bean.image}">
+														</td>
+														<td>${bean.pname}</td>
+														<td>${bean.price}</td>
+														<td class="quantity">
+															<div class="input-group">
+																<input type="text" name="quantity"
+																	class="quantity form-control input-number"
+																	value="${bean.qty}" min="1" max="100">
+															</div>
+														</td>
+														<td>${bean.price * bean.qty}</td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
 							<div class="w-100"></div>
 							<div class="col-md-6">
 								<div class="form-group">
+									<label for="name">아이디</label>
+									<input type="text" id="id" name="id" class="form-control" value="${loginfo.id}">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
 									<label for="name">받는 사람</label>
-									<input type="text" name="name" class="form-control" value="${loginfo.name}">
+									<input type="text" id="name" name="name" class="form-control">
 								</div>
 							</div>
 							<div class="w-100"></div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="zipcode"> 우편 번호 </label>
-									<input type="text" name="zipcode" class="form-control" value="${loginfo.zipcode}">
+									<input type="text" id="zipcode" name="zipcode" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="button">
+									<input type="button" onclick="zipfind();" value="우편번호 찾기" >
 								</div>
 							</div>
 							<div class="w-100"></div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="roadaddress">도로명 주소</label>
-									<input type="text" name="roadaddress" class="form-control" value="${loginfo.roadaddress}">
+									<input type="text" id="roadaddress" name="roadaddress" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="address2">상세 주소</label>
-									<input type="text" name="address2" class="form-control" value="${loginfo.address2}">
+									<input type="text" id="address2" name="address2" class="form-control" >
 								</div>
 							</div>
 							<div class="w-100"></div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="address1">지번 주소</label>
-									<input type="text" name="address1" class="form-control" value="${loginfo.address1}">
+									<input type="text" id="address1" name="address1" class="form-control">
+									<span id="guide" style="color:#999;display:none"></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="extraaddress">참조 주소</label>
-									<input type="text" name="extraaddress" class="form-control" value="${loginfo.extraaddress}">
+									<input type="text" id="extraaddress" name="extraaddress" class="form-control" >
 								</div>
 							</div>
 							<div class="w-100"></div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="phonenumber">핸드폰 번호</label>
-									<input type="text" name="phonenumber" class="form-control" value="${loginfo.phonenumber}">
+									<input type="text" id="phonenumber" name="phonenumber" 
+										class="form-control" value="${loginfo.phonenumber}">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="email">이메일</label>
-									<input type="text" name="email" class="form-control" value="${loginfo.email}">
+									<input type="text" id="email" name="email" class="form-control" value="${loginfo.email}">
 								</div>
 							</div>
 						</div>
-
 						<div class="row mt-5 pt-3 d-flex">
 							<div class="col-md-6 d-flex">
 								<div class="cart-detail cart-total p-3 p-md-4">
 									<h3 class="billing-heading mb-4">Cart Total</h3>
-									<p class="d-flex">
-										<span>Subtotal</span>
-										<span>$20.60</span>
-									</p>
-									<p class="d-flex">
-										<span>Delivery</span>
-										<span>$0.00</span>
-									</p>
-									<p class="d-flex">
-										<span>Discount</span>
-										<span>$3.00</span>
-									</p>
-									<hr>
-									<p class="d-flex total-price">
-										<span>Total</span>
-										<span>$17.60</span>
-									</p>
+									<c:forEach var="bean" items="${sessionScope.shoplists}">
+										<p class="d-flex">
+											<span>구매 가격</span> <span>${bean.price * bean.qty}</span>
+										</p>
+										<p class="d-flex">
+											<span>배송비</span> <span>0</span>
+										</p>
+										<p class="d-flex">
+											<span>할인률</span> <span>10%</span>
+										</p>
+		
+										<hr>
+										<p class="d-flex total-price">
+											<span>총 금액</span> <span>${bean.price * bean.qty-bean.price/10}</span>
+										</p>
+									</c:forEach>
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -167,7 +223,7 @@
 											</div>
 										</div>
 										<div class="button" align="center">
-											<input type="submit" class="btn btn-default"
+											<input type="submit" class="btn btn-primary py-3 px-4"
 												style="background-color: #b7472a; color: white;" value="Place to order">
 										</div>
 									</div>

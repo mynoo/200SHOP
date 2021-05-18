@@ -206,7 +206,7 @@ public class ProductDao extends SuperDao {
 
 		Product bean = null ;
 		try {
-			if( this.conn == null ){ this.conn = this.getConnection() ; }			
+			if( this.conn == null ){ this.conn = this.getConnection() ; }
 			pstmt = this.conn.prepareStatement(sql) ;
 			
 			pstmt.setInt(1, pno);
@@ -313,5 +313,59 @@ public class ProductDao extends SuperDao {
 		}
 		return cnt ;
 		
+	}
+	public List<Product> SelectPrDataList(int beginRow, int endRow, String mode, String keyword) {
+		PreparedStatement pstmt = null ;
+		ResultSet rs = null ;
+		
+		String sql = " select ranking, pno, pname, brand, image, stock, price, category" ;
+		sql += " from ( select pno, pname, brand, image, stock, price, category, rank() over(order by pno desc) as ranking " ;
+		sql += " from products " ;
+		
+		if(mode.equalsIgnoreCase("all") ==false) { 
+			System.out.println("not all search mode");
+			sql += " where " + mode + " like '%" + keyword + "%' " ;	
+		}
+		
+		sql += "  ) " ;
+		sql += " where ranking between ? and ?  " ;	
+
+		List<Product> lists = new ArrayList<Product>();
+		
+		try {
+			if( conn == null ){ super.conn = super.getConnection() ; }
+			pstmt = super.conn.prepareStatement(sql) ;
+			
+			pstmt.setInt(1, beginRow);
+			pstmt.setInt(2, endRow);
+			
+			rs = pstmt.executeQuery() ;	
+			
+			while( rs.next() ){
+				Product bean = new Product();
+				
+				bean.setPno(rs.getInt("pno"));
+				bean.setPname(rs.getString("pname"));
+				bean.setBrand(rs.getString("brand"));
+				bean.setImage(rs.getString("image"));
+				bean.setStock(rs.getInt("stock"));
+				bean.setPrice(rs.getInt("price"));
+				bean.setCategory(rs.getString("category"));
+				
+				lists.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				if( rs != null ){ rs.close(); }
+				if( pstmt != null ){ pstmt.close(); }
+				super.closeConnection(); 
+			} catch (Exception e2) {
+				e2.printStackTrace(); 
+			}
+		}
+		
+		return lists ;
 	}
 }

@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import shopping.common.controller.MainController;
 import shopping.common.controller.SuperClass;
 import shopping.otheraddress.model.Otheraddress;
 import shopping.otheraddress.model.OtheraddressDao;
@@ -27,7 +26,7 @@ public class OtheraddressListController extends SuperClass{
 		
 		request.setAttribute("lists", lists);
 		
-		String gotopage = "orderdetail/odList.jsp";
+		String gotopage = "orderdetail/otheraddrList.jsp";
 		super.GotoPage(gotopage);
 	}
 }

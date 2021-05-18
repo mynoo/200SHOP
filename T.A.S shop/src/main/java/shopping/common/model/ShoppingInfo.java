@@ -6,7 +6,7 @@ public class ShoppingInfo {
 	private int qty ;
 	private int price ;
 	private String image;
-	private int point ;
+//	private int point ;
 	
 		
 	public int getPnum() {
@@ -15,7 +15,7 @@ public class ShoppingInfo {
 	@Override
 	public String toString() {
 		return "ShoppingInfo [pnum=" + pnum + ", pname=" + pname + ", qty=" + qty + ", price=" + price + ", image="
-				+ image + ", point=" + point + "]";
+				+ image + "]";
 	}
 	public void setPnum(int pnum) {
 		this.pnum = pnum;
@@ -44,12 +44,12 @@ public class ShoppingInfo {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public int getPoint() {
-		return point;
-	}
-	public void setPoint(int point) {
-		this.point = point;
-	}
+//	public int getPoint() {
+//		return point;
+//	}
+//	public void setPoint(int point) {
+//		this.point = point;
+//	}
 	
 	
 }

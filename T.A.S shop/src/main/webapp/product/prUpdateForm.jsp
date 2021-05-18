@@ -32,7 +32,7 @@
 		<div class="container">
 			<div class="signup-content">
 				<div class="signup-img">
-					<img src="../images/solid.png" alt="">
+					<img src="<%=contextPath%>/images/solid.png" alt="">
 					<div class="signup-img-content">
 						<h2>Product Registration</h2>
 						<p>Please enter the product to add !</p>
@@ -114,12 +114,12 @@
 	</div>
 
 	<!-- JS -->
-	<script src="../vendor/jquery/jquery.min.js"></script>
-	<script src="../vendor/nouislider/nouislider.min.js"></script>
-	<script src="../vendor/wnumb/wNumb.js"></script>
-	<script src="../vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-	<script src="../vendor/jquery-validation/dist/additional-methods.min.js"></script>
-	<script src="../js/signup.js"></script>
+	<script src="<%=contextPath %>/vendor/jquery/jquery.min.js"></script>
+	<script src="<%=contextPath %>/vendor/nouislider/nouislider.min.js"></script>
+	<script src="<%=contextPath %>/vendor/wnumb/wNumb.js"></script>
+	<script src="<%=contextPath %>/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="<%=contextPath %>/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+	<script src="<%=contextPath %>/js/signup.js"></script>
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
