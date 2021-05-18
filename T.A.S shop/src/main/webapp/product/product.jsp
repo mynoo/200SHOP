@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	int pageSize = 9;
-%>
 <%@ include file="/common/common.jsp"%>
+<%
+int pageSize = 9;
+%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+</head>
 <style>
 	#prList {
 		float: right;
@@ -28,17 +29,16 @@
 	}
 </style>
 <script>
-	function search(){
-		var mode = $('#mode').val() ;
-		var keyword = $('#keyword').val() ;
-		location.href='<%=Noform%>prprList' + '&mode=' + mode + '&keyword=' + keyword ;
-	}
-	function searchAll(){
-		location.href='<%=Noform%>prprList';
-	}
-	$(document).ready(function() {
-
-	});
+function search(){
+	var mode = $('#mode').val() ;
+	var keyword = $('#keyword').val() ;
+	location.href='<%=Noform%>prprList' + '&mode=' + mode + '&keyword=' + keyword ;
+}
+function searchAll(){
+	location.href='<%=Noform%>prprList';
+}
+$(document).ready(function() {
+});
 </script>
 </head>
 
