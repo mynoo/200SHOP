@@ -79,7 +79,8 @@
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
-						<small> </small>
+						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
+						<small style="color: white;">${shopcount}</small>
 					</div>
 				</a>
 				<div class="dropdown-menu dropdown-menu-right">

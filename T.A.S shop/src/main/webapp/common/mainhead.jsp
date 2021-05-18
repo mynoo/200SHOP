@@ -83,6 +83,10 @@
 			<div class="order-lg-last btn-group">
 				<a href="<%=Noform%>mallList" class="btn-cart dropdown-toggle dropdown-toggle-split">
 					<span class="flaticon-shopping-bag"></span>
+					<div class="d-flex justify-content-center align-items-center">
+						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
+						<small style="color: white;">${shopcount}</small>
+					</div>
 				</a>
 			</div>
 
