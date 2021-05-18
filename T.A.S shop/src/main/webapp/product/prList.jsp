@@ -34,6 +34,9 @@ form.form-inline {
 .form-group {
     margin: 0 5;
 }
+.btn{
+	margin: 10px;
+}
 </style>
 <script>	
 		function search(){
@@ -99,10 +102,10 @@ form.form-inline {
 										id="keyword">
 								</div>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="search();">검색</button>
 								&nbsp;&nbsp;
-								<button class="btn btn-default" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="searchAll();">전체 검색</button>
 									<button class="btn btn-primary btn-info" type="button"
 										onclick="writeForm();">상품 등록</button>
@@ -111,7 +114,7 @@ form.form-inline {
 						</td>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody style="color:#808080" align="center">
 					<tr>
 						<th>PNO</th>
 						<th>PNAME</th>

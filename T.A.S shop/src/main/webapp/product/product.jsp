@@ -30,6 +30,9 @@ int pageSize = 9;
 .form-group {
     margin-left: 20;
 }
+.form-group {
+    margin-left: 20;
+}
 </style>
 <script>	
 		function search(){
