@@ -40,7 +40,7 @@ public class ProductPrListController extends SuperClass {
 								parameters.getPageNumber(), 
 								totalCount, 
 								url, 
-								parameters.getMode(), 
+								parameters.getMode(),
 								parameters.getKeyword());
 		    
 		List<Product> lists = dao.SelectPrDataList(
