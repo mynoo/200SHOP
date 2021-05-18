@@ -90,7 +90,7 @@ int pageSize = 9;
 									<input type="text" class="form-control-sm" name="keyword" id="keyword">
 								</div>
 								&nbsp;&nbsp;
-																<button class="btn btn-primary" type="button"
+								<button class="btn btn-primary" type="button"
 									onclick="search();">검색</button>
 								&nbsp;&nbsp;
 								<button class="btn btn-primary" type="button"
