@@ -7,8 +7,8 @@
 	function goinsert() {
 		location.href = '<%=Noform%>mallInsert';
 	}
-	
-	
+
+
    $(document).ready(function() {
       $('[data-toggle="popover"]').popover();
    });
@@ -28,6 +28,7 @@
 	width: 1400px;
 	margin: 0 auto;
 }
+
 .btnbox2 {
 	text-align: right;
 	margin: 0 auto 20px;
@@ -84,6 +85,7 @@ form.form-inline {
 #btn3 {
 	margin: 20px auto 0;
 }
+
 form.form-inline {
 	margin: auto;
 }
