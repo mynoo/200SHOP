@@ -130,27 +130,6 @@ button.btn.btn-primary {
 						</c:forEach>
 					</div>
 				</div>
-
-				<%-- <div class="col-md-3">
-					<div class="sidebar-box ftco-animate">
-						<div class="categories" id="mode" name="mode">
-							<h3>Product Types</h3>
-							<ul class="p-0">
-								<li><a href="<%=Noform%>prprList&category=brandy">Brandy <span
-										class="fa fa-chevron-right" name="keyword"
-										id="keyword"></span></a></li>
-								<li><a href="<%=Noform%>prprList&category=gin">Gin <span class="fa fa-chevron-right"></span></a></li>
-								<li><a href="<%=Noform%>prprList&category=rum">Rum <span class="fa fa-chevron-right"></span></a></li>
-								<li><a href="<%=Noform%>prprList&category=tequila">Tequila <span
-										class="fa fa-chevron-right"></span></a></li>
-								<li><a href="<%=Noform%>prprList&category=vodka">Vodka <span class="fa fa-chevron-right"></span></a></li>
-								<li><a href="<%=Noform%>prprList&category=whiskey" name="keyword"
-										id="keyword">Whiskey <span
-										class="fa fa-chevron-right" ></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div> --%>
 			</div>
 		</div>
 	</section>

@@ -11,7 +11,6 @@ import shopping.common.controller.SuperClass;
 import shopping.product.model.Product;
 import shopping.product.model.ProductDao;
 import shopping.utility.FlowParameters;
-import shopping.utility.Paging;
 import shopping.utility.Paging2;
 
 public class ProductPrListController extends SuperClass {

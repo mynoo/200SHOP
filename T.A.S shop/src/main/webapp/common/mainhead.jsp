@@ -33,11 +33,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 d-flex align-items-center">
-					<p class="mb-0 phone pl-md-2">
-							<span class="fa fa-phone mr-1"></span>
-							+82 02-3486-9600
-							<span class="fa fa-paper-plane mr-1"></span>
-							youremail@tasshop.com
+					<p class="mb-0 phone pl-md-2" style="color: white;">
+						<span class="fa fa-phone mr-1"></span>
+						+82 02-3486-9600
+						<span class="fa fa-paper-plane mr-1"></span>
+						youremail@tasshop.com
 					</p>
 				</div>
 				<div class="col-md-6 d-flex justify-content-md-end">
@@ -81,10 +81,11 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
-				<a href="<%=Noform%>mallOrder&id=${loginfo.id}" class="btn-cart dropdown-toggle dropdown-toggle-split">
+				<a href="<%=Noform%>mallList" class="btn-cart dropdown-toggle dropdown-toggle-split">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
-						<small>10</small>
+						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
+						<small style="color: white;">${shopcount}</small>
 					</div>
 				</a>
 			</div>

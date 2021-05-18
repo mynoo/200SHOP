@@ -23,10 +23,10 @@
 			<div class="row">
 				<div class="col-md-6 d-flex align-items-center">
 					<p class="mb-0 phone pl-md-2">
-							<span class="fa fa-phone mr-1"></span>
-							+82 02 3486 9600
-							<span class="fa fa-paper-plane mr-1"></span>
-							youremail@tasshop.com 
+						<span class="fa fa-phone mr-1"></span>
+						+82 02 3486 9600
+						<span class="fa fa-paper-plane mr-1"></span>
+						youremail@tasshop.com 
 					</p>
 				</div>
 				<div class="col-md-6 d-flex justify-content-md-end">
@@ -75,13 +75,15 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
-				<a href="<%=Noform%>mallOrder&id=${loginfo.id}" class="btn-cart dropdown-toggle dropdown-toggle-split">
+				<a href="<%=Noform%>mallOrder&id=${loginfo.id}" class="btn-cart dropdown-toggle dropdown-toggle-split"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="flaticon-shopping-bag"></span>
-					<div class="d-flex justify-content-center align-items-right">
-						<small>10</small>
+					<div class="d-flex justify-content-center align-items-center">
+						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
+						<small style="color: white;">${shopcount}</small>
 					</div>
 				</a>
-				<%-- <div class="dropdown-menu dropdown-menu-right">
+				<div class="dropdown-menu dropdown-menu-right">
 					<div class="dropdown-item d-flex align-items-start" href="#">
 						<div class="img"
 							style="background-image: url(<%=contextPath%>/images/prod-1.jpg);"></div>
@@ -119,7 +121,7 @@
 						href="<%=contextPath%>/order/order.jsp"> View All <span
 						class="ion-ios-arrow-round-forward"></span>
 					</a>
-				</div> --%>
+				</div>
 			</div>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -134,26 +136,26 @@
 						<a href="<%=Noform%>main" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=Noform%>prprList" class="nav-link">Products</a>
+						<a href="<%=Noform%>prList" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=Noform%>boList" class="nav-link">Boards</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=contextPath%>/common/contact.jsp" class="nav-link">Contact</a>
+						<a href="contact.jsp" class="nav-link">Contact</a>
 					</li>
 					<li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown04" 
-                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Info</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                     <a class="dropdown-item" href="<%=Noform%>meDetailView">My Profile</a>
-                     <a class="dropdown-item" href="<%=Noform%>meUpdate">Profile Modify</a>
-                     <c:if test="${whologin == 2}">
-                        <a class="dropdown-item" href="<%=Noform%>meList">Member List</a>
-                     </c:if>
-                     <a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> Secession</a>
-                  </div>
-               </li>
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" 
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Info</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="<%=Noform%>meDetailView">My Profile</a>
+							<a class="dropdown-item" href="<%=Noform%>meUpdate">Profile Modify</a>
+							<c:if test="${whologin == 2}">
+								<a class="dropdown-item" href="<%=Noform%>meList">Member List</a>
+							</c:if>
+							<a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> Secession</a>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
