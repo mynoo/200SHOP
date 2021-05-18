@@ -9,53 +9,64 @@ $(document).ready(function() {
 	$('[data-toggle="popover"]').popover();
 });
 function goinsert() {
-    location.href = '<%=Noform%>mallInsert';
- }
+    location.href = '<%=Noform%>
+    	mallInsert';
+    	}
+    </script>
+    <style>
+    .imgbox {
+    	display: inline-block;
+    	vertical-align: top;
+    	text-align: right;
+    }
 
-</script>
-<style>
-.imgbox{
-display: inline-block;
-vertical-align: top;
-text-align: right;
-}
-.containerbox{
-display: inline-block;
-}
-.container-wrap{
-width: 1200px;
-margin: 100 auto;
-margin-left: 200;
-}
-.btn{
-justify-content: flex-end;
-}
-.btnbox2{
-text-align: right;
-margin: 0 auto 20px;
-width: 986px;
-}
-h4{
-margin: 0px auto;
-padding: 20px 0;
-width: 1400px;
-}
-.form-control-sm{
-margin: 0 10px;
-}
-.col-lg-10 {
-margin: auto;
-}
-th{
-text-align: center !important;
-}
-button.btn.btn-primary {
-margin: 0 10 0 0;
-}
+    .containerbox {
+    	display: inline-block;
+    }
+
+    .container-wrap {
+    	width: 1200px;
+    	margin: 100 auto;
+    	margin-left: 200;
+    }
+
+    .btn {
+    	justify-content: flex-end;
+    }
+
+    .btnbox2 {
+    	text-align: right;
+    	margin: 0 auto 20px;
+    	width: 986px;
+    }
+
+    h4 {
+    	margin: 0px auto;
+    	padding: 20px 0;
+    	width: 1400px;
+    }
+
+    .form-control-sm {
+    	margin: 0 10px;
+    }
+
+    .col-lg-10 {
+    	margin: auto;
+    }
+
+    th {
+    	text-align: center !important;
+    }
+
+    button.btn.btn-primary {
+    	margin: 0 10 0 0;
+    }
+    .containerbox.container.col-sm-offset.col-sm-6 {
+        margin: 0;
 </style>
 </head>
 <body>
-	<jsp:include page="../common/generalhead.jsp" />
+<jsp:include page="../common/generalhead.jsp" />
 
 	<section class="hero-wrap hero-wrap-2"
 		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
@@ -76,7 +87,6 @@ margin: 0 10 0 0;
 			</div>
 		</div>
 	</section>
-	<h4>Product Detail View</h4>
 	<div class="container-wrap">
 		<form action="<%=YesForm%>" class="form-inline" role="form" method="post">
 			<input type="hidden" name="command" value="mallInsert" >
@@ -85,7 +95,7 @@ margin: 0 10 0 0;
 					<tr>
 						<td>
 							<img src="'upload/${bean.image}'"
-							class="img-rounded" alt="${bean.pname}" width="200" height="200">
+							class="img-rounded" alt="${bean.pname}" width="300" height="400">
 						</td>
 					</tr>
 				</table>
@@ -97,31 +107,31 @@ margin: 0 10 0 0;
 						<div class="col-sm-2">
 							<table class="table table-bordered">
 								<tr>
-									<td width="25%" align="center">상품명(번호)</td>
+									<td width="40%" align="center">상품명(번호)</td>
 										
-									<td width="75%" align="left"> ${bean.pname}(${bean.pno})
+									<td width="60%" align="left"> ${bean.pname}(${bean.pno})
 										<input type="hidden" name="pno" value="${bean.pno}">
 									 </td>
 								</tr>
 								<tr>
-									<td width="25%" align="center">재고 수량</td>
-									<td width="75%" align="left">${bean.stock}
+									<td width="40%" align="center">재고 수량</td>
+									<td width="60%" align="left">${bean.stock}
 										<input type="hidden" name="stock" value="${bean.stock}">
 									</td>
 								</tr>
 								<tr>
-									<td width="25%" align="center">가격</td>
-									<td width="75%" align="left">${bean.price}
+									<td width="40%" align="center">가격</td>
+									<td width="60%" align="left">${bean.price}
 										<input type="hidden" name="price" value="${bean.price}">
 									</td>
 								</tr>
 								<tr>
-									<td width="25%" align="center">설명</td>
-									<td width="75%" align="left">${bean.content}</td>
+									<td width="40%" align="center">설명</td>
+									<td width="60%" align="left">${bean.content}</td>
 								</tr>
 								<tr>
-									<td width="25%" align="center">주문 수량</td>
-									<td width="75%" align="left">
+									<td width="40%" align="center">주문 수량</td>
+									<td width="60%" align="left">
 										<input type="number" name="qty" id="qty"
 											class="form-control-sm" data-toggle="popover" title="수량 입력란"
 											data-trigger="hover" data-placement="auto top"
@@ -140,7 +150,6 @@ margin: 0 10 0 0;
 			<div class="btnbox2">
 				<button type=submit class="btn btn-primary btn2">주문</button>
 				<button type=submit class="btn btn-primary btn2">장바구니</button>
-				<button class="btn btn-primary" onclick="history.back();"> 돌아가기</button>
 			</div>
 		</form>
 	</div>
@@ -153,7 +162,8 @@ margin: 0 10 0 0;
 				<input type="hidden" name="totalcount" value="${requestScope.totalcount}">
 				<button type="submit" class="btn btn-danger" id="btn1">리뷰보기(${requestScope.totalcount})</button>  
 			</form>
-		</div>
+				<button class="btn btn-primary" onclick="history.back();"> 돌아가기</button>
+	</div>
 
 
 	<jsp:include page="../common/footer.jsp" />
