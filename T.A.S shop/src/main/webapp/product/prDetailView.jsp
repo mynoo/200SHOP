@@ -75,22 +75,22 @@ button.btn.btn-primary {
 		<div class="overlay"></div>
 		<div class="container">
 			<div
-			class="row no-gutters slider-text align-items-end justify-content-center">
-			<div class="col-md-9 ftco-animate mb-5 text-center">
-				<p class="breadcrumbs mb-0">
-					<span class="mr-2"><a href="<%=Noform%>main">Home <i
-							class="fa fa-chevron-right"></i></a></span> <span>Products <i
-						class="fa fa-chevron-right"></i></span>
-				</p>
-				<h2 class="mb-0 bread">Products</h2>
+				class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate mb-5 text-center">
+					<p class="breadcrumbs mb-0">
+						<span class="mr-2"><a href="<%=Noform%>main">Home <i
+								class="fa fa-chevron-right"></i></a></span> <span>Products <i
+							class="fa fa-chevron-right"></i></span>
+					</p>
+					<h2 class="mb-0 bread">Products</h2>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<div class="container-wrap">
-	<form action="<%=YesForm%>" class="form-inline" role="form"
-		method="post">
-		<input type="hidden" name="command" value="mallInsert">
+	</section>
+	<div class="container-wrap">
+		<form action="<%=YesForm%>" class="form-inline" role="form"
+			method="post">
+			<input type="hidden" name="command" value="mallInsert">
 		<div class="imgbox col-sm-3">
 			<table>
 				<tr>
