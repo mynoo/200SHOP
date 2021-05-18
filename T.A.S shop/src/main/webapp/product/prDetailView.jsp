@@ -48,7 +48,7 @@ margin: auto;
 }
 th{
 text-align: center !important;
-} 
+}
 button.btn.btn-primary {
 margin: 0 10 0 0;
 }
