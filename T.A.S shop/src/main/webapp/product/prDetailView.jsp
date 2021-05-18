@@ -7,6 +7,8 @@
 	function goinsert() {
 		location.href = '<%=Noform%>mallInsert';
 	}
+	
+	
    $(document).ready(function() {
       $('[data-toggle="popover"]').popover();
    });
@@ -17,9 +19,11 @@
 	vertical-align: top;
 	text-align: right;
 }
+
 .containerbox {
 	display: inline-block;
 }
+
 .container-wrap {
 	width: 1400px;
 	margin: 0 auto;
@@ -29,43 +33,54 @@
 	margin: 0 auto 20px;
 	width: 1130px;
 }
+
 h4 {
 	margin: 0px auto;
 	padding: 20px 0;
 	width: 1400px;
 }
+
 .form-control-sm {
 	margin: 0 10px;
 }
+
 table {
 	border-collapse: collapse;
 	width: 100%;
 }
+
 th {
 	padding: 8px;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
+
 td {
 	padding: 8px;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
+
 h4 {
 	text-align: center;
 }
+
 ul.pagination {
 	justify-content: center;
 }
+
 ul.pagination li {
 	padding: 3;
 }
+
 form.form-inline {
 	justify-content: center;
 }
+
 .hidden-col {
 	display: none;
 }
+
 #btn3 {
 	margin: 20px auto 0;
 }
