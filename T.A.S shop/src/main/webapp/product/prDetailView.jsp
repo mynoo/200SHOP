@@ -15,9 +15,9 @@ function goinsert() {
 </script>
 <style>
 .imgbox {
-display: inline-block;
-vertical-align: top;
-text-align: right;
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
 }
 
 .containerbox {
