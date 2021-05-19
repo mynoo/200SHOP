@@ -169,24 +169,24 @@ public Member SelectData(String id, String password) {
 //			sql += " where writer = ? " ;
 //			pstmt = super.conn.prepareStatement(sql) ;
 //			
-//			String imsi = bean.getName() +  "(" + id + ")가 회원 탈퇴를 하였습니다." ;
+			String imsi = bean.getName() +  "(" + id + ")가 회원 탈퇴를 하였습니다." ;
 //			pstmt.setString(1, imsi);
 //			pstmt.setString(2, id);
 //			
 //			cnt = pstmt.executeUpdate() ;
 //			if(pstmt != null) {pstmt.close();}
 //			
-//			// step02 : 매출 테이블 remark 컬럼 수정하기
-//			sql = " update orders set remark = ? " ;
-//			sql += " where mid = ? " ;
-//			pstmt = super.conn.prepareStatement(sql) ;
-//			
-//			pstmt.setString(1, imsi);			
-//			pstmt.setString(2, id);
-//			
-//			cnt = pstmt.executeUpdate() ;
-//			if(pstmt != null) {pstmt.close();}
-//			
+			// step02 : 매출 테이블 remark 컬럼 수정하기
+			sql = " update orders set remark = ? " ;
+			sql += " where mid = ? " ;
+			pstmt = super.conn.prepareStatement(sql) ;
+			
+			pstmt.setString(1, imsi);			
+			pstmt.setString(2, id);
+			
+			cnt = pstmt.executeUpdate() ;
+			if(pstmt != null) {pstmt.close();}
+			
 			// step03 : 회원 테이블 행 삭제하기
 			sql = " delete from members" ;
 			sql += " where id = ? " ;

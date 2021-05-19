@@ -40,7 +40,8 @@
 										</div>
 										<div class="text">
 											<p>
-												<span>Address:</span>  459, Gangnam-daero, Seocho-gu, Seoul, Republic of Korea 
+												<span>Address:</span> 
+												<span style="color: gray;">459, Gangnam-daero, Seocho-gu, Seoul, Republic of Korea </span>
 											</p>
 										</div>
 									</div>
@@ -52,7 +53,8 @@
 										</div>
 										<div class="text">
 											<p>
-												<span>Phone:</span>+82 02 3486 9600
+												<span>Phone:</span>
+												<span style="color: gray;">+82 02 3486 9600</span>
 											</p>
 										</div>
 									</div>
@@ -64,7 +66,8 @@
 										</div>
 										<div class="text">
 											<p>
-												<span>Email:</span> info@yoursite.com
+												<span>Email:</span> 
+												<span style="color: gray;">info@yoursite.com</span>
 											</p>
 										</div>
 									</div>
@@ -76,7 +79,8 @@
 										</div>
 										<div class="text">
 											<p>
-												<span>Website</span> yoursite.com
+												<span>Website</span> 
+												<span style="color: gray;">yoursite.com</span>
 											</p>
 										</div>
 									</div>

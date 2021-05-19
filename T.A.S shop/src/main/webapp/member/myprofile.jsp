@@ -19,6 +19,8 @@
 	<!-- Main css -->
 	<link rel="stylesheet" href="<%=contextPath%>/css/css/style.css">
 	
+	<script src="<%=contextPath%>/common/common.jsp"></script>
+	
 	<style type="text/css">
 	#button1 {
 		border-top-left-radius: 5px;
@@ -54,6 +56,9 @@
 					</div>
 				</div>
 				<div class="signup-form">
+					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="gotomain();">
+						<b>X</b>
+					</button>
 					<form method="post" class="register-form" name="minsertform" action="<%=YesForm%>">
 					<input type="hidden" name="command" value="meUpdate" >
 						<div class="form-row">
@@ -124,7 +129,7 @@
 						</div>
 						<div class="form-submit">
 							<input type="submit" value="Modify" class="submit" id="submit" name="submit" />
-							<input type="button" value="Home" class="submit" name="home" onclick="location='<%=Noform%>main'" />
+							<input type="button" value="Home" class="submit" style="background-color: skyblue;" name="home" onclick="location='<%=Noform%>main'" />
 						</div>
 					</form>
 				</div>

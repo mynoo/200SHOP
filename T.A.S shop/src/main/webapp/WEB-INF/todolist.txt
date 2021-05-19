@@ -1,5 +1,6 @@
 # Main Section
 main=shopping.common.controller.MainController
+contact=shopping.common.controller.ContactController
 ### Member Section ######################################################
 meLogin=shopping.member.controller.MemberLoginController
 meList=shopping.member.controller.MemberListController
