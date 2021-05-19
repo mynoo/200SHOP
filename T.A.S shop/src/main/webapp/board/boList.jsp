@@ -1,25 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/common/common.jsp" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/common/common.jsp"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<script>	
 		function search(){
 			/* alert('검색');  */	
-			var mode = $('#mode').val() ;
-			var keyword = $('#keyword').val() ;
+			var mode = $('#mode').val ;
+			var keyword = $('keyword').val ;
 			location.href='<%=Noform%>boList' + '&mode=' + mode + '&keyword=' + keyword ;
 		}
 		
-		function writeForm(){
-			/* alert('글 작성'); */
-			location.href='<%=Noform%>boInsert';
-		}
-		
-		$(document).ready(function(){
-			
-		});
 	</script>
 	<style>
 		table {
@@ -85,9 +76,7 @@
 									<button class="btn btn-default" type="button" onclick="search();">search</button>
 									<div class="button" align="right">
 										<a href="<%=contextPath%>/board/boInsert.jsp" class="btn btn-primary py-2 px-4" >Write</a>
-									</div>
-									&nbsp;&nbsp;
-									${pageInfo.pagingStatus}								
+									</div>							
 								</form>
 						</td>
 					</tr>
@@ -113,7 +102,7 @@
 								<c:forEach var="cnt" begin="1" end="${bean.depth}">
 										<span class="badge">re</span>&nbsp;
 								</c:forEach>
-								<a href="<%=Noform%>boDetailView&bno=${bean.bno}&${requestScope.parameters}">
+								<a href="<%=Noform%>boDetailView&bno=${bean.bno}">
 								${bean.title}
 								</a>
 								</td>
@@ -122,7 +111,7 @@
 								<td>${bean.writedate}</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
-										<a href="<%=Noform%>boUpdate&bno=${bean.bno}&${requestScope.parameters}">
+										<a href="<%=Noform%>boUpdate?bno=${bean.bno}&${requestScope.parameters}">
 											수정
 										</a>
 									</c:if>
@@ -144,7 +133,7 @@
 						</c:forEach>
 					</tbody>
 			</table>
-			<div class="row mt-5" align="center">
+		<div class="row mt-5" align="center">
 			<div class="col text-center">
 				<div class="block-27">
 					<footer>${pageInfo.pagingHtml}</footer>
@@ -154,7 +143,6 @@
 		
 		</div>
 		<br>
-		
 	</section>
 
 	<jsp:include page="../common/footer.jsp" />

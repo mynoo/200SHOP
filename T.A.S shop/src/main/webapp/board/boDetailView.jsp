@@ -54,7 +54,7 @@
 			$("#comment_list").empty() ;
 			$.ajax({ /* 유효성 검사를 통과 했을 때 Ajax 함수 호출 */
 	            url: '<%=Noform%>reList',
-	            data : 'no=' + '${bean.no}', 
+	            data : 'bno=' + '${bean.bno}', 
 	    		type : "get",             
 	            dataType: "json",
 	            success: function (obj, textStatus) {
@@ -77,7 +77,7 @@
 				
 				$.ajax({ /* 유효성 검사를 통과 했을 때 Ajax 함수 호출 */
 		            url: '<%=Noform%>reDelete',
-		            data : 'cnum=' + $(this).attr('pmkey') + '&no=' + '${bean.no}',  
+		            data : 'cnum=' + $(this).attr('pmkey') + '&bno=' + '${bean.bno}',  
 		    		type : "post",             
 		            dataType: "text",
 		            success: function (data, textStatus) { /* 댓글 삭제 */	            	
@@ -226,7 +226,7 @@
                     ${rebean.mid}
                     </h3>
                     <div class="meta">
-                    	<input >
+                    ${rebean.redate}
                     </div>
                     <p>
                     ${rebean.comments}
@@ -243,16 +243,17 @@
               <!-- END comment-list -->
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
-                <form action="<%=YesForm %>" class="p-5 bg-light" role="form">
+                <form action="<%=YesForm %>" class="p-5 bg-light" role="form" method="post">
                 	<input type="hidden" name="command" value="boDetailView">
                   <div class="form-group">
+                  	<input type="hidden" name="bno" id="bno" value="${bean.bno}">
                     <label for="name">Name *</label>
                     <input type="text" name="fakewriter" id="fakemid" class="form-control" disabled="disabled" value="${sessionScope.loginfo.id}">
                     <input type="hidden" name="mid" id="mid" value="${sessionScope.loginfo.id}">
                   </div>
                    <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="comments" id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <input type="text" name="comments" id="comments">
                   </div>
                   <div class="form-group" align="right">
                     <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">

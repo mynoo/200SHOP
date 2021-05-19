@@ -127,10 +127,7 @@ button.btn.btn-primary.btn2 {
 										style="background-image: url('upload/${bean.image}');">
 										<div class="desc">
 											<p class="meta-prod d-flex">
-												<a href="<%=Noform%>mallOrder&id=${loginfo.id}"
-													class="d-flex align-items-center justify-content-center">
-													<span class="flaticon-shopping-bag"></span>
-												</a> <a
+												<a
 													href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}"
 													class="d-flex align-items-center justify-content-center">
 													<span class="flaticon-visibility"></span>

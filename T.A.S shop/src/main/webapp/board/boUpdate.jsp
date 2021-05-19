@@ -56,7 +56,7 @@
 								<tr>
 									<th>Title</th>
 									<td>
-										<input name="title" id="title" placeholder="input title">
+										<input name="title" id="title">
 									</td>
 								</tr>
 								<tr>

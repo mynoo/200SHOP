@@ -170,8 +170,7 @@
 			<div class="row justify-content-center mb-5">
 				<div
 					class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-					<span class="subheading">Recommend</span>
-					<h2 class="mb-3">Recommend it to people like this</h2>
+					<h2 class="mb-3">Introduction to Alcohol</h2>
 				</div>
 			</div>
 			<div class="row ftco-animate">
@@ -184,9 +183,8 @@
 									<span class="fa fa-quote-left"></span>
 								</div>
 								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains,
-										far from the countries Vokalia and Consonantia, there live the
-										blind texts.</p>
+									<p class="mb-4">The etymology of the word "Vodka" comes from the Russian word "Voda", which means 
+									"small water". Vodka is a distilled liquor that is mixed with other beverages such as cocktails and juice.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-1.jpg)"></div>
@@ -204,9 +202,8 @@
 									<span class="fa fa-quote-left"></span>
 								</div>
 								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains,
-										far from the countries Vokalia and Consonantia, there live the
-										blind texts.</p>
+									<p class="mb-4">Rum, also known as rum, is a liquor that is distilled 
+									after fermenting the remaining residue, molasses or cane juice, from sugar cane juice.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-2.jpg)"></div>
@@ -224,9 +221,8 @@
 									<span class="fa fa-quote-left"></span>
 								</div>
 								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains,
-										far from the countries Vokalia and Consonantia, there live the
-										blind texts.</p>
+									<p class="mb-4">It is a liquor made through distillation and ripening by sprouting 
+									or grinding grains such as barley, rye, wheat, corn, and oats into water, malt, and yeast.<br></p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-3.jpg)"></div>
@@ -244,9 +240,8 @@
 									<span class="fa fa-quote-left"></span>
 								</div>
 								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains,
-										far from the countries Vokalia and Consonantia, there live the
-										blind texts.</p>
+									<p class="mb-4">It is a colorless, transparent liquor with rye and other ingredients
+									 and a unique scent of dusongja.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-4.jpg)"></div>
@@ -264,14 +259,32 @@
 									<span class="fa fa-quote-left"></span>
 								</div>
 								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains,
-										far from the countries Vokalia and Consonantia, there live the
-										blind texts.</p>
+									<p class="mb-4">Brandy in broad sense is a generic name for liquor made by distillation of fruit liquor.
+									In a narrow sense, wine is distilled and aged in an oak barrel.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-5.jpg)"></div>
 										<div class="pl-3">
 											<p class="name">Brandy</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div
+									class="icon d-flex align-items-center justify-content-center">
+									<span class="fa fa-quote-left"></span>
+								</div>
+								<div class="text">
+									<p class="mb-4">Mexico's main ingredient is blue sermons, which inhabit only the area
+									 surrounding Tequila in the Mexican state of Jalisco.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img"
+											style="background-image: url(<%=contextPath%>/images/prod-5.jpg)"></div>
+										<div class="pl-3">
+											<p class="name">Tequila</p>
 										</div>
 									</div>
 								</div>

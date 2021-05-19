@@ -29,7 +29,7 @@ public class BoardInsertController extends SuperClass {
 		bean.setBcontents(request.getParameter("bcontents")); 
 		bean.setTitle(request.getParameter("title"));
 		bean.setWriter(request.getParameter("writer"));
-		bean.setWritedate(request.getParameter("writedate"));
+		System.out.println("writer : " + request.getParameter("writer"));
 		
 		System.out.println("bean information");
 		System.out.println(bean.toString()); 
@@ -59,8 +59,8 @@ public class BoardInsertController extends SuperClass {
 			isCheck = false ;
 		}
 		
-		if (bean.getBcontents().length() < 2 || bean.getBcontents().length() > 50) {
-			request.setAttribute(super.PREFIX + "content", "글 내용은 5자리 이상 50자리 이하이어야 합니다.");
+		if (bean.getBcontents().length() < 5 || bean.getBcontents().length() > 30) {
+			request.setAttribute(super.PREFIX + "content", "글 내용은 5자리 이상 30자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
 		return isCheck ;

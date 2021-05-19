@@ -15,7 +15,7 @@
 		</c:if>
 	</c:if>
 	
-<!DOCTYPE html>4
+<!DOCTYPE html>
 <html>
 <head>
 <style>

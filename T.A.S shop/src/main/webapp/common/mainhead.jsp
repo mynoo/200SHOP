@@ -80,16 +80,6 @@
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
-			<div class="order-lg-last btn-group">
-				<a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
-					<span class="flaticon-shopping-bag"></span>
-					<div class="d-flex justify-content-center align-items-center">
-						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
-						<small style="color: white;">${shopcount}</small>
-					</div>
-				</a>
-			</div>
-
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -113,7 +103,7 @@
 					<c:if test="${whologin != 0}">
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown04" 
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Page</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown04">
 								<a class="dropdown-item" href="<%=Noform%>meDetailView">나의 정보</a>
 								<a class="dropdown-item" href="<%=Noform%>meUpdate">나의 정보 수정</a>
@@ -123,6 +113,15 @@
 								<a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> 회원 탈퇴 </a>
 							</div>
 						</li>
+						<div class="order-lg-last btn-group" style="margin: auto">
+							<a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
+							<span class="flaticon-shopping-bag"></span>
+							<div class="d-flex justify-content-center align-items-center">
+							<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
+							<small style="color: white;">${shopcount}</small>
+								</div>
+							</a>
+						</div>
 					</c:if>
 				</ul>
 			</div>

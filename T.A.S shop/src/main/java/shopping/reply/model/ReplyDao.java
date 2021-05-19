@@ -14,7 +14,7 @@ public class ReplyDao extends SuperDao {
 
    public int InsertData(Reply rebean) {
       String sql = " insert into replys(rno, groupno, mid, comments, redate ) " ;
-      sql += " values(myreply.nextval,myreply.nextval , ?, ?, sysdate ) " ;
+      sql += " values(myreplys.nextval, ? , ?, ?, sysdate ) " ;
       
       PreparedStatement pstmt = null ;
       int cnt = -99999 ;
@@ -23,8 +23,9 @@ public class ReplyDao extends SuperDao {
          conn.setAutoCommit( false );
          pstmt = super.conn.prepareStatement(sql) ;
          
-         pstmt.setString(1, rebean.getMid());
-         pstmt.setString(2, rebean.getcomments());
+         pstmt.setInt(1, rebean.getGroupno());
+         pstmt.setString(2, rebean.getMid());
+         pstmt.setString(3, rebean.getcomments());
       
          cnt = pstmt.executeUpdate() ; 
          conn.commit(); 
@@ -50,6 +51,8 @@ public class ReplyDao extends SuperDao {
    
    public List<Reply> getReplyListByPk(int bno) {
       
+	   System.out.println("groupno--"+bno);
+	   
       PreparedStatement pstmt = null;
       ResultSet rs = null;
       
@@ -60,12 +63,14 @@ public class ReplyDao extends SuperDao {
          .append(", mid")
          .append(", comments")
          .append(", redate")
-         .append("from")
-         .append("   replys")
-         .append("where")
+         .append(" from")
+         .append(" replys")
+         .append(" where")
          .append("   groupno = ? ");
       
       List<Reply> replyList = new ArrayList<Reply>();
+      
+      System.out.println(sb.toString());
       
       try {
          if( this.conn == null ){ this.conn = this.getConnection() ; }         
@@ -84,6 +89,7 @@ public class ReplyDao extends SuperDao {
             
             replyList.add(reply);
          }
+         
          
       } catch (SQLException e) {         
          e.printStackTrace();

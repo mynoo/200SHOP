@@ -48,6 +48,7 @@ public class BoardDao extends SuperDao {
 		}
 		return cnt ;
 	}
+	
 	public int UpdateData( Board bean ){
 		String sql = " update boards set bcontents=?, title=?, writer=?, depth=? " ;
 		sql += " where bno = ? " ;

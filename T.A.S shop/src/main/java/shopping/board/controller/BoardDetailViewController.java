@@ -28,11 +28,16 @@ public class BoardDetailViewController extends SuperClass {
       
       Member loginfo = (Member)super.session.getAttribute("loginfo") ;
       
+      if (loginfo != null && loginfo.getId().equals(bean.getWriter()) == false || bean.getWriter() == null) {
+          dao.UpdateReadhit(bno) ;
+          bean.setDepth( bean.getDepth() + 1 ); 
+       }
       
-      if (loginfo.getId().equals(bean.getWriter()) == false || bean.getWriter() == null) {
-         dao.UpdateReadhit(bno) ;
-         bean.setDepth( bean.getDepth() + 1 ); 
-      }   
+      
+//      if (loginfo.getId().equals(bean.getWriter()) == false || bean.getWriter() == null) {
+//         dao.UpdateReadhit(bno) ;
+//         bean.setDepth( bean.getDepth() + 1 ); 
+//      }   
       
       request.setAttribute("bean", bean);
       
@@ -45,23 +50,33 @@ public class BoardDetailViewController extends SuperClass {
       //
       
       // 인설트 페이지
-      Reply rebean = new Reply() ;
-      rebean.setMid(request.getParameter("mid"));
-      rebean.setcomments(request.getParameter("comments"));
-      int cnt = - 999999 ;
-	  cnt = replyDao.InsertData(rebean) ;
+//      Reply rebean = new Reply() ;
+//      rebean.setGroupno(Integer.parseInt(request.getParameter("bno")));
+//      rebean.setMid(request.getParameter("mid"));
+//      rebean.setcomments(request.getParameter("comments"));
+//      int cnt = - 999999 ;
+//	  cnt = replyDao.InsertData(rebean) ;
       
-	  
       //
       
-      
+      System.out.println(replyList);
+	  
       String gotopage = "/board/boDetailView.jsp" ;
       super.GotoPage(gotopage);
    }   
    @Override
    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       super.doPost(request, response);
-   
+      
+      ReplyDao replyDao = new ReplyDao();
+      Reply rebean = new Reply() ;
+      rebean.setGroupno(Integer.parseInt(request.getParameter("bno")));
+      rebean.setMid(request.getParameter("mid"));
+      rebean.setcomments(request.getParameter("comments"));
+      int cnt = - 999999 ;
+	  cnt = replyDao.InsertData(rebean) ;
+      
+	  this.doGet(request, response);
    }
 }
 

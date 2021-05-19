@@ -33,12 +33,15 @@ public class MallCalculateController extends SuperClass {
 			Member mem = (Member)super.session.getAttribute("loginfo");
 			Otheraddress othermem = (Otheraddress)super.session.getAttribute("otherinfo");
 			
-			if(mem.getName() != othermem.getFname()) {
+			if(othermem != null) {
 				
-				System.out.println("call dao.Calulate() method - othermem");
-				dao.Calculate(othermem, maplists, totalPoint);
-				
-			}else {
+				if(mem.getName() != othermem.getFname()) {
+					
+					System.out.println("call dao.Calulate() method - othermem");
+					dao.Calculate(othermem, maplists, totalPoint);
+					
+				}
+			} else {
 				
 				System.out.println("call dao.Calulate() method - mem");
 				dao.Calculate(mem, maplists, totalPoint);

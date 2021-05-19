@@ -43,6 +43,7 @@
 			<div class="row justify-content-center">
 				<div class="col-xl-10 ftco-animate">
 					<form  method="post" action="<%=Noform%>boInsert" >
+					<input type="hidden" name="writer" value="${sessionScope.loginfo.id}">
 						<h3>Write Board</h3>
 						<table style="width: 100%">
 							<tbody>
@@ -55,7 +56,7 @@
 								<tr>
 									<th>Writer</th>
 									<td>
-										<input type="text" name="writer" id="writer" width="100%"  disabled="disabled" value="${sessionScope.loginfo.id }">
+										<input type="text" name="writer" id="writer" width="100%"  disabled="disabled" value="${sessionScope.loginfo.id}">
 									</td>
 								</tr>
 								<tr>

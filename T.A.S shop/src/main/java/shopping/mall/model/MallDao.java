@@ -260,17 +260,6 @@ public class MallDao extends SuperDao {
 				if(pstmt != null) {pstmt.close();}
 			}
 			
-			// step05 : update member point
-			sql = " update members set point = point + ? " ;
-			sql += " where id = ? " ;			
-			pstmt = this.conn.prepareStatement(sql) ;
-			
-			pstmt.setInt(1, totalPoint);
-			pstmt.setString(2, mem.getId());
-			
-			cnt = pstmt.executeUpdate() ;
-			if(pstmt != null) {pstmt.close();}
-			
 			conn.commit();
 			System.out.println("Calculate finished"); 
 			
@@ -316,7 +305,7 @@ public class MallDao extends SuperDao {
 			cnt = pstmt.executeUpdate() ;
 			if(pstmt != null) {pstmt.close();}
 			
-			// step02 : get max invoice number from table
+			// get max invoice number from table
 			sql = " select max(oid) as invoice from orders " ;
 			pstmt = this.conn.prepareStatement(sql) ;
 			rs = pstmt.executeQuery() ;
@@ -330,7 +319,7 @@ public class MallDao extends SuperDao {
 			System.out.println("shopping item size : " + keylist.size());
 			
 			for(Integer pnum : keylist) {
-				// step03 : orderdetails table into insert data
+				// orderdetails table into insert data
 				sql = " insert into orderdetails" ;
 				sql += " (odid, oid, pnum, qty)" ;
 				sql += " values(seqdetail.nextval, ?, ?, ?) " ;
@@ -345,7 +334,7 @@ public class MallDao extends SuperDao {
 				cnt = pstmt.executeUpdate() ;
 				if(pstmt != null) {pstmt.close();}
 				
-				// step04 : decreasing product stock
+				// decreasing product stock
 				sql = " update products set stock = stock - ? " ;
 				sql += " where pno = ? " ;			
 				pstmt = this.conn.prepareStatement(sql) ;
