@@ -32,7 +32,7 @@ td {
 				<div class="col-md-9 ftco-animate mb-5 text-center">
 					<p class="breadcrumbs mb-0">
 						<span class="mr-2">
-							<a href="<%=contextPath %>/commom/common.jsp">Home <i class="fa fa-chevron-right"></i>
+							<a href="<%=Noform%>main">Home <i class="fa fa-chevron-right"></i>
 							</a>
 						</span> 
 						<span class="mr-2">

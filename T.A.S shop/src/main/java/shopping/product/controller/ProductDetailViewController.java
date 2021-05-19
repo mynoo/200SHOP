@@ -26,12 +26,13 @@ public class ProductDetailViewController extends SuperClass {
 		int pno = 0;
 		if(request.getParameter("pno") != null)
 		{
-			pno = Integer.parseInt(request.getParameter("pno"));  
+			pno = Integer.parseInt(request.getParameter("pno"));
 		}
 		if(request.getAttribute("pno") != null)
 		{
 			pno = (int) request.getAttribute("pno");
 		}
+		
 		System.out.println("pno = " + request.getAttribute("pno"));
 		
 		ProductDao dao = new ProductDao();

@@ -32,7 +32,7 @@ public class MallInsertController extends SuperClass {
 			int qty = Integer.parseInt(request.getParameter("qty"));
 			
 			if(stock < qty) {
-				String message = "재고 수량이 부족합니다.";
+				String message = "현재 재고수량은 " + stock + "개 입니다.";
 				super.setErrorMessage(message);
 				new ProductDetailViewController().doGet(request, response);
 			}else {

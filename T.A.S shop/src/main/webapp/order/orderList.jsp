@@ -64,33 +64,32 @@
 										<th class="text-center">상품명</th>
 										<th class="text-center">수량</th>
 										<th class="text-center">단가</th>
-										<!-- <th class="text-center">포인트</th> -->
 										<th class="text-center">금액</th>
-										<!-- <th class="text-center">누적 포인트</th> -->
 										<th class="text-center">삭제</th>
 									</tr>
 								</thead>
+								<c:if test="${sessionScope.shoplists == null}">
+									<tr>
+										<td colspan="7">
+											${sessionScope.errmsg}
+										</td>
+									</tr>
+								</c:if>
 								<c:forEach var="shopinfo" items="${sessionScope.shoplists}">
 									<tr>
 										<td align="center"> ${shopinfo.pnum}</td>
 										<td align="center"> 
-											<img class="img-rounded" alt="${shopinfo.pname}" width="36" height="36" 
-												src="${applicationScrope.uploadPath}/${shipinfo.image}"> <br>
+											<img class="img-rounded" alt="${shopinfo.pname}" width="45" height="45" 
+												src="uploade/${shipinfo.image}"> <br>
 										</td>
 										<td align="center">${shopinfo.pname}</td>
 										<td align="center">${shopinfo.qty} 개</td>
 										<td align="center">
 											<fmt:formatNumber value="${shopinfo.price}" pattern="###,###" />원
 										</td>
-									<%-- 	<td align="center">
-											<fmt:formatNumber value="${shopinfo.point}" pattern="###,###" />p
-										</td> --%>
 										<td align="center">
 											<fmt:formatNumber value="${shopinfo.qty * shopinfo.price}" pattern="###,###" />원
 										 </td>
-										<%-- <td align="center">
-											<fmt:formatNumber value="${shopinfo.qty * shopinfo.point}" pattern="###,###" />p
-										</td> --%>
 										<td align="center">
 											<a href="<%=Noform%>mallDelete&pnum=${shopinfo.pnum}">
 												삭제
@@ -106,9 +105,6 @@
 									<td colspan="4" align="center">
 										총 금액 : 
 										<fmt:formatNumber value="${sessionScope.totalAmount}" pattern="###,###" />원
-										<%-- &nbsp; 
-										총 누적 포인트 : 
-										<fmt:formatNumber value="${sessionScope.totalPoint}" pattern="###,###" />p --%>
 									</td>
 								</tr>
 							</table>
