@@ -180,7 +180,6 @@ public class BoardDao extends SuperDao {
 				
 				bean.setBcontents(rs.getString("bcontents"));
 				bean.setWriter(rs.getString("writer"));
-				bean.setDepth(rs.getInt("depth"));
 				bean.setTitle(rs.getString("title"));
 				bean.setBno(rs.getInt("bno"));
 				bean.setWritedate(rs.getString("writedate"));

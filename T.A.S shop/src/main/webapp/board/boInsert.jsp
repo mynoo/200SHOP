@@ -55,7 +55,7 @@
 								<tr>
 									<th>Writer</th>
 									<td>
-										<input type="hidden" name="writer" id="writer" width="100%" value="${sessionScope.loginfo.id }">
+										<input type="text" name="writer" id="writer" width="100%"  disabled="disabled" value="${sessionScope.loginfo.id }">
 									</td>
 								</tr>
 								<tr>

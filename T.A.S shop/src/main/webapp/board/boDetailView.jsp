@@ -17,6 +17,114 @@
 		border-bottom: 1px solid #ddd;
 	}
 	</style>
+	<script>
+		function gotolist(){
+			location.href = '<%=Noform%>boList' ;
+		}
+		function addNewItem(cnum, writer, content, regdate) {
+			/* 댓글 1개를 추가해 주는 함수 */
+			var litag = $("<li>"); // 새로운 글이 추가될 li태그 객체
+			litag.addClass("comment_item");
+			
+			var ptag = $("<p>");// 작성자 정보가 지정될 <p>태그
+			ptag.addClass("writer");
+			
+			var spantag = $("<span>");// 작성자 정보의 이름
+			spantag.addClass("name");
+			spantag.html(writer + "님");
+			
+			var spandate = $("<span>");// 작성 일시
+			spandate.html("&nbsp;&nbsp;/&nbsp;&nbsp;" + regdate + " ");
+			
+			var inputtag = $("<input>");// 삭제하기 버튼
+			inputtag.attr({"class" : "btn btn-default btn-xs", "type" : "button", "value" : "삭제하기", "pmkey" : cnum});
+			inputtag.addClass("delete_btn");
+	
+			var content_p = $("<p>");// 내용
+			content_p.html( content );
+	
+			// 조립하기
+			ptag.append(spantag).append(spandate).append(inputtag);
+			litag.append(ptag).append(content_p);
+			
+			$("#comment_list").append(litag);			
+		}
+		
+		function getListComment(){ /* 댓글 목록을 읽어 온다. */
+			$("#comment_list").empty() ;
+			$.ajax({ /* 유효성 검사를 통과 했을 때 Ajax 함수 호출 */
+	            url: '<%=Noform%>reList',
+	            data : 'no=' + '${bean.no}', 
+	    		type : "get",             
+	            dataType: "json",
+	            success: function (obj, textStatus) {
+		           	/* var obj = JSON.parse(data); */
+		           	 
+					$.each(obj, function (idx) {
+		           		 var cnum = obj[idx].cnum ;	 
+		           		 var writer = obj[idx].writer ;
+		           		 var content = obj[idx].content ;	 
+		           		 var regdate = obj[idx].regdate ;
+		           		 addNewItem(cnum, writer, content, regdate);
+		           	});
+	            }
+	        });
+		}
+		
+		/** 삭제 버튼 클릭시에 항목 삭제하도록 "미리" 지정 */
+		$(document).on("click", ".delete_btn", function() {
+			if (confirm("정말 선택하신 항목을 삭제하시겠습니까?")) {
+				
+				$.ajax({ /* 유효성 검사를 통과 했을 때 Ajax 함수 호출 */
+		            url: '<%=Noform%>reDelete',
+		            data : 'cnum=' + $(this).attr('pmkey') + '&no=' + '${bean.no}',  
+		    		type : "post",             
+		            dataType: "text",
+		            success: function (data, textStatus) { /* 댓글 삭제 */	            	
+		            	getListComment() ; /* 목록 갱신 */		           
+		            }
+		        });			
+			}
+		});	
+		
+		$(document).ready(function() {
+			getListComment() ; /* 시작하자 마자 읽어 오기 */		 
+			 
+			/** 덧글 내용 저장 이벤트 */
+			$("#comment_form").submit(function(){
+				// 작성자 이름에 대한 입력여부 검사
+				if (!$("#writer").val()) {
+					alert("이름을 입력하세요.");
+					$("#writer").focus();
+					return false;
+				}
+	
+				// 내용에 대한 입력여부 검사
+				if (!$("#content").val()) {
+					alert("내용을 입력하세요.");
+					$("#content").focus();
+					return false;
+				}		
+				
+				var url = '<%=Noform%>reInsert' ;
+				var parameter = $('#comment_form').serialize() ;
+				$.post(url, parameter, function( data ) {
+					/* alert( '댓글이 작성되었읍니다.' ) ; */
+					getListComment(0) ; /* 목록 갱신 */
+					$("#writer").val('') ;
+					$("#content").val('') ;
+					
+				}).fail(function() {
+					alert("덧글 작성에 실패했습니다. 잠시 후에 다시 시도해 주세요.");
+				});
+				return false ;
+			});			
+		});	
+	</script>
+	<%
+		// 여기에 빈을  담아오기
+	%>
+	
 	
 </head>
 
@@ -44,19 +152,19 @@
 					<tr>
 						<th>no</th>
 						<td>
-							<input type="hidden" value="${requestScope.bno}">
+							<input type="text" disabled="disabled" value="${bean.bno}">
 						</td>
 					</tr>
 					<tr>
 						<th>writer</th>
 						<td>
-							<input type="hidden" value="${requestScope.writer}">
+							<input type="text" disabled="disabled" value="${bean.writer}">
 						</td>
 					</tr>
 					<tr>
 						<th>title</th>
 						<td>
-							<input type="hidden" value="${requestScope.title}">
+							<input type="text" disabled="disabled" value="${bean.title}">
 						</td>
 					</tr>
 					<tr>
@@ -64,13 +172,13 @@
 							regdate
 						</th>
 						<td>
-							<input type="hidden" value="${requestScope.writedate}">
+							<input type="text" disabled="disabled" value="${bean.writedate}">
 						</td>
 					</tr>
 					<tr>
 						<th>contant</th>
 						<td>
-							<input type="hidden" value="${requestScope.bcontents}">	
+							<input type="text" disabled="disabled" value="${bean.bcontents}">	
 						</td>
 					</tr>
 				</tbody>
@@ -102,92 +210,49 @@
                     <h3>John Doe</h3>
                     <div class="meta">April 12, 2020 at 1:21am</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p>
-              <div class="comment-body">					
-				<ul id="comment_list">
-					<!-- 여기에 동적 생성 요소가 들어가게 됩니다. -->
-				</ul>
-				<div id="comment_mid">
-					<form id="comment_form" action="<%=YesForm %>" method="get" role="form" >
-					<input type="hidden" name="command" value="reInsert">
-						<div class="form-group">
-							<label for="writer" class="col-xs-3 col-lg-3 control-label">작성자</label>
-							<div class="col-xs-4 col-lg-4">
-								<input type="text" name="fakewriter" id="fakemid" class="form-control" disabled="disabled" value="${sessionScope.loginfo.id}">								
-							</div><input type="hidden" name="mid" id="mid" value="${sessionScope.loginfo.id}">
-						</div>
-						<div class="form-group">
-							<label for="content" class="col-xs-3 col-lg-3 control-label">덧글 내용</label>
-							<div class="col-xs-9 col-lg-9">
-								<textarea name="comment" class="form-control" rows="3" cols="50" id="comment" ></textarea> 
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="#" align="right">
-								<button type="submit" class="reply">
-									Reply
-								</button> 
-							</div>
-						</div>	        		
-					</form>
-				</div>
-			</div>
+                    <p align="right">
+             			<a href="#" class="reply" >Reply</a>
                     </p>
                   </div>
                 </li>
+                
+                <c:forEach var="rebean" items="${requestScope.relists}">
                 <li class="comment">
                   <div class="vcard bio">
                     <img src="../images/icons/icon2.png" alt="Image placeholder">
                   </div>
                   <div class="comment-body">
-                     <p>
-                    <div class="col-sm-12">					
-				<ul id="comment_list">
-					<!-- 여기에 동적 생성 요소가 들어가게 됩니다. -->
-				</ul>
-				<div id="comment_mid">
-					<form id="comment_form" action="<%=YesForm %>" method="get" role="form" >
-					<input type="hidden" name="command" value="reInsert">
-						<div class="form-group">
-							<label for="writer" class="col-xs-3 col-lg-3 control-label">작성자</label>
-							<div class="col-xs-4 col-lg-4">
-								<input type="text" name="fakewriter" id="fakemid" class="form-control" disabled="disabled" value="${sessionScope.loginfo.id}">								
-							</div><input type="hidden" name="mid" id="mid" value="${sessionScope.loginfo.id}">
-						</div>
-						<div class="form-group">
-							<label for="content" class="col-xs-3 col-lg-3 control-label">덧글 내용</label>
-							<div class="col-xs-9 col-lg-9">
-								<textarea name="comment" class="form-control" rows="3" cols="50" id="comment" ></textarea> 
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="#" align="right">
-								<button type="submit" class="reply">
-									Reply
-								</button> 
-							</div>
-						</div>	        		
-					</form>
-				</div>
-			</div>
+                    <h3>
+                    ${rebean.mid}
+                    </h3>
+                    <div class="meta">
+                    	<input >
+                    </div>
+                    <p>
+                    ${rebean.comments}
+                    </p>
+                    <p align="right">
+             			<a href="#" class="reply">Reply</a>
                     </p>
                   </div>
                 </li>
-                
+                </c:forEach>
                 
               </ul>
               
               <!-- END comment-list -->
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
-                <form action="comment" class="p-5 bg-light">
+                <form action="<%=YesForm %>" class="p-5 bg-light" role="form">
+                	<input type="hidden" name="command" value="boDetailView">
                   <div class="form-group">
                     <label for="name">Name *</label>
-                    <input type="hidden" class="form-control" name="comment_name"  id="name" value="${sessionScope.loginfo.id }">
+                    <input type="text" name="fakewriter" id="fakemid" class="form-control" disabled="disabled" value="${sessionScope.loginfo.id}">
+                    <input type="hidden" name="mid" id="mid" value="${sessionScope.loginfo.id}">
                   </div>
                    <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="comment_message" id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="comments" id="message" cols="30" rows="10" class="form-control"></textarea>
                   </div>
                   <div class="form-group" align="right">
                     <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">

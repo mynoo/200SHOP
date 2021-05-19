@@ -95,7 +95,6 @@ public class Member {
 	public void setExtraaddress(String extraaddress) {
 		this.extraaddress = extraaddress;
 	}
-	
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
@@ -103,5 +102,4 @@ public class Member {
 				+ ", address2=" + address2 + ", extraaddress=" + extraaddress + ", birth=" + birth + ", point=" 
 				+ ", phonenumber=" + phonenumber + "]";
 	}
-	
 }

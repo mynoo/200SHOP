@@ -118,7 +118,7 @@
 					</div>
 				</div>
 				<div class="signup-form">
-					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="history.go(-2);">
+					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="gotomain();">
 						<b>X</b>
 					</button>
 					<form method="POST" class="register-form" name="minsertform">
