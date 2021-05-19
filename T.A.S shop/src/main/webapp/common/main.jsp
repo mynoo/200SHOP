@@ -70,8 +70,8 @@
 							<span class="flaticon-free-delivery"></span>
 						</div>
 						<div class="text">
-							<h2>무료 배송 &amp; 반품</h2>
-							<p> 고객들의 상품에 대한 신뢰도를 높이기 위해 이렇게 했슴다. </p>
+							<h2>Free Shipping &amp; Return</h2>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 						</div>
 					</div>
 				</div>

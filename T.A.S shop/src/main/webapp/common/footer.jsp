@@ -18,9 +18,10 @@
 <!DOCTYPE html>4
 <html>
 <head>
-<style type="text/css">
+<style>
 .ftco-footer {
-  padding: 0;
+    padding: 0;
+}
 </style>
 <meta charset="UTF-8">
 </head>

@@ -54,15 +54,15 @@
 					<table>
 						<thead align="center">
 							<tr>
-								<th> No </th>
-								<th> Id </th>
-								<th> Name </th>
-								<th> Birth </th>
-								<th> Gender </th>
-								<th> Email </th>
-								<th> Phone </th>
-								<th> Address </th>
-								<th> Update/Del </th>
+								<th> NO </th>
+								<th> ID </th>
+								<th> NAME </th>
+								<th> BIRTH </th>
+								<th> GENDER </th>
+								<th> EMAIL </th>
+								<th> PHONE </th>
+								<th> ADDRESS </th>
+								<th> UPDATE/DEL </th>
 							</tr>
 						</thead>
 						<tbody>
