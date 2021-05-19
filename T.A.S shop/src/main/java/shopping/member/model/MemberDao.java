@@ -45,8 +45,8 @@ public Member SelectData(String id, String password) {
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
 				bean.setPhonenumber(rs.getString("phonenumber"));
-//				bean.setRoadaddress(rs.getString("roadaddress"));
-//				bean.setExtraaddress(rs.getString("extraaddress"));
+				bean.setRoadaddress(rs.getString("roadaddress"));
+				bean.setExtraaddress(rs.getString("extraaddress"));
 				
 			}
 			
@@ -71,8 +71,8 @@ public Member SelectData(String id, String password) {
 		
 		int cnt = -99999;
 		
-		String sql = " insert into members(id, name, password, birth, email, zipcode, address1, address2, gender, phonenumber, roadaddress, extraaddress, point)";
-		sql += " values(?, ?, ?, to_date(?, 'yyyy/mm/dd'), ?, ?, ?, ?, ?, ?, ?, ?, default)";
+		String sql = " insert into members(id, name, password, birth, email, zipcode, address1, address2, gender, phonenumber, roadaddress, extraaddress)";
+		sql += " values(?, ?, ?, to_date(?, 'yyyy/mm/dd'), ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			if(conn == null) {conn = super.getConnection();}
@@ -248,7 +248,6 @@ public Member SelectData(String id, String password) {
 				bean.setZipcode(rs.getString("zipcode"));
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
-				bean.setPoint(rs.getInt("point"));
 				bean.setRoadaddress(rs.getString("roadaddress"));
 				bean.setExtraaddress(rs.getString("extraaddress"));
 				
@@ -348,40 +347,4 @@ public Member SelectData(String id, String password) {
 		}
 		return cnt;
 	}
-	
-	public int UpdateMpoint(String id, int mpoint ) {
-		String sql = " " ; 
-		sql += " " ;
-		sql += " " ;
-
-		PreparedStatement pstmt = null ;
-		int cnt = -99999 ;
-		try {
-			if( conn == null ){ super.conn = super.getConnection() ; }
-			conn.setAutoCommit( false );
-			pstmt = super.conn.prepareStatement(sql) ;
-			
-			cnt = pstmt.executeUpdate() ; 
-			conn.commit(); 
-		} catch (Exception e) {
-			SQLException err = (SQLException)e;
-			cnt = - err.getErrorCode();
-			e.printStackTrace();
-			try {
-				conn.rollback(); 
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		} finally{
-			try {
-				if( pstmt != null ){ pstmt.close(); }
-				super.closeConnection(); 
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		}
-		return cnt ;
-	}
-
-	
 }

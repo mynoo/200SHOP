@@ -75,7 +75,7 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
-				<a href="<%=Noform%>mallList" class="btn-cart dropdown-toggle dropdown-toggle-split">
+				<a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
 						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />

@@ -18,12 +18,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+.ftco-footer {
+  padding: 0;
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<footer class="ftco-footer">
-		<div class="container">
+		<%--<div class="container">
 			<div class="row mb-5">
 				<div class="col-sm-12 col-md">
 					<div class="ftco-footer-widget mb-4">
@@ -169,7 +173,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --%>
 		<div class="container-fluid px-0 py-5 bg-black">
 			<div class="container">
 				<div class="row">

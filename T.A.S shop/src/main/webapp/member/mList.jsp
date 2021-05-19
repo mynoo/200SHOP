@@ -62,7 +62,6 @@
 								<th> Email </th>
 								<th> Phone </th>
 								<th> Address </th>
-								<th> Point </th>
 								<th> Update/Del </th>
 							</tr>
 						</thead>
@@ -83,7 +82,6 @@
 										${bean.address1}
 										${bean.address2}
 									</td>
-									<td>${bean.point}</td>
 									<td>
 										<c:if test="${bean.id == 'admin'}">
 											<a href="<%=Noform%>meUpdate&id=${bean.id}">

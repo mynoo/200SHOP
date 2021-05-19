@@ -155,7 +155,7 @@
 		</div>
 		<div class="row justify-content-center" id="viewAll">
 			<div class="col-md-4">
-				<a href="<%=contextPath%>/product/product.jsp"
+				<a href="<%=Noform%>prprList"
 					class="btn btn-primary d-block">View All Products&nbsp&nbsp<span
 					class="fa fa-long-arrow-right"></span>
 				</a>
