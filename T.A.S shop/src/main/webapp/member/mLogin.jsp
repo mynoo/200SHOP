@@ -28,7 +28,9 @@
 
 	<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/main.css">
-
+	
+	<script src="<%=contextPath%>/common/common.jsp"></script>
+	
 	<script type="text/javascript">
 		function Logincheck() {
 			var id = document.login.id.value;
@@ -51,7 +53,7 @@
 			<div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
 					Account Login
-					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="history.go(-1);">
+					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="gotomain();">
 						<b>X</b>
 					</button>
 				</span>
