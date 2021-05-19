@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../common/common.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%
-	String payment = request.getParameter("optradio");
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +69,7 @@
 											<td class="text-center">${shopinfo.pname}</td>
 											<td class="text-center">
 												<img alt="${shopinfo.image}" width="45" height="45"
-													src="${applicationScope.uploadedPath}/${shopinfo.image}">
+													src="upload/${shopinfo.image}">
 											</td>
 											<td class="text-center">
 												<fmt:formatNumber value="${shopinfo.price}" pattern="###,###" /> 원
@@ -225,17 +221,9 @@
 									</tr>
 									<tr>
 										<td class="text-center gr">
-											<strong> 적립 포인트 </strong>
-										</td>
-										<td>
-											<fmt:formatNumber value="${sessionScope.loginfo.point}" pattern="###,###" /> p
-										</td>
-									</tr>
-									<tr>
-										<td class="text-center gr">
 											<strong> 결제 방법 </strong>
 										</td>
-										<td> <%=payment%> </td>
+										<td> ${sessionScope.payment} </td>
 									</tr>
 								</tbody>
 							</table>

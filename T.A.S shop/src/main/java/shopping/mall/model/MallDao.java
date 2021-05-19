@@ -198,7 +198,7 @@ public class MallDao extends SuperDao {
 		return lists;
 	}
 	
-	public void Calculate(Member mem, Map<Integer, Integer> maplists, int totalPoint) {
+	public void Calculate(Member mem, Map<Integer, Integer> maplists) {
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;
 		
@@ -260,17 +260,6 @@ public class MallDao extends SuperDao {
 				if(pstmt != null) {pstmt.close();}
 			}
 			
-			// step05 : update member point
-			sql = " update members set point = point + ? " ;
-			sql += " where id = ? " ;			
-			pstmt = this.conn.prepareStatement(sql) ;
-			
-			pstmt.setInt(1, totalPoint);
-			pstmt.setString(2, mem.getId());
-			
-			cnt = pstmt.executeUpdate() ;
-			if(pstmt != null) {pstmt.close();}
-			
 			conn.commit();
 			System.out.println("Calculate finished"); 
 			
@@ -293,7 +282,7 @@ public class MallDao extends SuperDao {
 		
 	}
 
-	public void Calculate(Otheraddress othermem, Map<Integer, Integer> maplists, int totalPoint) {
+	public void Calculate(Otheraddress othermem, Map<Integer, Integer> maplists) {
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;
 		
@@ -354,17 +343,6 @@ public class MallDao extends SuperDao {
 				cnt = pstmt.executeUpdate() ;
 				if(pstmt != null) {pstmt.close();}
 			}
-			
-			// step05 : update member point
-			sql = " update members set point = point + ? " ;
-			sql += " where id = ? " ;			
-			pstmt = this.conn.prepareStatement(sql) ;
-			
-			pstmt.setInt(1, totalPoint);
-			pstmt.setString(2, othermem.getMid());
-			
-			cnt = pstmt.executeUpdate() ;
-			if(pstmt != null) {pstmt.close();}
 			
 			conn.commit();
 			System.out.println("Calculate finished"); 

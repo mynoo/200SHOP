@@ -24,35 +24,33 @@ public class MallCalculateController extends SuperClass {
 		MyCartList mycart = (MyCartList)super.session.getAttribute("mycart");
 		MallDao dao = new MallDao();
 		
+		String payment = request.getParameter("payment");
+		
 		if (mycart != null) {
 			Map<Integer, Integer> maplists = mycart.GetAllOrderList();
 			System.out.println("shopping list count : " + maplists.size());
 			
-			int totalPoint =  (Integer)super.session.getAttribute("totalPoint");
-			
 			Member mem = (Member)super.session.getAttribute("loginfo");
 			Otheraddress othermem = (Otheraddress)super.session.getAttribute("otherinfo");
 			
-			if(mem.getName() != othermem.getFname()) {
-				
-				System.out.println("call dao.Calulate() method - othermem");
-				dao.Calculate(othermem, maplists, totalPoint);
-				
+			if(othermem != null) {
+				if(mem.getName() != othermem.getFname()) {
+					System.out.println("call dao.Calulate() method - othermem");
+					dao.Calculate(othermem, maplists);
+				}
 			}else {
-				
 				System.out.println("call dao.Calulate() method - mem");
-				dao.Calculate(mem, maplists, totalPoint);
+				dao.Calculate(mem, maplists);
 			}
-			
 			
 			System.out.println("remove attribute in session");
 			super.session.removeAttribute("totalAmount");
-			super.session.removeAttribute("totalPoint");
 			super.session.removeAttribute("mycart");
 			super.session.removeAttribute("shoplists");
 			
 			String message = "결재를 완료하였습니다.";
 			super.session.setAttribute("message", message);
+			super.session.setAttribute("payment", payment);
 		}
 		
 		new MallOrderController().doGet(request, response);

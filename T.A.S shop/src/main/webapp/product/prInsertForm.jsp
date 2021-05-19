@@ -25,6 +25,16 @@
 	}
 }
 	</style>
+	
+	<script type="text/javascript">
+		
+		var checkSubmit = false;
+	
+		function save() {
+			
+		}
+	
+	</script>
 
 </head>
 
@@ -111,9 +121,8 @@
 							</div>
 						</div>
 						<div class="form-submit">
-							<input type="submit" value="Register" class="submit" id="submit"
-								name="submit" /> <input type="reset" value="Reset"
-								class="submit" id="reset" name="reset" />
+							<input type="submit" value="Register" class="submit" id="submit" name="submit" onclick=""/>
+							<input type="reset" value="Reset" class="submit" id="reset" name="reset" />
 						</div>
 					</form>
 				</div>
