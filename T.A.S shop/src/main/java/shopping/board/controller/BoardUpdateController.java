@@ -20,10 +20,25 @@ public class BoardUpdateController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
+		int bno = Integer.parseInt(request.getParameter("bno")) ;
+		BoardDao dao = new BoardDao();
+
+		Board bean = dao.SelectDataByPk(bno) ; 
+		
+		request.setAttribute("bean", bean);
+		
+		String gotopage = "/board/boUpdate.jsp" ;
+		super.GotoPage(gotopage);
+	}	
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		super.doPost(request, response);
+		
 		bean = new Board() ;
-		bean.setBcontents(request.getParameter("bcontents")); 
+		bean.setBcontents(request.getParameter("bcontents"));
 		bean.setTitle(request.getParameter("title"));
-		bean.setBno(Integer.parseInt(request.getParameter("bno")));
+		bean.setWriter(request.getParameter("writer"));
+		bean.setBno(Integer.parseInt(request.getParameter("bno")));		
 		
 		System.out.println("bean information");
 		System.out.println(bean.toString()); 
@@ -34,7 +49,7 @@ public class BoardUpdateController extends SuperClass {
 			int cnt = - 999999 ;
 			cnt = dao.UpdateData(bean) ;
 			
-			new BoardUpdateController().doPost(request, response); 
+			new BoardListController().doGet(request, response); 
 			
 		} else {
 			System.out.println("board update validation check failure");
@@ -43,20 +58,6 @@ public class BoardUpdateController extends SuperClass {
 			String gotopage = "/board/boUpdate.jsp" ;
 			super.GotoPage(gotopage);
 		}
-	}	
-	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		super.doPost(request, response);
-		
-		int bno = Integer.parseInt(request.getParameter("bno")) ;
-		BoardDao dao = new BoardDao();
-
-		Board bean = dao.SelectDataByPk(bno) ; 
-		
-		request.setAttribute("bean", bean);
-		
-		String gotopage = "/board/boList.jsp" ;
-		super.GotoPage(gotopage);
 	}
 
 	

@@ -42,7 +42,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 ftco-animate">
-					<form id="comment_form" action="<%=Noform %>boUpdate" method="get" role="form" >
+					<form id="comment_form" action="<%=YesForm %>" method="post" role="form" >
 						<input type="hidden" name="command" value="boUpdate">
 						<h3>Update Board</h3>
 						<table style="width: 100%">
@@ -50,7 +50,7 @@
 								<tr>
 									<th>no</th>
 									<td>
-										<input type="hidden" name="bno" id="bno" value="${requestScope.bno}">
+										<input type="hidden" name="bno" id="bno" value="${bean.bno}">
 									</td>
 								</tr>
 								<tr>
@@ -62,7 +62,7 @@
 								<tr>
 									<th>Writer</th>
 									<td>
-										<input type="hidden" name="writer" id="writer" width="100%" value="${sessionScope.loginfo.id}">
+										<input type="hidden" name="writer" id="writer" width="100%" value="${bean.writer}">
 									</td>
 								</tr>
 								<tr>

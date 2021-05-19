@@ -30,7 +30,7 @@ public class ProductUpdateController extends SuperClass {
 		
 		request.setAttribute("bean", bean);
 		
-		String gotopage = "review/prReviewUpdate.jsp";
+		String gotopage = "product/prUpdateForm.jsp";
 		super.GotoPage(gotopage);
 		
 		

@@ -11,6 +11,7 @@
 #viewAll {
     margin: 50px auto 100;
 }
+
 </style>
 </head>
 <body>
@@ -48,8 +49,8 @@
 							<span class="flaticon-support"></span>
 						</div>
 						<div class="text">
-							<h2>연중무휴 온라인 지원</h2>
-							<p>고객들의 편의를 위해 24시간 연중무휴 온라인 고객센터를 운영합니다.</p>
+							<h2>Online Support 24/7</h2>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 						</div>
 					</div>
 				</div>
@@ -59,8 +60,8 @@
 							<span class="flaticon-cashback"></span>
 						</div>
 						<div class="text">
-							<h2>환불 보증</h2>
-							<p>보다 확실한 품질을 보증하기 위해 조금이라도 품질에 문제가 있을 경우 환불을 보장합니다.</p>
+							<h2>Money Back Guarantee</h2>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 						</div>
 					</div>
 				</div>
@@ -70,8 +71,8 @@
 							<span class="flaticon-free-delivery"></span>
 						</div>
 						<div class="text">
-							<h2>무료 배송 &amp; 반품</h2>
-							<p> 고객들의 상품에 대한 신뢰도를 높이기 위해 이렇게 했슴다. </p>
+							<h2>Free Shipping &amp; Return</h2>
+							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 						</div>
 					</div>
 				</div>
@@ -88,11 +89,11 @@
 				<div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
 					<div class="heading-section">
 						<span class="subheading">Since 1905</span>
-						<h2 class="mb-4">욕망이 새로운 맛을 만나다.</h2>
+						<h2 class="mb-4">Desire Meets A New Taste</h2>
 
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 						<p class="year">
-							<strong class="number" data-number="116">0</strong> <span>연혁
+							<strong class="number" data-number="116">0</strong> <span>Years of Experience In Business</span>
 						</p>
 					</div>
 				</div>
@@ -155,7 +156,7 @@
 		</div>
 		<div class="row justify-content-center" id="viewAll">
 			<div class="col-md-4">
-				<a href="<%=contextPath%>/product/product.jsp"
+				<a href="<%=Noform%>prprList"
 					class="btn btn-primary d-block">View All Products&nbsp&nbsp<span
 					class="fa fa-long-arrow-right"></span>
 				</a>
@@ -169,8 +170,8 @@
 			<div class="row justify-content-center mb-5">
 				<div
 					class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-					<span class="subheading">Testimonial</span>
-					<h2 class="mb-3">Happy Clients</h2>
+					<span class="subheading">Recommend</span>
+					<h2 class="mb-3">Recommend it to people like this</h2>
 				</div>
 			</div>
 			<div class="row ftco-animate">
@@ -190,8 +191,7 @@
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-1.jpg)"></div>
 										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
+											<p class="name">Vodka</p>
 										</div>
 									</div>
 								</div>
@@ -211,8 +211,7 @@
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-2.jpg)"></div>
 										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
+											<p class="name">Rum</p>
 										</div>
 									</div>
 								</div>
@@ -232,8 +231,7 @@
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-3.jpg)"></div>
 										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
+											<p class="name">Whiskey</p>
 										</div>
 									</div>
 								</div>
@@ -253,8 +251,7 @@
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-4.jpg)"></div>
 										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
+											<p class="name">Gin</p>
 										</div>
 									</div>
 								</div>
@@ -274,8 +271,7 @@
 										<div class="user-img"
 											style="background-image: url(<%=contextPath%>/images/prod-5.jpg)"></div>
 										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
+											<p class="name">Brandy</p>
 										</div>
 									</div>
 								</div>

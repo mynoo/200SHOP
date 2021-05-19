@@ -281,7 +281,7 @@ input[type="month"] {
 
 textarea {
   overflow: auto;
-  resize: vertical; }
+  }
 
 fieldset {
   min-width: 0;
@@ -506,13 +506,14 @@ pre {
   margin-left: auto; }
 
 .row {
+	justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px; }
+  margin-right: -130px;
+  margin-left: -80px; }
 
 .no-gutters {
   margin-right: 0;
@@ -9051,6 +9052,7 @@ h1, h2, h3, h4, h5,
   width: 100%;
   display: block;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  color: #000;
   padding: 20px; }
   .cart-total h3 {
     font-size: 24px;
@@ -9678,7 +9680,10 @@ textarea.form-control {
       margin-bottom: 25px !important;
       padding: 0 20px; } }
   .dbox p {
-    margin-bottom: 0; }
+    margin-bottom: 0; 
+    color: #000;
+    font-family: 'Slabo 27px', serif;
+    }
     .dbox p span {
       font-weight: 500;
       color: #000000; }

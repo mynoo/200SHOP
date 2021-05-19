@@ -71,8 +71,7 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
-				<a href="<%=Noform%>mallOrder&id=${loginfo.id}" class="btn-cart dropdown-toggle dropdown-toggle-split"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
 						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
@@ -95,7 +94,7 @@
 						<a href="<%=Noform%>prprList" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=Noform%>boList" class="nav-link">Boards</a>
+						<a href="<%=Noform%>boList" class="nav-link">Q&A</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=Noform%>contact" class="nav-link">Contact</a>
