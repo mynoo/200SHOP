@@ -39,12 +39,6 @@ public class MemberUpdateController extends SuperClass {
 		bean.setPassword(request.getParameter("password"));
 		bean.setPhonenumber(request.getParameter("phonenumber"));
 		
-		if (request.getParameter("point") == null || request.getParameter("point").equals("")) {
-			bean.setPoint(0);	
-		}else {
-			bean.setPoint(Integer.parseInt(request.getParameter("point")));
-		}
-		
 		System.out.println(bean.getId());
 		System.out.println(bean.getName());
 		System.out.println(bean.getPassword());

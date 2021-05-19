@@ -45,9 +45,6 @@
 				</div>
 				
 				<div class="signup-form">
-					<button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="history.go(-2);">
-						<b>X</b>
-					</button>
 					<form method="post" class="register-form">
 						<div class="form-row">
 							<div class="form-group">
@@ -83,14 +80,14 @@
 								</div>
 								
 								<div class="form-input">
-									<label class="control-label required" for="zipcode">Zipcode</label>
+									<label class="control-label" for="zipcode">Zipcode</label>
 									<div class="form-inline">
 										<input type="text" id="zipcode" name="zipcode" value="${loginfo.zipcode}" readonly="readonly">
 									</div>
 								</div>
 								
 								<div class="form-input">
-									<label class="required" for="address1">Address1</label>
+									<label class="control-label" for="address1">Address1</label>
 										<input type="text" id="roadaddress" name="roadaddress" value="${loginfo.roadaddress}" readonly="readonly">	
 										<input type="text" id="address1" name="address1" value="${loginfo.address1}" readonly="readonly">
 										<span id="guide" style="color:#999;display:none"></span>
@@ -107,8 +104,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-submit">
-							<input type="button" value="Home" class="btn btn-default" name="home" onclick="location='<%=Noform%>main'" />
+						<div class="button">
+							<input type="button"  style="float:right; width: 60pt; heghit: 60pt; background-color: #b7472a; color: white;"
+								 value="Home" class="btn btn-default" name="home" onclick="location='<%=Noform%>main'" />
 						</div>
 					</form>
 				</div>
