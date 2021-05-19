@@ -15,7 +15,7 @@
 		</c:if>
 	</c:if>
 	
-<!DOCTYPE html>
+<!DOCTYPE html>4
 <html>
 <head>
 <style type="text/css">
@@ -23,7 +23,6 @@
   padding: 0;
 </style>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 	<footer class="ftco-footer">

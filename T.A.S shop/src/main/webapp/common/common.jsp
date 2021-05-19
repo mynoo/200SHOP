@@ -122,6 +122,10 @@
                }
            }).open();
       }
+      
+      function gotomain() {
+			location.href = '<%=Noform%>main';
+		}
    </script>
    
 </head>
