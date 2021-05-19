@@ -82,6 +82,7 @@ public class Member {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
+	
 	public String getRoadaddress() {
 		return roadaddress;
 	}
@@ -98,7 +99,7 @@ public class Member {
 	public String toString() {
 		return "Member [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
 				+ gender + ", zipcode=" + zipcode + ", roadaddress=" + roadaddress + ", address1=" + address1
-				+ ", address2=" + address2 + ", extraaddress=" + extraaddress + ", birth=" + birth + ", phonenumber="
-				+ phonenumber + "]";
+				+ ", address2=" + address2 + ", extraaddress=" + extraaddress + ", birth=" + birth + ", point=" 
+				+ ", phonenumber=" + phonenumber + "]";
 	}
 }
