@@ -77,12 +77,16 @@ public class ProductInsertController extends SuperClass {
 	public boolean validate(HttpServletRequest request) {
 		boolean isCheck = true ;
 
-		if (bean.getPname().length() < 3 || bean.getPname().length() > 15) {
-			request.setAttribute(super.PREFIX + "name", "상품 이름은(는) 3자리 이상 15자리 이하이어야 합니다.");
+		if (bean.getPname().length() < 1 || bean.getPname().length() > 15) {
+			request.setAttribute(super.PREFIX + "pname", "상품 이름은(는) 3자리 이상 15자리 이하이어야 합니다.");
+			isCheck = false ;
+		}
+		if (bean.getBrand().length() < 1 || bean.getBrand().length() > 15) {
+			request.setAttribute(super.PREFIX + "brand", "회사 이름은(는) 3자리 이상 15자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
 		if (bean.getContent().length() < 5 || bean.getContent().length() > 255) {
-			request.setAttribute(super.PREFIX + "contents", "상품에 대한 설명은 5자리 이상 255자리 이하이어야 합니다.");
+			request.setAttribute(super.PREFIX + "content", "상품에 대한 설명은 5자리 이상 255자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
 		
@@ -95,12 +99,12 @@ public class ProductInsertController extends SuperClass {
 		String regex = "\\d{4}[-/]\\d{2}[-/]\\d{2}" ;
 		
 		if (bean.getDate() == null) {
-			bean.setDate("");
+			request.setAttribute(super.PREFIX + "date", "날짜를 입력해주세요.");
 		}
 		
 		boolean result = Pattern.matches(regex, bean.getDate()) ;
 		if (result == false) {
-			request.setAttribute(super.PREFIX + "inputdate", "입고 일자는 yyyy/mm/dd 또는 yyyy-mm-dd으로 입력해 주셔야 합니다.");
+			request.setAttribute(super.PREFIX + "date", "입고 일자는 yyyy/mm/dd 또는 yyyy-mm-dd으로 입력해 주셔야 합니다.");
 			isCheck = false ;
 		}		
 		
@@ -112,6 +116,21 @@ public class ProductInsertController extends SuperClass {
 		int stock = 10 ;
 		if (bean.getStock() < stock) {
 			request.setAttribute(super.PREFIX + "stock", "재고 수량은 " + stock + "개 이상이어야 합니다.");
+			isCheck = false ;
+		}
+		int price = 100 ;
+		if (bean.getStock() < price) {
+			request.setAttribute(super.PREFIX + "price", "가격은 " + price + "원 이상이어야 합니다.");
+			isCheck = false ;
+		}
+		int alcohol = 1 ;
+		if (bean.getStock() < alcohol) {
+			request.setAttribute(super.PREFIX + "alcohol", "도수는 " + alcohol + "도 이상이어야 합니다.");
+			isCheck = false ;
+		}
+		int volume = 1 ;
+		if (bean.getStock() < volume) {
+			request.setAttribute(super.PREFIX + "volume", "용량은 " + volume + "ml 이상이어야 합니다.");
 			isCheck = false ;
 		}
 		

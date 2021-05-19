@@ -5,25 +5,27 @@
 <html>
 <head>
 	<style type="text/css">
-		th {
-			padding: 3px;
-			text-align: center;
-			background-color: #A23F25;
-			color: white;
-			border-bottom: 1px solid #ddd;
-			border-right: 1px solid #ddd;
-		}
-		td {
-			padding: 3px;
-			border-bottom: 1px solid #ddd;
-		}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+td {
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
 	</style>
 </head>
 <body>
 
 	<jsp:include page="../common/generalhead.jsp"></jsp:include>
 	
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('../images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('<%=contextPath%>/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -52,7 +54,7 @@
 				<div class="ftco-animate">
 					<c:set var="cnt" value="0"/>
 					<table>
-						<thead align="center">
+						<tbody style="color:#808080" align="center">
 							<tr>
 								<th> NO </th>
 								<th> ID </th>
@@ -64,7 +66,7 @@
 								<th> ADDRESS </th>
 								<th> UPDATE/DEL </th>
 							</tr>
-						</thead>
+						</tbody>
 						<tbody>
 							<c:forEach var="bean" items="${requestScope.lists }">
 								<tr>

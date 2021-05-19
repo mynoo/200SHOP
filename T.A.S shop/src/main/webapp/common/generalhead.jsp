@@ -94,7 +94,7 @@
 						<a href="<%=Noform%>prprList" class="nav-link">Products</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=Noform%>boList" class="nav-link">Boards</a>
+						<a href="<%=Noform%>boList" class="nav-link">Q&A</a>
 					</li>
 					<li class="nav-item">
 						<a href="<%=Noform%>contact" class="nav-link">Contact</a>
