@@ -248,7 +248,6 @@ public Member SelectData(String id, String password) {
 				bean.setZipcode(rs.getString("zipcode"));
 				bean.setAddress1(rs.getString("address1"));
 				bean.setAddress2(rs.getString("address2"));
-				bean.setPoint(rs.getInt("point"));
 				bean.setRoadaddress(rs.getString("roadaddress"));
 				bean.setExtraaddress(rs.getString("extraaddress"));
 				

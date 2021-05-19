@@ -12,7 +12,6 @@ public class Member {
 	private String address2;
 	private String extraaddress;
 	private String birth;
-	private int point;
 	private String phonenumber;
 	
 	public String getPhonenumber() {
@@ -83,12 +82,6 @@ public class Member {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public int getPoint() {
-		return point;
-	}
-	public void setPoint(int point) {
-		this.point = point;
-	}
 	
 	public String getRoadaddress() {
 		return roadaddress;
@@ -107,7 +100,7 @@ public class Member {
 	public String toString() {
 		return "Member [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
 				+ gender + ", zipcode=" + zipcode + ", roadaddress=" + roadaddress + ", address1=" + address1
-				+ ", address2=" + address2 + ", extraaddress=" + extraaddress + ", birth=" + birth + ", point=" + point
+				+ ", address2=" + address2 + ", extraaddress=" + extraaddress + ", birth=" + birth + ", point=" 
 				+ ", phonenumber=" + phonenumber + "]";
 	}
 	

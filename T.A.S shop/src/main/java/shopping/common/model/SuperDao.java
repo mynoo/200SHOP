@@ -8,7 +8,7 @@ public class SuperDao {
 	protected Connection conn = null;
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String id = "project";
+	private String id = "tasshop";
 	private String password = "oracle";
 	
 	protected Connection getConnection() {		
