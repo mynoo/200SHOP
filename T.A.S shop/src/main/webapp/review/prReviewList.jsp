@@ -13,12 +13,14 @@
 		  padding: 8px;
 		  text-align: center;
 		  border-bottom: 1px solid #ddd;
+		  color: initial;
 		}
 		
 		td {
 		  padding: 8px;
 		  text-align: center;
 		  border-bottom: 1px solid #ddd;
+		  font: message-box;
 		}
 		ul.pagination {
    		justify-content: center;
@@ -81,7 +83,7 @@
                      <td>${bean.vcomment}</td>
                      <td>${bean.inputdate}</td>
                <td>
-               <form action="<%=YesForm%>" class="form-inline" role="form"   method="get">
+               <form action="<%=YesForm%>" class="form-inline" role="form"   method="get" style="margin-block: initial">
                      <input type="hidden" name="command" value="reviewDelete">
                      <input type="hidden" name="vnum" value="${bean.vnum}">
                      <input type="hidden" name="pno" value="${bean.pno}">
@@ -91,15 +93,12 @@
                <td>
               	 	 <c:set var="mid" value="${bean.mid}" />
                		 <c:if test="${loginfo.id eq mid}">
-	               		 <form action="<%=YesForm%>" class="form-inline" role="form"   method="get">
+	               		 <form action="<%=YesForm%>" class="form-inline" role="form" method="get" style="margin-block: initial">
 		                     <input type="hidden" name="command" value="reviewUpdate">
 		                     <input type="hidden" name="vnum" value="${bean.vnum}">
 	                     	 <button type="submit" class="btn btn-danger" id="btn2" onclick="return confirm('수정하시겠습니까?');">수정</button>      
                     	 </form>
                		 </c:if>
-               
-               
-               
                </td>
             </tr>
             </c:forEach>      
@@ -120,7 +119,7 @@
 					<footer>${pageInfo.pagingHtml}</footer>
 				</div>
 			</div>
-		</div>
+	  </div>
    </section>
 
 	<jsp:include page="../common/footer.jsp" />

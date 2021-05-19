@@ -81,7 +81,7 @@ form.form-inline {
 			</div>
 		</div>
 	</section>
-	<section class="ftco-section">
+	<section class="ftco-section ftco-degree-bg">
 		<div class="container">
 			<table>
 				<thead>

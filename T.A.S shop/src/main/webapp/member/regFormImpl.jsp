@@ -13,7 +13,12 @@
 		textarea {
 			resize: none;
 		}
-		
+		.sss{
+			font-family: 'Song Myung', serif;
+		}
+		.ddd{
+			margin-top: 40px;
+		}
 	</style>
 
 	<script type="text/javascript">
@@ -61,10 +66,11 @@
 		<table style="margin: auto;">
 			<tr>
 				<td height="60%" >
-					<p align="center">
-						<b style="font-size: 30px; color: black;">개인 정보 약관동의</b>
+					<p align="center" class="ddd">
+						<b style="font-size: 30px; color: black;" class="sss">개인 정보 약관동의</b>
 					</p>
 					<br>
+					<div class="container">
 					<textarea rows="20" cols="110">
 가. 수집하는 개인정보의 항목첫째, 회사는 회원가 입, 원활한 고객상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 개인정보를 필수항목으로 수집하고 있습니다.
 회원가입
@@ -89,6 +95,7 @@
 - 협력회사로부터의 제공
 - 생성정보 수집 툴을 통한 수집
 					</textarea>
+					</div>
 					<br><br>
 					<input type="checkbox" name="req"> 개인정보 수집 및 이용에 동의합니다.
 					<br>
@@ -97,7 +104,7 @@
 			</tr>
 			<tr>
 				<td align="right">
-					<input type="button" class="btn btn-primary py-3 px-4" value="다음" onclick="chk();">
+					<input type="button" class="btn btn-primary" value="다음" onclick="chk();">
 				</td>
 			</tr>
 		</table>

@@ -9,29 +9,36 @@ int pageSize = 9;
 <head>
 </head>
 <style>
-	#prList {
-		float: right;
-	}
-	
-	ul.pagination {
-		justify-content: center;
-	}
-	
-	ul.pagination li {
-		padding: 3;
-	}
-	
-	.block-27 {
-		margin-bottom: 20px;
-	}
-	button.btn.btn-primary {
-		margin-right: 15px;
-	}
-.form-group {
-    margin-left: 20;
+#prList {
+	float: right;
 }
+
+ul.pagination {
+	justify-content: center;
+}
+
+ul.pagination li {
+	padding: 3;
+}
+
+.block-27 {
+	margin-bottom: 20px;
+}
+
+button.btn.btn-primary {
+	margin-right: 15px;
+}
+
+button.btn.btn-primary.btn2 {
+	float: right;
+}
+
 .form-group {
-    margin-left: 20;
+	margin-left: 20;
+}
+
+.form-group {
+	margin-left: 20;
 }
 </style>
 <script>	
@@ -41,7 +48,8 @@ int pageSize = 9;
 			location.href='<%=Noform%>prprList' + '&mode=' + mode + '&keyword=' + keyword ;
 		}
 		function searchAll(){
-			location.href='<%=Noform%>prprList';
+			location.href='<%=Noform%>
+	prprList';
 	}
 	$(document).ready(function() {
 
@@ -52,20 +60,19 @@ int pageSize = 9;
 <body>
 	<jsp:include page="../common/generalhead.jsp" />
 
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
-			data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2"
+		style="background-image: url('<%=contextPath%>/images/bg_2.jpg');"
+		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
-			<div class="row no-gutters slider-text align-items-end justify-content-center">
+			<div
+				class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate mb-5 text-center">
 					<p class="breadcrumbs mb-0">
-						<span class="mr-2">
-							<a href="<%=Noform%>main">Home 
-								<i class="fa fa-chevron-right"></i>
-							</a>
-						</span>
-						<span>Products 
-							<i class="fa fa-chevron-right"></i>
+						<span class="mr-2"> <a href="<%=Noform%>main">Home <i
+								class="fa fa-chevron-right"></i>
+						</a>
+						</span> <span>Products <i class="fa fa-chevron-right"></i>
 						</span>
 					</p>
 					<h2 class="mb-0 bread">Products</h2>
@@ -76,11 +83,19 @@ int pageSize = 9;
 
 	<section class="ftco-section">
 		<div class="container">
+			<div>
+				<c:if test="${whologin == 2}">
+					<a href="<%=Noform%>prList">
+						<button class="btn btn-primary btn2">상품 목록</button>
+					</a>
+				</c:if>
+			</div>
 			<div class="row">
 				<div class="col-md-9">
 					<div class="row mb-4">
 						<div class="col-md-12" id="prList">
-							<form action="" class="form-inline" role="form" name="myform" method="get">
+							<form action="" class="form-inline" role="form" name="myform"
+								method="get">
 								<div class="form-group">
 									<select id="mode" name="mode" class="form-control-sm">
 										<option value="all" selected="selected">-- 선택하세요.
@@ -90,7 +105,8 @@ int pageSize = 9;
 									</select>
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control-sm" name="keyword" id="keyword">
+									<input type="text" class="form-control-sm" name="keyword"
+										id="keyword">
 								</div>
 								&nbsp;&nbsp;
 								<button class="btn btn-primary" type="button"
@@ -101,11 +117,6 @@ int pageSize = 9;
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
 						</div>
-						<c:if test="${whologin == 2}">
-							<a href="<%=Noform%>prList">
-								<button class="btn btn-primary">상품 	목록</button>
-							</a>
-						</c:if>
 					</div>
 					<div class="row">
 						<c:forEach var="bean" items="${requestScope.lists}">
@@ -119,8 +130,7 @@ int pageSize = 9;
 												<a href="<%=Noform%>mallOrder&id=${loginfo.id}"
 													class="d-flex align-items-center justify-content-center">
 													<span class="flaticon-shopping-bag"></span>
-												</a> 
-												<a
+												</a> <a
 													href="<%=Noform%>prDetailView&pno=${bean.pno}&${requestScope.parameters}"
 													class="d-flex align-items-center justify-content-center">
 													<span class="flaticon-visibility"></span>
@@ -129,12 +139,11 @@ int pageSize = 9;
 										</div>
 									</div>
 									<div class="text text-center">
-										<span class="new">New Arrival</span> 
-										<span class="category">${bean.category}</span>
+										<span class="new">New Arrival</span> <span class="category">${bean.category}</span>
 										<h2>${bean.pname }</h2>
 										<p class="mb-0">
-											<span class="price price-sale">${bean.price }</span> 
-											<span class="price">${bean.price-bean.price/10 }</span>
+											<span class="price price-sale">${bean.price }</span> <span
+												class="price">${bean.price-bean.price/10 }</span>
 										</p>
 									</div>
 								</div>

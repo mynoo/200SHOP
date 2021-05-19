@@ -38,7 +38,7 @@ function goinsert() {
 .btnbox2 {
 	text-align: right;
 	margin: 0 auto 20px;
-	width: 986px;
+	width: 975px;
 }
 
 h4 {
@@ -64,6 +64,11 @@ button.btn.btn-primary {
 }
 .containerbox.container.col-sm-offset.col-sm-6 {
     margin: 0;
+}
+.btnbox3 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 70px;
 }
 </style>
 </head>
@@ -156,13 +161,16 @@ button.btn.btn-primary {
 					</div>
 				</div>
 			</div>
+			
 			<div class="btnbox2">
 				<button type=submit class="btn btn-primary btn2">주문</button>
 				<button type=submit class="btn btn-primary btn2">장바구니</button>
 			</div>
 		</form>
+	</div>
 	<div class="btnbox3">
 		<c:set var="totalcount" value="${requestScope.totalcount}" />
+<<<<<<< HEAD
 			<form action="<%=YesForm%>" class="form-inline" role="form" method="get">
 				<input type="hidden" name="command" value="reviewList">
 				<input type="hidden" name="pno" value="${bean.pno}">
@@ -170,7 +178,16 @@ button.btn.btn-primary {
 				<button type="submit" class="btn btn-primary" id="btn1">리뷰보기(${requestScope.totalcount})</button>
 				<button class="btn btn-primary" onclick="history.back();">돌아가기</button>
 			</form>
-	</div>
+=======
+		<form action="<%=YesForm%>" role="form"
+			method="get">
+			<input type="hidden" name="command" value="reviewList"> <input
+				type="hidden" name="pno" value="${bean.pno}"> <input
+				type="hidden" name="totalcount" value="${requestScope.totalcount}">
+		<button type="submit" class="btn btn-primary" id="btn1">리뷰보기(${requestScope.totalcount})</button>
+		<button class="btn btn-primary" onclick="history.back();">돌아가기</button>
+		</form>
+>>>>>>> refs/remotes/origin/junhwan
 	</div>
 	<jsp:include page="../common/footer.jsp" />
 </body>

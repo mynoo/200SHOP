@@ -28,12 +28,12 @@
 						<thead class="thead-primary" align="center">
 							<tr>
 								<th>&nbsp;</th>
-								<th>상품 번호</th>
-								<th>이미지</th>
-								<th>상품명</th>
-								<th>가격</th>
-								<th>구매 수량</th>
-								<th>총 가격</th>
+								<th>NO</th>
+								<th>IMAGE</th>
+								<th>NAME</th>
+								<th>PRICE</th>
+								<th>QUANTITY</th>
+								<th>TOTAL</th>
 								<th>&nbsp;</th>
 							</tr>
 						</thead>
@@ -43,7 +43,11 @@
 									<td><input type="checkbox"></td>
 									<td>${bean.pnum}</td>
 									<td>
+<<<<<<< HEAD
 										<img width="45" height="45" src="upload/${bean.image}">
+=======
+										<img src="<%=contextPath%>/upload/${bean.image}" style="width:100; hight:100">
+>>>>>>> refs/remotes/origin/junhwan
 									</td>
 									<td>${bean.pname}</td>
 									<td>
@@ -73,24 +77,32 @@
 								<h3>Cart Totals</h3>
 									<c:forEach var="bean" items="${sessionScope.shoplists}">
 										<p class="d-flex">
+<<<<<<< HEAD
 											<span>구매 가격</span> 
 											<span>
 												<fmt:formatNumber value="${bean.price * bean.qty}" pattern="###,###" /> 원
 											</span>
+=======
+											<span>Subtotal</span> <span>${bean.price * bean.qty}</span>
+>>>>>>> refs/remotes/origin/junhwan
 										</p>
 										<p class="d-flex">
-											<span>배송비</span> <span>0</span>
+											<span>Delivery</span> <span>0</span>
 										</p>
 										<p class="d-flex">
-											<span>할인률</span> <span>10%</span>
+											<span>Discount</span> <span>10%</span>
 										</p>
 		
 										<hr>
 										<p class="d-flex total-price">
+<<<<<<< HEAD
 											<span>총 금액</span> 
 											<span>
 												<fmt:formatNumber value="${bean.price * bean.qty - bean.price/10}" pattern="###,###" /> 원
 											</span>
+=======
+											<span>TOTAL</span> <span>${bean.price * bean.qty-bean.price/10}</span>
+>>>>>>> refs/remotes/origin/junhwan
 										</p>
 									</c:forEach>
 							</div>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="./../common/common.jsp" %>
+<%@ include file="/common/common.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -110,12 +110,15 @@
 							<tr>
 								<td>${bean.bno}</td>
 								<td>
-								<a href="<%=contextPath%>/board/board_Detail.jsp">
+								<c:forEach var="cnt" begin="1" end="${bean.depth}">
+										<span class="badge">re</span>&nbsp;
+								</c:forEach>
+								<a href="<%=Noform%>boDetailView&bno=${bean.bno}&${requestScope.parameters}">
 								${bean.title}
 								</a>
 								</td>
 								<td>${bean.bcontents}</td>
-								<td>${sessionScope.loginfo.id}</td>	
+								<td>${bean.writer}</td>	
 								<td>${bean.writedate}</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
@@ -129,7 +132,7 @@
 								</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
-										<a href="<%=Noform%>boDelete&no=${bean.bno}&${requestScope.parameters}">
+										<a href="<%=Noform%>boDelete&bno=${bean.bno}&${requestScope.parameters}">
 											삭제
 										</a>
 									</c:if>
@@ -141,24 +144,17 @@
 						</c:forEach>
 					</tbody>
 			</table>
-		</div>
-		<br>
-			
-		<div class="row mt-5">
+			<div class="row mt-5" align="center">
 			<div class="col text-center">
 				<div class="block-27">
-					<ul>
-						<li><a href="#">&lt;</a></li>
-						<li class="active"><span>1</span></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">&gt;</a></li>
-					</ul>
+					<footer>${pageInfo.pagingHtml}</footer>
 				</div>
 			</div>
 		</div>
+		
+		</div>
+		<br>
+		
 	</section>
 
 	<jsp:include page="../common/footer.jsp" />

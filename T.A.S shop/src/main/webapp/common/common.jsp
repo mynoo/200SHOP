@@ -33,8 +33,6 @@
    <meta charset="utf-8">
    <meta name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Slabo+27px&family=Song+Myung&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="<%=contextPath%>/css/animate.css">
@@ -44,7 +42,8 @@
    
    <link rel="stylesheet" href="<%=contextPath%>/css/flaticon.css">
    <link rel="stylesheet" href="<%=contextPath%>/css/style.css">
-   
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <script src="<%=contextPath%>/js/jquery.min.js"></script>
    <script src="<%=contextPath%>/js/jquery-migrate-3.0.1.min.js"></script>
    <script src="<%=contextPath%>/js/popper.min.js"></script>
@@ -58,6 +57,8 @@
    <script src="<%=contextPath%>/js/scrollax.min.js"></script>
    
    <script src="<%=contextPath%>/js/main.js"></script>
+   
+   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
    
    <style type="text/css">
       /* for form validation check */
