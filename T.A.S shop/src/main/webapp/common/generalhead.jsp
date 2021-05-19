@@ -141,7 +141,7 @@
 						<a href="<%=Noform%>boList" class="nav-link">Boards</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=contextPath%>/common/contact.jsp" class="nav-link">Contact</a>
+						<a href="<%=Noform%>contact" class="nav-link">Contact</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" 
