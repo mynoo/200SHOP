@@ -343,6 +343,7 @@ public class MallDao extends SuperDao {
 				cnt = pstmt.executeUpdate() ;
 				if(pstmt != null) {pstmt.close();}
 			}
+			
 			conn.commit();
 			System.out.println("Calculate finished"); 
 			
