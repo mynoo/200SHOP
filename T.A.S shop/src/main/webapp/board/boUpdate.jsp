@@ -50,6 +50,7 @@
 								<tr>
 									<th>no</th>
 									<td>
+										<input type="text" name="bno" id="bno" value="${bean.bno}" disabled="disabled">
 										<input type="hidden" name="bno" id="bno" value="${bean.bno}">
 									</td>
 								</tr>
@@ -62,7 +63,8 @@
 								<tr>
 									<th>Writer</th>
 									<td>
-										<input type="hidden" name="writer" id="writer" width="100%" value="${bean.writer}">
+										<input type="text" name="writer" id="writer" width="100%" value="${bean.writer}" disabled="disabled">
+										<input type="hidden" name="writer" id="writer" value="${bean.writer}">
 									</td>
 								</tr>
 								<tr>

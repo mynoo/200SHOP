@@ -16,6 +16,8 @@ public class BoardDeleteController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		int bno = Integer.parseInt(request.getParameter("bno")) ;
 		
 		BoardDao dao = new BoardDao();

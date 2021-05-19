@@ -20,6 +20,8 @@ public class BoardDetailViewController extends SuperClass {
    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       super.doGet(request, response);
       
+      request.setCharacterEncoding("UTF-8");
+      
       int bno = Integer.parseInt(request.getParameter("bno")) ;
       
       BoardDao dao = new BoardDao();
@@ -67,6 +69,8 @@ public class BoardDetailViewController extends SuperClass {
    @Override
    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       super.doPost(request, response);
+      
+      request.setCharacterEncoding("UTF-8");
       
       ReplyDao replyDao = new ReplyDao();
       Reply rebean = new Reply() ;

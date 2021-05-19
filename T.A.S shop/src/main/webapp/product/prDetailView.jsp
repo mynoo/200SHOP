@@ -170,24 +170,13 @@ button.btn.btn-primary {
 	</div>
 	<div class="btnbox3">
 		<c:set var="totalcount" value="${requestScope.totalcount}" />
-<<<<<<< HEAD
-			<form action="<%=YesForm%>" class="form-inline" role="form" method="get">
-				<input type="hidden" name="command" value="reviewList">
-				<input type="hidden" name="pno" value="${bean.pno}">
-				<input type="hidden" name="totalcount" value="${requestScope.totalcount}">
-				<button type="submit" class="btn btn-primary" id="btn1">리뷰보기(${requestScope.totalcount})</button>
-				<button class="btn btn-primary" onclick="history.back();">돌아가기</button>
-			</form>
-=======
-		<form action="<%=YesForm%>" role="form"
-			method="get">
+		<form action="<%=YesForm%>" role="form"	method="get">
 			<input type="hidden" name="command" value="reviewList"> <input
 				type="hidden" name="pno" value="${bean.pno}"> <input
 				type="hidden" name="totalcount" value="${requestScope.totalcount}">
 		<button type="submit" class="btn btn-primary" id="btn1">리뷰보기(${requestScope.totalcount})</button>
-		<button class="btn btn-primary" onclick="history.back();">돌아가기</button>
+		<button type="button" class="btn btn-primary" onclick="location.href='<%=Noform%>prprList';">돌아가기</button>
 		</form>
->>>>>>> refs/remotes/origin/junhwan
 	</div>
 	<jsp:include page="../common/footer.jsp" />
 </body>

@@ -52,16 +52,10 @@ public class ProductDetailViewController extends SuperClass {
 		System.out.println("pvolume : " + bean.getVolume());
 		
 		
-		FlowParameters parameters 
-			= new FlowParameters(
-				request.getParameter("pageNumber"), 
-				request.getParameter("mode"), 
-				request.getParameter("keyword")); 
-	
 		ReviewDao Rdao = new ReviewDao();
 		
 		
-		int totalCount = Rdao.SelectTotalCount(parameters.getMode(), parameters.getKeyword(), pno) ; 
+		int totalCount = Rdao.SelectTotalCount(pno) ; 
 		
 		
 		if (bean == null) {

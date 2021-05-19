@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/common/common.jsp"%>
+<%@ include file="/common/common.jsp" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+	<meta charset="UTF-8">
 	<script>	
 		function search(){
 			/* alert('검색');  */	
@@ -75,7 +76,7 @@
 									&nbsp;&nbsp;
 									<button class="btn btn-default" type="button" onclick="search();">search</button>
 									<div class="button" align="right">
-										<a href="<%=contextPath%>/board/boInsert.jsp" class="btn btn-primary py-2 px-4" >Write</a>
+										<a href="<%=Noform%>boInsert" class="btn btn-primary py-2 px-4" >Write</a>
 									</div>							
 								</form>
 						</td>
@@ -111,28 +112,30 @@
 								<td>${bean.writedate}</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
-										<a href="<%=Noform%>boUpdate?bno=${bean.bno}&${requestScope.parameters}">
-											수정
+										<a href="<%=Noform%>boUpdate&bno=${bean.bno}&${requestScope.parameters}">
+											update
 										</a>
 									</c:if>
 									<c:if test="${sessionScope.loginfo.id != bean.writer}">
-										수정
+										update
 									</c:if>
 								</td>
 								<td>
 									<c:if test="${sessionScope.loginfo.id == bean.writer}">
 										<a href="<%=Noform%>boDelete&bno=${bean.bno}&${requestScope.parameters}">
-											삭제
+											delete
 										</a>
 									</c:if>
 									<c:if test="${sessionScope.loginfo.id != bean.writer}">
-										삭제
+										delete
 									</c:if>									
 								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 			</table>
+			
+		
 		<div class="row mt-5" align="center">
 			<div class="col text-center">
 				<div class="block-27">
@@ -140,6 +143,7 @@
 				</div>
 			</div>
 		</div>
+		
 		
 		</div>
 		<br>

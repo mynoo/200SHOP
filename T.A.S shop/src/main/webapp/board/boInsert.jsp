@@ -62,13 +62,7 @@
 								<tr>
 									<th>Contant</th>
 									<td>
-										<input name="bcontents" id="bcontents" >
-									</td>
-								</tr>
-								<tr>
-									<th>Attachments</th>
-									<td>
-										<input type="file" name="image" id="image">
+										<textarea rows="10" cols="80" name="bcontents" id="bcontents" ></textarea>
 									</td>
 								</tr>
 							</tbody>

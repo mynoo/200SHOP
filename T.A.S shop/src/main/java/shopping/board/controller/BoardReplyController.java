@@ -21,6 +21,7 @@ public class BoardReplyController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
+		request.setCharacterEncoding("UTF-8");
 
 		bean = new Board() ;
 		bean.setBcontents(request.getParameter("bcontents")); 
@@ -57,6 +58,7 @@ public class BoardReplyController extends SuperClass {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
+		request.setCharacterEncoding("UTF-8");
 
 		dao = new BoardDao() ;
 		

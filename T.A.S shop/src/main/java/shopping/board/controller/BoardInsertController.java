@@ -18,12 +18,16 @@ public class BoardInsertController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
-		String gotopage = "/board/boList.jsp" ;
+		request.setCharacterEncoding("UTF-8");
+		
+		String gotopage = "/board/boInsert.jsp" ;
 		super.GotoPage(gotopage);
 	}	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
+		
+		request.setCharacterEncoding("UTF-8");
 		
 		bean = new Board() ;
 		bean.setBcontents(request.getParameter("bcontents")); 

@@ -49,7 +49,7 @@ public class ReviewListController extends SuperClass {
 		ReviewDao Rdao = new ReviewDao();
 		
 		
-		int totalCount = Rdao.SelectTotalCount(parameters.getMode(), parameters.getKeyword(), pno) ; 
+		int totalCount = Rdao.SelectTotalCount(pno) ; 
 		System.out.println("total data size : " + totalCount); 
 		
 		PagingR pageInfo = new PagingR(

@@ -20,6 +20,8 @@ public class BoardUpdateController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		int bno = Integer.parseInt(request.getParameter("bno")) ;
 		BoardDao dao = new BoardDao();
 
@@ -34,12 +36,15 @@ public class BoardUpdateController extends SuperClass {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		bean = new Board() ;
 		bean.setBcontents(request.getParameter("bcontents"));
 		bean.setTitle(request.getParameter("title"));
 		bean.setWriter(request.getParameter("writer"));
 		bean.setBno(Integer.parseInt(request.getParameter("bno")));		
 		
+		System.out.println("wirter : " + request.getParameter("writer"));
 		System.out.println("bean information");
 		System.out.println(bean.toString()); 
 		

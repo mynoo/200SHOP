@@ -48,6 +48,3 @@ reviewMain=shopping.review.controller.ReviewMainController
 reviewList=shopping.review.controller.ReviewListController
 reviewDelete=shopping.review.controller.ReviewDeleteController
 reviewUpdate=shopping.review.controller.ReviewUpdateController
-### Reply Section #####################################################
-reInsert=shopping.reply.controller.ReplyInsertController
-reDelete=shopping.reply.controller.ReplyDeleteController

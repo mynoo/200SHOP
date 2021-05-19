@@ -184,14 +184,6 @@
 				</tbody>
 			</table>
 			
-            <div class="tag-widget post-tag-container mb-5 mt-5">
-              <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">Life</a>
-                <a href="#" class="tag-cloud-link">Sport</a>
-                <a href="#" class="tag-cloud-link">Tech</a>
-                <a href="#" class="tag-cloud-link">Travel</a>
-              </div>
-            </div>
             
             <div class="button" align="right">
 				<a href="board.jsp" class="btn btn-primary py-2 px-4" >Go Back</a>
@@ -204,7 +196,7 @@
               
                 <li class="comment">
                   <div class="vcard bio">
-                    <img src="../images/person_1.jpg" alt="Image placeholder">
+                    <img src="./../upload/icon2.png" alt="Image placeholder">
                   </div>
                   <div class="comment-body">
                     <h3>John Doe</h3>
@@ -219,7 +211,7 @@
                 <c:forEach var="rebean" items="${requestScope.relists}">
                 <li class="comment">
                   <div class="vcard bio">
-                    <img src="../images/icons/icon2.png" alt="Image placeholder">
+                    <img src="./../upload/icon2.png" alt="Image placeholder">
                   </div>
                   <div class="comment-body">
                     <h3>
@@ -230,9 +222,6 @@
                     </div>
                     <p>
                     ${rebean.comments}
-                    </p>
-                    <p align="right">
-             			<a href="#" class="reply">Reply</a>
                     </p>
                   </div>
                 </li>
@@ -248,12 +237,14 @@
                   <div class="form-group">
                   	<input type="hidden" name="bno" id="bno" value="${bean.bno}">
                     <label for="name">Name *</label>
-                    <input type="text" name="fakewriter" id="fakemid" class="form-control" disabled="disabled" value="${sessionScope.loginfo.id}">
-                    <input type="hidden" name="mid" id="mid" value="${sessionScope.loginfo.id}">
+                    <input type="text" name="fakewriter" id="fakemid" class="form-control" disabled="disabled" value="${loginfo.id}">
+                    <input type="hidden" name="mid" id="mid" value="${loginfo.id}">
                   </div>
                    <div class="form-group">
                     <label for="message">Message</label>
-                    <input type="text" name="comments" id="comments">
+                    <p>
+                    <textarea rows="10" cols="52" name="comments" id="comments"></textarea>
+                    </p>
                   </div>
                   <div class="form-group" align="right">
                     <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">

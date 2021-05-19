@@ -327,16 +327,14 @@ public class ReviewDao extends SuperDao {
 	}
 	
 	
-	public int SelectTotalCount( String mode, String keyword, int pno ) {
+	public int SelectTotalCount(int pno ) {
 		PreparedStatement pstmt = null ;
 		ResultSet rs = null ;
 		
 		String sql = " select count(*) as cnt from review " ;
 		sql += " where pno = ? " ;
-		if(mode.equalsIgnoreCase("all") ==false) { 
-			System.out.println("not all search mode");
-			sql += " where " + mode + " like '%" + keyword + "%' " ;	
-		}
+		
+		
 		int cnt = 0 ; //없는 경우의 기본 값
 		try {
 			if( this.conn == null ){ this.conn = this.getConnection() ; }			
@@ -360,12 +358,8 @@ public class ReviewDao extends SuperDao {
 				e2.printStackTrace(); 
 			}
 		} 		
-		System.out.println("여긴 페이질 토탈 카운트");
 		return cnt  ; 
 	}
-	
-	
-	
-	
+
 	
 }
