@@ -37,11 +37,11 @@
           				<i class="fa fa-chevron-right"></i>
           			</a>
           		</span>
-          		<span>Board 
+          		<span>Q&A 
           			<i class="fa fa-chevron-right"></i>
           		</span>
           	</p>
-            <h2 class="mb-0 bread">Board</h2>
+            <h2 class="mb-0 bread">Q&A Write</h2>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
 								<tr>
 									<th>Title</th>
 									<td width="500px" height="60px">
-										<input name="title" id="title" placeholder="input title">
+										<input name="title" id="title" placeholder="제목은 10자리 이하이어야 합니다.">
 									</td>
 								</tr>
 								<tr>
@@ -71,7 +71,7 @@
 								<tr>
 									<th>Contant</th>
 									<td height="300px">
-										<textarea rows="10" cols="80" name="bcontents" id="bcontents"  ></textarea>
+										<textarea rows="10" cols="80" name="bcontents" id="bcontents" placeholder="글 내용은 5자리 이상 30자리 이하이어야 합니다."  ></textarea>
 									</td>
 								</tr>
 							</tbody>

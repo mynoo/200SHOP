@@ -58,7 +58,7 @@ public class BoardInsertController extends SuperClass {
 	@Override
 	public boolean validate(HttpServletRequest request) {
 		boolean isCheck = true ;		
-		if (bean.getTitle().length() < 3 || bean.getTitle().length() > 10) {
+		if (bean.getTitle().length() > 10) {
 			request.setAttribute(super.PREFIX + "subject", "제목은 3자리 이상 10자리 이하이어야 합니다.");
 			isCheck = false ;
 		}

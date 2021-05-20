@@ -25,8 +25,10 @@
 		
 		th {
 		  padding: 8px;
-		  text-align: center;
+		  text-align-last: center;
 		  border-bottom: 1px solid #ddd;
+		  color: black;
+		  
 		}
 		
 		td {
@@ -49,11 +51,11 @@
           				<i class="fa fa-chevron-right"></i>
           			</a>
           		</span>
-          		<span>Board 
+          		<span>Q&A 
           			<i class="fa fa-chevron-right"></i>
           		</span>
           	</p>
-            <h2 class="mb-0 bread">Board</h2>
+            <h2 class="mb-0 bread">Q&A</h2>
           </div>
         </div>
       </div>

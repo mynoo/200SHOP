@@ -19,6 +19,7 @@ boDetailView=shopping.board.controller.BoardDetailViewController
 boDelete=shopping.board.controller.BoardDeleteController
 boUpdate=shopping.board.controller.BoardUpdateController
 boReply=shopping.board.controller.BoardReplyController
+boreDelete=shopping.board.controller.BoardReplyDeleteController
 ### Product Section ######################################################
 prList=shopping.product.controller.ProductListController
 prprList=shopping.product.controller.ProductPrListController

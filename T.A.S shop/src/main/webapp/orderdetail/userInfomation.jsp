@@ -22,6 +22,16 @@
 			
 		});
 	</script>
+	<style type="text/css">
+	label
+	{
+	    display: inline-block;
+	    margin-bottom: 0.5rem;
+	    color: black;
+	    font-family: sans-serif;
+	}
+	
+	</style>
 </head>
 
 <body>

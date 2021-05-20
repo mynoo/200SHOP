@@ -6,11 +6,11 @@
 	<style type="text/css">
 	th {
 		padding: 3px;
-		text-align: center;
 		background-color: #A23F25;
 		color: white;
 		border-bottom: 1px solid #ddd;
 		border-right: 1px solid #ddd;
+		text-align: center;
 	}
 	td {
 		padding: 15px;
@@ -42,7 +42,10 @@
 	span.black{
 	color: #808080;
 	}
-	
+	label {
+	color: black;
+    font: message-box;
+}
 	
 	
 	</style>
@@ -62,10 +65,10 @@
 						<span class="mr-2">
 							<a href="<%=Noform%>main">Home <i class="fa fa-chevron-right"></i></a>
 						</span> 
-						<span>Board<i class="fa fa-chevron-right"></i>
+						<span>Q&A<i class="fa fa-chevron-right"></i>
 						</span>
 					</p>
-					<h2 class="mb-0 bread">Board Detail</h2>
+					<h2 class="mb-0 bread">Q&A Detail</h2>
 				</div>
 			</div>
 		</div>
@@ -122,23 +125,6 @@
               <ul class="comment-list">
               
               
-                <li class="comment">
-                  <div class="vcard bio">
-                	<img src="<%=request.getContextPath()%>/upload/icon2.png" >
-				 </div>
-                  <div class="comment-body">
-                    <h3>John Doe</h3>
-                    <div class="meta">
-                    <span class="meta">
-                    April 12, 2020 at 1:21am
-                   	</span>
-                    </div>
-                    <span class="black">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                   </span>
-                   </div>
-                </li>
-                
                 <c:forEach var="rebean" items="${requestScope.relists}">
                 <li class="comment">
                   <div class="vcard bio">
@@ -157,6 +143,13 @@
                     <span class="black">
                     ${rebean.comments}
                     </span>
+                    </p>
+                    <p>
+	                    <span class="black">
+	                       <div align="right">
+	                   		  <a href="<%=Noform %>boreDelete&rno=${rebean.rno}&groupno=${rebean.groupno}" class="reply" >삭제</a>
+	                 	   </div>
+	                    </span>
                     </p>
                   </div>
                 </li>
