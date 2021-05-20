@@ -20,6 +20,7 @@ public class BoardUpdateController extends SuperClass {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doGet(request, response);
 		
+<<<<<<< HEAD
 		request.setCharacterEncoding("UTF-8");
 		
 		int bno = Integer.parseInt(request.getParameter("bno")) ;
@@ -37,6 +38,21 @@ public class BoardUpdateController extends SuperClass {
 		super.doPost(request, response);
 		
 		request.setCharacterEncoding("UTF-8");
+=======
+		int bno = Integer.parseInt(request.getParameter("bno")) ;
+		BoardDao dao = new BoardDao();
+
+		Board bean = dao.SelectDataByPk(bno) ; 
+		
+		request.setAttribute("bean", bean);
+		
+		String gotopage = "/board/boUpdate.jsp" ;
+		super.GotoPage(gotopage);
+	}	
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		super.doPost(request, response);
+>>>>>>> refs/remotes/origin/seongeun
 		
 		bean = new Board() ;
 		bean.setBcontents(request.getParameter("bcontents"));

@@ -63,8 +63,8 @@ public class BoardInsertController extends SuperClass {
 			isCheck = false ;
 		}
 		
-		if (bean.getBcontents().length() < 5 || bean.getBcontents().length() > 30) {
-			request.setAttribute(super.PREFIX + "content", "글 내용은 5자리 이상 30자리 이하이어야 합니다.");
+		if (bean.getBcontents().length() < 2 || bean.getBcontents().length() > 50) {
+			request.setAttribute(super.PREFIX + "content", "글 내용은 5자리 이상 50자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
 		return isCheck ;

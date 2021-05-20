@@ -33,6 +33,10 @@ public class MemberInsertController extends SuperClass {
 		bean.setExtraaddress(request.getParameter("extraaddress"));
 		bean.setRoadaddress(request.getParameter("roadaddress"));
 		
+<<<<<<< HEAD
+=======
+		
+>>>>>>> refs/remotes/origin/seongeun
 		MemberDao dao = new MemberDao();
 		
 		if (this.validate(request) == true) { 
@@ -63,30 +67,25 @@ public class MemberInsertController extends SuperClass {
 			isCheck = false ;
 		}
 		
-//		System.out.println("id : " + isCheck);
 		
 		if (bean.getName().length() < 2 || bean.getName().length() > 10) {
 			request.setAttribute(super.PREFIX + "name", "이름은(는) 2자리 이상 10자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
 		
-//		System.out.println("name : " + isCheck);
 		
 		if (bean.getPassword().length() < 4 || bean.getPassword().length() > 10) {
 			request.setAttribute(super.PREFIX + "password", "비밀 번호는 4자리 이상 10자리 이하이어야 합니다.");
 			isCheck = false ;
 		}
 		
-//		System.out.println("password : " + isCheck);
 		
 		if (bean.getGender() == null ) {
 			request.setAttribute(super.PREFIX + "gender", "성별은 반드시 체크가 되어야 합니다.");
 			isCheck = false ;
 		}
 		
-//		System.out.println("gender : " + isCheck);
 		
-		// 날짜 형식은 yyyy/mm/dd 또는 yyyy-mm-dd 
 		String regex = "\\d{4}[-/]\\d{2}[-/]\\d{2}" ;
 		
 		if (bean.getBirth() == null) {
@@ -99,26 +98,22 @@ public class MemberInsertController extends SuperClass {
 			isCheck = false ;
 		}
 		
-//		System.out.println("birth : " + isCheck);
 		
 		if (bean.getZipcode() == null || bean.getZipcode() == "" ) {
 			request.setAttribute(super.PREFIX + "zipcode", "우편 번호는 필수 입력 사항입니다.");
 			isCheck = false ;
 		}
 		
-//		System.out.println("zipcode : " + isCheck);
 		
 		if (bean.getPhonenumber().length() < 9 ||bean.getPhonenumber().length() < 11 ) {
 			request.setAttribute(super.PREFIX + "phonenumber", "핸드폰 번호는 9글자 이상 11글자 이하로 입력하세요");
 		}
 		
-//		System.out.println("phonenumber : " + isCheck);
 		
 		if (bean.getEmail() == null || bean.getZipcode() == "") {
 			request.setAttribute(super.PREFIX + "email", "이메일은 필수 입력 사항입니다.");
 		}
 		
-//		System.out.println("email : " + isCheck);
 		
 		return isCheck ;
 	}

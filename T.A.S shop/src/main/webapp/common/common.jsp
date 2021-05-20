@@ -58,6 +58,8 @@
    
    <script src="<%=contextPath%>/js/main.js"></script>
    
+   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+   
    <style type="text/css">
       /* for form validation check */
       .err{font-size:10pt;color:red;font-weight:bolder;}
@@ -119,6 +121,10 @@
                }
            }).open();
       }
+      
+      function gotomain() {
+			location.href = '<%=Noform%>main';
+		}
    </script>
    
 </head>

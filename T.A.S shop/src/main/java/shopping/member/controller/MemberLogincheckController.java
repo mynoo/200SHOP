@@ -36,11 +36,5 @@ public class MemberLogincheckController extends SuperClass {
 			String gotopage = "/member/Logincheck.jsp" ;
 			super.GotoPage(gotopage);
 		}
-		
-//		String gotopage = "/member/mLogin.jsp" ;
-//		super.GotoPage(gotopage);
-		
-		
 	}	
-	
 }

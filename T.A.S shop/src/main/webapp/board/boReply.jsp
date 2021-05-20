@@ -68,9 +68,15 @@ th{
 						<table style="width: 100%">
 							<tbody>
 								<tr>
+<<<<<<< HEAD
 									<th>WRITER</th>
 									<td><input class="form-control" type="text" name="mid" id="mid"
 										disabled="disabled" value="${sessionScope.loginfo.id}">
+=======
+									<th>Writer</th>
+									<td>
+										<input type="text" name="mid" id="mid" width="100%" disabled="disabled" value="${sessionScope.loginfo.id}">
+>>>>>>> refs/remotes/origin/seongeun
 									</td>
 								</tr>
 								<tr>

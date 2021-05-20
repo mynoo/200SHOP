@@ -55,11 +55,7 @@
 								<a href="<%=Noform%>regForm" class="mr-2">Sign Up</a>
 								<a href="<%=Noform%>meLogin">Log In</a>
 							</c:if>
-							<c:if test="${whologin == 2}">
-								<a href="<%=Noform%>meList" class="mr-2">Member List</a>
-							</c:if>
 							<c:if test="${whologin != 0}">
-								<a href="<%=Noform%>meDetailView" class="mr-2">My Profile</a>
 								<a href="<%=Noform%>meLogout">Log Out</a>
 							</c:if>
 						</p>
@@ -75,53 +71,17 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
+<<<<<<< HEAD
 				<a href="<%=Noform%>mallList" class="btn-cart dropdown-toggle dropdown-toggle-split">
+=======
+				<a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
+>>>>>>> refs/remotes/origin/seongeun
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
 						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
 						<small style="color: white;">${shopcount}</small>
 					</div>
 				</a>
-				<div class="dropdown-menu dropdown-menu-right">
-					<div class="dropdown-item d-flex align-items-start" href="#">
-						<div class="img"
-							style="background-image: url(<%=contextPath%>/images/prod-1.jpg);"></div>
-						<div class="text pl-3">
-							<h4>Bacardi 151</h4>
-							<p class="mb-0">
-								<a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity:
-									01</span>
-							</p>
-						</div>
-					</div>
-					<div class="dropdown-item d-flex align-items-start" href="#">
-						<div class="img"
-							style="background-image: url(<%=contextPath%>/images/prod-2.jpg);"></div>
-						<div class="text pl-3">
-							<h4>Jim Beam Kentucky Straight</h4>
-							<p class="mb-0">
-								<a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity:
-									02</span>
-							</p>
-						</div>
-					</div>
-					<div class="dropdown-item d-flex align-items-start" href="#">
-						<div class="img"
-							style="background-image: url(<%=contextPath%>/images/prod-3.jpg);"></div>
-						<div class="text pl-3">
-							<h4>Citadelle</h4>
-							<p class="mb-0">
-								<a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity:
-									01</span>
-							</p>
-						</div>
-					</div>
-					<a class="dropdown-item text-center btn-link d-block w-100"
-						href="<%=contextPath%>/order/order.jsp"> View All <span
-						class="ion-ios-arrow-round-forward"></span>
-					</a>
-				</div>
-			</div>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
@@ -141,18 +101,18 @@
 						<a href="<%=Noform%>boList" class="nav-link">Q&A</a>
 					</li>
 					<li class="nav-item">
-						<a href="contact.jsp" class="nav-link">Contact</a>
+						<a href="<%=Noform%>contact" class="nav-link">Contact</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" 
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Info</a>
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="<%=Noform%>meDetailView">My Profile</a>
-							<a class="dropdown-item" href="<%=Noform%>meUpdate">Profile Modify</a>
+							<a class="dropdown-item" href="<%=Noform%>meDetailView">나의 정보</a>
+							<a class="dropdown-item" href="<%=Noform%>meUpdate">나의 정보 수정</a>
 							<c:if test="${whologin == 2}">
-								<a class="dropdown-item" href="<%=Noform%>meList">Member List</a>
+								<a class="dropdown-item" href="<%=Noform%>meList">회원 리스트</a>
 							</c:if>
-							<a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> Secession</a>
+							<a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> 회원 탈퇴 </a>
 						</div>
 					</li>
 				</ul>

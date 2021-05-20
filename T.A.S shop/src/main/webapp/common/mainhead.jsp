@@ -81,7 +81,7 @@
 		<div class="container">
 			<a class="navbar-brand" href="<%=Noform%>main">T.A.S <span>store</span></a>
 			<div class="order-lg-last btn-group">
-				<a href="<%=Noform%>mallList" class="btn-cart dropdown-toggle dropdown-toggle-split">
+				<a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center">
 						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
@@ -108,19 +108,19 @@
 						<a href="<%=Noform%>boList" class="nav-link">Q&A</a>
 					</li>
 					<li class="nav-item">
-						<a href="<%=contextPath%>/common/contact.jsp" class="nav-link">Contact</a>
+						<a href="<%=Noform%>contact" class="nav-link">Contact</a>
 					</li>
 					<c:if test="${whologin != 0}">
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown04" 
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Info</a>
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown04">
-								<a class="dropdown-item" href="<%=Noform%>meDetailView">My Profile</a>
-								<a class="dropdown-item" href="<%=Noform%>meUpdate">Profile Modify</a>
+								<a class="dropdown-item" href="<%=Noform%>meDetailView">나의 정보</a>
+								<a class="dropdown-item" href="<%=Noform%>meUpdate">나의 정보 수정</a>
 								<c:if test="${whologin == 2}">
-									<a class="dropdown-item" href="<%=Noform%>meList">Member List</a>
+									<a class="dropdown-item" href="<%=Noform%>meList">회원 리스트</a>
 								</c:if>
-								<a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> Secession</a>
+								<a class="dropdown-item" href="<%=Noform%>meDelete&id=${loginfo.id}"> 회원 탈퇴 </a>
 							</div>
 						</li>
 					</c:if>

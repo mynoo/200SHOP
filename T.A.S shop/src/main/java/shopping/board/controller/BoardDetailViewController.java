@@ -1,6 +1,7 @@
 package shopping.board.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import java.util.List;
 
@@ -21,8 +22,11 @@ public class BoardDetailViewController extends SuperClass {
    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       super.doGet(request, response);
       
+<<<<<<< HEAD
       request.setCharacterEncoding("UTF-8");
       
+=======
+>>>>>>> refs/remotes/origin/seongeun
       int bno = Integer.parseInt(request.getParameter("bno")) ;
       
       BoardDao dao = new BoardDao();
@@ -31,6 +35,7 @@ public class BoardDetailViewController extends SuperClass {
       
       Member loginfo = (Member)super.session.getAttribute("loginfo") ;
       
+<<<<<<< HEAD
       if (loginfo != null && loginfo.getId().equals(bean.getWriter()) == false || bean.getWriter() == null) {
           dao.UpdateReadhit(bno) ;
           bean.setDepth( bean.getDepth() + 1 ); 
@@ -82,6 +87,42 @@ public class BoardDetailViewController extends SuperClass {
 	  cnt = replyDao.InsertData(rebean) ;
       
 	  this.doGet(request, response);
+=======
+      
+      if (loginfo.getId().equals(bean.getWriter()) == false || bean.getWriter() == null) {
+         dao.UpdateReadhit(bno) ;
+         bean.setDepth( bean.getDepth() + 1 ); 
+      }   
+      
+      request.setAttribute("bean", bean);
+      
+      //여기에 댓글리스트 생성 로직 부착.
+      
+      ReplyDao replyDao = new ReplyDao();
+      List<Reply> replyList = replyDao.getReplyListByPk(bno);
+   
+      request.setAttribute("relists", replyList);
+      //
+      
+      // 인설트 페이지
+      Reply rebean = new Reply() ;
+      rebean.setMid(request.getParameter("mid"));
+      rebean.setcomments(request.getParameter("comments"));
+      int cnt = - 999999 ;
+	  cnt = replyDao.InsertData(rebean) ;
+      
+	  
+      //
+      
+      
+      String gotopage = "/board/boDetailView.jsp" ;
+      super.GotoPage(gotopage);
+   }   
+   @Override
+   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      super.doPost(request, response);
+   
+>>>>>>> refs/remotes/origin/seongeun
    }
 }
 
