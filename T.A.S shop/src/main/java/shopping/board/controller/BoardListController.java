@@ -22,8 +22,6 @@ public class BoardListController extends SuperClass {
    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   super.doGet(request, response);
 	   
-	   request.setCharacterEncoding("UTF-8");
-	   
 	   FlowParameters parameters 
          = new FlowParameters(
                request.getParameter("pageNumber"), 
@@ -66,8 +64,7 @@ public class BoardListController extends SuperClass {
       request.setAttribute("parameters", parameters.toString());
       
       String gotopage = "/board/boList.jsp" ;
-      RequestDispatcher requestDispatcher = request.getRequestDispatcher(gotopage);
-      requestDispatcher.include(request, response); 
+      super.GotoPage(gotopage);
       
    }   
    @Override

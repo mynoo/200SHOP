@@ -105,13 +105,23 @@
 						</div>
 					</li>
 					<div class="order-lg-last btn-group" style="margin: auto">
-						<a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
-						<span class="flaticon-shopping-bag"></span>
-							<div class="d-flex justify-content-center align-items-center">
-							<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
-							<small style="color: white;">${shopcount}</small>
-							</div>
-						</a>
+						<c:set var="shopcount" value="${sessionScope.shoplists.size() }" />
+                     <c:if test="${shopcount == 0}">
+                        <a href="<%=Noform%>prprList" class="btn-cart dropdown-toggle dropdown-toggle-split">
+                           <span class="flaticon-shopping-bag"></span>
+                           <div class="d-flex justify-content-center align-items-center">
+                              <small style="color: white;">${shopcount}</small>
+                           </div>
+                        </a>
+                     </c:if>
+                     <c:if test="${shopcount != 0}">
+                        <a href="<%=Noform%>mallList" class="btn-cart dropdown-toggle dropdown-toggle-split">
+                           <span class="flaticon-shopping-bag"></span>
+                           <div class="d-flex justify-content-center align-items-center">
+                              <small style="color: white;">${shopcount}</small>
+                           </div>
+                        </a>
+                     </c:if>
 					</div>
 					</c:if>
 				</ul>
