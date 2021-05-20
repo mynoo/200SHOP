@@ -61,7 +61,6 @@ thead {
 		style="background-image: url('<%=contextPath%>/images/bg_4.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="container">
-<<<<<<< HEAD
 			<div
 				class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate mb-5 text-center">
@@ -73,7 +72,6 @@ thead {
 						</span>
 					</p>
 					<h2 class="mb-0 bread">Board</h2>
-=======
 			<table>
 				<tr>
 					<td align="center" colspan="11">
@@ -155,7 +153,6 @@ thead {
 			<div class="col text-center">
 				<div class="block-27">
 					<footer>${pageInfo.pagingHtml}</footer>
->>>>>>> refs/remotes/origin/seongeun
 				</div>
 			</div>
 		</div>

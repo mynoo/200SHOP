@@ -76,17 +76,14 @@ text-align: center;
 										placeholder="input title"></td>
 								</tr>
 								<tr>
-<<<<<<< HEAD
 									<th>WRITER</th>
 									<td><input class="form-control" type="text" name="writer" id="writer"
 										width="100%" disabled="disabled"
 										value="${sessionScope.loginfo.id}"></td>
-=======
 									<th>Writer</th>
 									<td>
 										<input type="text" name="writer" id="writer" width="100%"  disabled="disabled" value="${sessionScope.loginfo.id }">
 									</td>
->>>>>>> refs/remotes/origin/seongeun
 								</tr>
 								<tr>
 									<th>CONTENT</th>
