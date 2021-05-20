@@ -84,7 +84,7 @@ textarea {
 										value="${bean.writer}"></td>
 									<th>Writer</th>
 									<td>
-										<input type="hidden" name="writer" id="writer" width="100%" value="${bean.writer}">
+										<input type="hidden" name="writer" id="writer" value="${bean.writer}">
 									</td>
 								</tr>
 								<tr>

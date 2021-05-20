@@ -18,9 +18,6 @@ function goinsert() {
 .container-wrap {
     margin-top: 100px;
 }
-form.form-inline {
-    justify-content: center;
-}
 .imgbox {
    display: inline-block;
    vertical-align: top;
@@ -44,7 +41,7 @@ form.form-inline {
 .btnbox2 {
    text-align: right;
    margin: 0 auto 20px;
-   width: 1200px;
+   width: 978px;
 }
 
 h4 {
@@ -110,7 +107,7 @@ button.btn.btn-primary {
                <tr>
                   <td>
                      <img src="upload/${bean.image}" class="img-rounded"
-                     alt="${bean.pname}" width="300" height="400">
+                     alt="${bean.pname}" width="300" height="480">
                   </td>
                </tr>
             </table>
