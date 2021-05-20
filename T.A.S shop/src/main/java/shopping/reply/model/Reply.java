@@ -4,10 +4,21 @@ public class Reply {
 	private int rno ;
 	private int groupno ;
 	private String mid;
-	private String comment;
-	private String date;
+	private String comments;
+	private String redate;
 	
 	public Reply() {}
+	
+	
+	public Reply(int rno, int groupno, String mid, String comments, String redate) {
+		super();
+		this.rno = rno;
+		this.groupno = groupno;
+		this.mid = mid;
+		this.comments = comments;
+		this.redate = redate;
+	}
+
 
 	public int getRno() {
 		return rno;
@@ -33,25 +44,25 @@ public class Reply {
 		this.mid = mid;
 	}
 
-	public String getComment() {
-		return comment;
+	public String getcomments() {
+		return comments;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setcomments(String comments) {
+		this.comments = comments;
 	}
 
-	public String getDate() {
-		return date;
+	public String getredate() {
+		return redate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setredate(String redate) {
+		this.redate = redate;
 	}
 
 	@Override
 	public String toString() {
-		return "Reply [rno=" + rno + ", groupno=" + groupno + ", mid=" + mid + ", comment=" + comment + ", date=" + date
+		return "Reply [rno=" + rno + ", groupno=" + groupno + ", mid=" + mid + ", comments=" + comments + ", redate=" + redate
 				+ "]";
 	}
 

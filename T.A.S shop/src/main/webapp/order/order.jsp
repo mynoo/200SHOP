@@ -3,12 +3,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+section{
+	font-family: 'Slabo 27px', serif;
+}
+td{
+	font-size: 20px;
+}
+</style>
 </head>
 
 <body>
 	<jsp:include page="../common/generalhead.jsp" />
     
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('../images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('<%=contextPath%>/images/bg_4.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">

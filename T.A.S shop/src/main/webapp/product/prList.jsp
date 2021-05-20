@@ -91,10 +91,10 @@ form.form-inline {
 								method="get">
 								<div class="form-group">
 									<select id="mode" name="mode" class="form-control-sm">
-										<option value="all" selected="selected">-- 선택하세요.
-										<option value="pname">이름
-										<option value="brand">제조회사
-										<option value="category">카테고리
+										<option value="all" selected="selected">-- select.
+										<option value="pname">name
+										<option value="brand">brand
+										<option value="category">category
 									</select>
 								</div>
 								<div class="form-group">
@@ -103,12 +103,12 @@ form.form-inline {
 								</div>
 								&nbsp;&nbsp;
 								<button class="btn btn-primary" type="button"
-									onclick="search();">검색</button>
+									onclick="search();">search</button>
 								&nbsp;&nbsp;
 								<button class="btn btn-primary" type="button"
-									onclick="searchAll();">전체 검색</button>
+									onclick="searchAll();">search all</button>
 									<button class="btn btn-primary btn-info" type="button"
-										onclick="writeForm();">상품 등록</button>
+										onclick="writeForm();">Registration</button>
 								&nbsp;&nbsp; ${pageInfo.pagingStatus}
 							</form>
 						</td>

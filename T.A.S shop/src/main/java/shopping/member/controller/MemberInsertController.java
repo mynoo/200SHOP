@@ -33,12 +33,6 @@ public class MemberInsertController extends SuperClass {
 		bean.setExtraaddress(request.getParameter("extraaddress"));
 		bean.setRoadaddress(request.getParameter("roadaddress"));
 		
-		if (request.getParameter("point") == null || request.getParameter("point").equals("")) {
-			bean.setPoint(0);	
-		}else {
-			bean.setPoint(Integer.parseInt(request.getParameter("point")));
-		}
-		
 		MemberDao dao = new MemberDao();
 		
 		if (this.validate(request) == true) { 

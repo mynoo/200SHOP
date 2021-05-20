@@ -19,13 +19,16 @@ td {
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
+input.btn.btn-default {
+    margin-top: 20;
+}
 	</style>
 </head>
 <body>
 
 	<jsp:include page="../common/generalhead.jsp"></jsp:include>
 	
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('<%=contextPath%>/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('<%=contextPath%>/images/bg_4.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">

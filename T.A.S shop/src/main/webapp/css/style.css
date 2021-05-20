@@ -512,7 +512,7 @@ pre {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -130px;
+  margin-right: -80px;
   margin-left: -80px; }
 
 .no-gutters {
@@ -5682,6 +5682,7 @@ button.bg-dark:focus {
   justify-content: flex-start !important; }
 
 .justify-content-end {
+	width: 1119px;
   -webkit-box-pack: end !important;
   -ms-flex-pack: end !important;
   justify-content: flex-end !important; }
@@ -8946,9 +8947,6 @@ h1, h2, h3, h4, h5,
         width: 62%; }
       .rating-wrap .star span:last-child {
         width: 32%; }
-
-.table-wrap {
-  overflow-x: scroll; }
 
 .table {
   min-width: 700px !important;

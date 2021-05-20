@@ -119,7 +119,7 @@ public class ProductInsertController extends SuperClass {
 			isCheck = false ;
 		}
 		int price = 100 ;
-		if (bean.getStock() < price) {
+		if (bean.getStock() > price) {
 			request.setAttribute(super.PREFIX + "price", "가격은 " + price + "원 이상이어야 합니다.");
 			isCheck = false ;
 		}

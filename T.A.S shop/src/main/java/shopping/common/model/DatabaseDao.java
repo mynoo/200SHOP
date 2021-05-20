@@ -31,7 +31,6 @@ public class DatabaseDao extends SuperDao{
 				bean.setImage( rs.getString("image") );
 				bean.setPname( rs.getString("pname") );
 				bean.setPnum( Integer.parseInt( rs.getString("pnum") ));
-				bean.setPoint( Integer.parseInt( rs.getString("point") ));
 				bean.setPrice( Integer.parseInt( rs.getString("price") ));
 				bean.setQty( Integer.parseInt( rs.getString("qty") ));				 
 				 
@@ -156,7 +155,7 @@ public class DatabaseDao extends SuperDao{
 			pstmt = conn.prepareStatement(sql) ;
 			
 			pstmt.setString(1, bean.getMid() );
-			pstmt.setString(2, bean.getComment() );
+			pstmt.setString(2, bean.getcomments() );
 			
 			cnt = pstmt.executeUpdate() ; 
 			conn.commit(); 
@@ -199,9 +198,9 @@ public class DatabaseDao extends SuperDao{
 				Reply bean = new Reply();
 				
 				bean.setRno( Integer.parseInt( rs.getString("rno") ));
-				bean.setComment( rs.getString("comment") );
+				bean.setcomments( rs.getString("comment") );
 				bean.setGroupno( Integer.parseInt( rs.getString("groupno") ));
-				bean.setDate( String.valueOf( rs.getDate("date") ));
+				bean.setredate( String.valueOf( rs.getDate("date") ));
 				bean.setMid( rs.getString("mid") );
 		  
 				lists.add( bean ) ;

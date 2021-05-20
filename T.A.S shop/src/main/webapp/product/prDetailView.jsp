@@ -111,29 +111,29 @@ button.btn.btn-primary {
 						<div class="col-lg-10">
 							<table class="table table-bordered">
 								<tr>
-									<td width="40%" align="center">상품명(번호)</td>
+									<td width="40%" align="center">name(no)</td>
 									<td width="60%" align="left">${bean.pname}(${bean.pno})<input
 										type="hidden" name="pno" value="${bean.pno}">
 									</td>
 								</tr>
 								<tr>
-									<td width="40%" align="center">재고 수량</td>
+									<td width="40%" align="center">stock</td>
 									<td width="60%" align="left">${bean.stock}<input
 										type="hidden" name="stock" value="${bean.stock}">
 									</td>
 								</tr>
 								<tr>
-									<td width="40%" align="center">가격</td>
+									<td width="40%" align="center">price</td>
 									<td width="60%" align="left">${bean.price}<input
 										type="hidden" name="price" value="${bean.price}">
 									</td>
 								</tr>
 								<tr>
-									<td width="40%" align="center">설명</td>
+									<td width="40%" align="center">content</td>
 									<td width="60%" align="left">${bean.content}</td>
 								</tr>
 								<tr>
-									<td width="40%" align="center">주문 수량</td>
+									<td width="40%" align="center">qty</td>
 									<td width="60%" align="left"><input type="number"
 										name="qty" id="qty" class="form-control-sm"
 										data-toggle="popover" title="수량 입력란" data-trigger="hover"
@@ -141,7 +141,7 @@ button.btn.btn-primary {
 										data-content="구매하시고자 하는 수량을 정수로 입력하세요."></td>
 								</tr>
 								<tr>
-									<td width="25%" align="center">입고 일자</td>
+									<td width="25%" align="center">date</td>
 									<td width="75%" align="left">${bean.date}</td>
 								</tr>
 							</table>
@@ -151,8 +151,8 @@ button.btn.btn-primary {
 			</div>
 			
 			<div class="btnbox2">
-				<button type=submit class="btn btn-primary btn2">주문</button>
-				<button type=submit class="btn btn-primary btn2">장바구니</button>
+				<button type=submit class="btn btn-primary btn2">order</button>
+				<button type=submit class="btn btn-primary btn2">cart</button>
 			</div>
 		</form>
 	</div>
@@ -163,8 +163,8 @@ button.btn.btn-primary {
 			<input type="hidden" name="command" value="reviewList"> <input
 				type="hidden" name="pno" value="${bean.pno}"> <input
 				type="hidden" name="totalcount" value="${requestScope.totalcount}">
-		<button type="submit" class="btn btn-primary" id="btn1">리뷰보기(${requestScope.totalcount})</button>
-		<button class="btn btn-primary" onclick="history.back();">돌아가기</button>
+		<button type="submit" class="btn btn-primary" id="btn1">review(${requestScope.totalcount})</button>
+		<button class="btn btn-primary" onclick="history.back();">home</button>
 		</form>
 	</div>
 	<jsp:include page="../common/footer.jsp" />
