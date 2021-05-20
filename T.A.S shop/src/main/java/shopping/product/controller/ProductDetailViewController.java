@@ -30,7 +30,7 @@ public class ProductDetailViewController extends SuperClass {
 		}
 		if(request.getAttribute("pno") != null)
 		{
-			pno = (int) request.getAttribute("pno");
+			pno = Integer.parseInt((String)request.getAttribute("pno"));
 		}
 		
 		System.out.println("pno = " + request.getAttribute("pno"));

@@ -1,7 +1,6 @@
 package shopping.board.controller;
 
 import java.io.IOException;
-
 import java.util.List;
 
 import javax.servlet.ServletException;

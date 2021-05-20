@@ -30,7 +30,7 @@ public class ReviewListController extends SuperClass {
 		}
 		if(request.getAttribute("pno") != null)
 		{
-			pno = (int) request.getAttribute("pno");
+			pno = Integer.parseInt((String)request.getAttribute("pno"));
 		}
 		
 		

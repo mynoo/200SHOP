@@ -25,7 +25,6 @@ public class MallCalculateController extends SuperClass {
 		MallDao dao = new MallDao();
 		
 		String payment = request.getParameter("payment");
-		
 		if (mycart != null) {
 			Map<Integer, Integer> maplists = mycart.GetAllOrderList();
 			System.out.println("shopping list count : " + maplists.size());

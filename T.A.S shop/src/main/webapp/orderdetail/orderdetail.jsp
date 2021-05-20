@@ -96,18 +96,6 @@
 										</td>
 									</tr>
 									<%-- 요금에 따른 운송비 구하기 --%>
-									<c:set var="shipExpense" value="0" />
-									<c:choose>
-										<c:when test="${totalAmount >= 100000}">
-											<c:set var="shipExpense" value="0" />
-										</c:when>
-										<c:when test="${totalAmount >= 50000}">
-											<c:set var="shipExpense" value="2000" />
-										</c:when>
-										<c:otherwise>
-											<c:set var="shipExpense" value="4000" />
-										</c:otherwise>
-									</c:choose>
 									<tr>
 										<td class="no-line"></td>
 										<td class="no-line"></td>
@@ -127,8 +115,7 @@
 											<strong> 최종 금액 </strong>
 										</td>
 										<td class="no-line text-right">
-											<c:set var="finalAmount" value="${totalAmount + shipExpense}" />
-											<fmt:formatNumber value="${finalAmount}" pattern="###,###" /> 원
+											<fmt:formatNumber value="${totalAmount}" pattern="###,###" /> 원
 										</td>
 									</tr>
 								</tbody>
@@ -151,18 +138,18 @@
 									<tr>
 										<td class="text-center gr"> 주문 총액 </td>
 										<td> 
-											<fmt:formatNumber value="${finalAmount}" pattern="###,###" /> 원
+											<fmt:formatNumber value="${totalAmount}" pattern="###,###" /> 원
 										</td>
 										<td class="text-center gr"> 할인 금액 </td>
 										<td> 
-											<c:set var="discount" value="0" />
+											<c:set var="discount" value="${totalAmount * 0.1}" />
 											<fmt:formatNumber value="${discount}" pattern="###,###" /> 원
 										</td>
 									</tr>
 									<tr>
 										<td class="text-center gr"> 결제 금액 </td>
 										<td>
-											<fmt:formatNumber value="${finalAmount - discount}" pattern="###,###" /> 원
+											<fmt:formatNumber value="${totalAmount - discount}" pattern="###,###" /> 원
 										</td>
 										<td class="text-center gr"> 결제 상태 </td>
 										<td> 결제 완료 </td>

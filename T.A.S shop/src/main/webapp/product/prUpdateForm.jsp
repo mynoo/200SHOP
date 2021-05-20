@@ -30,6 +30,9 @@
 <body>
 	<div class="main">
 		<div class="container">
+         <button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="location.href='<%=Noform%>prList'">
+            <b>X</b>
+         </button>
 			<div class="signup-content">
 				<div class="signup-img">
 					<img src="<%=contextPath%>/images/solid.png" alt="">

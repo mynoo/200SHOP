@@ -55,7 +55,7 @@
                   </div>
                   <div class="form-group" align="right">
                     <input type="submit" value="Post Review" class="btn py-3 px-4 btn-primary">
-					<input type="reset" value="Reset" class="btn py-3 px-4 btn-primary" name="reset" />
+					<button type="button" class="btn btn-primary" onclick="location.href='<%=Noform%>reviewList&pno=${bean.pno}';">돌아가기</button>
                   </div>
                 </form>
               </div>

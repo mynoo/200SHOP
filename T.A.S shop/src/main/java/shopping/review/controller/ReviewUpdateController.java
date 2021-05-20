@@ -36,7 +36,7 @@ public class ReviewUpdateController extends SuperClass {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
-		
+		System.out.println("adkshvkljdfa kjghawlhkb");
 		
 		Review bean = new Review() ;
 		MultipartRequest multi = (MultipartRequest)request.getAttribute("multi") ;
@@ -58,13 +58,15 @@ public class ReviewUpdateController extends SuperClass {
 			cnt = dao.UpdateData(bean) ;
 			if(cnt >= 1 )
 			{
-				System.out.println("board update validation check success");
+				System.out.println("review update validation check success");
 				request.setAttribute("pno", pno);
-				new ProductDetailViewController().doGet(request, response);
+				
+				new ReviewListController().doGet(request, response);
+
 			}
 			else
 			{
-			System.out.println("board update validation check failure");
+			System.out.println("review update validation check failure");
 			
 			request.setAttribute("bean", bean);
 			String gotopage = "/review/prReviewUpdate.jsp" ;

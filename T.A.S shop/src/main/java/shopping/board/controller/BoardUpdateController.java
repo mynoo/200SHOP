@@ -1,8 +1,11 @@
 package shopping.board.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -33,6 +36,8 @@ public class BoardUpdateController extends SuperClass {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		super.doPost(request, response);
 		
+		System.out.println("board update controller");
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		bean = new Board() ;
@@ -41,7 +46,6 @@ public class BoardUpdateController extends SuperClass {
 		bean.setWriter(request.getParameter("writer"));
 		bean.setBno(Integer.parseInt(request.getParameter("bno")));		
 		
-		System.out.println("wirter : " + request.getParameter("writer"));
 		System.out.println("bean information");
 		System.out.println(bean.toString()); 
 		

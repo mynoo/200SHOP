@@ -13,7 +13,11 @@
 		function neworder() {
 			location.href = "<%=Noform%>other"
 		}
-	
+	    function Calc() {
+	        var payment = $('input:radio[name="payment"]:checked').val();
+	          
+	          location.href = '<%=Noform%>mallCalculate&payment=' + payment;
+	       }
 		$(document).ready(function name() {
 			
 		});
@@ -204,7 +208,7 @@
 										</div>
 									</div>
 									<div class="button" align="center">
-										<a href="<%=Noform%>mallCalculate" class="btn btn-primary py-3 px-4"> 결제하기 </a>
+										<button type="button" class="btn btn-primary py-3 px-4" onclick="Calc();"> 결제하기 </button>
 									</div>
 								</div>
 							</div>

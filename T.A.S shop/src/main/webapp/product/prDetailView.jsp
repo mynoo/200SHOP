@@ -149,7 +149,7 @@ button.btn.btn-primary {
 										<input type="number" name="qty" id="qty" class="form-control-sm"
 										data-toggle="popover" title="수량 입력란" data-trigger="hover" 	
 										data-placement="auto top" data-content="구매하시고자 하는 수량을 정수로 입력하세요.">
-										<br>&nbsp;
+										&nbsp;
 										<span style="color: red; font-size: 10pt;">${requestScope.errmsg}</span>
 									</td>
 								</tr>

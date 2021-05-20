@@ -64,8 +64,6 @@
 			</div>
 		</div>
 	</section>
-
-
 	<section class="ftco-section ftco-degree-bg"  style="padding: 0;">
 		<div class="container">
  			  <div class="comment-form-wrap pt-5" >

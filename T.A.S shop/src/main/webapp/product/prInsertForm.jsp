@@ -50,9 +50,12 @@
 					</div>
 				</div>
 				<div class="signup-form">
-					<form method="POST" class="register-form" id="register-form" 
-					action="<%=YesForm%>" enctype="multipart/form-data">
-					<input type="hidden" id="command" name="command" value="prInsert">
+               <form method="POST" class="register-form" id="register-form" 
+                  action="<%=YesForm%>" enctype="multipart/form-data">
+               <input type="hidden" id="command" name="command" value="prInsert">
+                  <button type="button" class="btn btn-danger" style="border-radius: 30px; float: right;" onclick="location.href='<%=Noform%>prList'">
+                     <b>X</b>
+                  </button>
 						<div class="form-row">
 							<div class="form-group">
 								<div class="form-input">

@@ -58,6 +58,7 @@ public class BoardListController extends SuperClass {
       System.out.println("board list count : " + lists.size()); 
       
       request.setAttribute("lists", lists);
+      
       request.setAttribute("pageInfo", pageInfo);
       
       
