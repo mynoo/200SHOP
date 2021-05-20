@@ -101,8 +101,13 @@
                		 </c:if>
                </td>
             </tr>
-            </c:forEach>      
+            </c:forEach> 
             </tbody>
+              <c:if test="${requestScope.lists eq '[]'}">
+            		<td colspan="3" align="center">
+            			등록된 리뷰가 없습니다.
+            		</td>
+              </c:if>
          </table>
          <form action="<%=YesForm%>" role="form"   method="post">
             <input type="hidden" name="command" value="reviewMain">

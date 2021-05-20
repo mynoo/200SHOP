@@ -5,7 +5,7 @@
 <head>
 	<style type="text/css">
 	th {
-		padding: 3px;
+		padding: 3px; 
 		text-align: center;
 		background-color: #A23F25;
 		color: white;

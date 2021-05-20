@@ -15,6 +15,12 @@ function goinsert() {
 	
 </script>
 <style>
+.container-wrap {
+    margin-top: 100px;
+}
+form.form-inline {
+    justify-content: center;
+}
 .imgbox {
 	display: inline-block;
 	vertical-align: top;
@@ -38,7 +44,7 @@ function goinsert() {
 .btnbox2 {
 	text-align: right;
 	margin: 0 auto 20px;
-	width: 975px;
+	width: 1200px;
 }
 
 h4 {

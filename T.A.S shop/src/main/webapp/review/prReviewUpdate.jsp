@@ -3,43 +3,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-
-
-
+<style>
+		.placeholder {
+		  color: red;
+		}
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		th {
+		  padding: 8px;
+		  text-align: center;
+		  border-bottom: 1px solid #ddd;
+		  color: initial;
+		}
+		
+		td {
+		  padding: 8px;
+		  text-align: center;
+		  border-bottom: 1px solid #ddd;
+		  font: message-box;
+		}
+		ul.pagination {
+   		justify-content: center;
+		}
+		h4{
+		   margin: 0px auto;
+		   padding: 5px 0;
+		   text-align: center;
+		   margin-bottom: 1;
+		}
+		.add{color: black;
+	</style>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="../common/generalhead.jsp" />
- 			  <div class="comment-form-wrap pt-5">
-                <h3 class="mb-5">리뷰 수정</h3>
+	   <jsp:include page="../common/generalhead.jsp" />
+	   
+	   
+<section class="hero-wrap hero-wrap-2"
+		style="background-image: url('<%=contextPath%>/images/bg_4.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate mb-5 text-center">
+					<p class="breadcrumbs mb-0">
+						<span class="mr-2">
+							<a href="<%=Noform%>main">Home 
+								<i class="fa fa-chevron-right"></i>
+							</a>
+						</span>
+						<span>Products <i class="fa fa-chevron-right"></i></span>
+					</p>
+					<h2 class="mb-0 bread">Products List</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ftco-section ftco-degree-bg"  style="padding: 0;">
+		<div class="container">
+ 			  <div class="comment-form-wrap pt-5" >
+                <h4 class="mb-5">리뷰 수정</h4>
                 <form method="post" class="p-5 bg-light" action="<%=YesForm%>" >
                 
                  <input type="hidden" name="command" value="reviewUpdate">
                   
                    <div class="form-group">
-                    <label for="name">Pno</label>
-                    <input type="text" class="form-control" name="pno" id="pno" value="${bean.pno}" readonly/>
+                    <input type="hidden" class="form-control" name="pno" id="pno" value="${bean.pno}" readonly/>
                   </div>
                   <div class="form-group">
-                    <label for="name">vnum</label>
+                    <label for="name" class="add">리뷰 번호</label>
                     <input type="text" class="form-control" name="vnum" id="vnum" value="${bean.vnum}" readonly />
                   </div>
                   <div class="form-group">
-                    <label for="name">ID</label>
+                    <label for="name" class="add">회원 아이디</label>
                     <input type="text" class="form-control" name="mid" id="mid" value="${loginfo.id}" readonly />
                   </div>
                    <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea name="vcomment" id="vcomment" cols="30" rows="10" class="form-control"></textarea>
+                    <label for="message" class="add">Comment</label>
+                    <textarea name="vcomment" id="vcomment" cols="30" rows="10" class="form-control" placeholder="수정할 내용을 입력하세요."></textarea>
                   </div>
                   <div class="form-group" align="right">
-                    <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                    <input type="submit" value="수정" class="btn py-3 px-4 btn-primary">
 					<input type="reset" value="Reset" class="btn py-3 px-4 btn-primary" name="reset" />
                   </div>
                 </form>
               </div>
+              </div>
+         </section>
 </body>
 </html>
