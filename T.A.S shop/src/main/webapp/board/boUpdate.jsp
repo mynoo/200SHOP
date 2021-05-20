@@ -58,26 +58,20 @@ textarea {
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 ftco-animate">
-<<<<<<< HEAD
 					<form id="comment_form" action="<%=YesForm%>" method="post"
 						role="form">
-=======
 					<form id="comment_form" action="<%=YesForm %>" method="post" role="form" >
->>>>>>> refs/remotes/origin/seongeun
 						<input type="hidden" name="command" value="boUpdate">
 						<table style="width: 100%">
 							<tbody>
 								<tr>
-<<<<<<< HEAD
 									<th>NO</th>
 									<td><input class="form-control" type="hidden" name="bno" id="bno"
 										value="${bean.bno}"></td>
-=======
 									<th>no</th>
 									<td>
 										<input type="hidden" name="bno" id="bno" value="${bean.bno}">
 									</td>
->>>>>>> refs/remotes/origin/seongeun
 								</tr>
 								<tr>
 									<th>TITLE</th>
@@ -85,16 +79,13 @@ textarea {
 										value="${bean.title}"></td>
 								</tr>
 								<tr>
-<<<<<<< HEAD
 									<th>WRITER</th>
 									<td><input class="form-control" type="hidden" name="writer" id="writer"
 										value="${bean.writer}"></td>
-=======
 									<th>Writer</th>
 									<td>
 										<input type="hidden" name="writer" id="writer" width="100%" value="${bean.writer}">
 									</td>
->>>>>>> refs/remotes/origin/seongeun
 								</tr>
 								<tr>
 									<th>COTENT</th>
