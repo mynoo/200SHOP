@@ -65,30 +65,30 @@
 		}
 		
 		function Checkpw() {
+			   // 비밀번호
+	         var pw = document.getElementById('password').value;
+	         // 아이디
+	         var id = document.getElementById('id').value;
+	         // 특수문자
+	         var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!?@#$%^&*-~]).{4,}$/;
+	          
+	         // 비밀번호 검사
+	         if(false ===reg.test(pw)){
+	            alert('비밀번호는 4자이상이어야 하며, 숫자/대문자/소문자/특수문자를 모두 포함해야 합니다.');
+	         }else if (pw.search(id) > -1) {
+	            alert('비밀번호에 아이디가 포함되었습니다.');
+	            return false;
+	         }else if (pw.search(/\s/) != -1) {
+	            alert('비밀번호는 공백 없이 입력해주세요');
+	            return false;
+	         }
 			
-			// 비밀번호
-			var pw = document.getElementById('password').value;
-			// 특수문자
-			var SC = ["!","@","#","$","%"];
-			// 특수문자 갯수
-			var check_SC = 0;
-	 		
-			// 비밀번호에서 특수문자 카운트 
-			for(var i=0;i<SC.length;i++){
-				if(pw.indexOf(SC[i]) != -1){
-				check_SC = 1;
-				}
-			}
-			
-			// 특수문자 없을시
-			if(check_SC == 0){
-				window.alert('!,@,#,$,% 의 특수문자가 들어가 있지 않습니다.')
-				document.getElementById('password').value='';
-			}
 			
 			// 비밀번호 확인
-			if(document.getElementById('password').value !='' && document.getElementById('confpassword').value!=''){
-				if(document.getElementById('password').value==document.getElementById('confpassword').value){
+			if(document.getElementById('password').value !='' && document.getElementById('confpassword').value!='')
+			{
+				if(document.getElementById('password').value==document.getElementById('confpassword').value)
+				{
 					document.getElementById('same').innerHTML='비밀번호가 일치합니다.'
 					document.getElementById('same').style.color='blue';
 				}
